@@ -6,7 +6,7 @@ const Logo = () => {
   return (
     <React.Fragment>
       <Typography variant="h2" style={{ paddingBottom: 10 }}>
-        Geospace
+        adegras
       </Typography>
       <BlurOnIcon />
     </React.Fragment>
