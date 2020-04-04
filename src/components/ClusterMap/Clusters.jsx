@@ -51,8 +51,8 @@ export default function Clusters(props) {
   return (
     <MapGL
       {...viewport}
-      width="100%"
-      height="100%"
+      width="100vw"
+      height="100vh"
       mapStyle="mapbox://styles/mapbox/dark-v9"
       onViewportChange={_onViewportChange}
       mapboxApiAccessToken={MAPBOX_TOKEN}

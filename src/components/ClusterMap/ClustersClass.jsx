@@ -17,7 +17,9 @@ export default class ClustersClass extends Component {
       longitude: -103.59,
       zoom: 3,
       bearing: 0,
-      pitch: 0
+      pitch: 0,
+      width: "100%",
+      height: "91vh"
     }
   };
 
@@ -49,19 +51,21 @@ export default class ClustersClass extends Component {
     });
   };
 
+  handleStyleLoad = map => map.resize();
+
   render() {
     const { viewport } = this.state;
 
     return (
       <MapGL
         {...viewport}
-        width="100vw"
-        height="100vh"
         mapStyle="mapbox://styles/mapbox/dark-v9"
         onViewportChange={this._onViewportChange}
         mapboxApiAccessToken={MAPBOX_TOKEN}
         interactiveLayerIds={[clusterLayer.id]}
         onClick={this._onClick}
+        containerStyle={{ width: "100%", height: "100%" }}
+        onStyleLoad={this.handleStyleLoad}
       >
         <Source
           type="geojson"
