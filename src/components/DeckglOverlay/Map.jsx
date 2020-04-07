@@ -29,7 +29,7 @@ export default class Map extends Component {
       <MapGL
         {...viewport}
         width="100%"
-        height="100%"
+        height="100vh"
         maxPitch={85}
         onViewportChange={this._onViewportChange}
         mapboxApiAccessToken={TOKEN}
