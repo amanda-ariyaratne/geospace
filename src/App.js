@@ -3,7 +3,7 @@ import Header from "./components/Header";
 
 import "./App.css";
 import { Grid, TextField, Box } from "@material-ui/core";
-import Map from "./components/DeckglOverlay/Map";
+import Map from "./components/GetStarted/Map";
 
 export default function App(props) {
   return (
@@ -14,10 +14,12 @@ export default function App(props) {
         </Grid>
         <Grid item container direction="row">
           <Grid item md={2}>
-            <div></div>
+            <TextField id="standard-basic" label="Standard" />
           </Grid>
           <Grid item md={10}>
-            <Map />
+            <div className="positioned">
+              <Map />
+            </div>
           </Grid>
         </Grid>
       </Grid>
