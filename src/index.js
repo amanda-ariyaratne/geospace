@@ -6,25 +6,34 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import { CssBaseline } from "@material-ui/core";
 import * as serviceWorker from "./serviceWorker";
 
+import { createStore } from "redux";
+import rootReducer from "./reducers/index";
+import { Provider } from "react-redux";
+
+const store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
 const theme = createMuiTheme({
   palette: {
     type: "dark",
     primary: {
-      main: "#90caf9"
+      main: "#90caf9",
     },
     secondary: {
-      main: "#f48fb1"
-    }
-  }
+      main: "#f48fb1",
+    },
+  },
 });
 
 ReactDOM.render(
-  <React.StrictMode>
-    <MuiThemeProvider theme={theme}>
-      <CssBaseline />
+  <MuiThemeProvider theme={theme}>
+    <CssBaseline />
+    <Provider store={store}>
       <App />
-    </MuiThemeProvider>
-  </React.StrictMode>,
+    </Provider>
+  </MuiThemeProvider>,
   document.getElementById("root")
 );
 

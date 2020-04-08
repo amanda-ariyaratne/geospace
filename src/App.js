@@ -1,28 +1,18 @@
 import React, { Component, useState } from "react";
-import Header from "./components/Header";
-
 import "./App.css";
-import { Grid, TextField, Box } from "@material-ui/core";
-import Map from "./components/GetStarted/Map";
+
+import { Box } from "@material-ui/core";
+
+import Header from "./components/Header";
+import Main from "./components/Main";
 
 export default function App(props) {
   return (
-    <div>
-      <Grid container direction="column">
-        <Grid item>
-          <Header />
-        </Grid>
-        <Grid item container direction="row">
-          <Grid item md={2}>
-            <TextField id="standard-basic" label="Standard" />
-          </Grid>
-          <Grid item md={10}>
-            <div className="positioned">
-              <Map />
-            </div>
-          </Grid>
-        </Grid>
-      </Grid>
-    </div>
+    <Box display="flex" flexDirection="column" className="app">
+      <Box order={1}>
+        <Header />
+      </Box>
+      <Main />
+    </Box>
   );
 }
