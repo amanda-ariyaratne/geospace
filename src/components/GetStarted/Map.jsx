@@ -16,7 +16,6 @@ export default function Map() {
     zoom: 4,
     bearing: 0,
     pitch: 30,
-    width: "100%",
   };
 
   const mapboxstyle = useSelector((state) => state.mapstyle);
