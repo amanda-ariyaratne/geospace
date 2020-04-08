@@ -5,7 +5,7 @@ const stylelist = mapStyles;
 const mapstlyeReducer = (state = stylelist[0], action) => {
   switch (action.type) {
     case "CHANGE":
-      return action.style;
+      return action.payload;
     default:
       return state;
   }
