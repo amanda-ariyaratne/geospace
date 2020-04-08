@@ -10,7 +10,7 @@ import Select from "@material-ui/core/Select";
 import { mapStyles } from "../../data/mapstyles";
 
 // redux
-import { changeMapboxStyle } from "../../actions";
+import { changeMapboxStyle } from "../../actions/mapstyles";
 import { useDispatch } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
