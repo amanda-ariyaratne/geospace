@@ -10,13 +10,7 @@ export default function Map() {
   const AIR_PORTS =
     "https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_10m_airports.geojson";
 
-  const INITIAL_VIEW_STATE = {
-    latitude: 20,
-    longitude: 0,
-    zoom: 2,
-    bearing: 0,
-    pitch: 0,
-  };
+  const INITIAL_VIEW_STATE = useSelector((state) => state.viewstate);
 
   const mapboxstyle = useSelector((state) => state.mapstyle);
 
