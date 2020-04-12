@@ -5,6 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import { Box } from "@material-ui/core";
 
 // style-list
 import { mapStyles } from "../../data/mapstyles";
@@ -42,11 +43,17 @@ export default function MapTheme() {
   };
 
   return (
-    <FormControl variant="filled" className={classes.formControl}>
-      <InputLabel htmlFor="my-input">Map Style</InputLabel>
-      <Select native variant="filled" onChange={(event) => handleChange(event)}>
-        {menulist}
-      </Select>
-    </FormControl>
+    <Box>
+      <FormControl variant="filled" className={classes.formControl}>
+        <InputLabel htmlFor="my-input">Map Style</InputLabel>
+        <Select
+          native
+          variant="filled"
+          onChange={(event) => handleChange(event)}
+        >
+          {menulist}
+        </Select>
+      </FormControl>
+    </Box>
   );
 }
