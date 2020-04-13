@@ -1,9 +1,9 @@
 const viewstateReducer = (state, action) => {
   if (state === undefined) {
     const viewstate = {
-      latitude: 20,
-      longitude: 0,
-      zoom: 2,
+      latitude: 40.7,
+      longitude: -74,
+      zoom: 11,
       bearing: 0,
       pitch: 0,
     };

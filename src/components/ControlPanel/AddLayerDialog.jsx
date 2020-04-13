@@ -15,12 +15,16 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import { Button } from "@material-ui/core";
 
+// classes
+import Scatterplot from "../../classes/Scatterplot";
+
 // redux
-import { addLayer } from "../../state-management/actions/layers";
+import { addLayer } from "../../state/actions/layers";
 import { useDispatch } from "react-redux";
 
 // data
 import { layerTypes } from "../../data/layertypes";
+import shortid from "shortid";
 
 const useModelStyles = makeStyles((theme) => ({
   box: {
@@ -59,10 +63,19 @@ export default function AddLayerDialog(props) {
 
   const dispatch = useDispatch();
   const handleSave = () => {
-    const layer = {
+    const layerData = {
+      id: shortid.generate(),
+      type: "scatterplot",
       data: data,
-      description: "this is my new layer",
+      radiusScale: 1,
+      pickable: false,
+      opacity: 0.5,
+      getRadius: 1,
+      radiusMinPixels: 1,
+      getColor: [255, 0, 0],
     };
+    const layerInstance = new Scatterplot(layerData);
+    const layer = layerInstance.render();
     dispatch(addLayer(layer));
     onClose(selectedValue);
   };
