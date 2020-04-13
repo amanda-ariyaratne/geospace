@@ -2,9 +2,7 @@ import React, { useState } from "react";
 
 // material-ui
 import { makeStyles } from "@material-ui/core/styles";
-import { useTheme } from "@material-ui/core/styles";
-import { Box, DialogActions, TextField } from "@material-ui/core";
-import { Button } from "@material-ui/core";
+import { Box, TextField, Button } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   input: {

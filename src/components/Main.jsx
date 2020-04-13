@@ -5,7 +5,6 @@ import { Box } from "@material-ui/core";
 
 // components
 import Map from "./GetStarted/Map";
-import App from "./Scatterplot/App";
 import ControlPanel from "./ControlPanel/ControlPanel";
 
 export default function Main() {

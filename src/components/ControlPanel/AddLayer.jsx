@@ -4,8 +4,7 @@ import React, { useState } from "react";
 import AddLayerDialog from "./AddLayerDialog";
 
 // material-ui
-import { Box } from "@material-ui/core";
-import { Button } from "@material-ui/core";
+import { Box, Button } from "@material-ui/core";
 
 export default function AddLayer(props) {
   const [open, setOpen] = useState(false);
