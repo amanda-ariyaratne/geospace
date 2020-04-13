@@ -4,16 +4,19 @@ import React, { useState } from "react";
 import FileUploadButton from "./FileUploadButton";
 
 // material-ui
-import { Box, DialogActions, TextField } from "@material-ui/core";
+import {
+  Box,
+  Button,
+  Dialog,
+  DialogActions,
+  DialogTitle,
+  InputLabel,
+  FormControl,
+  Select,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import Dialog from "@material-ui/core/Dialog";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import InputLabel from "@material-ui/core/InputLabel";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import { Button } from "@material-ui/core";
 
 // classes
 import Scatterplot from "../../classes/Scatterplot";

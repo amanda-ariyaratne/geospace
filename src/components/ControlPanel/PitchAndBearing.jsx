@@ -4,11 +4,8 @@ import React, { useState } from "react";
 import Pitch from "../../classes/Pitch";
 
 // material-ui
-import { Box } from "@material-ui/core";
-import TextField from "@material-ui/core/TextField";
-import Tooltip from "@material-ui/core/Tooltip";
+import { Box, InputAdornment, TextField, Tooltip } from "@material-ui/core";
 import InfoIcon from "@material-ui/icons/Info";
-import { InputAdornment } from "@material-ui/core";
 
 // redux
 import { setPitch, setBearing } from "../../state/actions/viewstate";
