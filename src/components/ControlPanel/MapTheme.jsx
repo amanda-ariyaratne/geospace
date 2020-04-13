@@ -11,7 +11,7 @@ import { Box } from "@material-ui/core";
 import { mapStyles } from "../../data/mapstyles";
 
 // redux
-import { changeMapboxStyle } from "../../state-management/actions/mapstyles";
+import { changeMapboxStyle } from "../../state/actions/mapstyles";
 import { useDispatch } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({

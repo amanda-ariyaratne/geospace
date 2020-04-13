@@ -18,7 +18,7 @@ const INITIAL_VIEW_STATE = {
   latitude: 40.7,
   zoom: 11,
   maxZoom: 16,
-  pitch: 60,
+  pitch: 0,
   bearing: 0,
 };
 
@@ -26,7 +26,10 @@ export default class App extends Component {
   _renderLayers() {
     const {
       data = DATA_URL,
-      radius = 30,
+      radius = 20,
+      pickable = false,
+      opacity = 0.5,
+      getRadius = 1,
       maleColor = MALE_COLOR,
       femaleColor = FEMALE_COLOR,
     } = this.props;
@@ -35,14 +38,12 @@ export default class App extends Component {
       new ScatterplotLayer({
         id: "scatter-plot",
         data,
+        opacity: 0.5,
         radiusScale: radius,
         radiusMinPixels: 0.25,
         getPosition: (d) => [d[0], d[1], 0],
         getFillColor: (d) => (d[2] === 1 ? maleColor : femaleColor),
         getRadius: 1,
-        updateTriggers: {
-          getFillColor: [maleColor, femaleColor],
-        },
       }),
     ];
   }
