@@ -11,20 +11,16 @@ import { Box } from "@material-ui/core";
 import { mapStyles } from "../../data/mapstyles";
 
 // redux
-import { changeMapboxStyle } from "../../actions/mapstyles";
+import { changeMapboxStyle } from "../../state-management/actions/mapstyles";
 import { useDispatch } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-  },
   selectEmpty: {
     marginTop: theme.spacing(2),
   },
 }));
 
-export default function MapTheme() {
+export default function MapTheme(props) {
   const classes = useStyles();
 
   const menulist = mapStyles.map((style) => (
@@ -43,8 +39,8 @@ export default function MapTheme() {
   };
 
   return (
-    <Box>
-      <FormControl variant="filled" className={classes.formControl}>
+    <Box className={props.boxStyle}>
+      <FormControl variant="filled" className={classes.formControl} fullWidth>
         <InputLabel htmlFor="my-input">Map Style</InputLabel>
         <Select
           native

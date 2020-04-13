@@ -8,7 +8,7 @@
   height: 100vh;
 }
 
-.container {
+.main {
   display: flex;
   height: 100%;
   align-items: stretch;
@@ -19,4 +19,9 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
+  width: 250px;
+}
+
+.map {
+  flex-grow: 1;
 }
