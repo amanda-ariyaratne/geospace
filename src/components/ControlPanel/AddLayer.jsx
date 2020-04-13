@@ -4,19 +4,10 @@ import React, { useState } from "react";
 import AddLayerDialog from "./AddLayerDialog";
 
 // material-ui
-import { Box, DialogActions } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Box } from "@material-ui/core";
 import { Button } from "@material-ui/core";
 
-const useButtonStyles = makeStyles((theme) => ({
-  button: {
-    margin: theme.spacing(1),
-  },
-}));
-
-export default function AddLayer() {
-  const classes = useButtonStyles();
-
+export default function AddLayer(props) {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -28,7 +19,7 @@ export default function AddLayer() {
   };
 
   return (
-    <Box className={classes.button}>
+    <Box className={props.boxStyle}>
       <Button
         variant="outlined"
         color="secondary"

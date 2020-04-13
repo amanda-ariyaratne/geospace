@@ -1,4 +1,4 @@
-import { mapStyles } from "../data/mapstyles";
+import { mapStyles } from "../../data/mapstyles";
 
 const stylelist = mapStyles;
 

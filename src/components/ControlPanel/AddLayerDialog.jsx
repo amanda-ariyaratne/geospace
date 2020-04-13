@@ -16,7 +16,7 @@ import Select from "@material-ui/core/Select";
 import { Button } from "@material-ui/core";
 
 // redux
-import { addLayer } from "../../actions/layers";
+import { addLayer } from "../../state-management/actions/layers";
 import { useDispatch } from "react-redux";
 
 // data
