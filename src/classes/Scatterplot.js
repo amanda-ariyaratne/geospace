@@ -21,6 +21,57 @@ export default class Scatterplot extends Layer {
     this.getColor = getColor;
   }
 
+  validateRadiusScale() {
+    if (isNaN(this.radiusScale)) {
+      return false;
+    }
+    if (this.radiusScale === "") {
+      return false;
+    }
+    if (typeof this.radiusScale === "string") {
+      this.setRadiusScale(Number(this.radiusScale));
+    }
+    if (this.radiusScale === null) {
+      return false;
+    }
+    if (typeof this.radiusScale === "object") {
+      return false;
+    }
+    if (this.radiusScale < 0) {
+      return false;
+    }
+    return true;
+  }
+
+  validateOpacity() {
+    if (isNaN(this.opacity)) {
+      return false;
+    }
+    if (this.opacity === "") {
+      return false;
+    }
+    if (typeof this.opacity === "string") {
+      this.setOpacity(Number(this.opacity));
+    }
+    if (this.opacity === null) {
+      return false;
+    }
+    if (typeof this.opacity === "object") {
+      return false;
+    }
+    if (this.opacity < 0 || this.opacity > 1) {
+      return false;
+    }
+    return true;
+  }
+
+  validatePickable() {
+    if (typeof this.pickable === "boolean") {
+      return true;
+    }
+    return false;
+  }
+
   render() {
     return new ScatterplotLayer({
       id: this.id,
@@ -33,5 +84,17 @@ export default class Scatterplot extends Layer {
       getColor: this.getColor,
       getPosition: (d) => [d[0], d[1], 0],
     });
+  }
+
+  setRadiusScale(rs) {
+    this.radiusScale = rs;
+  }
+
+  setPickable(pickable) {
+    this.pickable = pickable;
+  }
+
+  setOpacity(opacity) {
+    this.opacity = opacity;
   }
 }
