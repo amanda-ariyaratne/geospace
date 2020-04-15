@@ -58,43 +58,48 @@ export default function AddLayerDialog(props) {
       {type.name}
     </option>
   ));
-  const [data, setData] = useState({});
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const dispatch = useDispatch();
+
+  const [file, setFile] = useState(null);
+  const [fileUploadError, setFileUploadError] = useState(false);
 
   const handleClose = () => {
     onClose(selectedValue);
   };
 
-  const dispatch = useDispatch();
   const handleSave = () => {
-    const layerData = {
-      id: shortid.generate(),
-      type: "scatterplot",
-      data: data,
-      radiusScale: 1,
-      pickable: false,
-      opacity: 0.5,
-      getRadius: 1,
-      radiusMinPixels: 1,
-      getColor: [255, 0, 0],
-    };
-    const layerInstance = new Scatterplot(layerData);
-    const layer = layerInstance.render();
-    dispatch(addLayer(layer));
-    onClose(selectedValue);
+    if (!file) {
+      setFileUploadError(true);
+      return;
+    }
+    // const layerData = {
+    //   id: shortid.generate(),
+    //   data: data,
+    //   radiusScale: 1,
+    //   pickable: false,
+    //   opacity: 0.5,
+    //   getRadius: 1,
+    //   radiusMinPixels: 1,
+    //   getColor: [255, 0, 0],
+    // };
+    // const layerInstance = new Scatterplot(layerData);
+    // const layer = layerInstance.render();
+    // dispatch(addLayer(layer));
+    // onClose(selectedValue);
   };
 
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
-
   const handleFileUpload = (file) => {
-    const fr = new FileReader();
-    const parseJSON = (text) => JSON.parse(text);
-    fr.onload = (e) => {
-      const dataString = e.target.result;
-      const data = parseJSON(dataString);
-      setData(data);
-    };
-    fr.readAsText(file);
+    setFile(file);
+    // const fr = new FileReader();
+    // const parseJSON = (text) => JSON.parse(text);
+    // fr.onload = (e) => {
+    //   const dataString = e.target.result;
+    //   const data = parseJSON(dataString);
+    //   setData(data);
+    // };
+    // fr.readAsText(file);
   };
 
   return (
@@ -120,7 +125,11 @@ export default function AddLayerDialog(props) {
         </FormControl>
       </Box>
 
-      <FileUploadButton boxStyle={classes.box} onUpload={handleFileUpload} />
+      <FileUploadButton
+        boxStyle={classes.box}
+        onUpload={handleFileUpload}
+        error={fileUploadError}
+      />
 
       <DialogActions>
         <Button autoFocus onClick={handleClose} className={classes.close}>

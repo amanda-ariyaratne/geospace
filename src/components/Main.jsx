@@ -4,7 +4,7 @@ import React from "react";
 import { Box } from "@material-ui/core";
 
 // components
-import Map from "./GetStarted/Map";
+import Map from "./Map";
 import ControlPanel from "./ControlPanel/ControlPanel";
 
 export default function Main() {
