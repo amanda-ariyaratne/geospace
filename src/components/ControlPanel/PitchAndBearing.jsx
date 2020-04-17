@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // classes
-import Pitch from "../../classes/Pitch";
+import Pitch from "../../classes/map/Pitch";
 
 // material-ui
 import { Box, InputAdornment, TextField, Tooltip } from "@material-ui/core";

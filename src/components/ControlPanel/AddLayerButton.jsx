@@ -6,14 +6,14 @@ import AddLayerDialog from "./AddLayerDialog";
 // material-ui
 import { Box, Button } from "@material-ui/core";
 
-export default function AddLayer(props) {
+export default function AddLayerButton(props) {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
   };
 
-  const handleClose = (value) => {
+  const handleClose = () => {
     setOpen(false);
   };
 
