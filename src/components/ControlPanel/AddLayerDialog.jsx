@@ -120,6 +120,10 @@ export default function AddLayerDialog(props) {
     setFile(file);
   };
 
+  const handleFileRemove = () => {
+    setFile(null);
+  };
+
   const handleClose = () => {
     restoreDefaults();
     onClose();
@@ -161,6 +165,7 @@ export default function AddLayerDialog(props) {
         onUpload={handleFileUpload}
         error={fileUploadError}
         errorMessage={fileUploadErrorMessage}
+        fileRemove={handleFileRemove}
       />
 
       <DialogActions>

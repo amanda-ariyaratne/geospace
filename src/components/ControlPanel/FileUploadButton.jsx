@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 
 // material-ui
 import { makeStyles } from "@material-ui/core/styles";
-import { Box, TextField, Button } from "@material-ui/core";
+import { Box, InputAdornment, TextField, Button } from "@material-ui/core";
+import CloseIcon from "@material-ui/icons/Close";
 
 const useStyles = makeStyles((theme) => ({
   input: {
@@ -22,6 +23,11 @@ export default function FileUploadButton(props) {
     const file = e.target.files[0];
     setUploadFile(file);
     props.onUpload(file);
+  };
+
+  const handleFileRemove = () => {
+    setUploadFile({ name: "" });
+    props.fileRemove();
   };
 
   return (
@@ -53,6 +59,17 @@ export default function FileUploadButton(props) {
         value={uploadFile.name}
         error={props.error}
         helperText={props.errorMessage}
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              <CloseIcon
+                fontSize="small"
+                onClick={handleFileRemove}
+                style={{ cursor: "pointer" }}
+              />
+            </InputAdornment>
+          ),
+        }}
       />
     </Box>
   );
