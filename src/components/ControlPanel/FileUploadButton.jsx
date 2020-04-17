@@ -17,7 +17,6 @@ export default function FileUploadButton(props) {
   const classes = useStyles();
 
   const [uploadFile, setUploadFile] = useState({ name: "" });
-  const [errorMessage, setErrorMessage] = useState(props.errorMessage);
 
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
@@ -53,7 +52,7 @@ export default function FileUploadButton(props) {
         }}
         value={uploadFile.name}
         error={props.error}
-        helperText={errorMessage}
+        helperText={props.errorMessage}
       />
     </Box>
   );

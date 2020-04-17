@@ -20,14 +20,10 @@ export default class DataFile {
     });
   }
 
-  parseToJsonAsync() {
+  parseToJson() {
     return new Promise((resolve, reject) => {
-      try {
-        this.jsonData = JSON.parse(this.fileText);
-        resolve(this);
-      } catch (err) {
-        reject(err);
-      }
+      this.jsonData = JSON.parse(this.fileText);
+      resolve(this);
     });
   }
 

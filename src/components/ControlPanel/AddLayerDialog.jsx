@@ -68,10 +68,6 @@ export default function AddLayerDialog(props) {
   const [fileUploadErrorMessage, setFileUploadErrorMessage] = useState("");
   const [data, setData] = useState(null);
 
-  const handleClose = () => {
-    onClose();
-  };
-
   const handleSave = () => {
     if (!file) {
       setFileUploadError(true);
@@ -79,15 +75,21 @@ export default function AddLayerDialog(props) {
       return;
     }
     const datafile = new DataFile(file);
-    datafile.extractTextAsync().then(
-      (datafile) => {
-        datafile.parseToJsonAsync();
+    datafile
+      .extractTextAsync()
+      .then((datafile) => {
+        return datafile.parseToJson();
+        //console.log(datafile.getJsonData());
+      })
+      .then((datafile) => {
         console.log(datafile.getJsonData());
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
+      })
+      .catch((err) => {
+        setFileUploadErrorMessage(
+          "The content inside the file is not in json format"
+        );
+        setFileUploadError(true);
+      });
 
     // try {
     //   const datafile = new DataFile(file);
@@ -116,14 +118,18 @@ export default function AddLayerDialog(props) {
 
   const handleFileUpload = (file) => {
     setFile(file);
-    const fr = new FileReader();
-    const parseJSON = (text) => JSON.parse(text);
-    fr.onload = (e) => {
-      const dataString = e.target.result;
-      const data = parseJSON(dataString);
-      setData(data);
-    };
-    fr.readAsText(file);
+  };
+
+  const handleClose = () => {
+    restoreDefaults();
+    onClose();
+  };
+
+  const restoreDefaults = () => {
+    setFile(null);
+    setFileUploadError(false);
+    setFileUploadErrorMessage("");
+    setData(null);
   };
 
   return (
@@ -133,7 +139,8 @@ export default function AddLayerDialog(props) {
       open={open}
       fullScreen={fullScreen}
       fullWidth={true}
-      maxWidth="lg"
+      maxWidth="md"
+      disableBackdropClick
     >
       <DialogTitle id="simple-dialog-title">Add a new layer</DialogTitle>
       <Box className={classes.box}>
