@@ -19,7 +19,8 @@ import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 // classes
-import Scatterplot from "../../classes/Scatterplot";
+import Scatterplot from "../../classes/map/Scatterplot";
+import DataFile from "../../classes/data/DataFile";
 
 // redux
 import { addLayer } from "../../state/actions/layers";
@@ -52,7 +53,7 @@ const useModelStyles = makeStyles((theme) => ({
 
 export default function AddLayerDialog(props) {
   const classes = useModelStyles();
-  const { onClose, selectedValue, open } = props;
+  const { onClose, open } = props;
   const menulist = layerTypes.map((type) => (
     <option key={type.id} value={type.id}>
       {type.name}
@@ -64,42 +65,65 @@ export default function AddLayerDialog(props) {
 
   const [file, setFile] = useState(null);
   const [fileUploadError, setFileUploadError] = useState(false);
+  const [fileUploadErrorMessage, setFileUploadErrorMessage] = useState("");
+  const [data, setData] = useState(null);
 
   const handleClose = () => {
-    onClose(selectedValue);
+    onClose();
   };
 
   const handleSave = () => {
     if (!file) {
       setFileUploadError(true);
+      setFileUploadErrorMessage("No file selected");
       return;
     }
-    // const layerData = {
-    //   id: shortid.generate(),
-    //   data: data,
-    //   radiusScale: 1,
-    //   pickable: false,
-    //   opacity: 0.5,
-    //   getRadius: 1,
-    //   radiusMinPixels: 1,
-    //   getColor: [255, 0, 0],
-    // };
-    // const layerInstance = new Scatterplot(layerData);
-    // const layer = layerInstance.render();
-    // dispatch(addLayer(layer));
-    // onClose(selectedValue);
+    const datafile = new DataFile(file);
+    datafile.extractTextAsync().then(
+      (datafile) => {
+        datafile.parseToJsonAsync();
+        console.log(datafile.getJsonData());
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+
+    // try {
+    //   const datafile = new DataFile(file);
+    //   datafile.extractText();
+    //   console.log(datafile.getFileText());
+    //   const layerData = {
+    //     id: shortid.generate(),
+    //     data: data,
+    //     radiusScale: 1,
+    //     pickable: false,
+    //     opacity: 0.5,
+    //     getRadius: 1,
+    //     radiusMinPixels: 1,
+    //     getColor: [255, 0, 0],
+    //   };
+    //   const layerInstance = new Scatterplot(layerData);
+    //   const layer = layerInstance.render();
+    //   dispatch(addLayer(layer));
+    //   onClose();
+    // } catch (e) {
+    //   setFileUploadError(true);
+    //   setFileUploadErrorMessage("File cannot be read");
+    //   return;
+    // }
   };
 
   const handleFileUpload = (file) => {
     setFile(file);
-    // const fr = new FileReader();
-    // const parseJSON = (text) => JSON.parse(text);
-    // fr.onload = (e) => {
-    //   const dataString = e.target.result;
-    //   const data = parseJSON(dataString);
-    //   setData(data);
-    // };
-    // fr.readAsText(file);
+    const fr = new FileReader();
+    const parseJSON = (text) => JSON.parse(text);
+    fr.onload = (e) => {
+      const dataString = e.target.result;
+      const data = parseJSON(dataString);
+      setData(data);
+    };
+    fr.readAsText(file);
   };
 
   return (
@@ -129,6 +153,7 @@ export default function AddLayerDialog(props) {
         boxStyle={classes.box}
         onUpload={handleFileUpload}
         error={fileUploadError}
+        errorMessage={fileUploadErrorMessage}
       />
 
       <DialogActions>

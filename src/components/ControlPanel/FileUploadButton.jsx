@@ -17,19 +17,13 @@ export default function FileUploadButton(props) {
   const classes = useStyles();
 
   const [uploadFile, setUploadFile] = useState({ name: "" });
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState(props.errorMessage);
 
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
     setUploadFile(file);
     props.onUpload(file);
   };
-
-  useEffect(() => {
-    if (props.error) {
-      setErrorMessage("Incorrect");
-    }
-  });
 
   return (
     <Box className={props.boxStyle}>
