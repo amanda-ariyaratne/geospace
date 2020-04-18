@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 // components
 import FileUploadButton from "./FileUploadButton";
+import CoordinateHeaderPicker from "./CoordinateHeaderPicker";
 
 // material-ui
 import {
@@ -42,6 +43,7 @@ const useModelStyles = makeStyles((theme) => ({
   },
   formControl: {
     margin: theme.spacing(1),
+    minWidth: 120,
   },
   input: {
     display: "none",
@@ -67,6 +69,7 @@ export default function AddLayerDialog(props) {
   const [fileUploadError, setFileUploadError] = useState(false);
   const [fileUploadErrorMessage, setFileUploadErrorMessage] = useState("");
   const [data, setData] = useState(null);
+  const [coordinateHeaders, setCoordinateHeaders] = useState(null);
 
   const handleSave = () => {
     if (!file) {
@@ -78,16 +81,15 @@ export default function AddLayerDialog(props) {
     datafile
       .extractTextAsync()
       .then((datafile) => {
-        return datafile.parseToJson();
-        //console.log(datafile.getJsonData());
+        return datafile.parseToJsonArray();
       })
       .then((datafile) => {
-        console.log(datafile.getJsonData());
+        const coordinateHeaders = datafile.getAttributesObject();
+        console.log(coordinateHeaders);
+        setCoordinateHeaders(coordinateHeaders);
       })
       .catch((err) => {
-        setFileUploadErrorMessage(
-          "The content inside the file is not in json format"
-        );
+        setFileUploadErrorMessage(err.message);
         setFileUploadError(true);
       });
 
@@ -118,6 +120,26 @@ export default function AddLayerDialog(props) {
 
   const handleFileUpload = (file) => {
     setFile(file);
+    if (!file) {
+      setFileUploadError(true);
+      setFileUploadErrorMessage("No file selected");
+      return;
+    }
+    const datafile = new DataFile(file);
+    datafile
+      .extractTextAsync()
+      .then((datafile) => {
+        return datafile.parseToJsonArray();
+      })
+      .then((datafile) => {
+        const coordinateHeaders = datafile.getAttributesObject();
+        console.log(coordinateHeaders);
+        setCoordinateHeaders(coordinateHeaders);
+      })
+      .catch((err) => {
+        setFileUploadErrorMessage(err.message);
+        setFileUploadError(true);
+      });
   };
 
   const handleFileRemove = () => {
@@ -167,6 +189,14 @@ export default function AddLayerDialog(props) {
         errorMessage={fileUploadErrorMessage}
         fileRemove={handleFileRemove}
       />
+
+      {coordinateHeaders && (
+        <CoordinateHeaderPicker
+          boxStyle={classes.box}
+          formControlStyle={classes.formControl}
+          columnObject={coordinateHeaders}
+        />
+      )}
 
       <DialogActions>
         <Button autoFocus onClick={handleClose} className={classes.close}>
