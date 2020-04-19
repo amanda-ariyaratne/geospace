@@ -3,18 +3,10 @@ import React, { useState } from "react";
 // components
 import FileUploadButton from "./FileUploadButton";
 import CoordinateHeaderPicker from "./CoordinateHeaderPicker";
+import LayerPicker from "./LayerPicker";
 
 // material-ui
-import {
-  Box,
-  Button,
-  Dialog,
-  DialogActions,
-  DialogTitle,
-  InputLabel,
-  FormControl,
-  Select,
-} from "@material-ui/core";
+import { Button, Dialog, DialogActions, DialogTitle } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
@@ -56,11 +48,7 @@ const useModelStyles = makeStyles((theme) => ({
 export default function AddLayerDialog(props) {
   const classes = useModelStyles();
   const { onClose, open } = props;
-  const menulist = layerTypes.map((type) => (
-    <option key={type.id} value={type.id}>
-      {type.name}
-    </option>
-  ));
+
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const dispatch = useDispatch();
@@ -70,6 +58,8 @@ export default function AddLayerDialog(props) {
   const [fileUploadErrorMessage, setFileUploadErrorMessage] = useState("");
   const [data, setData] = useState(null);
   const [coordinateHeaders, setCoordinateHeaders] = useState(null);
+  const [latitudeKey, setLatitudeKey] = useState("");
+  const [longitudeKey, setLongitudeKey] = useState("");
 
   const handleSave = () => {
     if (!file) {
@@ -77,45 +67,12 @@ export default function AddLayerDialog(props) {
       setFileUploadErrorMessage("No file selected");
       return;
     }
-    const datafile = new DataFile(file);
-    datafile
-      .extractTextAsync()
-      .then((datafile) => {
-        return datafile.parseToJsonArray();
-      })
-      .then((datafile) => {
-        const coordinateHeaders = datafile.getAttributesObject();
-        console.log(coordinateHeaders);
-        setCoordinateHeaders(coordinateHeaders);
-      })
-      .catch((err) => {
-        setFileUploadErrorMessage(err.message);
-        setFileUploadError(true);
-      });
 
-    // try {
-    //   const datafile = new DataFile(file);
-    //   datafile.extractText();
-    //   console.log(datafile.getFileText());
-    //   const layerData = {
-    //     id: shortid.generate(),
-    //     data: data,
-    //     radiusScale: 1,
-    //     pickable: false,
-    //     opacity: 0.5,
-    //     getRadius: 1,
-    //     radiusMinPixels: 1,
-    //     getColor: [255, 0, 0],
-    //   };
-    //   const layerInstance = new Scatterplot(layerData);
-    //   const layer = layerInstance.render();
-    //   dispatch(addLayer(layer));
-    //   onClose();
-    // } catch (e) {
-    //   setFileUploadError(true);
-    //   setFileUploadErrorMessage("File cannot be read");
-    //   return;
-    // }
+    const layerInstance = new Scatterplot(data);
+    layerInstance.setPosition(latitudeKey, longitudeKey);
+    const layer = layerInstance.render();
+    dispatch(addLayer(layer));
+    onClose();
   };
 
   const handleFileUpload = (file) => {
@@ -132,8 +89,9 @@ export default function AddLayerDialog(props) {
         return datafile.parseToJsonArray();
       })
       .then((datafile) => {
+        setData(datafile.getJsonData());
         const coordinateHeaders = datafile.getAttributesObject();
-        console.log(coordinateHeaders);
+
         setCoordinateHeaders(coordinateHeaders);
       })
       .catch((err) => {
@@ -169,18 +127,11 @@ export default function AddLayerDialog(props) {
       disableBackdropClick
     >
       <DialogTitle id="simple-dialog-title">Add a new layer</DialogTitle>
-      <Box className={classes.box}>
-        <FormControl
-          variant="standard"
-          className={classes.formControl}
-          styles={{ position: "relative" }}
-        >
-          <InputLabel htmlFor="my-input">Layer Type</InputLabel>
-          <Select native variant="standard">
-            {menulist}
-          </Select>
-        </FormControl>
-      </Box>
+
+      <LayerPicker
+        boxStyle={classes.box}
+        formControlStyle={classes.formControl}
+      />
 
       <FileUploadButton
         boxStyle={classes.box}
@@ -195,6 +146,10 @@ export default function AddLayerDialog(props) {
           boxStyle={classes.box}
           formControlStyle={classes.formControl}
           columnObject={coordinateHeaders}
+          latitudeKey={latitudeKey}
+          setLatitudeKey={setLatitudeKey}
+          longitudeKey={longitudeKey}
+          setLongitudeKey={setLongitudeKey}
         />
       )}
 

@@ -1,24 +1,20 @@
+// deck,gk
 import { ScatterplotLayer } from "@deck.gl/layers";
+
+// classes
 import Layer from "./Layer";
+import { isJsonArray } from "../data/JsonHelper";
 
 export default class Scatterplot extends Layer {
-  constructor({
-    id,
-    data,
-    radiusScale,
-    pickable,
-    opacity,
-    radiusMinPixels,
-    getRadius,
-    getColor,
-  }) {
-    super({ id, data });
-    this.radiusScale = radiusScale;
-    this.pickable = pickable;
-    this.opacity = opacity;
-    this.radiusMinPixels = radiusMinPixels;
-    this.getRadius = getRadius;
-    this.getColor = getColor;
+  constructor(data) {
+    super(data);
+    this.radiusScale = 1;
+    this.pickable = false;
+    this.opacity = 0.5;
+    this.radiusMinPixels = 1;
+    this.getRadius = 1;
+    this.getColor = [255, 0, 0];
+    this.getPosition = null;
   }
 
   validateRadiusScale() {
@@ -82,7 +78,7 @@ export default class Scatterplot extends Layer {
       radiusMinPixels: this.radiusMinPixels,
       getRadius: this.getRadius,
       getColor: this.getColor,
-      getPosition: (d) => [d[0], d[1], 0],
+      getPosition: this.getPosition,
     });
   }
 
@@ -96,5 +92,14 @@ export default class Scatterplot extends Layer {
 
   setOpacity(opacity) {
     this.opacity = opacity;
+  }
+
+  setPosition(latitude, longitude) {
+    latitude = latitude.replace("Column ", "");
+    longitude = longitude.replace("Column ", "");
+    this.getPosition = new Function(
+      "object",
+      `return [object["${latitude}"], object["${longitude}"], 1]`
+    );
   }
 }

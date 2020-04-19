@@ -52,7 +52,7 @@ export default class DataFile {
       if (isJsonArray(columnObject)) {
         columnObject = getArrayAttributes(columnObject);
       }
-      console.log("column object", columnObject);
+
       return columnObject;
     } catch (error) {
       throw error;

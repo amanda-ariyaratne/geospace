@@ -1,6 +1,8 @@
+import shortid from "shortid";
+
 export default class Layer {
-  constructor({ id, data }) {
-    this.id = id;
+  constructor(data) {
+    this.id = shortid.generate();
     this.data = data;
   }
 }
