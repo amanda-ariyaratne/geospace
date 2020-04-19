@@ -7,7 +7,7 @@ import AddLayerDialog from "./AddLayerDialog";
 import { Box, Button } from "@material-ui/core";
 
 export default function AddLayerButton(props) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   const handleClickOpen = () => {
     setOpen(true);
