@@ -19,10 +19,6 @@ import DataFile from "../../classes/data/DataFile";
 import { addLayer } from "../../state/actions/layers";
 import { useDispatch } from "react-redux";
 
-// data
-import { layerTypes } from "../../data/layertypes";
-import shortid from "shortid";
-
 const useModelStyles = makeStyles((theme) => ({
   box: {
     padding: "10px 40px",
@@ -45,7 +41,7 @@ const useModelStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function AddLayerDialog(props) {
+export default function AddScatterplotLayerDialog(props) {
   const classes = useModelStyles();
   const { onClose, open } = props;
 
@@ -72,6 +68,7 @@ export default function AddLayerDialog(props) {
     layerInstance.setPosition(latitudeKey, longitudeKey);
     const layer = layerInstance.render();
     dispatch(addLayer(layer));
+    restoreDefaults();
     onClose();
   };
 
@@ -114,6 +111,13 @@ export default function AddLayerDialog(props) {
     setFileUploadError(false);
     setFileUploadErrorMessage("");
     setData(null);
+    setCoordinateHeaders(null);
+    setLatitudeKey("");
+    setLongitudeKey("");
+  };
+
+  const handleMenuClose = () => {
+    props.handleMenuClose();
   };
 
   return (
@@ -125,6 +129,7 @@ export default function AddLayerDialog(props) {
       fullWidth={true}
       maxWidth="md"
       disableBackdropClick
+      onEnter={handleMenuClose}
     >
       <DialogTitle id="simple-dialog-title">Add a new layer</DialogTitle>
 
