@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 // material-ui
 import { makeStyles } from "@material-ui/core/styles";
@@ -53,13 +53,11 @@ export default function FileUploadButton(props) {
       </label>
 
       <TextField
-        InputProps={{
-          readOnly: true,
-        }}
         value={uploadFile.name}
         error={props.error}
         helperText={props.errorMessage}
         InputProps={{
+          readOnly: true,
           endAdornment: (
             <InputAdornment position="end">
               <CloseIcon

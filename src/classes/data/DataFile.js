@@ -1,8 +1,4 @@
-import {
-  isJsonArray,
-  getArrayAttributes,
-  getObjectAttributes,
-} from "./JsonHelper";
+import { isJsonArray, getArrayAttributes } from "./JsonHelper";
 
 export default class DataFile {
   constructor(file) {

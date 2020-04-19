@@ -13,7 +13,7 @@ import {
 import LaunchIcon from "@material-ui/icons/Launch";
 
 // components
-import AddScatterplotLayerDialog from "./AddScatterplotLayerDialog";
+import AddScatterplotLayerDialog from "../Dialogs/AddScatterplotLayerDialog";
 
 const StyledMenu = withStyles({
   paper: {
