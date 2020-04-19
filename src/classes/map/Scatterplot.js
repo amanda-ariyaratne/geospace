@@ -3,7 +3,6 @@ import { ScatterplotLayer } from "@deck.gl/layers";
 
 // classes
 import Layer from "./Layer";
-import { isJsonArray } from "../data/JsonHelper";
 
 export default class Scatterplot extends Layer {
   constructor(data) {

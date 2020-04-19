@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 
 // components
-import FileUploadButton from "./FileUploadButton";
-import CoordinateHeaderPicker from "./CoordinateHeaderPicker";
-import LayerPicker from "./LayerPicker";
+import FileUploadButton from "../ControlPanel/FileUploadButton";
+import CoordinateHeaderPicker from "../ControlPanel/CoordinateHeaderPicker";
 
 // material-ui
 import { Button, Dialog, DialogActions, DialogTitle } from "@material-ui/core";
@@ -20,6 +19,9 @@ import { addLayer } from "../../state/actions/layers";
 import { useDispatch } from "react-redux";
 
 const useModelStyles = makeStyles((theme) => ({
+  paper: {
+    padding: "20px 40px",
+  },
   box: {
     padding: "10px 40px",
   },
@@ -130,13 +132,11 @@ export default function AddScatterplotLayerDialog(props) {
       maxWidth="md"
       disableBackdropClick
       onEnter={handleMenuClose}
+      classes={{
+        paper: classes.paper,
+      }}
     >
-      <DialogTitle id="simple-dialog-title">Add a new layer</DialogTitle>
-
-      <LayerPicker
-        boxStyle={classes.box}
-        formControlStyle={classes.formControl}
-      />
+      <DialogTitle id="simple-dialog-title">Add a new Scatterplot</DialogTitle>
 
       <FileUploadButton
         boxStyle={classes.box}

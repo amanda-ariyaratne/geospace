@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 
 // components
-import AddScatterplotLayerDialog from "../Dialogs/AddScatterplotLayerDialog";
 
 // material-ui
 import { Box, Button } from "@material-ui/core";
 
-export default function AddLayerButton(props) {
+export default function EditLayersButton(props) {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -21,13 +20,12 @@ export default function AddLayerButton(props) {
     <Box className={props.boxStyle}>
       <Button
         variant="outlined"
-        color="secondary"
+        color="primary"
         fullWidth
         onClick={handleClickOpen}
       >
-        Add Layer
+        EDIT LAYERS
       </Button>
-      <AddScatterplotLayerDialog open={open} onClose={handleClose} />
     </Box>
   );
 }

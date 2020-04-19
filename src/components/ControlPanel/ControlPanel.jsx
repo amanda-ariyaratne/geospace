@@ -6,7 +6,7 @@ import { Box } from "@material-ui/core";
 
 // components
 import MapTheme from "./MapTheme";
-import AddLayerButton from "./AddLayerButton";
+import EditLayersButton from "./EditLayersButton";
 import AddLayerMenu from "./AddLayerMenu";
 import PitchAndBearing from "./PitchAndBearing";
 
@@ -22,8 +22,9 @@ export default function ControlPanel() {
   return (
     <Box>
       <MapTheme boxStyle={classes.boxStyle} />
-      <AddLayerMenu boxStyle={classes.boxStyle} />
       <PitchAndBearing boxStyle={classes.boxStyle} />
+      <AddLayerMenu boxStyle={classes.boxStyle} />
+      <EditLayersButton boxStyle={classes.boxStyle} />
     </Box>
   );
 }
