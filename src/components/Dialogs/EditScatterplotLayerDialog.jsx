@@ -8,6 +8,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 // components
 import ColorPicker from "./ColorPicker";
+import OpacitySlider from "./OpacitySlider";
 
 const useModelStyles = makeStyles((theme) => ({
   paper: {
@@ -15,6 +16,10 @@ const useModelStyles = makeStyles((theme) => ({
   },
   box: {
     padding: "10px 40px",
+  },
+  inputLabel: {
+    marginRight: theme.spacing(2),
+    minWidth: 75,
   },
 }));
 
@@ -32,6 +37,7 @@ export default function EditScatterplotLayerDialog(props) {
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const [color, setColor] = useState(DEFAULT_COLOR);
+  const [opacity, setOpacity] = useState(0.5);
 
   const handleClose = () => {
     onClose();
@@ -51,7 +57,18 @@ export default function EditScatterplotLayerDialog(props) {
     >
       <DialogTitle>Edit Scatterplot</DialogTitle>
 
-      <ColorPicker boxStyle={classes.box} color={color} setColor={setColor} />
+      <ColorPicker
+        boxStyle={classes.box}
+        labelStyle={classes.inputLabel}
+        color={color}
+        setColor={setColor}
+      />
+      <OpacitySlider
+        boxStyle={classes.box}
+        labelStyle={classes.inputLabel}
+        opacity={opacity}
+        setOpacity={setOpacity}
+      />
 
       <DialogActions>
         <Button autoFocus onClick={handleClose} className={classes.close}>
