@@ -9,6 +9,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 // components
 import ColorPicker from "./ColorPicker";
 import OpacitySlider from "./OpacitySlider";
+import MetadataSelector from "./MetadataSelector";
 
 const useModelStyles = makeStyles((theme) => ({
   paper: {
@@ -70,6 +71,10 @@ export default function EditScatterplotLayerDialog(props) {
         setOpacity={setOpacity}
       />
 
+      <MetadataSelector
+        boxStyle={classes.box}
+        labelStyle={classes.inputLabel}
+      />
       <DialogActions>
         <Button autoFocus onClick={handleClose} className={classes.close}>
           Close
