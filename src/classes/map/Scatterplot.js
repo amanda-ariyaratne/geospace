@@ -8,7 +8,7 @@ export default class Scatterplot extends Layer {
   constructor(data) {
     super(data);
     this.radiusScale = 1;
-    this.pickable = false;
+    this.pickable = true;
     this.opacity = 0.5;
     this.radiusMinPixels = 1;
     this.getRadius = 1;

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 // components
-import FileUploadButton from "../ControlPanel/FileUploadButton";
-import CoordinateHeaderPicker from "../ControlPanel/CoordinateHeaderPicker";
+import FileUploadButton from "./FileUploadButton";
+import CoordinateHeaderPicker from "./CoordinateHeaderPicker";
 
 // material-ui
 import { Button, Dialog, DialogActions, DialogTitle } from "@material-ui/core";
@@ -17,6 +17,9 @@ import DataFile from "../../classes/data/DataFile";
 // redux
 import { addLayer } from "../../state/actions/layers";
 import { useDispatch } from "react-redux";
+
+// classes
+import { LayerType } from "../../classes/map/LayerType";
 
 const useModelStyles = makeStyles((theme) => ({
   paper: {
@@ -68,8 +71,8 @@ export default function AddScatterplotLayerDialog(props) {
 
     const layerInstance = new Scatterplot(data);
     layerInstance.setPosition(latitudeKey, longitudeKey);
-    const layer = layerInstance.render();
-    dispatch(addLayer(layer));
+
+    dispatch(addLayer(layerInstance));
     restoreDefaults();
     onClose();
   };
