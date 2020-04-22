@@ -11,7 +11,11 @@ export default function Map() {
   const INITIAL_VIEW_STATE = useSelector((state) => state.viewstate);
 
   const mapboxstyle = useSelector((state) => state.mapstyle);
-  const layers = useSelector((state) => state.layers);
+
+  const layersFromRedux = useSelector((state) => state.layers);
+  const layers = layersFromRedux.map((layer) => {
+    return layer.render();
+  });
 
   return (
     <DeckGL
