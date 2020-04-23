@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+
+// components
+import EditScatterplotLayerDialog from "./EditScatterplotLayerDialog";
 
 // material-ui
 import {
@@ -56,6 +59,18 @@ export default function EditLayerListDialog(props) {
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const layersFromRedux = useSelector((state) => state.layers);
+  const [editLayer, setEditLayer] = useState(null);
+  const [editIndex, setEditIndex] = useState(null);
+  const [editScattterplotOpen, setEditScattterplotOpen] = useState(false);
+
+  const handleEditClick = (layer, index) => {
+    switch (layer.constructor.name) {
+      case "Scatterplot":
+        setEditLayer(layer);
+        setEditIndex(index);
+        setEditScattterplotOpen(true);
+    }
+  };
 
   const layerList = layersFromRedux.map((layer, index) => {
     return (
@@ -65,7 +80,11 @@ export default function EditLayerListDialog(props) {
           <ListItemSecondaryAction>
             <IconButton edge="end" aria-label="delete">
               <Tooltip title="Edit" placement="left-start">
-                <EditIcon />
+                <EditIcon
+                  onClick={() => {
+                    handleEditClick(layer, index);
+                  }}
+                />
               </Tooltip>
             </IconButton>
             <IconButton edge="end" aria-label="delete">
@@ -80,47 +99,63 @@ export default function EditLayerListDialog(props) {
     );
   });
 
+  const handleEditScatterplotClose = () => {
+    setEditScattterplotOpen(false);
+  };
+
   const handleClose = () => {
     onClose();
   };
 
   return (
-    <Dialog
-      onClose={handleClose}
-      open={open}
-      fullScreen={fullScreen}
-      fullWidth={true}
-      maxWidth="md"
-      disableBackdropClick
-      classes={{
-        paper: classes.paper,
-      }}
-    >
-      <DialogTitle>Select a Layer</DialogTitle>
+    <React.Fragment>
+      <Dialog
+        onClose={handleClose}
+        open={open}
+        fullScreen={fullScreen}
+        fullWidth={true}
+        maxWidth="md"
+        disableBackdropClick
+        classes={{
+          paper: classes.paper,
+        }}
+      >
+        <DialogTitle>Select a Layer</DialogTitle>
 
-      <Box className={classes.box}>
-        {layerList.length !== 0 ? (
-          <List
-            component="nav"
-            className={classes.listRoot}
-            aria-label="mailbox folders"
+        <Box className={classes.box}>
+          {layerList.length !== 0 ? (
+            <List
+              component="nav"
+              className={classes.listRoot}
+              aria-label="mailbox folders"
+            >
+              <Divider />
+              {layerList}
+            </List>
+          ) : (
+            <Typography>
+              No layer to edit. You can add a new layer by selecting ADD LAYER
+              button on the panel next to the map.
+            </Typography>
+          )}
+        </Box>
+
+        <DialogActions>
+          <Button
+            autoFocus
+            onClick={handleClose}
+            className={classes.dialogClose}
           >
-            <Divider />
-            {layerList}
-          </List>
-        ) : (
-          <Typography>
-            No layer to edit. You can add a new layer by selecting ADD LAYER
-            button on the panel next to the map.
-          </Typography>
-        )}
-      </Box>
-
-      <DialogActions>
-        <Button autoFocus onClick={handleClose} className={classes.dialogClose}>
-          Close
-        </Button>
-      </DialogActions>
-    </Dialog>
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
+      <EditScatterplotLayerDialog
+        onClose={handleEditScatterplotClose}
+        open={editScattterplotOpen}
+        layer={editLayer}
+        index={editIndex}
+      />
+    </React.Fragment>
   );
 }
