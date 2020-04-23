@@ -10,6 +10,14 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import ColorPicker from "./ColorPicker";
 import OpacitySlider from "./OpacitySlider";
 import MetadataSelector from "./MetadataSelector";
+import LayerName from "./LayerName";
+
+// helper functions
+import { getJsonObjectFromArray } from "../../classes/data/JsonHelper";
+
+// redux
+import { updateLayer } from "../../state/actions/layers";
+import { useDispatch } from "react-redux";
 
 const useModelStyles = makeStyles((theme) => ({
   paper: {
@@ -30,23 +38,33 @@ const useModelStyles = makeStyles((theme) => ({
   },
 }));
 
-const DEFAULT_COLOR = {
-  r: 255,
-  g: 0,
-  b: 0,
-};
-
 export default function EditScatterplotLayerDialog(props) {
   const classes = useModelStyles();
-  const { onClose, open } = props;
+  const { onClose, open, layer, index } = props;
 
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const [color, setColor] = useState(DEFAULT_COLOR);
-  const [opacity, setOpacity] = useState(0.5);
+  const prevColor = getJsonObjectFromArray(layer.getColor, ["r", "g", "b"]);
+  const prevOpacity = layer.opacity;
+  const prevName = layer.name;
+
+  const [color, setColor] = useState(prevColor);
+  const [opacity, setOpacity] = useState(prevOpacity);
+  const [name, setName] = useState(prevName);
 
   const handleClose = () => {
+    onClose();
+  };
+
+  const dispatch = useDispatch();
+
+  const handleSave = () => {
+    layer.getColor = [color["r"], color["g"], color["b"]];
+    layer.opacity = opacity;
+    layer.name = name;
+
+    dispatch(updateLayer(layer, index));
     onClose();
   };
 
@@ -63,6 +81,13 @@ export default function EditScatterplotLayerDialog(props) {
       }}
     >
       <DialogTitle>Edit Scatterplot</DialogTitle>
+
+      <LayerName
+        boxStyle={classes.box}
+        labelStyle={classes.inputLabel}
+        name={name}
+        setName={setName}
+      />
 
       <ColorPicker
         boxStyle={classes.box}
@@ -85,7 +110,7 @@ export default function EditScatterplotLayerDialog(props) {
         <Button autoFocus onClick={handleClose} className={classes.dialogClose}>
           Close
         </Button>
-        <Button autoFocus onClick={handleClose} className={classes.dialogSave}>
+        <Button autoFocus onClick={handleSave} className={classes.dialogSave}>
           Save
         </Button>
       </DialogActions>
