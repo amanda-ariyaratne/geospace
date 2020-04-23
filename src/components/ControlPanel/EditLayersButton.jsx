@@ -7,7 +7,7 @@ import EditLayerListDialog from "../Dialogs/EditLayerListDialog";
 import { Box, Button } from "@material-ui/core";
 
 export default function EditLayersButton(props) {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
