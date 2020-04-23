@@ -19,6 +19,9 @@ import DataFile from "../../classes/data/DataFile";
 import { addLayer } from "../../state/actions/layers";
 import { useDispatch } from "react-redux";
 
+// helpers
+import { isValidFile } from "../../classes/data/FileHelper";
+
 const useModelStyles = makeStyles((theme) => ({
   paper: {
     padding: "20px 40px",
@@ -78,11 +81,19 @@ export default function AddScatterplotLayerDialog(props) {
 
   const handleFileUpload = (file) => {
     setFile(file);
+
     if (!file) {
       setFileUploadError(true);
       setFileUploadErrorMessage("No file selected");
       return;
     }
+    if (!isValidFile(file.name, [".csv", ".xlsx", ".xls"])) {
+      setFileUploadError(true);
+      setFileUploadErrorMessage("Wrong format");
+      return;
+    }
+    setFileUploadError(false);
+    setFileUploadErrorMessage("");
     const datafile = new DataFile(file);
     setLoading(true);
     datafile
