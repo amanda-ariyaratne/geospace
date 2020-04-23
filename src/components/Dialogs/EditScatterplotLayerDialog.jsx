@@ -22,6 +22,12 @@ const useModelStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
     minWidth: 75,
   },
+  dialogClose: {
+    color: theme.palette.primary.dark,
+  },
+  dialogSave: {
+    color: theme.palette.primary.light,
+  },
 }));
 
 const DEFAULT_COLOR = {
@@ -76,10 +82,10 @@ export default function EditScatterplotLayerDialog(props) {
         labelStyle={classes.inputLabel}
       />
       <DialogActions>
-        <Button autoFocus onClick={handleClose} className={classes.close}>
+        <Button autoFocus onClick={handleClose} className={classes.dialogClose}>
           Close
         </Button>
-        <Button autoFocus onClick={handleClose} className={classes.save}>
+        <Button autoFocus onClick={handleClose} className={classes.dialogSave}>
           Save
         </Button>
       </DialogActions>

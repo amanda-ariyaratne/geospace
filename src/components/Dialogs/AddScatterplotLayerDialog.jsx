@@ -25,10 +25,10 @@ const useModelStyles = makeStyles((theme) => ({
   box: {
     padding: "10px 40px",
   },
-  close: {
+  dialogClose: {
     color: theme.palette.primary.dark,
   },
-  save: {
+  dialogSave: {
     color: theme.palette.primary.light,
   },
   formControl: {
@@ -159,10 +159,10 @@ export default function AddScatterplotLayerDialog(props) {
       )}
 
       <DialogActions>
-        <Button autoFocus onClick={handleClose} className={classes.close}>
+        <Button autoFocus onClick={handleClose} className={classes.dialogClose}>
           Close
         </Button>
-        <Button autoFocus onClick={handleSave} className={classes.save}>
+        <Button autoFocus onClick={handleSave} className={classes.dialogSave}>
           Save
         </Button>
       </DialogActions>
