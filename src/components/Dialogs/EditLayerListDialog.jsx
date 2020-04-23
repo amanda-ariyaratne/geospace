@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 // material-ui
 import {
@@ -14,11 +14,15 @@ import {
   ListItemSecondaryAction,
   ListItemText,
   Tooltip,
+  Typography,
 } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
+
+// redux
+import { useSelector } from "react-redux";
 
 const useModelStyles = makeStyles((theme) => ({
   paper: {
@@ -36,6 +40,12 @@ const useModelStyles = makeStyles((theme) => ({
 
     backgroundColor: theme.palette.background.paper,
   },
+  dialogClose: {
+    color: theme.palette.primary.dark,
+  },
+  dialogSave: {
+    color: theme.palette.primary.light,
+  },
 }));
 
 export default function EditLayerListDialog(props) {
@@ -44,6 +54,31 @@ export default function EditLayerListDialog(props) {
 
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const layersFromRedux = useSelector((state) => state.layers);
+
+  const layerList = layersFromRedux.map((layer, index) => {
+    return (
+      <React.Fragment>
+        <ListItem button key={layer.id} index={index} layer={layer}>
+          <ListItemText primary={`Layer ${index}`} />
+          <ListItemSecondaryAction>
+            <IconButton edge="end" aria-label="delete">
+              <Tooltip title="Edit" placement="left-start">
+                <EditIcon />
+              </Tooltip>
+            </IconButton>
+            <IconButton edge="end" aria-label="delete">
+              <Tooltip title="Edit" placement="right-start">
+                <DeleteIcon />
+              </Tooltip>
+            </IconButton>
+          </ListItemSecondaryAction>
+        </ListItem>
+        <Divider />
+      </React.Fragment>
+    );
+  });
 
   const handleClose = () => {
     onClose();
@@ -64,36 +99,26 @@ export default function EditLayerListDialog(props) {
       <DialogTitle>Select a Layer</DialogTitle>
 
       <Box className={classes.box}>
-        <List
-          component="nav"
-          className={classes.listRoot}
-          aria-label="mailbox folders"
-        >
-          <ListItem button>
-            <ListItemText primary="Inbox" />
-            <ListItemSecondaryAction>
-              <IconButton edge="end" aria-label="delete">
-                <Tooltip title="Edit" placement="left-start">
-                  <EditIcon />
-                </Tooltip>
-              </IconButton>
-              <IconButton edge="end" aria-label="delete">
-                <Tooltip title="Edit" placement="right-start">
-                  <DeleteIcon />
-                </Tooltip>
-              </IconButton>
-            </ListItemSecondaryAction>
-          </ListItem>
-          <Divider />
-        </List>
+        {layerList.length !== 0 ? (
+          <List
+            component="nav"
+            className={classes.listRoot}
+            aria-label="mailbox folders"
+          >
+            <Divider />
+            {layerList}
+          </List>
+        ) : (
+          <Typography>
+            No layer to edit. You can add a new layer by selecting ADD LAYER
+            button on the panel next to the map.
+          </Typography>
+        )}
       </Box>
 
       <DialogActions>
-        <Button autoFocus onClick={handleClose} className={classes.close}>
+        <Button autoFocus onClick={handleClose} className={classes.dialogClose}>
           Close
-        </Button>
-        <Button autoFocus onClick={handleClose} className={classes.save}>
-          Save
         </Button>
       </DialogActions>
     </Dialog>
