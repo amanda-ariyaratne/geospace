@@ -11,6 +11,7 @@ import ColorPicker from "./ColorPicker";
 import OpacitySlider from "./OpacitySlider";
 import MetadataSelector from "./MetadataSelector";
 import LayerName from "./LayerName";
+import RadiusSlider from "./RadiusSlider";
 
 // helper functions
 import { getJsonObjectFromArray } from "../../classes/data/JsonHelper";
@@ -48,10 +49,12 @@ export default function EditScatterplotLayerDialog(props) {
   const prevColor = getJsonObjectFromArray(layer.getColor, ["r", "g", "b"]);
   const prevOpacity = layer.opacity;
   const prevName = layer.name;
+  const prevRadius = layer.radiusMinPixels;
 
   const [color, setColor] = useState(prevColor);
   const [opacity, setOpacity] = useState(prevOpacity);
   const [name, setName] = useState(prevName);
+  const [radius, setRadius] = useState(prevRadius);
 
   const handleClose = () => {
     onClose();
@@ -63,6 +66,7 @@ export default function EditScatterplotLayerDialog(props) {
     layer.getColor = [color["r"], color["g"], color["b"]];
     layer.opacity = opacity;
     layer.name = name;
+    layer.radiusMinPixels = radius;
 
     dispatch(updateLayer(layer, index));
     onClose();
@@ -100,6 +104,13 @@ export default function EditScatterplotLayerDialog(props) {
         labelStyle={classes.inputLabel}
         opacity={opacity}
         setOpacity={setOpacity}
+      />
+
+      <RadiusSlider
+        boxStyle={classes.box}
+        labelStyle={classes.inputLabel}
+        radius={radius}
+        setRadius={setRadius}
       />
 
       <MetadataSelector
