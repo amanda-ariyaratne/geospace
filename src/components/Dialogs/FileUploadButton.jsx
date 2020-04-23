@@ -33,7 +33,6 @@ export default function FileUploadButton(props) {
   return (
     <Box className={props.boxStyle}>
       <input
-        accept=".csv"
         className={classes.input}
         id="contained-button-file"
         type="file"
