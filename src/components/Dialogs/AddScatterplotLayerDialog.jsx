@@ -97,18 +97,15 @@ export default function AddScatterplotLayerDialog(props) {
     const datafile = new DataFile(file);
     setLoading(true);
     datafile
-      .extractTextAsync()
+      .readFromFile()
       .then((datafile) => {
         setLoading(false);
-        return datafile.parseToJsonArray();
-      })
-      .then((datafile) => {
-        setData(datafile.getJsonData());
+        setData(datafile.jsonData);
         const coordinateHeaders = datafile.getKeys();
-
         setCoordinateHeaders(coordinateHeaders);
       })
       .catch((err) => {
+        console.log(err);
         setFileUploadErrorMessage(err.message);
         setFileUploadError(true);
       });
