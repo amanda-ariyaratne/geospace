@@ -18,9 +18,6 @@ import DataFile from "../../classes/data/DataFile";
 import { addLayer } from "../../state/actions/layers";
 import { useDispatch } from "react-redux";
 
-// classes
-import { LayerType } from "../../classes/map/LayerType";
-
 const useModelStyles = makeStyles((theme) => ({
   paper: {
     padding: "20px 40px",

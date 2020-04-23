@@ -14,6 +14,7 @@ export default class Scatterplot extends Layer {
     this.getRadius = 1;
     this.getColor = [255, 0, 0];
     this.getPosition = null;
+    this.getMetadata = {};
   }
 
   validateRadiusScale() {
