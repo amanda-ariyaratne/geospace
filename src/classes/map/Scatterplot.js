@@ -15,6 +15,7 @@ export default class Scatterplot extends Layer {
     this.getColor = [255, 0, 0];
     this.getPosition = null;
     this.getMetadata = {};
+    this.name = "";
   }
 
   render() {

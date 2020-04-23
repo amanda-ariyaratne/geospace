@@ -4,3 +4,11 @@ export const addLayer = (layer) => {
     new: layer,
   };
 };
+
+export const updateLayer = (layer, index) => {
+  return {
+    type: "UPDATE",
+    layer: layer,
+    index: index,
+  };
+};

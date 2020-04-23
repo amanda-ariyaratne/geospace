@@ -74,9 +74,11 @@ export default function EditLayerListDialog(props) {
 
   const layerList = layersFromRedux.map((layer, index) => {
     return (
-      <React.Fragment>
+      <React.Fragment key={layer.id}>
         <ListItem button key={layer.id} index={index} layer={layer}>
-          <ListItemText primary={`Layer ${index}`} />
+          <ListItemText
+            primary={layer.name !== "" ? layer.name : `Layer ${index}`}
+          />
           <ListItemSecondaryAction>
             <IconButton edge="end" aria-label="delete">
               <Tooltip title="Edit" placement="left-start">
@@ -150,12 +152,14 @@ export default function EditLayerListDialog(props) {
           </Button>
         </DialogActions>
       </Dialog>
-      <EditScatterplotLayerDialog
-        onClose={handleEditScatterplotClose}
-        open={editScattterplotOpen}
-        layer={editLayer}
-        index={editIndex}
-      />
+      {editScattterplotOpen ? (
+        <EditScatterplotLayerDialog
+          onClose={handleEditScatterplotClose}
+          open={editScattterplotOpen}
+          layer={editLayer}
+          index={editIndex}
+        />
+      ) : null}
     </React.Fragment>
   );
 }

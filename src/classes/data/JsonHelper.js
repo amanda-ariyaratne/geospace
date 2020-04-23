@@ -19,4 +19,13 @@ export const getArrayAttributes = (row) => {
   return columnObject;
 };
 
-export const getObjectAttributes = (row) => {};
+export const getJsonObjectFromArray = (values, keys) => {
+  if (values.length !== keys.length) {
+    throw new Error("Arrays are of two different lengths");
+  }
+  const obj = {};
+  for (let i = 0; i < keys.length; i++) {
+    obj[keys[i]] = values[i];
+  }
+  return obj;
+};
