@@ -1,5 +1,3 @@
-import { isJsonArray, getArrayAttributes } from "./JsonHelper";
-
 export default class DataFile {
   constructor(file) {
     this.file = file;
@@ -34,13 +32,11 @@ export default class DataFile {
         for (let i = 1; i < lines.length; i++) {
           let obj = [];
           let currentline = lines[i].split(",");
-
           for (var j = 0; j < headers.length; j++) {
             obj.push(
               isNaN(currentline[j]) ? currentline[j] : Number(currentline[j])
             );
           }
-
           result.push(obj);
         }
         this.jsonData = result;
@@ -52,7 +48,14 @@ export default class DataFile {
   }
 
   getKeys() {
-    return this.fileKeys;
+    try {
+      const lines = this.fileText.split("\n");
+      const keys = lines[0].split(",");
+      this.fileKeys = keys;
+      return this.fileKeys;
+    } catch (err) {
+      throw new Error("Column headers could not be found.");
+    }
   }
 
   getFile() {

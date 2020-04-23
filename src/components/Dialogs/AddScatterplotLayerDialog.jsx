@@ -3,6 +3,7 @@ import React, { useState } from "react";
 // components
 import FileUploadButton from "./FileUploadButton";
 import CoordinateHeaderPicker from "./CoordinateHeaderPicker";
+import SplashScreen from "../SplashScreen";
 
 // material-ui
 import { Button, Dialog, DialogActions, DialogTitle } from "@material-ui/core";
@@ -58,6 +59,7 @@ export default function AddScatterplotLayerDialog(props) {
   const [coordinateHeaders, setCoordinateHeaders] = useState(null);
   const [latitudeKey, setLatitudeKey] = useState("");
   const [longitudeKey, setLongitudeKey] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSave = () => {
     if (!file) {
@@ -82,13 +84,14 @@ export default function AddScatterplotLayerDialog(props) {
       return;
     }
     const datafile = new DataFile(file);
+    setLoading(true);
     datafile
       .extractTextAsync()
       .then((datafile) => {
+        setLoading(false);
         return datafile.parseToJsonArray();
       })
       .then((datafile) => {
-        //console.log(datafile.jsonData);
         setData(datafile.getJsonData());
         const coordinateHeaders = datafile.getKeys();
 
@@ -124,49 +127,58 @@ export default function AddScatterplotLayerDialog(props) {
   };
 
   return (
-    <Dialog
-      onClose={handleClose}
-      aria-labelledby="simple-dialog-title"
-      open={open}
-      fullScreen={fullScreen}
-      fullWidth={true}
-      maxWidth="md"
-      disableBackdropClick
-      onEnter={handleMenuClose}
-      classes={{
-        paper: classes.paper,
-      }}
-    >
-      <DialogTitle id="simple-dialog-title">Add a new Scatterplot</DialogTitle>
+    <React.Fragment>
+      <Dialog
+        onClose={handleClose}
+        aria-labelledby="simple-dialog-title"
+        open={open}
+        fullScreen={fullScreen}
+        fullWidth={true}
+        maxWidth="md"
+        disableBackdropClick
+        onEnter={handleMenuClose}
+        classes={{
+          paper: classes.paper,
+        }}
+      >
+        <DialogTitle id="simple-dialog-title">
+          Add a new Scatterplot
+        </DialogTitle>
 
-      <FileUploadButton
-        boxStyle={classes.box}
-        onUpload={handleFileUpload}
-        error={fileUploadError}
-        errorMessage={fileUploadErrorMessage}
-        fileRemove={handleFileRemove}
-      />
-
-      {coordinateHeaders && (
-        <CoordinateHeaderPicker
+        <FileUploadButton
           boxStyle={classes.box}
-          formControlStyle={classes.formControl}
-          coordinateHeaders={coordinateHeaders}
-          latitudeKey={latitudeKey}
-          setLatitudeKey={setLatitudeKey}
-          longitudeKey={longitudeKey}
-          setLongitudeKey={setLongitudeKey}
+          onUpload={handleFileUpload}
+          error={fileUploadError}
+          errorMessage={fileUploadErrorMessage}
+          fileRemove={handleFileRemove}
         />
-      )}
 
-      <DialogActions>
-        <Button autoFocus onClick={handleClose} className={classes.dialogClose}>
-          Close
-        </Button>
-        <Button autoFocus onClick={handleSave} className={classes.dialogSave}>
-          Save
-        </Button>
-      </DialogActions>
-    </Dialog>
+        {coordinateHeaders && (
+          <CoordinateHeaderPicker
+            boxStyle={classes.box}
+            formControlStyle={classes.formControl}
+            coordinateHeaders={coordinateHeaders}
+            latitudeKey={latitudeKey}
+            setLatitudeKey={setLatitudeKey}
+            longitudeKey={longitudeKey}
+            setLongitudeKey={setLongitudeKey}
+          />
+        )}
+
+        <DialogActions>
+          <Button
+            autoFocus
+            onClick={handleClose}
+            className={classes.dialogClose}
+          >
+            Close
+          </Button>
+          <Button autoFocus onClick={handleSave} className={classes.dialogSave}>
+            Save
+          </Button>
+        </DialogActions>
+      </Dialog>
+      <SplashScreen open={loading} />
+    </React.Fragment>
   );
 }
