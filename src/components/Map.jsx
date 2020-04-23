@@ -8,7 +8,7 @@ import DeckGL from "deck.gl";
 import { useSelector } from "react-redux";
 
 // material-ui
-import Chip from "@material-ui/core/Chip";
+import Paper from "@material-ui/core/Paper";
 
 export default function Map() {
   const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
@@ -16,9 +16,8 @@ export default function Map() {
   const [hoverObject, setHoverObject] = useState({});
 
   const _renderTooltip = () => {
-    console.log(hoverObject.x, hoverObject.y);
-    return (
-      hoverObject && (
+    if (hoverObject.object !== undefined) {
+      return (
         <div
           style={{
             position: "absolute",
@@ -28,16 +27,16 @@ export default function Map() {
             top: hoverObject.y,
           }}
         >
-          <Chip label="Basic" />
+          <Paper elevation={3}>{hoverObject.object[0]}</Paper>
         </div>
-      )
-    );
+      );
+    } else {
+      return <div></div>;
+    }
   };
 
   const _onHover = (info, event) => {
-    if (info.object !== undefined) {
-      setHoverObject(info);
-    }
+    setHoverObject(info);
   };
 
   // source: Natural Earth http://www.naturalearthdata.com/ via geojson.xyz
