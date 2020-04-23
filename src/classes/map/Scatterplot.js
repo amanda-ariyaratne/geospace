@@ -17,6 +17,20 @@ export default class Scatterplot extends Layer {
     this.getMetadata = {};
   }
 
+  render() {
+    return new ScatterplotLayer({
+      id: this.id,
+      data: this.data,
+      radiusScale: this.radiusScale,
+      pickable: this.pickable,
+      opacity: this.opacity,
+      radiusMinPixels: this.radiusMinPixels,
+      getRadius: this.getRadius,
+      getColor: this.getColor,
+      getPosition: this.getPosition,
+    });
+  }
+
   validateRadiusScale() {
     if (isNaN(this.radiusScale)) {
       return false;
@@ -66,20 +80,6 @@ export default class Scatterplot extends Layer {
       return true;
     }
     return false;
-  }
-
-  render() {
-    return new ScatterplotLayer({
-      id: this.id,
-      data: this.data,
-      radiusScale: this.radiusScale,
-      pickable: this.pickable,
-      opacity: this.opacity,
-      radiusMinPixels: this.radiusMinPixels,
-      getRadius: this.getRadius,
-      getColor: this.getColor,
-      getPosition: this.getPosition,
-    });
   }
 
   setRadiusScale(rs) {
