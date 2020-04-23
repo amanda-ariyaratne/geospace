@@ -7,6 +7,10 @@ const layersReducer = (state = [], action) => {
       newState.splice(action.index, 1);
       newState.splice(action.index, 0, action.layer);
       return newState;
+    case "DELETE":
+      const deleteState = [...state];
+      deleteState.splice(action.index, 1);
+      return deleteState;
     default:
       return state;
   }

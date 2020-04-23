@@ -10,8 +10,8 @@ export default class Scatterplot extends Layer {
     this.radiusScale = 1;
     this.pickable = true;
     this.opacity = 0.5;
-    this.radiusMinPixels = 1;
-    this.getRadius = 1;
+    this.radiusMinPixels = 2;
+    this.getRadius = 2;
     this.getColor = [255, 0, 0];
     this.getPosition = null;
     this.getMetadata = {};
@@ -100,7 +100,7 @@ export default class Scatterplot extends Layer {
     longitude = longitude.replace("Column ", "");
     this.getPosition = new Function(
       "object",
-      `return [object["${latitude}"], object["${longitude}"], 1]`
+      `return [object["${latitude}"], object["${longitude}"], 0]`
     );
   }
 }
