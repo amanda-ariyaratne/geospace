@@ -73,28 +73,6 @@ export default function MetadataSelector(props) {
             </Select>
           </FormControl>
         </Box>
-        <Box display="flex" flexDirection="row">
-          <TextField
-            variant="outlined"
-            size="small"
-            className={classes.metadataHeader}
-          />
-          <FormControl className={classes.formControl}>
-            <Select
-              value={""}
-              displayEmpty
-              className={classes.selectEmpty}
-              inputProps={{ "aria-label": "Without label" }}
-            >
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
-            </Select>
-          </FormControl>
-        </Box>
       </Box>
     </Box>
   );

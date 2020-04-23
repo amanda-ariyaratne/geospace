@@ -3,7 +3,6 @@ import { CompactPicker } from "react-color";
 
 // material-ui
 import { Box, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
 
 export default function ColorPicker(props) {
   const handleChangeComplete = (color) => {

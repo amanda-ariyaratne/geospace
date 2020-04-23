@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // components
-import EditScatterplotLayerDialog from "../Dialogs/EditScatterplotLayerDialog";
+import EditLayerListDialog from "../Dialogs/EditLayerListDialog";
 
 // material-ui
 import { Box, Button } from "@material-ui/core";
@@ -29,7 +29,7 @@ export default function EditLayersButton(props) {
           EDIT LAYERS
         </Button>
       </Box>
-      <EditScatterplotLayerDialog open={open} onClose={handleClose} />
+      <EditLayerListDialog open={open} onClose={handleClose} />
     </React.Fragment>
   );
 }
