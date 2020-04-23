@@ -12,3 +12,11 @@ export const updateLayer = (layer, index) => {
     index: index,
   };
 };
+
+export const deleteLayer = (layer, index) => {
+  return {
+    type: "DELETE",
+    layer: layer,
+    index: index,
+  };
+};

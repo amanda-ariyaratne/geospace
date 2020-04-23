@@ -27,7 +27,9 @@ export default function Map() {
             top: hoverObject.y,
           }}
         >
-          <Paper elevation={3}>{hoverObject.object[0]}</Paper>
+          <Paper style={{ padding: 20 }} elevation={3}>
+            {hoverObject.object[0]}
+          </Paper>
         </div>
       );
     } else {

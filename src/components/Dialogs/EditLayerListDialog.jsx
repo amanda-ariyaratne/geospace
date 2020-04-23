@@ -26,6 +26,8 @@ import EditIcon from "@material-ui/icons/Edit";
 
 // redux
 import { useSelector } from "react-redux";
+import { deleteLayer } from "../../state/actions/layers";
+import { useDispatch } from "react-redux";
 
 const useModelStyles = makeStyles((theme) => ({
   paper: {
@@ -53,6 +55,7 @@ const useModelStyles = makeStyles((theme) => ({
 export default function EditLayerListDialog(props) {
   const classes = useModelStyles();
   const { onClose, open } = props;
+  const dispatch = useDispatch();
 
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
@@ -68,6 +71,19 @@ export default function EditLayerListDialog(props) {
         setEditLayer(layer);
         setEditIndex(index);
         setEditScattterplotOpen(true);
+        break;
+      default:
+        return;
+    }
+  };
+
+  const handleDeleteClick = (layer, index) => {
+    switch (layer.constructor.name) {
+      case "Scatterplot":
+        dispatch(deleteLayer(layer, index));
+        break;
+      default:
+        return;
     }
   };
 
@@ -90,7 +106,11 @@ export default function EditLayerListDialog(props) {
             </IconButton>
             <IconButton edge="end" aria-label="delete">
               <Tooltip title="Edit" placement="right-start">
-                <DeleteIcon />
+                <DeleteIcon
+                  onClick={() => {
+                    handleDeleteClick(layer, index);
+                  }}
+                />
               </Tooltip>
             </IconButton>
           </ListItemSecondaryAction>

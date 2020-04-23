@@ -88,8 +88,9 @@ export default function AddScatterplotLayerDialog(props) {
         return datafile.parseToJsonArray();
       })
       .then((datafile) => {
+        //console.log(datafile.jsonData);
         setData(datafile.getJsonData());
-        const coordinateHeaders = datafile.getAttributesObject();
+        const coordinateHeaders = datafile.getKeys();
 
         setCoordinateHeaders(coordinateHeaders);
       })
@@ -150,7 +151,7 @@ export default function AddScatterplotLayerDialog(props) {
         <CoordinateHeaderPicker
           boxStyle={classes.box}
           formControlStyle={classes.formControl}
-          columnObject={coordinateHeaders}
+          coordinateHeaders={coordinateHeaders}
           latitudeKey={latitudeKey}
           setLatitudeKey={setLatitudeKey}
           longitudeKey={longitudeKey}

@@ -10,14 +10,13 @@ import {
 } from "@material-ui/core";
 
 export default function CoordinateHeaderPicker(props) {
-  const headerList = [];
-  for (const key of Object.keys(props.columnObject)) {
-    headerList.push(
-      <option key={key} value={key}>
-        {key} eg: {props.columnObject[key]}
+  const headerList = props.coordinateHeaders.map((key, index) => {
+    return (
+      <option key={key} value={index}>
+        {key}
       </option>
     );
-  }
+  });
 
   const handleLatitudeSelect = (event) => {
     props.setLatitudeKey(event.target.value);

@@ -5,6 +5,7 @@ export default class DataFile {
     this.file = file;
     this.fileText = null;
     this.jsonData = null;
+    this.fileKeys = null;
   }
 
   extractTextAsync() {
@@ -25,34 +26,33 @@ export default class DataFile {
   parseToJsonArray() {
     return new Promise((resolve, reject) => {
       try {
-        this.fileText = this.fileText.replace(/(\r\n|\n|\r)/gm, "");
-        this.jsonData = JSON.parse(this.fileText);
-        if (isJsonArray(this.jsonData)) {
-          resolve(this);
-        } else {
-          reject(new Error("The file does not contain a Json array"));
+        const lines = this.fileText.split("\n");
+        const result = [];
+        const headers = lines[0].split(",");
+        this.fileKeys = headers;
+
+        for (let i = 1; i < lines.length; i++) {
+          let obj = [];
+          let currentline = lines[i].split(",");
+
+          for (var j = 0; j < headers.length; j++) {
+            obj.push(
+              isNaN(currentline[j]) ? currentline[j] : Number(currentline[j])
+            );
+          }
+
+          result.push(obj);
         }
+        this.jsonData = result;
+        resolve(this);
       } catch (err) {
         reject(new Error("The file could not be parsed to Json"));
       }
     });
   }
 
-  getAttributesObject() {
-    if (this.jsonData.length === 0) {
-      throw new Error("The file does not contain any objects to display");
-    }
-    try {
-      let columnObject = this.jsonData[0];
-
-      if (isJsonArray(columnObject)) {
-        columnObject = getArrayAttributes(columnObject);
-      }
-
-      return columnObject;
-    } catch (error) {
-      throw error;
-    }
+  getKeys() {
+    return this.fileKeys;
   }
 
   getFile() {
