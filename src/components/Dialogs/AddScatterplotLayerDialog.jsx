@@ -105,7 +105,6 @@ export default function AddScatterplotLayerDialog(props) {
         setCoordinateHeaders(coordinateHeaders);
       })
       .catch((err) => {
-        console.log(err);
         setFileUploadErrorMessage(err.message);
         setFileUploadError(true);
       });
