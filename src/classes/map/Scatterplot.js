@@ -100,7 +100,7 @@ export default class Scatterplot extends Layer {
     longitude = longitude.replace("Column ", "");
     this.getPosition = new Function(
       "object",
-      `return [object["${latitude}"], object["${longitude}"], 0]`
+      `return [object["${longitude}"], object["${latitude}"], 0]`
     );
   }
 }
