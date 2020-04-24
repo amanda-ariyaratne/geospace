@@ -3,10 +3,19 @@ import { ScatterplotLayer } from "@deck.gl/layers";
 
 // classes
 import Layer from "./Layer";
+import ScatterplotDataTable from "../data/ScatterplotDataTable";
+import { ThemeProvider } from "@material-ui/core";
 
 export default class Scatterplot extends Layer {
-  constructor(data) {
-    super(data);
+  constructor(data, headers, latitudeHeaderIndex, longitudeHeaderIndex) {
+    super();
+
+    this.dataTable = new ScatterplotDataTable();
+    this.dataTable.headers = headers;
+    this.dataTable.latitudeHeaderIndex = latitudeHeaderIndex;
+    this.dataTable.longitudeHeaderIndex = longitudeHeaderIndex;
+    this.dataTable.setDataset(data);
+
     this.radiusScale = 1;
     this.pickable = true;
     this.opacity = 0.5;
@@ -16,19 +25,20 @@ export default class Scatterplot extends Layer {
     this.getPosition = null;
     this.getMetadata = {};
     this.name = "";
+    this.showOnHover = [];
   }
 
   render() {
     return new ScatterplotLayer({
       id: this.id,
-      data: this.data,
+      data: this.dataTable.dataset,
       radiusScale: this.radiusScale,
       pickable: this.pickable,
       opacity: this.opacity,
       radiusMinPixels: this.radiusMinPixels,
       getRadius: this.getRadius,
       getColor: this.getColor,
-      getPosition: this.getPosition,
+      getPosition: this.dataTable.getObjectPosition(),
     });
   }
 
@@ -83,24 +93,32 @@ export default class Scatterplot extends Layer {
     return false;
   }
 
-  setRadiusScale(rs) {
-    this.radiusScale = rs;
-  }
+  // addShowOnHover(index) {
+  //   this.showOnHover.add(index);
+  // }
 
-  setPickable(pickable) {
-    this.pickable = pickable;
-  }
+  // removeShowOnHover(index) {
+  //   this.showOnHover.delete(index);
+  // }
 
-  setOpacity(opacity) {
-    this.opacity = opacity;
-  }
+  // setRadiusScale(rs) {
+  //   this.radiusScale = rs;
+  // }
 
-  setPosition(latitude, longitude) {
-    latitude = latitude.replace("Column ", "");
-    longitude = longitude.replace("Column ", "");
-    this.getPosition = new Function(
-      "object",
-      `return [object["${longitude}"], object["${latitude}"], 0]`
-    );
-  }
+  // setPickable(pickable) {
+  //   this.pickable = pickable;
+  // }
+
+  // setOpacity(opacity) {
+  //   this.opacity = opacity;
+  // }
+
+  // setPosition(latitude, longitude) {
+  //   latitude = latitude.replace("Column ", "");
+  //   longitude = longitude.replace("Column ", "");
+  //   this.getPosition = new Function(
+  //     "object",
+  //     `return [object["${longitude}"], object["${latitude}"], 0]`
+  //   );
+  // }
 }

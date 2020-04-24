@@ -106,4 +106,8 @@ export default class ScatterplotDataTable {
     }
     return isFinite(latitude) && Math.abs(latitude) <= 90;
   }
+
+  getObjectPosition() {
+    return (object) => [object[0], object[1], 0];
+  }
 }
