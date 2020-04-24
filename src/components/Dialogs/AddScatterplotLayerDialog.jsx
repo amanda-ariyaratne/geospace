@@ -21,6 +21,7 @@ import { useDispatch } from "react-redux";
 
 // helpers
 import { isValidFile } from "../../classes/data/FileHelper";
+import ScatterplotDataTable from "../../classes/data/ScatterplotDataTable";
 
 const useModelStyles = makeStyles((theme) => ({
   paper: {
@@ -71,7 +72,13 @@ export default function AddScatterplotLayerDialog(props) {
       return;
     }
 
-    const layerInstance = new Scatterplot(data);
+    const dataset = new ScatterplotDataTable();
+    dataset.headers = coordinateHeaders;
+    dataset.longitudeHeaderIndex = longitudeKey;
+    dataset.latitudeHeaderIndex = latitudeKey;
+    dataset.setDataset(data);
+
+    const layerInstance = new Scatterplot(dataset.dataset);
     layerInstance.setPosition(latitudeKey, longitudeKey);
 
     dispatch(addLayer(layerInstance));
