@@ -13,10 +13,35 @@ import Paper from "@material-ui/core/Paper";
 export default function Map() {
   const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
+  const INITIAL_VIEW_STATE = useSelector((state) => state.viewstate);
+
+  const mapboxstyle = useSelector((state) => state.mapstyle);
+
+  const layersFromRedux = useSelector((state) => state.layers);
+  const layers = layersFromRedux.map((layer) => {
+    return layer.render();
+  });
+
   const [hoverObject, setHoverObject] = useState({});
 
-  const _renderTooltip = () => {
+  const getShowOnHoverIndices = (id) => {
+    for (let i = 0; i < layersFromRedux.length; ++i) {
+      if (layersFromRedux[i].id === id) {
+        return layersFromRedux[i].showOnHover;
+      }
+    }
+  };
+
+  const renderTooltip = () => {
     if (hoverObject.object !== undefined) {
+      const layerId = hoverObject.layer.id;
+      const showOnHover = getShowOnHoverIndices(layerId);
+      if (showOnHover.length === 0) {
+        return <div></div>;
+      }
+      const metadataTags = showOnHover.map((index) => {
+        return <div key={index}>{hoverObject.object[index]}</div>;
+      });
       return (
         <div
           style={{
@@ -27,8 +52,8 @@ export default function Map() {
             top: hoverObject.y,
           }}
         >
-          <Paper style={{ padding: 20 }} elevation={3}>
-            {hoverObject.object[0]}
+          <Paper style={{ padding: 10 }} elevation={3}>
+            {metadataTags}
           </Paper>
         </div>
       );
@@ -37,33 +62,22 @@ export default function Map() {
     }
   };
 
-  const _onHover = (info, event) => {
+  const onHover = (info, event) => {
     setHoverObject(info);
   };
-
-  // source: Natural Earth http://www.naturalearthdata.com/ via geojson.xyz
-
-  const INITIAL_VIEW_STATE = useSelector((state) => state.viewstate);
-
-  const mapboxstyle = useSelector((state) => state.mapstyle);
-
-  const layersFromRedux = useSelector((state) => state.layers);
-  const layers = layersFromRedux.map((layer) => {
-    return layer.render();
-  });
 
   return (
     <DeckGL
       initialViewState={INITIAL_VIEW_STATE}
       controller={true}
       layers={layers}
-      onHover={_onHover}
+      onHover={onHover}
     >
       <StaticMap
         mapboxApiAccessToken={MAPBOX_TOKEN}
         mapStyle={mapboxstyle.url}
       />
-      {_renderTooltip()}
+      {renderTooltip()}
     </DeckGL>
   );
 }

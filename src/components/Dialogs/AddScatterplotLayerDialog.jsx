@@ -72,14 +72,12 @@ export default function AddScatterplotLayerDialog(props) {
       return;
     }
 
-    const dataset = new ScatterplotDataTable();
-    dataset.headers = coordinateHeaders;
-    dataset.longitudeHeaderIndex = longitudeKey;
-    dataset.latitudeHeaderIndex = latitudeKey;
-    dataset.setDataset(data);
-
-    const layerInstance = new Scatterplot(dataset.dataset);
-    layerInstance.setPosition(latitudeKey, longitudeKey);
+    const layerInstance = new Scatterplot(
+      data,
+      coordinateHeaders,
+      latitudeKey,
+      longitudeKey
+    );
 
     dispatch(addLayer(layerInstance));
     restoreDefaults();

@@ -50,11 +50,14 @@ export default function EditScatterplotLayerDialog(props) {
   const prevOpacity = layer.opacity;
   const prevName = layer.name;
   const prevRadius = layer.radiusMinPixels;
+  const prevShowOnHover = layer.showOnHover;
+  const headers = layer.dataTable.headers;
 
   const [color, setColor] = useState(prevColor);
   const [opacity, setOpacity] = useState(prevOpacity);
   const [name, setName] = useState(prevName);
   const [radius, setRadius] = useState(prevRadius);
+  const [showOnHover, setShowOnHover] = useState(prevShowOnHover);
 
   const handleClose = () => {
     onClose();
@@ -67,6 +70,7 @@ export default function EditScatterplotLayerDialog(props) {
     layer.opacity = opacity;
     layer.name = name;
     layer.radiusMinPixels = radius;
+    layer.showOnHover = showOnHover;
 
     dispatch(updateLayer(layer, index));
     onClose();
@@ -116,7 +120,11 @@ export default function EditScatterplotLayerDialog(props) {
       <MetadataSelector
         boxStyle={classes.box}
         labelStyle={classes.inputLabel}
+        headers={headers}
+        showOnHover={showOnHover}
+        setShowOnHover={setShowOnHover}
       />
+
       <DialogActions>
         <Button autoFocus onClick={handleClose} className={classes.dialogClose}>
           Close
