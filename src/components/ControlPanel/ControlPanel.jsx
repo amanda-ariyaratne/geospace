@@ -9,6 +9,7 @@ import MapTheme from "./MapTheme";
 import EditLayersButton from "./EditLayersButton";
 import AddLayerMenu from "./AddLayerMenu";
 import PitchAndBearing from "./PitchAndBearing";
+import ViewDataButton from "./ViewDataButton";
 
 const useStyles = makeStyles((theme) => ({
   boxStyle: {
@@ -25,6 +26,7 @@ export default function ControlPanel() {
       <PitchAndBearing boxStyle={classes.boxStyle} />
       <AddLayerMenu boxStyle={classes.boxStyle} />
       <EditLayersButton boxStyle={classes.boxStyle} />
+      <ViewDataButton boxStyle={classes.boxStyle} />
     </Box>
   );
 }
