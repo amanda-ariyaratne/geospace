@@ -168,3 +168,153 @@ test("test setDataset method", () => {
   ]);
   expect(dt.headers).toEqual(["longitude", "latitude", "description"]);
 });
+
+test("test isValidLongitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLongitude(-74.57689)).toBeTruthy();
+});
+
+test("test isValidLongitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLongitude("-74.57689")).toBeTruthy();
+});
+
+test("test isValidLongitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLongitude(" -74.57689")).toBeTruthy();
+});
+
+test("test isValidLongitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLongitude(74.57689)).toBeTruthy();
+});
+
+test("test isValidLongitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLongitude("74.57689")).toBeTruthy();
+});
+
+test("test isValidLongitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLongitude(" 74.57689")).toBeTruthy();
+});
+
+test("test isValidLongitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLongitude(180)).toBeTruthy();
+});
+
+test("test isValidLongitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLongitude(180.1)).not.toBeTruthy();
+});
+
+test("test isValidLongitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLongitude(-180)).toBeTruthy();
+});
+
+test("test isValidLongitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLongitude(-180.1)).not.toBeTruthy();
+});
+
+test("test isValidLongitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLongitude(179.9)).toBeTruthy();
+});
+
+test("test isValidLongitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLongitude(-179.9)).toBeTruthy();
+});
+
+test("test isValidLongitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLongitude(null)).not.toBeTruthy();
+});
+
+test("test isValidLongitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLongitude("")).not.toBeTruthy();
+});
+
+test("test isValidLongitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLongitude("abc")).not.toBeTruthy();
+});
+
+test("test isValidLatitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLatitude(-74.57689)).toBeTruthy();
+});
+
+test("test isValidLatitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLatitude("-74.57689")).toBeTruthy();
+});
+
+test("test isValidLatitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLatitude(" -74.57689")).toBeTruthy();
+});
+
+test("test isValidLatitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLatitude(74.57689)).toBeTruthy();
+});
+
+test("test isValidLatitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLatitude("74.57689")).toBeTruthy();
+});
+
+test("test isValidLatitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLatitude(" 74.57689")).toBeTruthy();
+});
+
+test("test isValidLatitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLatitude(90)).toBeTruthy();
+});
+
+test("test isValidLatitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLatitude(90.1)).not.toBeTruthy();
+});
+
+test("test isValidLatitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLatitude(-90)).toBeTruthy();
+});
+
+test("test isValidLatitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLatitude(-90.1)).not.toBeTruthy();
+});
+
+test("test isValidLatitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLatitude(89.9)).toBeTruthy();
+});
+
+test("test isValidLatitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLatitude(-89.9)).toBeTruthy();
+});
+
+test("test isValidLatitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLatitude(null)).not.toBeTruthy();
+});
+
+test("test isValidLatitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLatitude("")).not.toBeTruthy();
+});
+
+test("test isValidLatitude method", () => {
+  const dt = new ScatterplotDataTable();
+  expect(dt.isValidLatitude("abc")).not.toBeTruthy();
+});

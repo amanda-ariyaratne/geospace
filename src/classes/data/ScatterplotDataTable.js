@@ -1,5 +1,3 @@
-import { isJsonArray } from "./JsonHelper";
-
 export default class ScatterplotDataTable {
   constructor() {
     this.dataset = [];
@@ -95,10 +93,17 @@ export default class ScatterplotDataTable {
   }
 
   isValidLongitude(longitude) {
-    return true;
+    if (longitude === null || longitude === "" || isNaN(longitude) === true) {
+      return false;
+    }
+
+    return isFinite(longitude) && Math.abs(longitude) <= 180;
   }
 
   isValidLatitude(latitude) {
-    return true;
+    if (latitude === null || latitude === "" || isNaN(latitude) === true) {
+      return false;
+    }
+    return isFinite(latitude) && Math.abs(latitude) <= 90;
   }
 }
