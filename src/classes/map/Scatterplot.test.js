@@ -14,7 +14,7 @@ test("validate constructor", () => {
   expect(layer.radiusScale).toBe(1);
   expect(layer.pickable).toBeTruthy();
   expect(layer.opacity).toBe(0.5);
-  expect(layer.radiusMinPixels).toBe(1);
+  expect(layer.radiusMinPixels).toBe(2);
   expect(layer.getRadius).toBe(1);
   expect(layer.getColor).toEqual([255, 0, 0]);
 });
