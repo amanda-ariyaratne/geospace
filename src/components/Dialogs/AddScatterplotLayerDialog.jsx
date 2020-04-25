@@ -6,7 +6,14 @@ import CoordinateHeaderPicker from "./CoordinateHeaderPicker";
 import SplashScreen from "../SplashScreen";
 
 // material-ui
-import { Button, Dialog, DialogActions, DialogTitle } from "@material-ui/core";
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogTitle,
+  Box,
+  Typography,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
@@ -21,7 +28,6 @@ import { useDispatch } from "react-redux";
 
 // helpers
 import { isValidFile } from "../../classes/data/FileHelper";
-import ScatterplotDataTable from "../../classes/data/ScatterplotDataTable";
 
 const useModelStyles = makeStyles((theme) => ({
   paper: {
@@ -157,6 +163,15 @@ export default function AddScatterplotLayerDialog(props) {
           Add a new Scatterplot
         </DialogTitle>
 
+        <Box className={classes.box}>
+          <Box>
+            <Typography variant="subtitle1">
+              Please make sure your dataset contains a latitude and longitude
+              columns.
+            </Typography>
+          </Box>
+        </Box>
+
         <FileUploadButton
           boxStyle={classes.box}
           onUpload={handleFileUpload}
@@ -165,16 +180,26 @@ export default function AddScatterplotLayerDialog(props) {
           fileRemove={handleFileRemove}
         />
 
-        {coordinateHeaders && (
-          <CoordinateHeaderPicker
-            boxStyle={classes.box}
-            formControlStyle={classes.formControl}
-            coordinateHeaders={coordinateHeaders}
-            latitudeKey={latitudeKey}
-            setLatitudeKey={setLatitudeKey}
-            longitudeKey={longitudeKey}
-            setLongitudeKey={setLongitudeKey}
-          />
+        {coordinateHeaders && !fileUploadError && (
+          <React.Fragment>
+            <Box className={classes.box}>
+              <Box>
+                <Typography variant="subtitle1">
+                  Select the column name of latitude and longitude values
+                  respectively.
+                </Typography>
+              </Box>
+            </Box>
+            <CoordinateHeaderPicker
+              boxStyle={classes.box}
+              formControlStyle={classes.formControl}
+              coordinateHeaders={coordinateHeaders}
+              latitudeKey={latitudeKey}
+              setLatitudeKey={setLatitudeKey}
+              longitudeKey={longitudeKey}
+              setLongitudeKey={setLongitudeKey}
+            />
+          </React.Fragment>
         )}
 
         <DialogActions>

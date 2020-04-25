@@ -101,17 +101,17 @@ export default class Scatterplot extends Layer {
   //   this.showOnHover.delete(index);
   // }
 
-  // setRadiusScale(rs) {
-  //   this.radiusScale = rs;
-  // }
+  setRadiusScale(rs) {
+    this.radiusScale = rs;
+  }
 
-  // setPickable(pickable) {
-  //   this.pickable = pickable;
-  // }
+  setPickable(pickable) {
+    this.pickable = pickable;
+  }
 
-  // setOpacity(opacity) {
-  //   this.opacity = opacity;
-  // }
+  setOpacity(opacity) {
+    this.opacity = opacity;
+  }
 
   // setPosition(latitude, longitude) {
   //   latitude = latitude.replace("Column ", "");

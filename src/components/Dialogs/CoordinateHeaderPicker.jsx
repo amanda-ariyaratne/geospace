@@ -29,12 +29,6 @@ export default function CoordinateHeaderPicker(props) {
   return (
     <Box display="flex" flexDirection="column" className={props.boxStyle}>
       <Box>
-        <Typography variant="subtitle1">
-          The example is shown is the first record of the dataset provided
-          above.
-        </Typography>
-      </Box>
-      <Box>
         <FormControl variant="standard" className={props.formControlStyle}>
           <InputLabel>Latitude</InputLabel>
           <Select

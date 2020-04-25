@@ -10,10 +10,10 @@ import { useSelector } from "react-redux";
 // material-ui
 import Paper from "@material-ui/core/Paper";
 
-export default function Map() {
+export default function Map(props) {
   const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
-  const INITIAL_VIEW_STATE = useSelector((state) => state.viewstate);
+  //const INITIAL_VIEW_STATE = useSelector((state) => state.viewstate);
 
   const mapboxstyle = useSelector((state) => state.mapstyle);
 
@@ -66,9 +66,15 @@ export default function Map() {
     setHoverObject(info);
   };
 
+  const handleViewStateChange = ({ viewState }) => {
+    console.log(viewState);
+    props.setViewState(viewState);
+  };
+
   return (
     <DeckGL
-      initialViewState={INITIAL_VIEW_STATE}
+      viewState={props.viewState}
+      onViewStateChange={handleViewStateChange}
       controller={true}
       layers={layers}
       onHover={onHover}

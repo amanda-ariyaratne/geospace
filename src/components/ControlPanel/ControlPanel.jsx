@@ -8,7 +8,9 @@ import { Box } from "@material-ui/core";
 import MapTheme from "./MapTheme";
 import EditLayersButton from "./EditLayersButton";
 import AddLayerMenu from "./AddLayerMenu";
-import PitchAndBearing from "./PitchAndBearing";
+import PitchTextField from "./PitchTextField";
+import BearingTextField from "./BearingTextField";
+import ZoomTextField from "./ZoomTextField";
 import ViewDataButton from "./ViewDataButton";
 
 const useStyles = makeStyles((theme) => ({
@@ -17,16 +19,31 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ControlPanel() {
+export default function ControlPanel(props) {
   const classes = useStyles();
 
   return (
     <Box>
       <MapTheme boxStyle={classes.boxStyle} />
-      <PitchAndBearing boxStyle={classes.boxStyle} />
+
       <AddLayerMenu boxStyle={classes.boxStyle} />
       <EditLayersButton boxStyle={classes.boxStyle} />
       <ViewDataButton boxStyle={classes.boxStyle} />
+      <PitchTextField
+        boxStyle={classes.boxStyle}
+        viewState={props.viewState}
+        setViewState={props.setViewState}
+      />
+      <BearingTextField
+        boxStyle={classes.boxStyle}
+        viewState={props.viewState}
+        setViewState={props.setViewState}
+      />
+      <ZoomTextField
+        boxStyle={classes.boxStyle}
+        viewState={props.viewState}
+        setViewState={props.setViewState}
+      />
     </Box>
   );
 }
