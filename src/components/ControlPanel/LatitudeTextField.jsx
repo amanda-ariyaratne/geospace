@@ -1,64 +1,63 @@
 import React, { useState } from "react";
 
 // classes
-import Zoom from "../../classes/map/Zoom";
+import Latitude from "../../classes/map/Latitude";
 
 // material-ui
 import {
   Box,
-  Button,
   InputAdornment,
   TextField,
   Tooltip,
+  Button,
 } from "@material-ui/core";
 import InfoIcon from "@material-ui/icons/Info";
 
-export default function ZoomTextField(props) {
-  const [value, setValue] = useState(props.viewState.longitude);
-  const [zoomError, setZoomError] = useState(false);
+export default function LatitudeTextField(props) {
+  const [value, setValue] = useState(props.viewState.latitude);
+  const [latitudeError, setLatitudeError] = useState(false);
 
-  const handleChangeZoom = (event) => {
-    const zoom = new Zoom(event.target.value);
-    if (zoom.isValid()) {
-      setZoomError(false);
-      setValue(Number(zoom.value));
+  const handleChangeLatitude = (event) => {
+    const latitude = new Latitude(event.target.value);
+    if (latitude.isValid()) {
+      setLatitudeError(false);
+      setValue(Number(latitude.value));
       return;
     } else {
-      setValue(zoom.value);
-      setZoomError(true);
+      setValue(latitude.value);
+      setLatitudeError(true);
     }
   };
 
   const handleSetClick = (event) => {
-    if (!zoomError) {
-      setZoomError(false);
+    if (!latitudeError) {
+      setLatitudeError(false);
       const newViewState = {
         ...props.viewState,
-        zoom: value,
+        latitude: value,
       };
       props.setViewState(newViewState);
       return;
     } else {
-      setZoomError(true);
+      setLatitudeError(true);
     }
   };
 
   return (
     <Box display="flex" flexDirection="row" className={props.boxStyle}>
       <TextField
-        label="Zoom"
+        label="Latitude"
         variant="outlined"
-        onChange={(e) => handleChangeZoom(e)}
+        onChange={(e) => handleChangeLatitude(e)}
         autoComplete="off"
-        error={zoomError}
-        fullWidth
+        error={latitudeError}
         value={value}
         margin="dense"
         color="secondary"
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-              <Tooltip title="0 to 20" arrow>
+              <Tooltip title="-90 to 90" arrow>
                 <InfoIcon fontSize="small" />
               </Tooltip>
             </InputAdornment>

@@ -12,12 +12,12 @@ import ControlPanel from "./ControlPanel/ControlPanel";
 
 export default function Main() {
   const [viewState, setViewState] = useState({
-    latitude: 40.7,
-    longitude: -74,
-    zoom: 11,
+    latitude: 0,
+    longitude: 0,
+    zoom: 0.85,
     bearing: 0,
     pitch: 0,
-    transitionDuration: "auto",
+    transitionDuration: 2000,
     transitionInterpolator: new FlyToInterpolator(),
   });
 

@@ -183,12 +183,10 @@ export default function AddScatterplotLayerDialog(props) {
         {coordinateHeaders && !fileUploadError && (
           <React.Fragment>
             <Box className={classes.box}>
-              <Box>
-                <Typography variant="subtitle1">
-                  Select the column name of latitude and longitude values
-                  respectively.
-                </Typography>
-              </Box>
+              <Typography variant="subtitle1">
+                Select the column name of longitude and latitude values
+                respectively.
+              </Typography>
             </Box>
             <CoordinateHeaderPicker
               boxStyle={classes.box}

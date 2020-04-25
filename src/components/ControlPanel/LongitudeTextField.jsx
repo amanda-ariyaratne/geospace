@@ -1,64 +1,63 @@
 import React, { useState } from "react";
 
 // classes
-import Zoom from "../../classes/map/Zoom";
+import Longitude from "../../classes/map/Longitude";
 
 // material-ui
 import {
   Box,
-  Button,
   InputAdornment,
   TextField,
   Tooltip,
+  Button,
 } from "@material-ui/core";
 import InfoIcon from "@material-ui/icons/Info";
 
-export default function ZoomTextField(props) {
+export default function LongitudeTextField(props) {
   const [value, setValue] = useState(props.viewState.longitude);
-  const [zoomError, setZoomError] = useState(false);
+  const [longitudeError, setLongitudeError] = useState(false);
 
-  const handleChangeZoom = (event) => {
-    const zoom = new Zoom(event.target.value);
-    if (zoom.isValid()) {
-      setZoomError(false);
-      setValue(Number(zoom.value));
+  const handleChangeLongitude = (event) => {
+    const longitude = new Longitude(event.target.value);
+    if (longitude.isValid()) {
+      setLongitudeError(false);
+      setValue(Number(longitude.value));
       return;
     } else {
-      setValue(zoom.value);
-      setZoomError(true);
+      setValue(longitude.value);
+      setLongitudeError(true);
     }
   };
 
   const handleSetClick = (event) => {
-    if (!zoomError) {
-      setZoomError(false);
+    if (!longitudeError) {
+      setLongitudeError(false);
       const newViewState = {
         ...props.viewState,
-        zoom: value,
+        longitude: value,
       };
       props.setViewState(newViewState);
       return;
     } else {
-      setZoomError(true);
+      setLongitudeError(true);
     }
   };
 
   return (
     <Box display="flex" flexDirection="row" className={props.boxStyle}>
       <TextField
-        label="Zoom"
+        label="Longitude"
         variant="outlined"
-        onChange={(e) => handleChangeZoom(e)}
+        onChange={(e) => handleChangeLongitude(e)}
         autoComplete="off"
-        error={zoomError}
-        fullWidth
+        error={longitudeError}
         value={value}
         margin="dense"
         color="secondary"
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-              <Tooltip title="0 to 20" arrow>
+              <Tooltip title="-180 to 180" arrow>
                 <InfoIcon fontSize="small" />
               </Tooltip>
             </InputAdornment>
