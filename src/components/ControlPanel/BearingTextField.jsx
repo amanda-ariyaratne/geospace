@@ -4,19 +4,37 @@ import React, { useState } from "react";
 import Bearing from "../../classes/map/Bearing";
 
 // material-ui
-import { Box, InputAdornment, TextField, Tooltip } from "@material-ui/core";
+import {
+  Box,
+  Button,
+  InputAdornment,
+  TextField,
+  Tooltip,
+} from "@material-ui/core";
 import InfoIcon from "@material-ui/icons/Info";
 
 export default function BearingTextField(props) {
+  const [value, setValue] = useState(props.viewState.longitude);
   const [bearingError, setBearingError] = useState(false);
 
   const handleChangeBearing = (event) => {
     const bearing = new Bearing(event.target.value);
     if (bearing.isValid()) {
       setBearingError(false);
+      setValue(Number(bearing.value));
+      return;
+    } else {
+      setValue(bearing.value);
+      setBearingError(true);
+    }
+  };
+
+  const handleSetClick = (event) => {
+    if (!bearingError) {
+      setBearingError(false);
       const newViewState = {
         ...props.viewState,
-        bearing: Number(bearing.value),
+        bearing: value,
       };
       props.setViewState(newViewState);
       return;
@@ -26,7 +44,7 @@ export default function BearingTextField(props) {
   };
 
   return (
-    <Box className={props.boxStyle}>
+    <Box display="flex" flexDirection="row" className={props.boxStyle}>
       <TextField
         label="Bearing"
         variant="outlined"
@@ -35,7 +53,8 @@ export default function BearingTextField(props) {
         error={bearingError}
         fullWidth
         margin="dense"
-        value={props.viewState.bearing.toFixed(2)}
+        color="secondary"
+        value={value}
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
@@ -46,6 +65,14 @@ export default function BearingTextField(props) {
           ),
         }}
       />
+      <Button
+        style={{ marginTop: 8, marginBottom: 4 }}
+        variant="outlined"
+        color="primary"
+        onClick={handleSetClick}
+      >
+        SET
+      </Button>
     </Box>
   );
 }

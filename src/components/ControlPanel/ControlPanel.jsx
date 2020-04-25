@@ -8,6 +8,8 @@ import { Box } from "@material-ui/core";
 import MapTheme from "./MapTheme";
 import EditLayersButton from "./EditLayersButton";
 import AddLayerMenu from "./AddLayerMenu";
+import LongitudeTextField from "./LongitudeTextField";
+import LatitudeTextField from "./LatitudeTextField";
 import PitchTextField from "./PitchTextField";
 import BearingTextField from "./BearingTextField";
 import ZoomTextField from "./ZoomTextField";
@@ -29,6 +31,16 @@ export default function ControlPanel(props) {
       <AddLayerMenu boxStyle={classes.boxStyle} />
       <EditLayersButton boxStyle={classes.boxStyle} />
       <ViewDataButton boxStyle={classes.boxStyle} />
+      <LongitudeTextField
+        boxStyle={classes.boxStyle}
+        viewState={props.viewState}
+        setViewState={props.setViewState}
+      />
+      <LatitudeTextField
+        boxStyle={classes.boxStyle}
+        viewState={props.viewState}
+        setViewState={props.setViewState}
+      />
       <PitchTextField
         boxStyle={classes.boxStyle}
         viewState={props.viewState}
