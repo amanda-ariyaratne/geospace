@@ -14,6 +14,7 @@ import LaunchIcon from "@material-ui/icons/Launch";
 
 // components
 import AddScatterplotLayerDialog from "../Dialogs/AddScatterplotLayerDialog";
+import AddArcLayerDialog from "../Dialogs/AddArcLayerDialog";
 
 const StyledMenu = withStyles({
   paper: {
@@ -36,14 +37,23 @@ const StyledMenu = withStyles({
 ));
 
 export default function AddLayerMenu(props) {
-  const [open, setOpen] = useState(false);
+  const [scatterplotOpen, setScatterplotOpen] = useState(false);
+  const [arcOpen, setArcOpen] = useState(false);
 
-  const handleDialogOpen = () => {
-    setOpen(true);
+  const handleScatterplotDialogOpen = () => {
+    setScatterplotOpen(true);
   };
 
-  const handleDialogClose = () => {
-    setOpen(false);
+  const handleArcDialogOpen = () => {
+    setArcOpen(true);
+  };
+
+  const handleScatterplotDialogClose = () => {
+    setScatterplotOpen(false);
+  };
+
+  const handleArcDialogClose = () => {
+    setArcOpen(false);
   };
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -73,17 +83,29 @@ export default function AddLayerMenu(props) {
         open={Boolean(anchorEl)}
         onClose={handleMenuClose}
       >
-        <MenuItem onClick={handleDialogOpen}>
+        <MenuItem onClick={handleScatterplotDialogOpen}>
           <ListItemIcon>
             <LaunchIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Scatterplot" />
         </MenuItem>
+        <MenuItem onClick={handleArcDialogOpen}>
+          <ListItemIcon>
+            <LaunchIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText primary="Arc" />
+        </MenuItem>
       </StyledMenu>
 
       <AddScatterplotLayerDialog
-        open={open}
-        onClose={handleDialogClose}
+        open={scatterplotOpen}
+        onClose={handleScatterplotDialogClose}
+        handleMenuClose={handleMenuClose}
+      />
+
+      <AddArcLayerDialog
+        open={arcOpen}
+        onClose={handleArcDialogClose}
         handleMenuClose={handleMenuClose}
       />
     </Box>

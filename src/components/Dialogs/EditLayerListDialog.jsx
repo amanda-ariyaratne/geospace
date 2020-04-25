@@ -82,6 +82,9 @@ export default function EditLayerListDialog(props) {
       case "Scatterplot":
         dispatch(deleteLayer(layer, index));
         break;
+      case "Arc":
+        dispatch(deleteLayer(layer, index));
+        break;
       default:
         return;
     }
