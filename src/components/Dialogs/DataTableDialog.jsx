@@ -39,6 +39,9 @@ const useModelStyles = makeStyles((theme) => ({
   dialogSave: {
     color: theme.palette.primary.light,
   },
+  paperFullScreen: {
+    backgroundColor: "#333333",
+  },
 }));
 
 const styles = (theme) => ({
@@ -97,13 +100,16 @@ export default function DataTableDialog(props) {
         disableBackdropClick
         classes={{
           paper: classes.paper,
+          paperFullScreen: classes.paperFullScreen,
         }}
       >
         <FullScreenDialogTitle
           id="customized-dialog-title"
           onClose={handleClose}
         >
-          {props.table.name}
+          {props.table.name === ""
+            ? `Layer ${props.index} Data Table`
+            : `${props.table.name} Data Table`}
         </FullScreenDialogTitle>
 
         <Box className={classes.box}>

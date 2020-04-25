@@ -29,7 +29,7 @@ const styles = (theme) => ({
   },
   tableCell: {
     flex: 1,
-    borderBottom: "2px solid #818181",
+    borderBottom: "1px solid #818181",
   },
   noClick: {
     cursor: "initial",

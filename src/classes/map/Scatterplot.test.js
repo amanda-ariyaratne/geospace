@@ -34,19 +34,34 @@ test("validate radiusScale", () => {
   const layer = new Scatterplot({});
   layer.setRadiusScale(1);
   expect(layer.validateRadiusScale()).toBeTruthy();
+});
 
+test("validate radiusScale", () => {
+  const layer = new Scatterplot({});
   layer.setRadiusScale(-1);
   expect(layer.validateRadiusScale()).not.toBeTruthy();
+});
 
+test("validate radiusScale", () => {
+  const layer = new Scatterplot({});
   layer.setRadiusScale("abc");
   expect(layer.validateRadiusScale()).toBeFalsy();
+});
 
+test("validate radiusScale", () => {
+  const layer = new Scatterplot({});
   layer.setRadiusScale("");
   expect(layer.validateRadiusScale()).toBeFalsy();
+});
 
+test("validate radiusScale", () => {
+  const layer = new Scatterplot({});
   layer.setRadiusScale(null);
   expect(layer.validateRadiusScale()).toBeFalsy();
+});
 
+test("validate radiusScale", () => {
+  const layer = new Scatterplot({});
   layer.setRadiusScale([]);
   expect(layer.validateRadiusScale()).toBeFalsy();
 });
