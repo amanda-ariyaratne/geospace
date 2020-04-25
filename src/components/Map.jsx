@@ -67,7 +67,6 @@ export default function Map(props) {
   };
 
   const handleViewStateChange = ({ viewState }) => {
-    console.log(viewState);
     props.setViewState(viewState);
   };
 

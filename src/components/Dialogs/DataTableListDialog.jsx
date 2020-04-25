@@ -68,6 +68,10 @@ export default function DataTableListDialog(props) {
         setViewIndex(index);
         setDataTableDialogOpen(true);
         break;
+      case "Arc":
+        setViewTable(layer);
+        setViewIndex(index);
+        setDataTableDialogOpen(true);
       default:
         return;
     }
