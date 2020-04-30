@@ -28,6 +28,9 @@ export default class Route extends Layer {
     this.pickable = true;
     this.widthScale = 5;
     this.rounded = true;
+    this.opacity = 1;
+
+    this.name = "";
     this.showOnHover = [];
   }
 
@@ -39,6 +42,7 @@ export default class Route extends Layer {
       rounded: this.rounded,
       widthScale: this.widthScale,
       widthMinPixels: 2,
+      opacity: this.opacity,
       getPath: (d) => d[d.length - 1],
       getColor: (d) => d[d.length - 2],
       getWidth: (d) => 1,
