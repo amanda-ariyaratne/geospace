@@ -15,6 +15,7 @@ import LaunchIcon from "@material-ui/icons/Launch";
 // components
 import AddScatterplotLayerDialog from "../Dialogs/AddScatterplotLayerDialog";
 import AddArcLayerDialog from "../Dialogs/AddArcLayerDialog";
+import AddRouteLayerDialog from "../Dialogs/AddRouteLayerDialog";
 
 const StyledMenu = withStyles({
   paper: {
@@ -39,6 +40,7 @@ const StyledMenu = withStyles({
 export default function AddLayerMenu(props) {
   const [scatterplotOpen, setScatterplotOpen] = useState(false);
   const [arcOpen, setArcOpen] = useState(false);
+  const [routeOpen, setRouteOpen] = useState(false);
 
   const handleScatterplotDialogOpen = () => {
     setScatterplotOpen(true);
@@ -48,12 +50,20 @@ export default function AddLayerMenu(props) {
     setArcOpen(true);
   };
 
+  const handleRouteDialogOpen = () => {
+    setRouteOpen(true);
+  };
+
   const handleScatterplotDialogClose = () => {
     setScatterplotOpen(false);
   };
 
   const handleArcDialogClose = () => {
     setArcOpen(false);
+  };
+
+  const handleRouteDialogClose = () => {
+    setRouteOpen(false);
   };
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -95,6 +105,12 @@ export default function AddLayerMenu(props) {
           </ListItemIcon>
           <ListItemText primary="Arc" />
         </MenuItem>
+        <MenuItem onClick={handleRouteDialogOpen}>
+          <ListItemIcon>
+            <LaunchIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText primary="Route" />
+        </MenuItem>
       </StyledMenu>
 
       <AddScatterplotLayerDialog
@@ -106,6 +122,12 @@ export default function AddLayerMenu(props) {
       <AddArcLayerDialog
         open={arcOpen}
         onClose={handleArcDialogClose}
+        handleMenuClose={handleMenuClose}
+      />
+
+      <AddRouteLayerDialog
+        open={routeOpen}
+        onClose={handleRouteDialogClose}
         handleMenuClose={handleMenuClose}
       />
     </Box>

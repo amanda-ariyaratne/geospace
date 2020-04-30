@@ -1,4 +1,4 @@
-export default class ScatterplotDataTable {
+export default class ArcDataTable {
   constructor() {
     this.dataset = [];
     this.headers = [];
