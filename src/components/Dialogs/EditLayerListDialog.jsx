@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 // components
 import EditScatterplotLayerDialog from "./EditScatterplotLayerDialog";
+import EditRouteLayerDialog from "./EditRouteLayerDialog";
 
 // material-ui
 import {
@@ -64,13 +65,17 @@ export default function EditLayerListDialog(props) {
   const [editLayer, setEditLayer] = useState(null);
   const [editIndex, setEditIndex] = useState(null);
   const [editScattterplotOpen, setEditScattterplotOpen] = useState(false);
+  const [editRouteOpen, setEditRouteOpen] = useState(false);
 
   const handleEditClick = (layer, index) => {
+    setEditLayer(layer);
+    setEditIndex(index);
     switch (layer.constructor.name) {
       case "Scatterplot":
-        setEditLayer(layer);
-        setEditIndex(index);
         setEditScattterplotOpen(true);
+        break;
+      case "Route":
+        setEditRouteOpen(true);
         break;
       default:
         return;
@@ -78,16 +83,7 @@ export default function EditLayerListDialog(props) {
   };
 
   const handleDeleteClick = (layer, index) => {
-    switch (layer.constructor.name) {
-      case "Scatterplot":
-        dispatch(deleteLayer(layer, index));
-        break;
-      case "Arc":
-        dispatch(deleteLayer(layer, index));
-        break;
-      default:
-        return;
-    }
+    dispatch(deleteLayer(layer, index));
   };
 
   const layerList = layersFromRedux.map((layer, index) => {
@@ -125,6 +121,10 @@ export default function EditLayerListDialog(props) {
 
   const handleEditScatterplotClose = () => {
     setEditScattterplotOpen(false);
+  };
+
+  const handleEditRouteClose = () => {
+    setEditRouteOpen(false);
   };
 
   const handleClose = () => {
@@ -178,6 +178,14 @@ export default function EditLayerListDialog(props) {
         <EditScatterplotLayerDialog
           onClose={handleEditScatterplotClose}
           open={editScattterplotOpen}
+          layer={editLayer}
+          index={editIndex}
+        />
+      ) : null}
+      {editRouteOpen ? (
+        <EditRouteLayerDialog
+          onClose={handleEditRouteClose}
+          open={editRouteOpen}
           layer={editLayer}
           index={editIndex}
         />

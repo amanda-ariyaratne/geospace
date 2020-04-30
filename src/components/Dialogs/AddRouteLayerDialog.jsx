@@ -88,7 +88,9 @@ export default function AddRouteLayerDialog(props) {
       endLatitudeKey,
       endLongitudeKey
     );
+    setLoading(true);
     layerInstance.dataTable.callFetchDataFromGoogleApi().then(() => {
+      setLoading(false);
       dispatch(addLayer(layerInstance));
       restoreDefaults();
       onClose();
