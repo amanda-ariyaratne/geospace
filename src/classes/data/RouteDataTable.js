@@ -2,7 +2,6 @@ import ArcDataTable from "./ArcDataTable";
 
 import axios from "axios";
 import { Promise } from "bluebird";
-import { decodePolyline } from "decode-google-map-polyline";
 import { decode, randomColor } from "../map/Helper";
 
 export default class RouteDataTable extends ArcDataTable {

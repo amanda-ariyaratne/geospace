@@ -13,8 +13,6 @@ import Paper from "@material-ui/core/Paper";
 export default function Map(props) {
   const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
-  //const INITIAL_VIEW_STATE = useSelector((state) => state.viewstate);
-
   const mapboxstyle = useSelector((state) => state.mapstyle);
 
   const layersFromRedux = useSelector((state) => state.layers);

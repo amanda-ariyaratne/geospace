@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 // components
-import AddScatterplotLayerDialog from "../Dialogs/AddScatterplotLayerDialog";
+import ModifyDataDialog from "../ChartDialogs/ModifyDataDialog";
 
 // material-ui
 import { Box, Button } from "@material-ui/core";
 
-export default function AddLayerButton(props) {
+export default function ModifyChartButton(props) {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -21,13 +21,13 @@ export default function AddLayerButton(props) {
     <Box className={props.boxStyle}>
       <Button
         variant="outlined"
-        color="secondary"
+        color="primary"
         fullWidth
         onClick={handleClickOpen}
       >
-        Add Layer
+        CHART
       </Button>
-      <AddScatterplotLayerDialog open={open} onClose={handleClose} />
+      <ModifyDataDialog open={open} onClose={handleClose} />
     </Box>
   );
 }

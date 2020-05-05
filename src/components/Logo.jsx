@@ -3,15 +3,22 @@ import React from "react";
 // material-ui
 import { Typography } from "@material-ui/core";
 import BlurOnIcon from "@material-ui/icons/BlurOn";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  title: {
+    flexGrow: 1,
+  },
+}));
 
 const Logo = () => {
+  const classes = useStyles();
   return (
-    <React.Fragment>
+    <div className={classes.title}>
       <Typography variant="h2" style={{ paddingBottom: 10 }}>
-        GeoSpace
+        Ascent
       </Typography>
-      <BlurOnIcon />
-    </React.Fragment>
+    </div>
   );
 };
 

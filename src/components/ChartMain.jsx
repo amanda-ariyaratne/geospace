@@ -7,10 +7,10 @@ import { FlyToInterpolator } from "deck.gl";
 import { Box } from "@material-ui/core";
 
 // components
-import Map from "./Map";
-import ControlPanel from "./ControlPanel/ControlPanel";
+import Chart from "./Chart";
+import ControlPanel from "./ChartControlPanel/ControlPanel";
 
-export default function Main() {
+export default function ChartMain() {
   const [viewState, setViewState] = useState({
     latitude: 0,
     longitude: 0,
@@ -20,16 +20,13 @@ export default function Main() {
     transitionDuration: 2000,
     transitionInterpolator: new FlyToInterpolator(),
   });
-
   return (
     <Box order={2} className="main">
       <Box order={1} className="panel">
         <ControlPanel viewState={viewState} setViewState={setViewState} />
       </Box>
-      <Box order={2} className="map">
-        <div className="positioned">
-          <Map viewState={viewState} setViewState={setViewState} />
-        </div>
+      <Box order={2} className="viz chartspace">
+        <Chart />
       </Box>
     </Box>
   );

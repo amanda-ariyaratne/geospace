@@ -13,9 +13,9 @@ import {
 import LaunchIcon from "@material-ui/icons/Launch";
 
 // components
-import AddScatterplotLayerDialog from "../Dialogs/AddScatterplotLayerDialog";
-import AddArcLayerDialog from "../Dialogs/AddArcLayerDialog";
-import AddRouteLayerDialog from "../Dialogs/AddRouteLayerDialog";
+import AddScatterplotLayerDialog from "../MapDialogs/AddScatterplotLayerDialog";
+import AddArcLayerDialog from "../MapDialogs/AddArcLayerDialog";
+import AddRouteLayerDialog from "../MapDialogs/AddRouteLayerDialog";
 
 const StyledMenu = withStyles({
   paper: {

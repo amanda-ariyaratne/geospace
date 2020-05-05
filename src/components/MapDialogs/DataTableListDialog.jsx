@@ -62,19 +62,9 @@ export default function DataTableListDialog(props) {
   const [dataTableDialogOpen, setDataTableDialogOpen] = useState(false);
 
   const handleViewClick = (layer, index) => {
-    switch (layer.constructor.name) {
-      case "Scatterplot":
-        setViewTable(layer);
-        setViewIndex(index);
-        setDataTableDialogOpen(true);
-        break;
-      case "Arc":
-        setViewTable(layer);
-        setViewIndex(index);
-        setDataTableDialogOpen(true);
-      default:
-        return;
-    }
+    setViewTable(layer);
+    setViewIndex(index);
+    setDataTableDialogOpen(true);
   };
 
   const dataTableList = layersFromRedux.map((layer, index) => {
