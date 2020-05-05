@@ -38,7 +38,7 @@ export default class DataFile {
     const lines = this.rawData.split("\n");
     const result = [];
     this.fileKeys = lines[0].split(",");
-    for (let i = 1; i < lines.length; i++) {
+    for (let i = 1; i < lines.length - 1; i++) {
       let obj = [];
       let currentline = lines[i].split(",");
       for (var j = 0; j < this.fileKeys.length; j++) {

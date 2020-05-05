@@ -2,6 +2,7 @@
   position: relative;
   width: 100%;
   height: 100%;
+  background-color: gainsboro;
 }
 
 .app {
@@ -22,6 +23,15 @@
   width: 250px;
 }
 
-.map {
+.viz {
   flex-grow: 1;
+  background-color: gainsboro;
+}
+
+.chartspace {
+  padding: 30px;
+}
+
+.rv-discrete-color-legend-item {
+  color: white;
 }

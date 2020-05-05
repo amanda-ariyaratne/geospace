@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // components
-import DataTableListDialog from "../Dialogs/DataTableListDialog";
+import DataTableListDialog from "../MapDialogs/DataTableListDialog";
 
 // material-ui
 import { Box, Button } from "@material-ui/core";

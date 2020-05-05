@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // components
-import EditLayerListDialog from "../Dialogs/EditLayerListDialog";
+import EditLayerListDialog from "../MapDialogs/EditLayerListDialog";
 
 // material-ui
 import { Box, Button } from "@material-ui/core";
