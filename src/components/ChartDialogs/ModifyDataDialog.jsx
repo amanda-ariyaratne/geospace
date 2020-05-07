@@ -85,7 +85,7 @@ export default function ModifyDataDialog(props) {
   let barChart = useSelector((state) => state.barChart);
   useEffect(() => {
     setXAxis(barChart.xAxis);
-    setXAxis(barChart.yAxis);
+    setYAxis(barChart.yAxis);
   }, [open]);
 
   const theme = useTheme();
@@ -103,12 +103,10 @@ export default function ModifyDataDialog(props) {
 
   const handleSelectXAxis = (event) => {
     setXAxis(event.target.value);
-    console.log(xAxis);
   };
 
   const handleSelectYAxis = (event) => {
     setYAxis(event.target.value);
-    console.log(yAxis);
   };
 
   const handleSave = () => {
