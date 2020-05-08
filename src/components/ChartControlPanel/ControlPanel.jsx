@@ -2,26 +2,18 @@ import React from "react";
 
 // material-ui
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  Box,
-  FormControl,
-  FormLabel,
-  RadioGroup,
-  FormControlLabel,
-  Radio,
-} from "@material-ui/core";
+import { Box } from "@material-ui/core";
 
 // components
 import AddDataButton from "./AddDataButton";
 import ModifyChartButton from "./ModifyChartButton";
+import BCStackDirection from "./BCStackDirection";
+import BCLegend from "./BCLegend";
 
 // redux
 import { useSelector } from "react-redux";
 import { toggleStack } from "../../state/actions/barchart";
 import { useDispatch } from "react-redux";
-
-// react-vis
-import { DiscreteColorLegend } from "react-vis";
 
 const useStyles = makeStyles((theme) => ({
   boxStyle: {
@@ -42,8 +34,7 @@ export default function ControlPanel(props) {
 
   const barChart = useSelector((state) => state.barChart);
 
-  const handleStackBy = (event) => {
-    let axis = event.target.value;
+  const handleStackBy = (axis) => {
     dispatch(toggleStack(axis));
   };
 
@@ -52,26 +43,19 @@ export default function ControlPanel(props) {
       <AddDataButton boxStyle={classes.boxStyle} />
       <ModifyChartButton boxStyle={classes.boxStyle} />
 
-      {/* Change Stack Direction Radio Buttons */}
-      <Box className={classes.boxStyle}>
-        <FormControl component="fieldset" className={classes.formControl}>
-          <FormLabel component="legend">Stack Direction</FormLabel>
-          <RadioGroup
-            aria-label="gender"
-            name="gender1"
-            value={barChart.stackBy}
-            onChange={handleStackBy}
-          >
-            <FormControlLabel value="x" control={<Radio />} label="X Axis" />
-            <FormControlLabel value="y" control={<Radio />} label="Y Axis" />
-          </RadioGroup>
-        </FormControl>
-      </Box>
+      {/* Change Stack Direction Radio Buttons for Bar Chart */}
+      <BCStackDirection
+        boxStyle={classes.boxStyle}
+        formControl={classes.formControl}
+        stackBy={barChart.stackBy}
+        handleStackBy={handleStackBy}
+      />
 
       {/* Bar Chart Legend */}
-      <Box className={classes.legendStyle}>
-        <DiscreteColorLegend items={barChart.legendHeaders} />
-      </Box>
+      <BCLegend
+        legendStyle={classes.legendStyle}
+        legendHeaders={barChart.legendHeaders}
+      />
     </Box>
   );
 }

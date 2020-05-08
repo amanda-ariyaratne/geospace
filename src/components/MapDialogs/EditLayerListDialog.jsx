@@ -3,6 +3,7 @@ import React, { useState } from "react";
 // components
 import EditScatterplotLayerDialog from "./EditScatterplotLayerDialog";
 import EditRouteLayerDialog from "./EditRouteLayerDialog";
+import EditHeatMapLayerDialog from "./EditHeatMapLayerDialog";
 
 // material-ui
 import {
@@ -66,16 +67,21 @@ export default function EditLayerListDialog(props) {
   const [editIndex, setEditIndex] = useState(null);
   const [editScattterplotOpen, setEditScattterplotOpen] = useState(false);
   const [editRouteOpen, setEditRouteOpen] = useState(false);
+  const [editHeatMapOpen, setEditHeatMapOpen] = useState(false);
 
   const handleEditClick = (layer, index) => {
     setEditLayer(layer);
     setEditIndex(index);
+    console.log(layer.constructor.name);
     switch (layer.constructor.name) {
       case "Scatterplot":
         setEditScattterplotOpen(true);
         break;
       case "Route":
         setEditRouteOpen(true);
+        break;
+      case "HeatMap":
+        setEditHeatMapOpen(true);
         break;
       default:
         return;
@@ -125,6 +131,10 @@ export default function EditLayerListDialog(props) {
 
   const handleEditRouteClose = () => {
     setEditRouteOpen(false);
+  };
+
+  const handleEditHeatMapClose = () => {
+    setEditHeatMapOpen(false);
   };
 
   const handleClose = () => {
@@ -186,6 +196,14 @@ export default function EditLayerListDialog(props) {
         <EditRouteLayerDialog
           onClose={handleEditRouteClose}
           open={editRouteOpen}
+          layer={editLayer}
+          index={editIndex}
+        />
+      ) : null}
+      {editHeatMapOpen ? (
+        <EditHeatMapLayerDialog
+          onClose={handleEditHeatMapClose}
+          open={editHeatMapOpen}
           layer={editLayer}
           index={editIndex}
         />

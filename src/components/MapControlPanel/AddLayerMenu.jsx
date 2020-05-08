@@ -16,6 +16,7 @@ import LaunchIcon from "@material-ui/icons/Launch";
 import AddScatterplotLayerDialog from "../MapDialogs/AddScatterplotLayerDialog";
 import AddArcLayerDialog from "../MapDialogs/AddArcLayerDialog";
 import AddRouteLayerDialog from "../MapDialogs/AddRouteLayerDialog";
+import AddHeatMapLayerDialog from "../MapDialogs/AddHeatMapLayerDialog";
 
 const StyledMenu = withStyles({
   paper: {
@@ -41,6 +42,7 @@ export default function AddLayerMenu(props) {
   const [scatterplotOpen, setScatterplotOpen] = useState(false);
   const [arcOpen, setArcOpen] = useState(false);
   const [routeOpen, setRouteOpen] = useState(false);
+  const [heatmapOpen, setHeatMapOpen] = useState(false);
 
   const handleScatterplotDialogOpen = () => {
     setScatterplotOpen(true);
@@ -54,6 +56,10 @@ export default function AddLayerMenu(props) {
     setRouteOpen(true);
   };
 
+  const handleHeatMapDialogOpen = () => {
+    setHeatMapOpen(true);
+  };
+
   const handleScatterplotDialogClose = () => {
     setScatterplotOpen(false);
   };
@@ -64,6 +70,10 @@ export default function AddLayerMenu(props) {
 
   const handleRouteDialogClose = () => {
     setRouteOpen(false);
+  };
+
+  const handleHeatMapDialogClose = () => {
+    setHeatMapOpen(false);
   };
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -111,6 +121,12 @@ export default function AddLayerMenu(props) {
           </ListItemIcon>
           <ListItemText primary="Route" />
         </MenuItem>
+        <MenuItem onClick={handleHeatMapDialogOpen}>
+          <ListItemIcon>
+            <LaunchIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText primary="Heatmap" />
+        </MenuItem>
       </StyledMenu>
 
       <AddScatterplotLayerDialog
@@ -128,6 +144,12 @@ export default function AddLayerMenu(props) {
       <AddRouteLayerDialog
         open={routeOpen}
         onClose={handleRouteDialogClose}
+        handleMenuClose={handleMenuClose}
+      />
+
+      <AddHeatMapLayerDialog
+        open={heatmapOpen}
+        onClose={handleHeatMapDialogClose}
         handleMenuClose={handleMenuClose}
       />
     </Box>

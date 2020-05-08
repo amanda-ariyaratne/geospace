@@ -152,7 +152,7 @@ export default function VirtualizedDataTable(props) {
     for (let i = 0; i < columns; ++i) {
       formattedRow[keys[i]] = values[i + 1];
     }
-    console.log(formattedRow);
+    //console.log(formattedRow);
     return formattedRow;
   };
 

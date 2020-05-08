@@ -81,7 +81,7 @@ const Header = () => {
             flexDirection="row"
             className={classes.vizContainer}
           >
-            <Link to="/maps" className={classes.link}>
+            <Link to="/maps" className={classes.link} onClick={handleMenuClose}>
               <Button
                 color="inherit"
                 variant="outlined"
@@ -119,12 +119,18 @@ const Header = () => {
         open={Boolean(anchorEl)}
         onClose={handleMenuClose}
       >
-        <Link to="/charts" className={classes.link}>
+        <Link to="/charts" className={classes.link} onClick={handleMenuClose}>
           <MenuItem>
             <ListItemIcon>
               <LaunchIcon fontSize="small" />
             </ListItemIcon>
             <ListItemText primary="Vertical Bar" />
+          </MenuItem>
+          <MenuItem>
+            <ListItemIcon>
+              <LaunchIcon fontSize="small" />
+            </ListItemIcon>
+            <ListItemText primary="Sankey Diagram" />
           </MenuItem>
         </Link>
       </StyledMenu>
