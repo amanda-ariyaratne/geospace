@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // components
-import ModifyDataDialog from "../ChartDialogs/ModifyDataDialog";
+import ModifyDataDialog from "../ChartDialogs/BCModifyDataDialog";
 
 // material-ui
 import { Box, Button } from "@material-ui/core";

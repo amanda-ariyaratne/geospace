@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // components
-import FileUploadButton from "./FileUploadButton";
+import FileUploadButton from "./BCFileUploadButton";
 
 // material-ui
 import { Button, Dialog, DialogActions, DialogTitle } from "@material-ui/core";

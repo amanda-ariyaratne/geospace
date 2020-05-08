@@ -5,8 +5,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Box } from "@material-ui/core";
 
 // components
-import AddDataButton from "./AddDataButton";
-import ModifyChartButton from "./ModifyChartButton";
+import AddDataButton from "./BCAddDataButton";
+import ModifyChartButton from "./BCModifyChartButton";
 import BCStackDirection from "./BCStackDirection";
 import BCLegend from "./BCLegend";
 
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ControlPanel(props) {
+export default function BarChartControlPanel(props) {
   const classes = useStyles();
   const dispatch = useDispatch();
 

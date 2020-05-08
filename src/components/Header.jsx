@@ -18,7 +18,12 @@ import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import LaunchIcon from "@material-ui/icons/Launch";
 
+// react router
 import { Link } from "react-router-dom";
+
+// redux
+import { useDispatch } from "react-redux";
+import { selectType } from "../state/actions/chart";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -59,6 +64,7 @@ const StyledMenu = withStyles({
 
 const Header = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -68,6 +74,11 @@ const Header = () => {
 
   const handleMenuClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleChartSelect = (type) => {
+    dispatch(selectType(type));
+    handleMenuClose();
   };
 
   return (
@@ -119,14 +130,22 @@ const Header = () => {
         open={Boolean(anchorEl)}
         onClose={handleMenuClose}
       >
-        <Link to="/charts" className={classes.link} onClick={handleMenuClose}>
-          <MenuItem>
+        <Link to="/charts" className={classes.link}>
+          <MenuItem
+            onClick={() => {
+              handleChartSelect(1);
+            }}
+          >
             <ListItemIcon>
               <LaunchIcon fontSize="small" />
             </ListItemIcon>
             <ListItemText primary="Vertical Bar" />
           </MenuItem>
-          <MenuItem>
+          <MenuItem
+            onClick={() => {
+              handleChartSelect(2);
+            }}
+          >
             <ListItemIcon>
               <LaunchIcon fontSize="small" />
             </ListItemIcon>

@@ -20,12 +20,12 @@ import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 // classes
-import BarChartData from "../../classes/chart/BarChartData";
+import SankeyDiagramData from "../../classes/chart/SankeyDiagramData";
 
 // redux
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { addSeries } from "../../state/actions/barchart";
+import { addFilteredData } from "../../state/actions/sankeydiagram";
 
 const useModelStyles = makeStyles((theme) => ({
   paper: {
@@ -82,18 +82,18 @@ function getStyles(header, yAxis, theme) {
 export default function ModifyDataDialog(props) {
   const classes = useModelStyles();
   const { onClose, open } = props;
-  let barChart = useSelector((state) => state.barChart);
+  let sankeyDiagram = useSelector((state) => state.sankeyDiagram);
   useEffect(() => {
-    setXAxis(barChart.xAxis);
-    setYAxis(barChart.yAxis);
+    setFrom(sankeyDiagram.from);
+    setTo(sankeyDiagram.to);
   }, [open]);
 
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const dispatch = useDispatch();
 
-  const [xAxis, setXAxis] = useState(barChart.xAxis);
-  const [yAxis, setYAxis] = useState(barChart.yAxis);
+  const [from, setFrom] = useState(sankeyDiagram.from);
+  const [to, setTo] = useState(sankeyDiagram.to);
   const [error, setError] = useState("");
 
   const handleClose = () => {
@@ -101,24 +101,27 @@ export default function ModifyDataDialog(props) {
     onClose();
   };
 
-  const handleSelectXAxis = (event) => {
-    setXAxis(event.target.value);
+  const handleSelectFrom = (event) => {
+    setFrom(event.target.value);
   };
 
-  const handleSelectYAxis = (event) => {
-    setYAxis(event.target.value);
+  const handleSelectTo = (event) => {
+    setTo(event.target.value);
   };
 
   const handleSave = () => {
-    const barChartData = new BarChartData(barChart.headers, xAxis, yAxis);
+    const sankeyDiagramData = new SankeyDiagramData(
+      sankeyDiagram.headers,
+      from,
+      to
+    );
     try {
-      barChartData.setDataset(barChart.rawData);
+      sankeyDiagramData.setDataset(sankeyDiagram.rawData);
       dispatch(
-        addSeries({
-          series: barChartData.series,
-          legendHeaders: barChartData.legendHeaders,
-          xAxis,
-          yAxis,
+        addFilteredData({
+          filtered: sankeyDiagramData.data,
+          from: from,
+          to: to,
         })
       );
     } catch (err) {
@@ -128,8 +131,8 @@ export default function ModifyDataDialog(props) {
   };
 
   const restoreDefaults = () => {
-    setXAxis(barChart.xAxis);
-    setYAxis(barChart.yAxis);
+    setFrom(sankeyDiagram.from);
+    setTo(sankeyDiagram.to);
     setError("");
   };
 
@@ -150,7 +153,7 @@ export default function ModifyDataDialog(props) {
         <DialogTitle id="simple-dialog-title">Chart Details</DialogTitle>
 
         <Box className={classes.box}>
-          {barChart.rawData === [] ? (
+          {sankeyDiagram.rawData.length === 0 ? (
             <Typography>
               No data to create a chart. You can add a dataset by clicking the
               DATASET button on the left side panel.
@@ -159,18 +162,20 @@ export default function ModifyDataDialog(props) {
             <React.Fragment>
               <Box>
                 <div className={classes.label}>
-                  <Typography variant="subtitle1">Select X Axis</Typography>
+                  <Typography variant="subtitle1">
+                    Select From Column
+                  </Typography>
                 </div>
                 <FormControl variant="standard" className={classes.formControl}>
-                  <InputLabel>X Axis</InputLabel>
+                  <InputLabel>From</InputLabel>
                   <Select
                     native
                     variant="standard"
-                    value={xAxis}
-                    onChange={handleSelectXAxis}
+                    value={from}
+                    onChange={handleSelectFrom}
                   >
                     <option aria-label="None" value="" />
-                    {barChart.headers.map((header, index) => {
+                    {sankeyDiagram.headers.map((header, index) => {
                       return (
                         <option key={index} value={index}>
                           {header}
@@ -182,56 +187,27 @@ export default function ModifyDataDialog(props) {
               </Box>
               <Box>
                 <div className={classes.label}>
-                  <Typography variant="subtitle1">Select Y Axis</Typography>
-                  <Typography variant="subtitle1">
-                    You can select multiple fields. They can be stacked
-                    horizontally or vertically.
-                  </Typography>
+                  <Typography variant="subtitle1">Select To Column</Typography>
                 </div>
-                <FormControl className={classes.formControl}>
-                  <InputLabel id="y-axis-label">Y Axis</InputLabel>
+                <FormControl variant="standard" className={classes.formControl}>
+                  <InputLabel>To</InputLabel>
                   <Select
-                    labelId="y-axis-label"
-                    id="y-axis-select"
-                    multiple
-                    value={yAxis}
-                    onChange={handleSelectYAxis}
-                    input={<Input id="select-multiple-chip" />}
-                    renderValue={(selected) => (
-                      <div className={classes.chips}>
-                        {selected.map((value) => (
-                          <Chip
-                            key={value}
-                            label={barChart.headers[value]}
-                            className={classes.chip}
-                          />
-                        ))}
-                      </div>
-                    )}
-                    MenuProps={MenuProps}
+                    native
+                    variant="standard"
+                    value={to}
+                    onChange={handleSelectTo}
                   >
-                    {barChart.headers.map((header, index) => (
-                      <MenuItem
-                        key={index}
-                        value={index}
-                        style={getStyles(header, yAxis, theme)}
-                      >
-                        {header}
-                      </MenuItem>
-                    ))}
+                    <option aria-label="None" value="" />
+                    {sankeyDiagram.headers.map((header, index) => {
+                      return (
+                        <option key={index} value={index}>
+                          {header}
+                        </option>
+                      );
+                    })}
                   </Select>
                 </FormControl>
               </Box>
-              {error !== "" ? (
-                <Box>
-                  <div className={classes.label}>
-                    <Typography variant="subtitle1"></Typography>
-                    <Typography variant="subtitle1" color="error">
-                      {error}
-                    </Typography>
-                  </div>
-                </Box>
-              ) : null}
             </React.Fragment>
           )}
         </Box>
@@ -244,7 +220,7 @@ export default function ModifyDataDialog(props) {
           >
             Close
           </Button>
-          {barChart === null ? null : (
+          {sankeyDiagram.rawData.length === 0 ? null : (
             <Button
               autoFocus
               className={classes.dialogSave}
