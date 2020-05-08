@@ -9,13 +9,12 @@ import {
   XAxis,
   YAxis,
   FlexibleXYPlot,
-  DiscreteColorLegend,
 } from "react-vis";
 
 // redux
 import { useSelector } from "react-redux";
 
-function Chart() {
+function BarChart() {
   const axisStyle = {
     line: { stroke: "black" },
     ticks: { stroke: "black" },
@@ -50,4 +49,4 @@ function Chart() {
   );
 }
 
-export default Chart;
+export default BarChart;
