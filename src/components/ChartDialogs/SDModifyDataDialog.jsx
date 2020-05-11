@@ -8,12 +8,6 @@ import {
   DialogTitle,
   Box,
   Typography,
-  FormControl,
-  InputLabel,
-  Select,
-  Input,
-  Chip,
-  MenuItem,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useTheme } from "@material-ui/core/styles";
@@ -26,6 +20,11 @@ import SankeyDiagramData from "../../classes/chart/SankeyDiagramData";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { addFilteredData } from "../../state/actions/sankeydiagram";
+
+// components
+import SDFromPicker from "./SDFromPicker";
+import SDToPicker from "./SDToPicker";
+import SDWeightPicker from "./SDWeightPicker";
 
 const useModelStyles = makeStyles((theme) => ({
   paper: {
@@ -86,6 +85,9 @@ export default function ModifyDataDialog(props) {
   useEffect(() => {
     setFrom(sankeyDiagram.from);
     setTo(sankeyDiagram.to);
+    if (sankeyDiagram.specifyWeight === 1) {
+      setWeight(sankeyDiagram.weight);
+    }
   }, [open]);
 
   const theme = useTheme();
@@ -94,6 +96,10 @@ export default function ModifyDataDialog(props) {
 
   const [from, setFrom] = useState(sankeyDiagram.from);
   const [to, setTo] = useState(sankeyDiagram.to);
+  const [specifyWeight, setSpecifyWeight] = useState(
+    sankeyDiagram.specifyWeight
+  );
+  const [weight, setWeight] = useState(sankeyDiagram.weight);
   const [error, setError] = useState("");
 
   const handleClose = () => {
@@ -101,31 +107,47 @@ export default function ModifyDataDialog(props) {
     onClose();
   };
 
-  const handleSelectFrom = (event) => {
-    setFrom(event.target.value);
+  const handleSelectFrom = (value) => {
+    setFrom(value);
   };
 
-  const handleSelectTo = (event) => {
-    setTo(event.target.value);
+  const handleSelectTo = (value) => {
+    setTo(value);
   };
 
   const handleSave = () => {
+    if (from === "") {
+      setError("From column is required");
+      return;
+    }
+    if (to === "") {
+      setError("To column is required");
+      return;
+    }
+    if (specifyWeight === 1 && weight === "") {
+      setError("Weight is required");
+      return;
+    }
+    setError("");
     const sankeyDiagramData = new SankeyDiagramData(
       sankeyDiagram.headers,
       from,
-      to
+      to,
+      weight
     );
     try {
       sankeyDiagramData.setDataset(sankeyDiagram.rawData);
       dispatch(
         addFilteredData({
           filtered: sankeyDiagramData.data,
-          from: from,
-          to: to,
+          from,
+          to,
+          specifyWeight,
+          weight,
         })
       );
     } catch (err) {
-      setError("Y axis can only contain numerical data");
+      setError("Weight can only contain numerical data");
     }
     handleClose();
   };
@@ -134,6 +156,18 @@ export default function ModifyDataDialog(props) {
     setFrom(sankeyDiagram.from);
     setTo(sankeyDiagram.to);
     setError("");
+  };
+
+  const handleSpecifyWeightChange = (radioValue) => {
+    const value = radioValue === "yes" ? 1 : 0;
+    setSpecifyWeight(value);
+    if (value === 0) {
+      setWeight("");
+    }
+  };
+
+  const handleSelectWeight = (value) => {
+    setWeight(value);
   };
 
   return (
@@ -160,56 +194,35 @@ export default function ModifyDataDialog(props) {
             </Typography>
           ) : (
             <React.Fragment>
-              <Box>
-                <div className={classes.label}>
-                  <Typography variant="subtitle1">
-                    Select From Column
-                  </Typography>
-                </div>
-                <FormControl variant="standard" className={classes.formControl}>
-                  <InputLabel>From</InputLabel>
-                  <Select
-                    native
-                    variant="standard"
-                    value={from}
-                    onChange={handleSelectFrom}
-                  >
-                    <option aria-label="None" value="" />
-                    {sankeyDiagram.headers.map((header, index) => {
-                      return (
-                        <option key={index} value={index}>
-                          {header}
-                        </option>
-                      );
-                    })}
-                  </Select>
-                </FormControl>
-              </Box>
-              <Box>
-                <div className={classes.label}>
-                  <Typography variant="subtitle1">Select To Column</Typography>
-                </div>
-                <FormControl variant="standard" className={classes.formControl}>
-                  <InputLabel>To</InputLabel>
-                  <Select
-                    native
-                    variant="standard"
-                    value={to}
-                    onChange={handleSelectTo}
-                  >
-                    <option aria-label="None" value="" />
-                    {sankeyDiagram.headers.map((header, index) => {
-                      return (
-                        <option key={index} value={index}>
-                          {header}
-                        </option>
-                      );
-                    })}
-                  </Select>
-                </FormControl>
-              </Box>
+              <SDFromPicker
+                label={classes.label}
+                formControl={classes.formControl}
+                headers={sankeyDiagram.headers}
+                from={from}
+                handleSelectFrom={handleSelectFrom}
+              />
+              <SDToPicker
+                label={classes.label}
+                formControl={classes.formControl}
+                headers={sankeyDiagram.headers}
+                to={to}
+                handleSelectTo={handleSelectTo}
+              />
+              <SDWeightPicker
+                specifyWeight={specifyWeight}
+                handleSpecifyWeightChange={handleSpecifyWeightChange}
+                formControl={classes.formControl}
+                weight={weight}
+                handleSelectWeight={handleSelectWeight}
+                headers={sankeyDiagram.headers}
+              />
             </React.Fragment>
           )}
+          {error !== "" ? (
+            <Box pt={5}>
+              <Typography color="error">{error}</Typography>
+            </Box>
+          ) : null}
         </Box>
 
         <DialogActions>

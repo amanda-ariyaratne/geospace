@@ -13,6 +13,7 @@ import {
   DialogTitle,
   Box,
   Typography,
+  LinearProgress,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useTheme } from "@material-ui/core/styles";
@@ -162,6 +163,11 @@ export default function AddScatterplotLayerDialog(props) {
         <DialogTitle id="simple-dialog-title">
           Add a new Scatterplot
         </DialogTitle>
+        {loading ? (
+          <Box className={classes.box}>
+            <LinearProgress color="secondary" />
+          </Box>
+        ) : null}
 
         <Box className={classes.box}>
           <Box>

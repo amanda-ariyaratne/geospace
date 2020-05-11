@@ -13,22 +13,18 @@ export default function ArcCoordinateHeaderPicker(props) {
   });
 
   const handleStartLatitudeSelect = (event) => {
-    console.log(event.target.value);
     props.setStartLatitudeKey(event.target.value);
   };
 
   const handleStartLongitudeSelect = (event) => {
-    console.log(event.target.value);
     props.setStartLongitudeKey(event.target.value);
   };
 
   const handleEndLatitudeSelect = (event) => {
-    console.log(event.target.value);
     props.setEndLatitudeKey(event.target.value);
   };
 
   const handleEndLongitudeSelect = (event) => {
-    console.log(event.target.value);
     props.setEndLongitudeKey(event.target.value);
   };
 

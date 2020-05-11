@@ -34,22 +34,22 @@ export default class DataFile {
     this.jsonData.splice(0, 1);
   }
 
-  prepareDataFromCSV() {
-    const lines = this.rawData.split("\n");
-    const result = [];
-    this.fileKeys = lines[0].split(",");
-    for (let i = 1; i < lines.length - 1; i++) {
-      let obj = [];
-      let currentline = lines[i].split(",");
-      for (var j = 0; j < this.fileKeys.length; j++) {
-        obj.push(
-          isNaN(currentline[j]) ? currentline[j] : Number(currentline[j])
-        );
-      }
-      result.push(obj);
-    }
-    this.jsonData = result;
-  }
+  // prepareDataFromCSVOld() {
+  //   const lines = this.rawData.split("\n");
+  //   const result = [];
+  //   this.fileKeys = lines[0].split(",");
+  //   for (let i = 1; i < lines.length - 1; i++) {
+  //     let obj = [];
+  //     let currentline = lines[i].split(",");
+  //     for (var j = 0; j < this.fileKeys.length; j++) {
+  //       obj.push(
+  //         isNaN(currentline[j]) ? currentline[j] : Number(currentline[j])
+  //       );
+  //     }
+  //     result.push(obj);
+  //   }
+  //   this.jsonData = result;
+  // }
 
   readFromExcel() {
     return new Promise((resolve, reject) => {
@@ -101,5 +101,26 @@ export default class DataFile {
 
   setJsonData(jsonData) {
     this.jsonData = jsonData;
+  }
+
+  prepareDataFromCSV() {
+    var strData = this.rawData;
+    const objPattern = new RegExp(
+      '(\\,|\\r?\\n|\\r|^)(?:"([^"]*(?:""[^"]*)*)"|([^\\,\\r\\n]*))',
+      "gi"
+    );
+    let arrMatches = null,
+      arrData = [[]];
+    while ((arrMatches = objPattern.exec(strData))) {
+      if (arrMatches[1].length && arrMatches[1] !== ",") arrData.push([]);
+      let cell = arrMatches[2]
+        ? arrMatches[2].replace(new RegExp('""', "g"), '"')
+        : arrMatches[3];
+
+      arrData[arrData.length - 1].push(isNaN(cell) ? cell : Number(cell));
+    }
+    this.jsonData = arrData;
+    this.fileKeys = arrData.shift();
+    console.log(arrData);
   }
 }
