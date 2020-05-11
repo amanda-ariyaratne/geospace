@@ -27,7 +27,6 @@ export default class RouteDataTable extends ArcDataTable {
         const encodedPolyline =
           response.data.routes[0].overview_polyline.points;
         const decodedPolyline = decode(encodedPolyline);
-        console.log(decodedPolyline);
         trip.push(randomColor());
         trip.push(decodedPolyline);
 

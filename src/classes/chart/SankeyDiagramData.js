@@ -1,18 +1,29 @@
 export default class SankeyDiagramData {
-  constructor(headers, from, to) {
+  constructor(headers, from, to, weight) {
     this.headers = headers;
     this.from = from;
     this.to = to;
-    this.weight = null;
+    this.weight = weight;
     this.data = [];
   }
 
   setDataset(jsonData) {
     try {
-      this.data = jsonData.reduce((filtered, row) => {
-        filtered.push([row[this.from], row[this.to], 1]);
-        return filtered;
-      }, []);
+      if (this.weight === "") {
+        this.data = jsonData.reduce((filtered, row) => {
+          filtered.push([row[this.from], row[this.to], 1]);
+          return filtered;
+        }, []);
+      } else {
+        this.data = jsonData.reduce((filtered, row) => {
+          filtered.push([
+            row[this.from],
+            row[this.to],
+            Number(row[this.weight]),
+          ]);
+          return filtered;
+        }, []);
+      }
 
       this.data = this.data.sort();
 
@@ -21,7 +32,6 @@ export default class SankeyDiagramData {
 
       // add column headers
       this.data.unshift(["From", "To", "Weight"]);
-      console.log(this.data);
     } catch (err) {
       console.log(err);
       throw err;

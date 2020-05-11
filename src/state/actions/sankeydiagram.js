@@ -12,5 +12,7 @@ export const addFilteredData = (state) => {
     filtered: state.filtered,
     from: state.from,
     to: state.to,
+    specifyWeight: state.specifyWeight,
+    weight: state.weight,
   };
 };

@@ -5,6 +5,8 @@ const sankeyDiagramReducer = (
     filteredData: [],
     from: "",
     to: "",
+    weight: "",
+    specifyWeight: 0,
   },
   action
 ) => {
@@ -16,6 +18,8 @@ const sankeyDiagramReducer = (
         filteredData: [],
         from: "",
         to: "",
+        weight: "",
+        specifyWeight: 0,
       };
     case "SANKEY FILTERED DATA":
       return {
@@ -23,6 +27,8 @@ const sankeyDiagramReducer = (
         filteredData: action.filtered,
         from: action.from,
         to: action.to,
+        specifyWeight: action.specifyWeight,
+        weight: action.weight,
       };
     default:
       return state;
