@@ -82,13 +82,13 @@ export default function ModifyDataDialog(props) {
   const classes = useModelStyles();
   const { onClose, open } = props;
   let sankeyDiagram = useSelector((state) => state.sankeyDiagram);
-  useEffect(() => {
-    setFrom(sankeyDiagram.from);
-    setTo(sankeyDiagram.to);
-    if (sankeyDiagram.specifyWeight === 1) {
-      setWeight(sankeyDiagram.weight);
-    }
-  }, [open]);
+  // useEffect(() => {
+  //   setFrom(sankeyDiagram.from);
+  //   setTo(sankeyDiagram.to);
+  //   if (sankeyDiagram.specifyWeight === 1) {
+  //     setWeight(sankeyDiagram.weight);
+  //   }
+  // }, [open]);
 
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
@@ -155,6 +155,8 @@ export default function ModifyDataDialog(props) {
   const restoreDefaults = () => {
     setFrom(sankeyDiagram.from);
     setTo(sankeyDiagram.to);
+    setSpecifyWeight(sankeyDiagram.specifyWeight);
+    setWeight(sankeyDiagram.weight);
     setError("");
   };
 

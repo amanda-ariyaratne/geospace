@@ -93,7 +93,6 @@ export default function AddScatterplotLayerDialog(props) {
 
   const handleFileUpload = (file) => {
     setFile(file);
-
     if (!file) {
       setFileUploadError(true);
       setFileUploadErrorMessage("No file selected");

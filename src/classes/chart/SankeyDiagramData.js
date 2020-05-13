@@ -11,14 +11,14 @@ export default class SankeyDiagramData {
     try {
       if (this.weight === "") {
         this.data = jsonData.reduce((filtered, row) => {
-          filtered.push([row[this.from], row[this.to], 1]);
+          filtered.push([String(row[this.from]), String(row[this.to]), 1]);
           return filtered;
         }, []);
       } else {
         this.data = jsonData.reduce((filtered, row) => {
           filtered.push([
-            row[this.from],
-            row[this.to],
+            String(row[this.from]),
+            String(row[this.to]),
             Number(row[this.weight]),
           ]);
           return filtered;

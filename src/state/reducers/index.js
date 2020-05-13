@@ -4,6 +4,7 @@ import layersReducer from "./layers";
 import barChartReducer from "./barchart";
 import chartReducer from "./chart";
 import sankeyDiagramReducer from "./sankeydiagram";
+import lineChartReducer from "./linechart";
 
 import { combineReducers } from "redux";
 
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   barChart: barChartReducer,
   chart: chartReducer,
   sankeyDiagram: sankeyDiagramReducer,
+  lineChart: lineChartReducer,
 });
 
 export default rootReducer;
