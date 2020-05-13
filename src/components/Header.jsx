@@ -139,7 +139,17 @@ const Header = () => {
             <ListItemIcon>
               <LaunchIcon fontSize="small" />
             </ListItemIcon>
-            <ListItemText primary="Vertical Bar" />
+            <ListItemText primary="Bar Chart" />
+          </MenuItem>
+          <MenuItem
+            onClick={() => {
+              handleChartSelect(3);
+            }}
+          >
+            <ListItemIcon>
+              <LaunchIcon fontSize="small" />
+            </ListItemIcon>
+            <ListItemText primary="Line Chart" />
           </MenuItem>
           <MenuItem
             onClick={() => {

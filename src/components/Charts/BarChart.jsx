@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../../node_modules/react-vis/dist/style.css";
+import "../../../node_modules/react-vis/dist/style.css";
 
 import {
   VerticalBarSeries,
@@ -32,6 +32,22 @@ function BarChart() {
     plotAttributes.stackBy = "y";
   }
 
+  const colors = [
+    "#12939A",
+    "#79C7FF",
+    "#1A3177",
+    "#FF9833",
+    "#EF5D28",
+    "#496A81",
+    "#813405",
+    "#FFA69E",
+    "#5C9EAD",
+    "#A7A5C6",
+    "#EF476F",
+    "#FFD166",
+    "#06D6A0",
+  ];
+
   return (
     <React.Fragment>
       <FlexibleXYPlot {...plotAttributes}>
@@ -41,7 +57,13 @@ function BarChart() {
         <YAxis style={axisStyle} />
         {barChart !== null && barChart.series !== null
           ? barChart.series.map((series, index) => {
-              return <VerticalBarSeries key={index} data={series} />;
+              return (
+                <VerticalBarSeries
+                  key={index}
+                  data={series}
+                  color={colors[index]}
+                />
+              );
             })
           : null}
       </FlexibleXYPlot>

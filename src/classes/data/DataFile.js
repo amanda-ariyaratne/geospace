@@ -121,6 +121,11 @@ export default class DataFile {
     }
     this.jsonData = arrData;
     this.fileKeys = arrData.shift();
+    if (
+      this.jsonData[this.jsonData.length - 1].length !== this.fileKeys.length
+    ) {
+      this.jsonData.pop();
+    }
     console.log(arrData);
   }
 }
