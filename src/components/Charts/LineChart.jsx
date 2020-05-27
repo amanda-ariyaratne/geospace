@@ -2,12 +2,16 @@ import React, { useState } from "react";
 
 import "../../../node_modules/react-vis/dist/style.css";
 
+// components
+import EmptyChart from "./EmptyChart";
+
 import {
   LineSeries,
   VerticalGridLines,
   HorizontalGridLines,
   XAxis,
   YAxis,
+  XYPlot,
   Highlight,
   FlexibleXYPlot,
 } from "react-vis";
@@ -20,7 +24,11 @@ function LineChart(props) {
     line: { stroke: "black" },
     ticks: { stroke: "black" },
     text: { stroke: "black", fill: "black", fontWeight: 300 },
-    title: { stroke: "black", fill: "black", fontWeight: 300, fontSize: 24 },
+    title: { stroke: "black", fill: "black", fontWeight: 300, fontSize: 16 },
+  };
+
+  const gridStyle = {
+    line: { stroke: "black" },
   };
 
   const lineChart = useSelector((state) => state.lineChart);
@@ -56,39 +64,43 @@ function LineChart(props) {
 
   return (
     <React.Fragment>
-      <FlexibleXYPlot
-        {...plotAttributes}
-        animation
-        xDomain={
-          lastDrawLocation && [lastDrawLocation.left, lastDrawLocation.right]
-        }
-        yDomain={
-          lastDrawLocation && [lastDrawLocation.bottom, lastDrawLocation.top]
-        }
-      >
-        <VerticalGridLines />
-        <HorizontalGridLines />
-        <XAxis style={axisStyle} tickLabelAngle={-45} title={xAxisTitle} />
-        <YAxis style={axisStyle} title={yAxisTitle} />
-        {lineChart !== null && lineChart.series !== null
-          ? lineChart.series.map((series, index) => {
-              return (
-                <LineSeries key={index} data={series} color={colors[index]} />
-              );
-            })
-          : null}
-        <Highlight
-          onBrushEnd={(area) => setLastDrawLocation(area)}
-          onDrag={(area) => {
-            setLastDrawLocation({
-              bottom: lastDrawLocation.bottom + (area.top - area.bottom),
-              left: lastDrawLocation.left - (area.right - area.left),
-              right: lastDrawLocation.right - (area.right - area.left),
-              top: lastDrawLocation.top + (area.top - area.bottom),
-            });
-          }}
-        />
-      </FlexibleXYPlot>
+      {lineChart.series.length > 0 ? (
+        <FlexibleXYPlot
+          {...plotAttributes}
+          animation
+          xDomain={
+            lastDrawLocation && [lastDrawLocation.left, lastDrawLocation.right]
+          }
+          yDomain={
+            lastDrawLocation && [lastDrawLocation.bottom, lastDrawLocation.top]
+          }
+        >
+          <VerticalGridLines />
+          <HorizontalGridLines />
+          <XAxis style={axisStyle} tickLabelAngle={-45} title={xAxisTitle} />
+          <YAxis style={axisStyle} title={yAxisTitle} />
+          {lineChart !== null && lineChart.series !== null
+            ? lineChart.series.map((series, index) => {
+                return (
+                  <LineSeries key={index} data={series} color={colors[index]} />
+                );
+              })
+            : null}
+          {/* <Highlight
+            onBrushEnd={(area) => setLastDrawLocation(area)}
+            onDrag={(area) => {
+              setLastDrawLocation({
+                bottom: lastDrawLocation.bottom + (area.top - area.bottom),
+                left: lastDrawLocation.left - (area.right - area.left),
+                right: lastDrawLocation.right - (area.right - area.left),
+                top: lastDrawLocation.top + (area.top - area.bottom),
+              });
+            }}
+          /> */}
+        </FlexibleXYPlot>
+      ) : (
+        <EmptyChart />
+      )}
     </React.Fragment>
   );
 }

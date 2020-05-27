@@ -8,6 +8,8 @@ const barChartReducer = (
     legendHeaders: [],
     xAxis: "",
     yAxis: [],
+    xAxisTitle: "",
+    yAxisTitle: "",
   },
   action
 ) => {
@@ -22,6 +24,8 @@ const barChartReducer = (
         legendHeaders: [],
         xAxis: "",
         yAxis: [],
+        xAxisTitle: "",
+        yAxisTitle: "",
       };
     case "ADD SERIES":
       const newSeries = {
@@ -38,6 +42,16 @@ const barChartReducer = (
         stackBy: action.payload,
       };
       return toggled;
+    case "BAR X TITLE":
+      return {
+        ...state,
+        xAxisTitle: action.payload,
+      };
+    case "BAR Y TITLE":
+      return {
+        ...state,
+        yAxisTitle: action.payload,
+      };
     default:
       return state;
   }

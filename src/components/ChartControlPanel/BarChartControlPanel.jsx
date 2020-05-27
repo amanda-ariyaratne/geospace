@@ -9,6 +9,8 @@ import AddDataButton from "./BCAddDataButton";
 import ModifyChartButton from "./BCModifyChartButton";
 import BCStackDirection from "./BCStackDirection";
 import BCLegend from "./BCLegend";
+import BCXAxisTitle from "./BCXAxisTitle";
+import BCYAxisTitle from "./BCYAxisTitle";
 
 // redux
 import { useSelector } from "react-redux";
@@ -42,20 +44,24 @@ export default function BarChartControlPanel(props) {
     <Box>
       <AddDataButton boxStyle={classes.boxStyle} />
       <ModifyChartButton boxStyle={classes.boxStyle} />
+      {barChart.series.length > 0 ? (
+        <React.Fragment>
+          <BCXAxisTitle boxStyle={classes.boxStyle} />
+          <BCYAxisTitle boxStyle={classes.boxStyle} />
 
-      {/* Change Stack Direction Radio Buttons for Bar Chart */}
-      <BCStackDirection
-        boxStyle={classes.boxStyle}
-        formControl={classes.formControl}
-        stackBy={barChart.stackBy}
-        handleStackBy={handleStackBy}
-      />
+          <BCStackDirection
+            boxStyle={classes.boxStyle}
+            formControl={classes.formControl}
+            stackBy={barChart.stackBy}
+            handleStackBy={handleStackBy}
+          />
 
-      {/* Bar Chart Legend */}
-      <BCLegend
-        legendStyle={classes.legendStyle}
-        legendHeaders={barChart.legendHeaders}
-      />
+          <BCLegend
+            legendStyle={classes.legendStyle}
+            legendHeaders={barChart.legendHeaders}
+          />
+        </React.Fragment>
+      ) : null}
     </Box>
   );
 }

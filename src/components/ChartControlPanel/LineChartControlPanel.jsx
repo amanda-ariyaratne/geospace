@@ -43,15 +43,15 @@ export default function LineChartControlPanel(props) {
       {/* Line Chart Legend */}
       {lineChart.series.length > 0 ? (
         <React.Fragment>
-          <LCLegend
-            legendStyle={classes.legendStyle}
-            legendHeaders={lineChart.legendHeaders}
-          />
           <LCXAxisTitle boxStyle={classes.boxStyle} />
           <LCYAxisTitle boxStyle={classes.boxStyle} />
           <LCResetZoomButton
             boxStyle={classes.boxStyle}
             setLastDrawLocation={props.setLastDrawLocation}
+          />
+          <LCLegend
+            legendStyle={classes.legendStyle}
+            legendHeaders={lineChart.legendHeaders}
           />
         </React.Fragment>
       ) : null}

@@ -1,12 +1,12 @@
 import XLSX from "xlsx";
 import { getFileExtension } from "./FileHelper";
+import Papa from "papaparse";
 
 export default class DataFile {
   constructor(file) {
     this.file = file;
-    this.rawData = null;
-    this.proccesedData = null;
-    this.fileKeys = null;
+    this.data = null;
+    this.headers = null;
   }
 
   readFromFile() {
@@ -14,42 +14,31 @@ export default class DataFile {
       const fileExtension = getFileExtension(this.file.name);
 
       if (fileExtension === ".csv") {
-        this.readFromCSV().then(() => {
-          this.prepareDataFromCSV();
-          resolve(this);
-        });
+        this.readFromCSV()
+          .then((data) => {
+            this.headers = data[0];
+            this.data = data[1];
+            this.getFieldTypes();
+            resolve(this);
+          })
+          .catch((err) => {
+            reject(err);
+          });
       } else {
-        this.readFromExcel().then(() => {
-          this.prepareDataFromExcel();
+        this.readFromExcel().then((workbook) => {
+          this.prepareDataFromExcel(workbook);
           resolve(this);
         });
       }
     });
   }
 
-  prepareDataFromExcel() {
-    const first_worksheet = this.rawData.Sheets[this.rawData.SheetNames[0]];
-    this.jsonData = XLSX.utils.sheet_to_json(first_worksheet, { header: 1 });
-    this.fileKeys = this.jsonData[0];
-    this.jsonData.splice(0, 1);
+  prepareDataFromExcel(workbook) {
+    const first_worksheet = workbook.Sheets[workbook.SheetNames[0]];
+    this.data = XLSX.utils.sheet_to_json(first_worksheet, { header: 1 });
+    this.headers = this.data[0];
+    this.data.splice(0, 1);
   }
-
-  // prepareDataFromCSVOld() {
-  //   const lines = this.rawData.split("\n");
-  //   const result = [];
-  //   this.fileKeys = lines[0].split(",");
-  //   for (let i = 1; i < lines.length - 1; i++) {
-  //     let obj = [];
-  //     let currentline = lines[i].split(",");
-  //     for (var j = 0; j < this.fileKeys.length; j++) {
-  //       obj.push(
-  //         isNaN(currentline[j]) ? currentline[j] : Number(currentline[j])
-  //       );
-  //     }
-  //     result.push(obj);
-  //   }
-  //   this.jsonData = result;
-  // }
 
   readFromExcel() {
     return new Promise((resolve, reject) => {
@@ -57,8 +46,7 @@ export default class DataFile {
       fileReader.onload = (e) => {
         const data = new Uint8Array(e.target.result);
         const workbook = XLSX.read(data, { type: "array" });
-        this.rawData = workbook;
-        resolve();
+        resolve(workbook);
       };
       fileReader.readAsArrayBuffer(this.file);
     });
@@ -66,66 +54,67 @@ export default class DataFile {
 
   readFromCSV() {
     return new Promise((resolve, reject) => {
-      const fileReader = new FileReader();
-      fileReader.onload = (e) => {
-        this.rawData = e.target.result;
-        resolve();
-      };
-      fileReader.onerror = (e) => {
-        fileReader.abort();
-        reject(new Error("Your file could not be read"));
-      };
-      fileReader.readAsText(this.file);
+      Papa.parse(this.file, {
+        worker: true,
+        skipEmptyLines: true,
+        complete: (parseResult) => {
+          if (parseResult.errors.length > 0) {
+            reject(parseResult.errors[0]);
+          }
+          const headers = parseResult.data.shift();
+          let data = parseResult.data;
+          resolve([headers, data]);
+        },
+      });
     });
   }
 
-  getKeys() {
-    try {
-      return this.fileKeys;
-    } catch (err) {
-      throw new Error("Column headers could not be found.");
-    }
-  }
-
-  getFile() {
-    return this.file;
-  }
-
-  setFile(file) {
-    this.file = file;
-  }
-
-  getJsonData() {
-    return this.jsonData;
-  }
-
-  setJsonData(jsonData) {
-    this.jsonData = jsonData;
-  }
-
-  prepareDataFromCSV() {
-    var strData = this.rawData;
-    const objPattern = new RegExp(
-      '(\\,|\\r?\\n|\\r|^)(?:"([^"]*(?:""[^"]*)*)"|([^\\,\\r\\n]*))',
-      "gi"
+  getFieldTypes() {
+    let types = {
+      string: true,
+      number: false,
+      longitude: false,
+      latitude: false,
+    };
+    let headers = this.headers.map((header, index) => {
+      return {
+        index: index,
+        name: header,
+        ...types,
+      };
+    });
+    let dataTranspose = this.data[0].map((col, i) =>
+      this.data.map((row) => row[i])
     );
-    let arrMatches = null,
-      arrData = [[]];
-    while ((arrMatches = objPattern.exec(strData))) {
-      if (arrMatches[1].length && arrMatches[1] !== ",") arrData.push([]);
-      let cell = arrMatches[2]
-        ? arrMatches[2].replace(new RegExp('""', "g"), '"')
-        : arrMatches[3];
 
-      arrData[arrData.length - 1].push(isNaN(cell) ? cell : Number(cell));
+    for (let i = 0; i < dataTranspose.length; ++i) {
+      headers[i].number = this.checkIfNumber(dataTranspose[i]);
+      if (headers[i].number) {
+        headers[i].longitude = this.checkIfLongitude(dataTranspose[i]);
+        headers[i].latitude = this.checkIfLatitude(dataTranspose[i]);
+      }
     }
-    this.jsonData = arrData;
-    this.fileKeys = arrData.shift();
-    if (
-      this.jsonData[this.jsonData.length - 1].length !== this.fileKeys.length
-    ) {
-      this.jsonData.pop();
-    }
-    console.log(arrData);
+    this.headers = headers;
+    console.log(this.headers);
+  }
+
+  checkIfNumber(column) {
+    return column.every((value) => !isNaN(value));
+  }
+
+  checkIfLongitude(column) {
+    return column.every((value) => {
+      return isFinite(Number(value)) && Math.abs(Number(value)) <= 180;
+    });
+  }
+
+  checkIfLatitude(column) {
+    return column.every((value) => {
+      return isFinite(Number(value)) && Math.abs(Number(value)) <= 90;
+    });
+  }
+
+  setHeaders(headers) {
+    this.headers = headers;
   }
 }
