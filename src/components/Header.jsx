@@ -111,7 +111,7 @@ const Header = () => {
               Charts
             </Button>
 
-            <Link to="/graphs" className={classes.link}>
+            {/* <Link to="/graphs" className={classes.link}>
               <Button
                 color="inherit"
                 variant="outlined"
@@ -119,7 +119,7 @@ const Header = () => {
               >
                 Graphs
               </Button>
-            </Link>
+            </Link> */}
           </Box>
         </Toolbar>
       </AppBar>

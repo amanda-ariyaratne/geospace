@@ -41,7 +41,11 @@ export default function SDWeightPicker(props) {
         </RadioGroup>
       </FormControl>
       {specifyWeight === "yes" ? (
-        <FormControl variant="standard" className={props.formControl}>
+        <FormControl
+          variant="standard"
+          className={props.formControl}
+          style={{ width: 100 }}
+        >
           <InputLabel>Weight</InputLabel>
           <Select
             native

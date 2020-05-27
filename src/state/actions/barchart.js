@@ -22,3 +22,17 @@ export const toggleStack = (axis) => {
     payload: axis,
   };
 };
+
+export const setXAxisTitle = ({ xAxisTitle }) => {
+  return {
+    type: "BAR X TITLE",
+    payload: xAxisTitle,
+  };
+};
+
+export const setYAxisTitle = ({ yAxisTitle }) => {
+  return {
+    type: "BAR Y TITLE",
+    payload: yAxisTitle,
+  };
+};

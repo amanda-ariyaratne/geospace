@@ -2,6 +2,10 @@ import React from "react";
 
 import "../../../node_modules/react-vis/dist/style.css";
 
+// components
+import EmptyChart from "./EmptyChart";
+
+// react-vis
 import {
   VerticalBarSeries,
   VerticalGridLines,
@@ -19,6 +23,7 @@ function BarChart() {
     line: { stroke: "black" },
     ticks: { stroke: "black" },
     text: { stroke: "black", fill: "black", fontWeight: 300 },
+    title: { stroke: "black", fill: "black", fontWeight: 300, fontSize: 16 },
   };
 
   const barChart = useSelector((state) => state.barChart);
@@ -50,23 +55,31 @@ function BarChart() {
 
   return (
     <React.Fragment>
-      <FlexibleXYPlot {...plotAttributes}>
-        <VerticalGridLines />
-        <HorizontalGridLines />
-        <XAxis style={axisStyle} tickLabelAngle={-90} />
-        <YAxis style={axisStyle} />
-        {barChart !== null && barChart.series !== null
-          ? barChart.series.map((series, index) => {
-              return (
-                <VerticalBarSeries
-                  key={index}
-                  data={series}
-                  color={colors[index]}
-                />
-              );
-            })
-          : null}
-      </FlexibleXYPlot>
+      {barChart.series.length > 0 ? (
+        <FlexibleXYPlot {...plotAttributes}>
+          <VerticalGridLines />
+          <HorizontalGridLines />
+          <XAxis
+            style={axisStyle}
+            tickLabelAngle={-90}
+            title={barChart.xAxisTitle}
+          />
+          <YAxis style={axisStyle} title={barChart.yAxisTitle} />
+          {barChart !== null && barChart.series !== null
+            ? barChart.series.map((series, index) => {
+                return (
+                  <VerticalBarSeries
+                    key={index}
+                    data={series}
+                    color={colors[index]}
+                  />
+                );
+              })
+            : null}
+        </FlexibleXYPlot>
+      ) : (
+        <EmptyChart />
+      )}
     </React.Fragment>
   );
 }

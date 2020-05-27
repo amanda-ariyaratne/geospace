@@ -4,6 +4,7 @@ import React from "react";
 import BarChart from "./Charts/BarChart";
 import SankeyDiagram from "./Charts/SankeyDiagram";
 import LineChart from "./Charts/LineChart";
+import EmptyChart from "./Charts/EmptyChart";
 
 // redux
 import { useSelector } from "react-redux";
@@ -23,6 +24,6 @@ export default function ChartWrapper(props) {
         />
       );
     default:
-      return <div></div>;
+      return <EmptyChart />;
   }
 }
