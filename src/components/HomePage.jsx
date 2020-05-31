@@ -15,9 +15,6 @@ import { isValidFile } from "../classes/data/FileHelper";
 import { addDatafile } from "../state/actions/datafile";
 import { useDispatch } from "react-redux";
 
-// react-router
-import { Redirect } from "react-router-dom";
-
 const useStyles = makeStyles((theme) => ({
   bg: {
     backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${bg})`,
@@ -48,7 +45,6 @@ export default function HomePage(props) {
   const [data, setData] = useState(null);
   const [headers, setHeaders] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [redirect, setRedirect] = useState(false);
 
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
@@ -91,11 +87,15 @@ export default function HomePage(props) {
       justifyContent="center"
       alignItems="center"
     >
-      <Typography variant="h1">Ascent</Typography>
-      <Typography variant="h3" color="primary">
+      <Typography style={{ fontSize: 150, fontWeight: "bold" }}>
+        Ascent
+      </Typography>
+      <Typography color="primary" variant="h3" style={{ fontWeight: "bold" }}>
         A platform to visualize your transportation datasets instantly
       </Typography>
-      <Typography variant="h4">Upload your dataset to get started</Typography>
+      <Typography variant="h4" style={{ fontWeight: "bold" }}>
+        Upload your dataset to get started
+      </Typography>
       <div>
         <input
           className={classes.input}
@@ -111,8 +111,14 @@ export default function HomePage(props) {
             variant="contained"
             color="primary"
             component="span"
-            size="large"
-            startIcon={<CloudUploadIcon />}
+            startIcon={<CloudUploadIcon style={{ height: 50, width: 50 }} />}
+            style={{
+              maxWidth: "300px",
+              maxHeight: "100px",
+              minWidth: "300px",
+              minHeight: "100px",
+              fontSize: 30,
+            }}
           >
             Upload
           </Button>
