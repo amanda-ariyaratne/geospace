@@ -8,7 +8,6 @@ import {
   FormControlLabel,
   Checkbox,
   Typography,
-  Grid,
   Stepper,
   Step,
   StepLabel,
@@ -25,14 +24,11 @@ import { useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-  },
   formControl: {
     margin: theme.spacing(3),
   },
   button: {
-    marginRight: theme.spacing(1),
+    margin: theme.spacing(3),
   },
   instructions: {
     marginTop: theme.spacing(1),
@@ -46,35 +42,28 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-  return ["", "", ""];
+  return ["Number", "Longitude", "Latitude"];
 }
 
-export default function Help() {
+export default function Help(props) {
   const classes = useStyles();
   const dispatch = useDispatch();
   const datafile = useSelector((state) => state.datafile);
   const steps = getSteps();
   const [activeStep, setActiveStep] = React.useState(0);
-  let headers = datafile === null ? null : datafile.headers;
-
-  let numberHeadersSorted =
-    datafile !== null ? headers.filter((header) => header.number) : [];
-
-  const [numberHeaders, setNumberHeaders] = useState(
-    numberHeadersSorted.map((header) => {
-      return { ...header, selected: false };
-    })
+  let [headers, setHeaders] = useState(
+    datafile !== null ? datafile.headers : []
   );
 
   const handleNumberHeaderChange = (event) => {
     const name = event.target.name;
     const selected = event.target.checked;
-    setNumberHeaders(
-      numberHeaders.reduce((accumulator, header) => {
-        if (header["name"] === name) {
+    setHeaders(
+      headers.reduce((accumulator, header) => {
+        if (header.name === name) {
           const newHeader = {
             ...header,
-            selected: selected,
+            selected: selected ? "number" : "string",
           };
           accumulator.push(newHeader);
         } else {
@@ -84,25 +73,16 @@ export default function Help() {
       }, [])
     );
   };
-
-  let longitudeHeadersSorted =
-    datafile !== null ? headers.filter((header) => header.longitude) : [];
-
-  const [longitudeHeaders, setLongitudeHeaders] = useState(
-    longitudeHeadersSorted.map((header) => {
-      return { ...header, selected: false };
-    })
-  );
 
   const handleLongitudeHeaderChange = (event) => {
     const name = event.target.name;
     const selected = event.target.checked;
-    setLongitudeHeaders(
-      longitudeHeaders.reduce((accumulator, header) => {
-        if (header["name"] === name) {
+    setHeaders(
+      headers.reduce((accumulator, header) => {
+        if (header.name === name) {
           const newHeader = {
             ...header,
-            selected: selected,
+            selected: selected ? "longitude" : "string",
           };
           accumulator.push(newHeader);
         } else {
@@ -113,24 +93,15 @@ export default function Help() {
     );
   };
 
-  let latitudeHeadersSorted =
-    datafile !== null ? headers.filter((header) => header.latitude) : [];
-
-  const [latitudeHeaders, setLatitudeHeaders] = useState(
-    latitudeHeadersSorted.map((header) => {
-      return { ...header, selected: false };
-    })
-  );
-
   const handleLatitudeHeaderChange = (event) => {
     const name = event.target.name;
     const selected = event.target.checked;
-    setLatitudeHeaders(
-      latitudeHeaders.reduce((accumulator, header) => {
-        if (header["name"] === name) {
+    setHeaders(
+      headers.reduce((accumulator, header) => {
+        if (header.name === name) {
           const newHeader = {
             ...header,
-            selected: selected,
+            selected: selected ? "latitude" : "string",
           };
           accumulator.push(newHeader);
         } else {
@@ -154,53 +125,8 @@ export default function Help() {
   };
 
   const handleFinish = () => {
-    const selectedNumberHeaders = numberHeaders.filter(
-      (header) => header.selected
-    );
-    const selectedLongitudeHeaders = longitudeHeaders.filter(
-      (header) => header.selected
-    );
-    const selectedLatitudeHeaders = latitudeHeaders.filter(
-      (header) => header.selected
-    );
-    headers = headers.map((header) => {
-      return {
-        index: header.index,
-        name: header.name,
-        type: "string",
-      };
-    });
-
-    for (let i = 0; i < headers.length; ++i) {
-      for (let j = 0; j < selectedNumberHeaders.length; ++j) {
-        if (headers[i].name === selectedNumberHeaders[j].name) {
-          headers[i] = {
-            ...headers[i],
-            type: "number",
-          };
-          break;
-        }
-      }
-      for (let j = 0; j < selectedLongitudeHeaders.length; ++j) {
-        if (headers[i].name === selectedLongitudeHeaders[j].name) {
-          headers[i] = {
-            ...headers[i],
-            type: "longitude",
-          };
-          break;
-        }
-      }
-      for (let j = 0; j < selectedLatitudeHeaders.length; ++j) {
-        if (headers[i].name === selectedLatitudeHeaders[j].name) {
-          headers[i] = {
-            ...headers[i],
-            type: "latitude",
-          };
-          break;
-        }
-      }
-    }
     datafile.headers = headers;
+    props.history.push("/vis-list");
     dispatch(addDatafile(datafile));
   };
 
@@ -234,19 +160,19 @@ export default function Help() {
 
       {activeStep === 0 ? (
         <Step1
-          numberHeaders={numberHeaders}
+          headers={headers}
           handleNumberHeaderChange={handleNumberHeaderChange}
         />
       ) : null}
       {activeStep === 1 ? (
         <Step2
-          longitudeHeaders={longitudeHeaders}
+          headers={headers}
           handleLongitudeHeaderChange={handleLongitudeHeaderChange}
         />
       ) : null}
       {activeStep === 2 ? (
         <Step3
-          latitudeHeaders={latitudeHeaders}
+          headers={headers}
           handleLatitudeHeaderChange={handleLatitudeHeaderChange}
         />
       ) : null}
@@ -257,6 +183,7 @@ export default function Help() {
           className={classes.button}
           color="primary"
           variant="outlined"
+          size="large"
         >
           Back
         </Button>
@@ -265,6 +192,7 @@ export default function Help() {
           color="primary"
           onClick={handleNext}
           className={classes.button}
+          size="large"
         >
           {activeStep === steps.length - 1 ? "Finish" : "Next"}
         </Button>
@@ -285,20 +213,22 @@ function Step1(props) {
       <Box>
         <FormControl component="fieldset" className={classes.formControl}>
           <FormGroup>
-            {props.numberHeaders.map((header) => {
-              return (
-                <FormControlLabel
-                  key={header.index}
-                  control={
-                    <Checkbox
-                      checked={header.selected}
-                      name={header.name}
-                      onChange={props.handleNumberHeaderChange}
-                    />
-                  }
-                  label={header.name}
-                />
-              );
+            {props.headers.map((header) => {
+              if (header.number) {
+                return (
+                  <FormControlLabel
+                    key={header.index}
+                    control={
+                      <Checkbox
+                        checked={header.selected === "number" ? true : false}
+                        name={header.name}
+                        onChange={props.handleNumberHeaderChange}
+                      />
+                    }
+                    label={header.name}
+                  />
+                );
+              }
             })}
           </FormGroup>
         </FormControl>{" "}
@@ -315,20 +245,22 @@ function Step2(props) {
       <Box>
         <FormControl component="fieldset" className={classes.formControl}>
           <FormGroup>
-            {props.longitudeHeaders.map((header) => {
-              return (
-                <FormControlLabel
-                  key={header.index}
-                  control={
-                    <Checkbox
-                      checked={header.selected}
-                      name={header.name}
-                      onChange={props.handleLongitudeHeaderChange}
-                    />
-                  }
-                  label={header.name}
-                />
-              );
+            {props.headers.map((header) => {
+              if (header.longitude) {
+                return (
+                  <FormControlLabel
+                    key={header.index}
+                    control={
+                      <Checkbox
+                        checked={header.selected === "longitude" ? true : false}
+                        name={header.name}
+                        onChange={props.handleLongitudeHeaderChange}
+                      />
+                    }
+                    label={header.name}
+                  />
+                );
+              }
             })}
           </FormGroup>
         </FormControl>{" "}
@@ -345,20 +277,22 @@ function Step3(props) {
       <Box>
         <FormControl component="fieldset" className={classes.formControl}>
           <FormGroup>
-            {props.latitudeHeaders.map((header) => {
-              return (
-                <FormControlLabel
-                  key={header.index}
-                  control={
-                    <Checkbox
-                      checked={header.selected}
-                      name={header.name}
-                      onChange={props.handleLatitudeHeaderChange}
-                    />
-                  }
-                  label={header.name}
-                />
-              );
+            {props.headers.map((header) => {
+              if (header.latitude) {
+                return (
+                  <FormControlLabel
+                    key={header.index}
+                    control={
+                      <Checkbox
+                        checked={header.selected === "latitude" ? true : false}
+                        name={header.name}
+                        onChange={props.handleLatitudeHeaderChange}
+                      />
+                    }
+                    label={header.name}
+                  />
+                );
+              }
             })}
           </FormGroup>
         </FormControl>{" "}

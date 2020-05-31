@@ -81,6 +81,7 @@ export default class DataFile {
         index: index,
         name: header,
         ...types,
+        selected: "string",
       };
     });
     let dataTranspose = this.data[0].map((col, i) =>
@@ -95,7 +96,6 @@ export default class DataFile {
       }
     }
     this.headers = headers;
-    console.log(this.headers);
   }
 
   checkIfNumber(column) {
