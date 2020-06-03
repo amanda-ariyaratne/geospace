@@ -432,7 +432,11 @@ function ScatterplotConfiguration(props) {
   const classes = useStyles();
   return (
     <Box display="flex" flexDirection="row" alignItems="baseline">
-      <FormControl variant="outlined" className={classes.formControl}>
+      <FormControl
+        variant="outlined"
+        className={classes.formControl}
+        error={props.scatterplotConfig.longitude === -1 ? true : false}
+      >
         <InputLabel id="longitude-label">Longitude</InputLabel>
         <Select
           labelId="longitude-label"
@@ -454,7 +458,11 @@ function ScatterplotConfiguration(props) {
           })}
         </Select>
       </FormControl>
-      <FormControl variant="outlined" className={classes.formControl}>
+      <FormControl
+        variant="outlined"
+        className={classes.formControl}
+        error={props.scatterplotConfig.latitude === -1 ? true : false}
+      >
         <InputLabel id="latitude-label">Latitude</InputLabel>
         <Select
           labelId="latitude-label"
@@ -494,7 +502,11 @@ function HeatConfiguration(props) {
   const classes = useStyles();
   return (
     <Box display="flex" flexDirection="row" alignItems="baseline">
-      <FormControl variant="outlined" className={classes.formControl}>
+      <FormControl
+        variant="outlined"
+        className={classes.formControl}
+        error={props.heatConfig.longitude === -1 ? true : false}
+      >
         <InputLabel id="longitude-label">Longitude</InputLabel>
         <Select
           labelId="longitude-label"
@@ -512,7 +524,11 @@ function HeatConfiguration(props) {
           })}
         </Select>
       </FormControl>
-      <FormControl variant="outlined" className={classes.formControl}>
+      <FormControl
+        variant="outlined"
+        className={classes.formControl}
+        error={props.heatConfig.latitude === -1 ? true : false}
+      >
         <InputLabel id="latitude-label">Latitude</InputLabel>
         <Select
           labelId="latitude-label"
@@ -548,7 +564,11 @@ function RouteConfiguration(props) {
   return (
     <Fragment>
       <Box display="flex" flexDirection="row" alignItems="baseline">
-        <FormControl variant="outlined" className={classes.formControl}>
+        <FormControl
+          variant="outlined"
+          className={classes.formControl}
+          error={props.routeConfig.srcLongitude === -1 ? true : false}
+        >
           <InputLabel id="longitude-label">Source Longitude</InputLabel>
           <Select
             labelId="src-longitude-label"
@@ -566,7 +586,11 @@ function RouteConfiguration(props) {
             })}
           </Select>
         </FormControl>
-        <FormControl variant="outlined" className={classes.formControl}>
+        <FormControl
+          variant="outlined"
+          className={classes.formControl}
+          error={props.routeConfig.srcLatitude === -1 ? true : false}
+        >
           <InputLabel id="src-latitude-label">Source Latitude</InputLabel>
           <Select
             labelId="src-latitude-label"
@@ -586,7 +610,11 @@ function RouteConfiguration(props) {
         </FormControl>
       </Box>
       <Box display="flex" flexDirection="row" alignItems="baseline">
-        <FormControl variant="outlined" className={classes.formControl}>
+        <FormControl
+          variant="outlined"
+          className={classes.formControl}
+          error={props.routeConfig.dstLongitude === -1 ? true : false}
+        >
           <InputLabel id="dst-longitude-label">
             Destination Longitude
           </InputLabel>
@@ -606,7 +634,11 @@ function RouteConfiguration(props) {
             })}
           </Select>
         </FormControl>
-        <FormControl variant="outlined" className={classes.formControl}>
+        <FormControl
+          variant="outlined"
+          className={classes.formControl}
+          error={props.routeConfig.dstLatitude === -1 ? true : false}
+        >
           <InputLabel id="dst-latitude-label">Destination Latitude</InputLabel>
           <Select
             labelId="dst-latitude-label"
@@ -644,7 +676,11 @@ function BarConfiguration(props) {
   const classes = useStyles();
   return (
     <Box display="flex" flexDirection="row" alignItems="baseline">
-      <FormControl variant="outlined" className={classes.formControl}>
+      <FormControl
+        variant="outlined"
+        className={classes.formControl}
+        error={props.barConfig.x === -1 ? true : false}
+      >
         <InputLabel id="x-label">X Axis</InputLabel>
         <Select
           labelId="x-label"
@@ -662,7 +698,11 @@ function BarConfiguration(props) {
           })}
         </Select>
       </FormControl>
-      <FormControl variant="outlined" className={classes.formControl}>
+      <FormControl
+        variant="outlined"
+        className={classes.formControl}
+        error={props.barConfig.y === -1 ? true : false}
+      >
         <InputLabel id="y-label">Y Axis</InputLabel>
         <Select
           labelId="y-label"
@@ -697,7 +737,11 @@ function LineConfiguration(props) {
   const classes = useStyles();
   return (
     <Box display="flex" flexDirection="row" alignItems="baseline">
-      <FormControl variant="outlined" className={classes.formControl}>
+      <FormControl
+        variant="outlined"
+        className={classes.formControl}
+        error={props.lineConfig.x === -1 ? true : false}
+      >
         <InputLabel id="x-label">X Axis</InputLabel>
         <Select
           labelId="x-label"
@@ -715,7 +759,11 @@ function LineConfiguration(props) {
           })}
         </Select>
       </FormControl>
-      <FormControl variant="outlined" className={classes.formControl}>
+      <FormControl
+        variant="outlined"
+        className={classes.formControl}
+        error={props.lineConfig.y === -1 ? true : false}
+      >
         <InputLabel id="y-label">Y Axis</InputLabel>
         <Select
           labelId="y-label"
@@ -750,7 +798,11 @@ function SankeyConfiguration(props) {
   const classes = useStyles();
   return (
     <Box display="flex" flexDirection="row" alignItems="baseline">
-      <FormControl variant="outlined" className={classes.formControl}>
+      <FormControl
+        variant="outlined"
+        className={classes.formControl}
+        error={props.sankeyConfig.from === -1 ? true : false}
+      >
         <InputLabel id="from-label">From</InputLabel>
         <Select
           labelId="from-label"
@@ -768,7 +820,11 @@ function SankeyConfiguration(props) {
           })}
         </Select>
       </FormControl>
-      <FormControl variant="outlined" className={classes.formControl}>
+      <FormControl
+        variant="outlined"
+        className={classes.formControl}
+        error={props.sankeyConfig.to === -1 ? true : false}
+      >
         <InputLabel id="to-label">To</InputLabel>
         <Select
           labelId="to-label"

@@ -14,6 +14,9 @@ import {
   Checkbox,
 } from "@material-ui/core";
 
+// classes
+import Scatterplot from "../../classes/map/Scatterplot";
+
 // react color
 import { CompactPicker } from "react-color";
 
@@ -27,6 +30,7 @@ import {
   changeScatterplotMapRadius,
   addMetadataToShowOnHover,
   removeMetadataFromShowOnHover,
+  addScatterplot,
 } from "../../state/actions/scatterplot";
 
 // style-list
@@ -51,6 +55,9 @@ export default function ScatterplotMapControlPanel(props) {
   const opacity = useSelector((state) => state.scatterplot.opacity);
   const radius = useSelector((state) => state.scatterplot.radiusMinPixels);
   let showOnHover = useSelector((state) => state.scatterplot.showOnHover);
+  const datafile = useSelector((state) => state.datafile);
+  const headers = datafile !== null ? datafile.headers : [];
+  const mapStyle = useSelector((state) => state.mapstyle);
 
   const menulist = mapStyles.map((style) => (
     <option key={style.id} value={style.id}>
@@ -101,6 +108,18 @@ export default function ScatterplotMapControlPanel(props) {
     return;
   };
 
+  const handleChangeLongitude = (event) => {
+    scatterplotMap.dataTable.longitudeHeaderIndex = event.target.value;
+    scatterplotMap.dataTable.setDataset(scatterplotMap.dataTable.dataset);
+    dispatch(addScatterplot(scatterplotMap));
+  };
+
+  const handleChangeLatitude = (event) => {
+    scatterplotMap.dataTable.latitudeHeaderIndex = event.target.value;
+    scatterplotMap.dataTable.setDataset(scatterplotMap.dataTable.dataset);
+    dispatch(addScatterplot(scatterplotMap));
+  };
+
   return (
     <React.Fragment>
       <Box className={classes.boxStyle}>
@@ -110,8 +129,51 @@ export default function ScatterplotMapControlPanel(props) {
             native
             variant="filled"
             onChange={(event) => handleChangeMapStyle(event)}
+            value={mapStyle.id}
           >
             {menulist}
+          </Select>
+        </FormControl>
+      </Box>
+      <Box className={classes.boxStyle}>
+        <FormControl variant="filled" fullWidth>
+          <InputLabel htmlFor="longitude-input">Longitude</InputLabel>
+          <Select
+            native
+            variant="filled"
+            onChange={(event) => handleChangeLongitude(event)}
+            value={0}
+          >
+            {headers.map((header) => {
+              if (header.selected === "longitude") {
+                return (
+                  <option key={header.index} value={header.index}>
+                    {header.name}
+                  </option>
+                );
+              }
+            })}
+          </Select>
+        </FormControl>
+      </Box>
+      <Box className={classes.boxStyle}>
+        <FormControl variant="filled" fullWidth>
+          <InputLabel htmlFor="latitude-input">Latitude</InputLabel>
+          <Select
+            native
+            variant="filled"
+            onChange={(event) => handleChangeLatitude(event)}
+            value={1}
+          >
+            {headers.map((header) => {
+              if (header.selected === "latitude") {
+                return (
+                  <option key={header.index} value={header.index}>
+                    {header.name}
+                  </option>
+                );
+              }
+            })}
           </Select>
         </FormControl>
       </Box>
