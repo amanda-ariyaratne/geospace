@@ -1,7 +1,6 @@
 export default class VisualizationMapper {
   constructor(headers) {
     this.headers = headers;
-    console.log(headers);
   }
 
   map() {

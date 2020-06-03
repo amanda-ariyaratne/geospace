@@ -8,7 +8,13 @@ import { Box } from "@material-ui/core";
 
 // components
 import Map from "./Map";
-import ControlPanel from "./MapControlPanel/ControlPanel";
+import ControlPanelWrapper from "./MapControlPanel/ControlPanelWrapper";
+
+// react-redux
+import { useSelector } from "react-redux";
+
+// react-router
+import { Redirect } from "react-router-dom";
 
 export default function MapMain() {
   const [viewState, setViewState] = useState({
@@ -21,16 +27,26 @@ export default function MapMain() {
     transitionInterpolator: new FlyToInterpolator(),
   });
 
-  return (
-    <Box order={2} className="main">
-      <Box order={1} className="panel">
-        <ControlPanel viewState={viewState} setViewState={setViewState} />
-      </Box>
-      <Box order={2} className="viz">
-        <div className="positioned">
-          <Map viewState={viewState} setViewState={setViewState} />
-        </div>
-      </Box>
-    </Box>
-  );
+  const currentVis = useSelector((state) => state.currentVis);
+
+  switch (currentVis) {
+    case "scatterplot":
+      return (
+        <Box order={2} className="main ">
+          <Box order={1} className="panel">
+            <ControlPanelWrapper
+              viewState={viewState}
+              setViewState={setViewState}
+            />
+          </Box>
+          <Box order={2} className="viz">
+            <div className="positioned">
+              <Map viewState={viewState} setViewState={setViewState} />
+            </div>
+          </Box>
+        </Box>
+      );
+    default:
+      return <Redirect to="/" />;
+  }
 }

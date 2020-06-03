@@ -11,7 +11,7 @@ import { Box } from "@material-ui/core";
 import { mapStyles } from "../../data/mapstyles";
 
 // redux
-import { changeMapboxStyle } from "../../state/actions/mapstyles";
+import { changeMapStyle } from "../../state/actions/mapstyles";
 import { useDispatch } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
@@ -35,7 +35,7 @@ export default function MapTheme(props) {
     const index = event.target.value;
     const style = mapStyles[index - 1];
 
-    dispatch(changeMapboxStyle(style));
+    dispatch(changeMapStyle(style));
   };
 
   return (

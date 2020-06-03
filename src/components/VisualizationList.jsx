@@ -23,9 +23,13 @@ import { makeStyles } from "@material-ui/core/styles";
 
 // classes
 import VisualizationMapper from "../classes/data/VisualizationMapper";
+import Scatterplot from "../classes/map/Scatterplot";
 
 // redux
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { addScatterplot } from "../state/actions/scatterplot";
+import { changeCurrentVisualization } from "../state/actions/currentVisualization";
 
 // react-router
 import { Redirect } from "react-router-dom";
@@ -57,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function VisualizationList(props) {
   const classes = useStyles();
+  const dispatch = useDispatch();
   const datafile = useSelector((state) => state.datafile);
   const [openConfig, setOpenConfig] = useState(null);
 
@@ -86,6 +91,24 @@ export default function VisualizationList(props) {
         latitude: event.target.value,
       };
     });
+  };
+
+  const handleScatterplotOpen = () => {
+    if (
+      scatterplotConfig.longitude === -1 ||
+      scatterplotConfig.latitude === -1
+    ) {
+      return;
+    }
+    const scatterplot = new Scatterplot(
+      datafile.data,
+      headers,
+      scatterplotConfig.latitude,
+      scatterplotConfig.longitude
+    );
+    dispatch(addScatterplot(scatterplot));
+    dispatch(changeCurrentVisualization("scatterplot"));
+    props.history.push("/maps");
   };
   // **************************************************** //
 
@@ -354,6 +377,7 @@ export default function VisualizationList(props) {
           scatterplotConfig={scatterplotConfig}
           changeScatterplotLatitude={changeScatterplotLatitude}
           changeScatterplotLongitude={changeScatterplotLongitude}
+          handleScatterplotOpen={handleScatterplotOpen}
         />
       ) : null}
       {openConfig === "heat" ? (
@@ -421,7 +445,11 @@ function ScatterplotConfiguration(props) {
           </MenuItem>
           {props.headers.map((header) => {
             if (header.selected === "longitude") {
-              return <MenuItem value={header.index}>{header.name}</MenuItem>;
+              return (
+                <MenuItem key={header.index} value={header.index}>
+                  {header.name}
+                </MenuItem>
+              );
             }
           })}
         </Select>
@@ -439,7 +467,11 @@ function ScatterplotConfiguration(props) {
           </MenuItem>
           {props.headers.map((header) => {
             if (header.selected === "latitude") {
-              return <MenuItem value={header.index}>{header.name}</MenuItem>;
+              return (
+                <MenuItem key={header.index} value={header.index}>
+                  {header.name}
+                </MenuItem>
+              );
             }
           })}
         </Select>
@@ -450,6 +482,7 @@ function ScatterplotConfiguration(props) {
         className={classes.button}
         size="large"
         startIcon={<LaunchIcon />}
+        onClick={props.handleScatterplotOpen}
       >
         OPEN
       </Button>

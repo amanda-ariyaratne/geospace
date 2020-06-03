@@ -29,7 +29,7 @@ export default function ViewDataButton(props) {
           VIEW DATA
         </Button>
       </Box>
-      <DataTableListDialog open={open} onClose={handleClose} />
+      {/* <DataTableListDialog open={open} onClose={handleClose} /> */}
     </React.Fragment>
   );
 }
