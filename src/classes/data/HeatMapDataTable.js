@@ -14,16 +14,6 @@ export default class HeatMapDataTable {
         let longitude = object[this.longitudeHeaderIndex];
         let latitude = object[this.latitudeHeaderIndex];
 
-        // skip if latitude or longitude are not valid
-        if (isNaN(longitude) || isNaN(latitude)) {
-          return filteredData;
-        } else if (
-          !this.isValidLongitude(longitude) ||
-          !this.isValidLatitude(latitude)
-        ) {
-          return filteredData;
-        }
-
         longitude = Number(longitude);
         latitude = Number(latitude);
 
@@ -51,6 +41,9 @@ export default class HeatMapDataTable {
         if (i !== this.longitudeHeaderIndex && i !== this.latitudeHeaderIndex) {
           sortedHeader.push(this.headers[i]);
         }
+      }
+      for (let i = 0; i < this.headers.length; ++i) {
+        sortedHeader[i].index = i;
       }
       this.headers = sortedHeader;
       this.longitudeHeaderIndex = 0;

@@ -8,6 +8,7 @@ import datafileReducer from "./datafile";
 import mapstyleReducer from "./mapstyle";
 import currentVisualizationReducer from "./currentVisualization";
 import scatterplotReducer from "./scatterplot";
+import heatReducer from "./heat";
 
 import { combineReducers } from "redux";
 
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
   mapstyle: mapstyleReducer,
   currentVis: currentVisualizationReducer,
   scatterplot: scatterplotReducer,
+  heat: heatReducer,
 });
 
 export default rootReducer;
