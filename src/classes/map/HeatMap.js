@@ -17,6 +17,8 @@ export default class HeatMap extends Layer {
 
     this.radiusPixels = 30;
     this.intensity = 1;
+    this.threshold = 0.05;
+    this.opacity = 1;
     this.getPosition = null;
     this.getMetadata = {};
     this.name = "";
@@ -29,6 +31,8 @@ export default class HeatMap extends Layer {
       data: this.dataTable.dataset,
       radiusPixels: this.radiusPixels,
       intensity: this.intensity,
+      threshold: this.threshold,
+      opacity: this.opacity,
       getPosition: this.dataTable.getObjectPosition(),
     });
   }

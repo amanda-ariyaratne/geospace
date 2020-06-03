@@ -15,11 +15,9 @@ export default function Map(props) {
 
   const mapboxstyle = useSelector((state) => state.mapstyle);
 
-  const layer = useSelector((state) => state.scatterplot);
-  const renderedLayer = useSelector((state) => state.scatterplot.render());
-  // const layers = layersFromRedux.map((layer) => {
-  //   return layer.render();
-  // });
+  const currentVis = useSelector((state) => state.currentVis);
+  const layer = useSelector((state) => state[currentVis]);
+  const renderedLayer = useSelector((state) => state[currentVis].render());
 
   const [hoverObject, setHoverObject] = useState({});
 

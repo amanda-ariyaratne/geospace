@@ -13,6 +13,7 @@ import { mapStyles } from "../../data/mapstyles";
 // redux
 import { changeMapStyle } from "../../state/actions/mapstyles";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   selectEmpty: {
@@ -20,8 +21,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MapTheme(props) {
+export default function MapStyle(props) {
   const classes = useStyles();
+
+  const dispatch = useDispatch();
+
+  const mapStyle = useSelector((state) => state.mapstyle);
 
   const menulist = mapStyles.map((style) => (
     <option key={style.id} value={style.id}>
@@ -29,9 +34,7 @@ export default function MapTheme(props) {
     </option>
   ));
 
-  const dispatch = useDispatch();
-
-  const handleChange = (event) => {
+  const handleChangeMapStyle = (event) => {
     const index = event.target.value;
     const style = mapStyles[index - 1];
 
@@ -40,12 +43,13 @@ export default function MapTheme(props) {
 
   return (
     <Box className={props.boxStyle}>
-      <FormControl variant="filled" className={classes.formControl} fullWidth>
+      <FormControl variant="filled" fullWidth>
         <InputLabel htmlFor="my-input">Map Style</InputLabel>
         <Select
           native
           variant="filled"
-          onChange={(event) => handleChange(event)}
+          onChange={(event) => handleChangeMapStyle(event)}
+          value={mapStyle.id}
         >
           {menulist}
         </Select>

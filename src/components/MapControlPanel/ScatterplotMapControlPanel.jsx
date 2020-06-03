@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
+
+// components
+import MapStyle from "./MapStyle";
 
 // material-ui
 import { makeStyles } from "@material-ui/core/styles";
@@ -14,16 +17,12 @@ import {
   Checkbox,
 } from "@material-ui/core";
 
-// classes
-import Scatterplot from "../../classes/map/Scatterplot";
-
 // react color
 import { CompactPicker } from "react-color";
 
 // redux
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { changeMapStyle } from "../../state/actions/mapstyles";
 import {
   changeScatterplotMapColor,
   changeScatterplotMapOpacity,
@@ -32,9 +31,6 @@ import {
   removeMetadataFromShowOnHover,
   addScatterplot,
 } from "../../state/actions/scatterplot";
-
-// style-list
-import { mapStyles } from "../../data/mapstyles";
 
 const useStyles = makeStyles((theme) => ({
   boxStyle: {
@@ -57,20 +53,6 @@ export default function ScatterplotMapControlPanel(props) {
   let showOnHover = useSelector((state) => state.scatterplot.showOnHover);
   const datafile = useSelector((state) => state.datafile);
   const headers = datafile !== null ? datafile.headers : [];
-  const mapStyle = useSelector((state) => state.mapstyle);
-
-  const menulist = mapStyles.map((style) => (
-    <option key={style.id} value={style.id}>
-      {style.name}
-    </option>
-  ));
-
-  const handleChangeMapStyle = (event) => {
-    const index = event.target.value;
-    const style = mapStyles[index - 1];
-
-    dispatch(changeMapStyle(style));
-  };
 
   const handleChangeColor = (color) => {
     scatterplotMap.getColor = [color.rgb["r"], color.rgb["g"], color.rgb["b"]];
@@ -122,19 +104,7 @@ export default function ScatterplotMapControlPanel(props) {
 
   return (
     <React.Fragment>
-      <Box className={classes.boxStyle}>
-        <FormControl variant="filled" fullWidth>
-          <InputLabel htmlFor="my-input">Map Style</InputLabel>
-          <Select
-            native
-            variant="filled"
-            onChange={(event) => handleChangeMapStyle(event)}
-            value={mapStyle.id}
-          >
-            {menulist}
-          </Select>
-        </FormControl>
-      </Box>
+      <MapStyle boxStyle={classes.boxStyle} />
       <Box className={classes.boxStyle}>
         <FormControl variant="filled" fullWidth>
           <InputLabel htmlFor="longitude-input">Longitude</InputLabel>

@@ -1,5 +1,8 @@
 import React, { useState, Fragment } from "react";
 
+// components
+import ScatterplotConfiguration from "./Configurations/ScatterplotConfiguration";
+
 // material-ui
 import {
   Box,
@@ -24,11 +27,13 @@ import { makeStyles } from "@material-ui/core/styles";
 // classes
 import VisualizationMapper from "../classes/data/VisualizationMapper";
 import Scatterplot from "../classes/map/Scatterplot";
+import HeatMap from "../classes/map/HeatMap";
 
 // redux
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { addScatterplot } from "../state/actions/scatterplot";
+import { addHeat } from "../state/actions/heat";
 import { changeCurrentVisualization } from "../state/actions/currentVisualization";
 
 // react-router
@@ -134,6 +139,21 @@ export default function VisualizationList(props) {
         latitude: event.target.value,
       };
     });
+  };
+
+  const handleHeatOpen = () => {
+    if (heatConfig.longitude === -1 || heatConfig.latitude === -1) {
+      return;
+    }
+    const heat = new HeatMap(
+      datafile.data,
+      headers,
+      heatConfig.latitude,
+      heatConfig.longitude
+    );
+    dispatch(addHeat(heat));
+    dispatch(changeCurrentVisualization("heat"));
+    props.history.push("/maps");
   };
   // **************************************************** //
 
@@ -386,6 +406,7 @@ export default function VisualizationList(props) {
           heatConfig={heatConfig}
           changeHeatLatitude={changeHeatLatitude}
           changeHeatLongitude={changeHeatLongitude}
+          handleHeatOpen={handleHeatOpen}
         />
       ) : null}
       {openConfig === "route" ? (
@@ -428,76 +449,6 @@ export default function VisualizationList(props) {
   );
 }
 
-function ScatterplotConfiguration(props) {
-  const classes = useStyles();
-  return (
-    <Box display="flex" flexDirection="row" alignItems="baseline">
-      <FormControl
-        variant="outlined"
-        className={classes.formControl}
-        error={props.scatterplotConfig.longitude === -1 ? true : false}
-      >
-        <InputLabel id="longitude-label">Longitude</InputLabel>
-        <Select
-          labelId="longitude-label"
-          value={props.scatterplotConfig.longitude}
-          onChange={props.changeScatterplotLongitude}
-          label="Longitude"
-        >
-          <MenuItem value={-1}>
-            <em>None</em>
-          </MenuItem>
-          {props.headers.map((header) => {
-            if (header.selected === "longitude") {
-              return (
-                <MenuItem key={header.index} value={header.index}>
-                  {header.name}
-                </MenuItem>
-              );
-            }
-          })}
-        </Select>
-      </FormControl>
-      <FormControl
-        variant="outlined"
-        className={classes.formControl}
-        error={props.scatterplotConfig.latitude === -1 ? true : false}
-      >
-        <InputLabel id="latitude-label">Latitude</InputLabel>
-        <Select
-          labelId="latitude-label"
-          value={props.scatterplotConfig.latitude}
-          onChange={props.changeScatterplotLatitude}
-          label="Latitude"
-        >
-          <MenuItem value={-1}>
-            <em>None</em>
-          </MenuItem>
-          {props.headers.map((header) => {
-            if (header.selected === "latitude") {
-              return (
-                <MenuItem key={header.index} value={header.index}>
-                  {header.name}
-                </MenuItem>
-              );
-            }
-          })}
-        </Select>
-      </FormControl>
-      <Button
-        variant="contained"
-        color="primary"
-        className={classes.button}
-        size="large"
-        startIcon={<LaunchIcon />}
-        onClick={props.handleScatterplotOpen}
-      >
-        OPEN
-      </Button>
-    </Box>
-  );
-}
-
 function HeatConfiguration(props) {
   const classes = useStyles();
   return (
@@ -519,7 +470,11 @@ function HeatConfiguration(props) {
           </MenuItem>
           {props.headers.map((header) => {
             if (header.selected === "longitude") {
-              return <MenuItem value={header.index}>{header.name}</MenuItem>;
+              return (
+                <MenuItem key={header.index} value={header.index}>
+                  {header.name}
+                </MenuItem>
+              );
             }
           })}
         </Select>
@@ -541,7 +496,11 @@ function HeatConfiguration(props) {
           </MenuItem>
           {props.headers.map((header) => {
             if (header.selected === "latitude") {
-              return <MenuItem value={header.index}>{header.name}</MenuItem>;
+              return (
+                <MenuItem key={header.index} value={header.index}>
+                  {header.name}
+                </MenuItem>
+              );
             }
           })}
         </Select>
@@ -552,6 +511,7 @@ function HeatConfiguration(props) {
         className={classes.button}
         size="large"
         startIcon={<LaunchIcon />}
+        onClick={props.handleHeatOpen}
       >
         OPEN
       </Button>
