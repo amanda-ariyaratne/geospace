@@ -1,10 +1,9 @@
-// deck,gk
+// deck.gk
 import { ScatterplotLayer } from "@deck.gl/layers";
 
 // classes
 import Layer from "./Layer";
 import ScatterplotDataTable from "../data/ScatterplotDataTable";
-import { ThemeProvider } from "@material-ui/core";
 
 export default class Scatterplot extends Layer {
   constructor(data, headers, latitudeHeaderIndex, longitudeHeaderIndex) {
@@ -112,13 +111,4 @@ export default class Scatterplot extends Layer {
   setOpacity(opacity) {
     this.opacity = opacity;
   }
-
-  // setPosition(latitude, longitude) {
-  //   latitude = latitude.replace("Column ", "");
-  //   longitude = longitude.replace("Column ", "");
-  //   this.getPosition = new Function(
-  //     "object",
-  //     `return [object["${longitude}"], object["${latitude}"], 0]`
-  //   );
-  // }
 }

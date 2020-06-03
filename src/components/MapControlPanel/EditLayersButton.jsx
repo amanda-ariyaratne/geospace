@@ -29,7 +29,7 @@ export default function EditLayersButton(props) {
           EDIT LAYERS
         </Button>
       </Box>
-      <EditLayerListDialog open={open} onClose={handleClose} />
+      {/* <EditLayerListDialog open={open} onClose={handleClose} /> */}
     </React.Fragment>
   );
 }

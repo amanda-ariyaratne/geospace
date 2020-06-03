@@ -15,18 +15,22 @@ export default function Map(props) {
 
   const mapboxstyle = useSelector((state) => state.mapstyle);
 
-  const layersFromRedux = useSelector((state) => state.layers);
-  const layers = layersFromRedux.map((layer) => {
-    return layer.render();
-  });
+  const layer = useSelector((state) => state.scatterplot);
+  const renderedLayer = useSelector((state) => state.scatterplot.render());
+  // const layers = layersFromRedux.map((layer) => {
+  //   return layer.render();
+  // });
 
   const [hoverObject, setHoverObject] = useState({});
 
   const getShowOnHoverIndices = (id) => {
-    for (let i = 0; i < layersFromRedux.length; ++i) {
-      if (layersFromRedux[i].id === id) {
-        return layersFromRedux[i].showOnHover;
-      }
+    if (layer.id === id) {
+      return layer.showOnHover;
+    }
+  };
+  const getHeaderNames = (id) => {
+    if (layer.id === id) {
+      return layer.dataTable.headerNames;
     }
   };
 
@@ -34,11 +38,16 @@ export default function Map(props) {
     if (hoverObject.object !== undefined) {
       const layerId = hoverObject.layer.id;
       const showOnHover = getShowOnHoverIndices(layerId);
+      const headerNames = getHeaderNames(layerId);
       if (showOnHover.length === 0) {
         return <div></div>;
       }
       const metadataTags = showOnHover.map((index) => {
-        return <div key={index}>{hoverObject.object[index]}</div>;
+        return (
+          <div key={index}>
+            {headerNames[index]} : {hoverObject.object[index]}
+          </div>
+        );
       });
       return (
         <div
@@ -73,7 +82,7 @@ export default function Map(props) {
       viewState={props.viewState}
       onViewStateChange={handleViewStateChange}
       controller={true}
-      layers={layers}
+      layers={[renderedLayer]}
       onHover={onHover}
     >
       <StaticMap

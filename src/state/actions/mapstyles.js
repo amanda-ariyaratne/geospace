@@ -1,6 +1,6 @@
-export const changeMapboxStyle = (style) => {
+export const changeMapStyle = (style) => {
   return {
-    type: "CHANGE",
+    type: "CHANGE MAPSTYLE",
     payload: style,
   };
 };
