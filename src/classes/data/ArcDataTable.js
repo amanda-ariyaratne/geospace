@@ -6,6 +6,7 @@ export default class ArcDataTable {
     this.startLongitudeHeaderIndex = null;
     this.endLatitudeHeaderIndex = null;
     this.endLongitudeHeaderIndex = null;
+    this.headerNames = [];
   }
 
   setDataset(jsonData) {
@@ -17,23 +18,6 @@ export default class ArcDataTable {
         let startLatitude = object[this.startLatitudeHeaderIndex];
         let endLongitude = object[this.endLongitudeHeaderIndex];
         let endLatitude = object[this.endLatitudeHeaderIndex];
-
-        // skip if latitude or longitude are not valid
-        if (
-          isNaN(startLongitude) ||
-          isNaN(startLatitude) ||
-          isNaN(endLongitude) ||
-          isNaN(endLatitude)
-        ) {
-          return filteredData;
-        } else if (
-          !this.isValidLongitude(startLongitude) ||
-          !this.isValidLatitude(startLatitude) ||
-          !this.isValidLongitude(endLongitude) ||
-          !this.isValidLatitude(endLatitude)
-        ) {
-          return filteredData;
-        }
 
         startLongitude = Number(startLongitude);
         startLatitude = Number(startLatitude);
@@ -78,6 +62,10 @@ export default class ArcDataTable {
         ) {
           sortedHeader.push(this.headers[i]);
         }
+      }
+      for (let i = 0; i < this.headers.length; ++i) {
+        sortedHeader[i].index = i;
+        this.headerNames.push(sortedHeader[i].name);
       }
       this.headers = sortedHeader;
       this.startLongitudeHeaderIndex = 0;

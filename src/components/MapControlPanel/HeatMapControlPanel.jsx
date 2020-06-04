@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ScatterplotMapControlPanel(props) {
+export default function HeatMapControlPanel(props) {
   const classes = useStyles();
   const dispatch = useDispatch();
   const heatMap = useSelector((state) => state.heat);
@@ -183,7 +183,6 @@ export default function ScatterplotMapControlPanel(props) {
         display="flex"
         flexDirection="column"
         className={`${classes.boxStyle} ${classes.opacityBox}`}
-        fullWidth
       >
         <Typography variant="subtitle1">Opacity</Typography>
 
