@@ -75,7 +75,6 @@ export default function ScatterplotMapControlPanel(props) {
 
   const handleChangeMetaData = (event) => {
     const index = Number(event.target.name);
-    console.log(index);
     if (event.target.checked) {
       showOnHover = [...showOnHover, index];
 

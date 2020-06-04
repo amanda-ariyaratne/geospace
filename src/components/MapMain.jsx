@@ -32,6 +32,10 @@ export default function MapMain() {
   switch (currentVis) {
     case "scatterplot":
     case "heat":
+    case "route":
+    case "bar":
+    case "line":
+    case "sankey":
       return (
         <Box order={2} className="main ">
           <Box order={1} className="panel">

@@ -9,6 +9,7 @@ import mapstyleReducer from "./mapstyle";
 import currentVisualizationReducer from "./currentVisualization";
 import scatterplotReducer from "./scatterplot";
 import heatReducer from "./heat";
+import routeReducer from "./route";
 
 import { combineReducers } from "redux";
 
@@ -23,7 +24,7 @@ const rootReducer = combineReducers({
   mapstyle: mapstyleReducer,
   currentVis: currentVisualizationReducer,
   scatterplot: scatterplotReducer,
-  heat: heatReducer,
+  route: routeReducer,
 });
 
 export default rootReducer;

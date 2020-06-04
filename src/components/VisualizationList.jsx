@@ -2,6 +2,7 @@ import React, { useState, Fragment } from "react";
 
 // components
 import ScatterplotConfiguration from "./Configurations/ScatterplotConfiguration";
+import HeatConfiguration from "./Configurations/HeatConfiguration";
 
 // material-ui
 import {
@@ -28,12 +29,14 @@ import { makeStyles } from "@material-ui/core/styles";
 import VisualizationMapper from "../classes/data/VisualizationMapper";
 import Scatterplot from "../classes/map/Scatterplot";
 import HeatMap from "../classes/map/HeatMap";
+import Route from "../classes/map/Route";
 
 // redux
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { addScatterplot } from "../state/actions/scatterplot";
 import { addHeat } from "../state/actions/heat";
+import { addRoute } from "../state/actions/route";
 import { changeCurrentVisualization } from "../state/actions/currentVisualization";
 
 // react-router
@@ -200,6 +203,32 @@ export default function VisualizationList(props) {
       };
     });
   };
+
+  const handleRouteOpen = () => {
+    if (
+      routeConfig.srcLongitude === -1 ||
+      routeConfig.srcLatitude === -1 ||
+      routeConfig.dstLongitude === -1 ||
+      routeConfig.dstLatitude === -1
+    ) {
+      return;
+    }
+    console.log("hey");
+    const route = new Route(
+      datafile.data,
+      headers,
+      routeConfig.srcLatitude,
+      routeConfig.srcLongitude,
+      routeConfig.dstLatitude,
+      routeConfig.dstLongitude
+    );
+    route.dataTable.callFetchDataFromGoogleApi().then(() => {
+      dispatch(addRoute(route));
+      dispatch(changeCurrentVisualization("route"));
+      props.history.push("/maps");
+    });
+  };
+
   // **************************************************** //
 
   // *************** Bar Configuration *************** //
@@ -224,6 +253,10 @@ export default function VisualizationList(props) {
         y: event.target.value,
       };
     });
+  };
+
+  const handleBarOpen = () => {
+    return;
   };
   // **************************************************** //
 
@@ -250,6 +283,10 @@ export default function VisualizationList(props) {
       };
     });
   };
+
+  const handleLineOpen = () => {
+    return;
+  };
   // **************************************************** //
 
   // *************** Sankey Configuration *************** //
@@ -274,6 +311,10 @@ export default function VisualizationList(props) {
         to: event.target.value,
       };
     });
+  };
+
+  const handleSankeyOpen = () => {
+    return;
   };
   // **************************************************** //
 
@@ -417,6 +458,7 @@ export default function VisualizationList(props) {
           changeRouteSrcLatitude={changeRouteSrcLatitude}
           changeRouteDstLongitude={changeRouteDstLongitude}
           changeRouteDstLatitude={changeRouteDstLatitude}
+          handleRouteOpen={handleRouteOpen}
         />
       ) : null}
       {openConfig === "bar" ? (
@@ -425,6 +467,7 @@ export default function VisualizationList(props) {
           barConfig={barConfig}
           changeBarX={changeBarX}
           changeBarY={changeBarY}
+          handleBarOpen={handleBarOpen}
         />
       ) : null}
       {openConfig === "line" ? (
@@ -433,6 +476,7 @@ export default function VisualizationList(props) {
           lineConfig={lineConfig}
           changeLineX={changeLineX}
           changeLineY={changeLineY}
+          handleLineOpen={handleLineOpen}
         />
       ) : null}
       {openConfig === "sankey" ? (
@@ -441,81 +485,12 @@ export default function VisualizationList(props) {
           sankeyConfig={sankeyConfig}
           changeSankeyFrom={changeSankeyFrom}
           changeSankeyTo={changeSankeyTo}
+          handleSankeyOpen={handleSankeyOpen}
         />
       ) : null}
     </Box>
   ) : (
     <Redirect to="/" />
-  );
-}
-
-function HeatConfiguration(props) {
-  const classes = useStyles();
-  return (
-    <Box display="flex" flexDirection="row" alignItems="baseline">
-      <FormControl
-        variant="outlined"
-        className={classes.formControl}
-        error={props.heatConfig.longitude === -1 ? true : false}
-      >
-        <InputLabel id="longitude-label">Longitude</InputLabel>
-        <Select
-          labelId="longitude-label"
-          value={props.heatConfig.longitude}
-          onChange={props.changeHeatLongitude}
-          label="Longitude"
-        >
-          <MenuItem value={-1}>
-            <em>None</em>
-          </MenuItem>
-          {props.headers.map((header) => {
-            if (header.selected === "longitude") {
-              return (
-                <MenuItem key={header.index} value={header.index}>
-                  {header.name}
-                </MenuItem>
-              );
-            }
-          })}
-        </Select>
-      </FormControl>
-      <FormControl
-        variant="outlined"
-        className={classes.formControl}
-        error={props.heatConfig.latitude === -1 ? true : false}
-      >
-        <InputLabel id="latitude-label">Latitude</InputLabel>
-        <Select
-          labelId="latitude-label"
-          value={props.heatConfig.latitude}
-          onChange={props.changeHeatLatitude}
-          label="Latitude"
-        >
-          <MenuItem value={-1}>
-            <em>None</em>
-          </MenuItem>
-          {props.headers.map((header) => {
-            if (header.selected === "latitude") {
-              return (
-                <MenuItem key={header.index} value={header.index}>
-                  {header.name}
-                </MenuItem>
-              );
-            }
-          })}
-        </Select>
-      </FormControl>
-      <Button
-        variant="contained"
-        color="primary"
-        className={classes.button}
-        size="large"
-        startIcon={<LaunchIcon />}
-        onClick={props.handleHeatOpen}
-      >
-        OPEN
-      </Button>
-    </Box>
   );
 }
 
@@ -541,7 +516,11 @@ function RouteConfiguration(props) {
             </MenuItem>
             {props.headers.map((header) => {
               if (header.selected === "longitude") {
-                return <MenuItem value={header.index}>{header.name}</MenuItem>;
+                return (
+                  <MenuItem key={header.index} value={header.index}>
+                    {header.name}
+                  </MenuItem>
+                );
               }
             })}
           </Select>
@@ -563,7 +542,11 @@ function RouteConfiguration(props) {
             </MenuItem>
             {props.headers.map((header) => {
               if (header.selected === "latitude") {
-                return <MenuItem value={header.index}>{header.name}</MenuItem>;
+                return (
+                  <MenuItem key={header.index} value={header.index}>
+                    {header.name}
+                  </MenuItem>
+                );
               }
             })}
           </Select>
@@ -589,7 +572,11 @@ function RouteConfiguration(props) {
             </MenuItem>
             {props.headers.map((header) => {
               if (header.selected === "longitude") {
-                return <MenuItem value={header.index}>{header.name}</MenuItem>;
+                return (
+                  <MenuItem key={header.index} value={header.index}>
+                    {header.name}
+                  </MenuItem>
+                );
               }
             })}
           </Select>
@@ -611,7 +598,11 @@ function RouteConfiguration(props) {
             </MenuItem>
             {props.headers.map((header) => {
               if (header.selected === "latitude") {
-                return <MenuItem value={header.index}>{header.name}</MenuItem>;
+                return (
+                  <MenuItem key={header.index} value={header.index}>
+                    {header.name}
+                  </MenuItem>
+                );
               }
             })}
           </Select>
@@ -624,6 +615,7 @@ function RouteConfiguration(props) {
           className={classes.button}
           size="large"
           startIcon={<LaunchIcon />}
+          onClick={props.handleRouteOpen}
         >
           OPEN
         </Button>
@@ -686,6 +678,7 @@ function BarConfiguration(props) {
         className={classes.button}
         size="large"
         startIcon={<LaunchIcon />}
+        onClick={props.handleBarOpen}
       >
         OPEN
       </Button>
@@ -747,6 +740,7 @@ function LineConfiguration(props) {
         className={classes.button}
         size="large"
         startIcon={<LaunchIcon />}
+        onClick={props.handleLineOpen}
       >
         OPEN
       </Button>
@@ -808,6 +802,7 @@ function SankeyConfiguration(props) {
         className={classes.button}
         size="large"
         startIcon={<LaunchIcon />}
+        onClick={props.handleSankeyOpen}
       >
         OPEN
       </Button>
