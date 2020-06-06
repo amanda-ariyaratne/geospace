@@ -9,14 +9,17 @@ import EmptyChart from "./Charts/EmptyChart";
 // redux
 import { useSelector } from "react-redux";
 
+// react-router
+import { Redirect } from "react-router-dom";
+
 export default function ChartWrapper(props) {
-  const type = useSelector((state) => state.chart);
+  const type = useSelector((state) => state.currentVis);
   switch (type) {
-    case 1:
+    case "bar":
       return <BarChart />;
-    case 2:
+    case "sankey":
       return <SankeyDiagram />;
-    case 3:
+    case "line":
       return (
         <LineChart
           lastDrawLocation={props.lastDrawLocation}
@@ -24,6 +27,6 @@ export default function ChartWrapper(props) {
         />
       );
     default:
-      return <EmptyChart />;
+      return <Redirect to="/" />;
   }
 }
