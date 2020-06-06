@@ -1,6 +1,6 @@
 // import viewstateReducer from "./viewstate";
 import layersReducer from "./layers";
-// import barChartReducer from "./barchart";
+import barReducer from "./bar";
 // import chartReducer from "./chart";
 // import sankeyDiagramReducer from "./sankeydiagram";
 // import lineChartReducer from "./linechart";
@@ -16,7 +16,7 @@ import { combineReducers } from "redux";
 const rootReducer = combineReducers({
   // viewstate: viewstateReducer,
   layers: layersReducer,
-  // barChart: barChartReducer,
+  bar: barReducer,
   // chart: chartReducer,
   // sankeyDiagram: sankeyDiagramReducer,
   // lineChart: lineChartReducer,
@@ -24,6 +24,7 @@ const rootReducer = combineReducers({
   mapstyle: mapstyleReducer,
   currentVis: currentVisualizationReducer,
   scatterplot: scatterplotReducer,
+  heat: heatReducer,
   route: routeReducer,
 });
 

@@ -71,6 +71,7 @@ export default function HomePage(props) {
         props.history.push("/help");
       })
       .catch((err) => {
+        console.log(err);
         setFileErrorMessage(err.message);
         setFileError(true);
         setLoading(false);

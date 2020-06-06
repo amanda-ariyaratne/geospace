@@ -8,7 +8,7 @@ export default class VisualizationMapper {
     const heatmap = this.containsLatLongPair();
     const routemap = this.containsTwoLatLongPair();
 
-    const barchart = this.containsSuitableAxis();
+    const barchart = this.containsStringAndNumber();
     const linechart = this.containsSuitableAxis();
     const sankeychart = this.containsTwoStrings();
 
@@ -71,5 +71,18 @@ export default class VisualizationMapper {
       }
     }
     return string > 1;
+  }
+
+  containsStringAndNumber() {
+    let string = 0;
+    let number = 0;
+    for (let i = 0; i < this.headers.length; ++i) {
+      if (this.headers[i].selected == "string") {
+        string++;
+      } else if (this.headers[i].selected == "number") {
+        number++;
+      }
+    }
+    return string > 0 && number > 0;
   }
 }

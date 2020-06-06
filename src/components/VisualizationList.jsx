@@ -1,8 +1,10 @@
-import React, { useState, Fragment } from "react";
+import React, { useState } from "react";
 
 // components
 import ScatterplotConfiguration from "./Configurations/ScatterplotConfiguration";
 import HeatConfiguration from "./Configurations/HeatConfiguration";
+import RouteConfiguration from "./Configurations/RouteConfiguration";
+import BarConfiguration from "./Configurations/BarConfiguration";
 
 // material-ui
 import {
@@ -30,6 +32,7 @@ import VisualizationMapper from "../classes/data/VisualizationMapper";
 import Scatterplot from "../classes/map/Scatterplot";
 import HeatMap from "../classes/map/HeatMap";
 import Route from "../classes/map/Route";
+import BarChart from "../classes/chart/BarChart";
 
 // redux
 import { useSelector } from "react-redux";
@@ -37,6 +40,7 @@ import { useDispatch } from "react-redux";
 import { addScatterplot } from "../state/actions/scatterplot";
 import { addHeat } from "../state/actions/heat";
 import { addRoute } from "../state/actions/route";
+import { addBar } from "../state/actions/bar";
 import { changeCurrentVisualization } from "../state/actions/currentVisualization";
 
 // react-router
@@ -64,6 +68,13 @@ const useStyles = makeStyles((theme) => ({
     "& > *": {
       padding: "16px 0px",
     },
+  },
+  chips: {
+    display: "flex",
+    flexWrap: "wrap",
+  },
+  chip: {
+    margin: 2,
   },
 }));
 
@@ -213,7 +224,6 @@ export default function VisualizationList(props) {
     ) {
       return;
     }
-    console.log("hey");
     const route = new Route(
       datafile.data,
       headers,
@@ -234,7 +244,7 @@ export default function VisualizationList(props) {
   // *************** Bar Configuration *************** //
   const [barConfig, setBarConfig] = useState({
     x: -1,
-    y: -1,
+    y: [],
   });
 
   const changeBarX = (event) => {
@@ -256,7 +266,14 @@ export default function VisualizationList(props) {
   };
 
   const handleBarOpen = () => {
-    return;
+    if (barConfig.x === -1 || barConfig.y === -1) {
+      return;
+    }
+
+    const bar = new BarChart(datafile.data, headers, barConfig.x, barConfig.y);
+    dispatch(addBar(bar));
+    dispatch(changeCurrentVisualization("bar"));
+    props.history.push("/charts");
   };
   // **************************************************** //
 
@@ -491,198 +508,6 @@ export default function VisualizationList(props) {
     </Box>
   ) : (
     <Redirect to="/" />
-  );
-}
-
-function RouteConfiguration(props) {
-  const classes = useStyles();
-  return (
-    <Fragment>
-      <Box display="flex" flexDirection="row" alignItems="baseline">
-        <FormControl
-          variant="outlined"
-          className={classes.formControl}
-          error={props.routeConfig.srcLongitude === -1 ? true : false}
-        >
-          <InputLabel id="longitude-label">Source Longitude</InputLabel>
-          <Select
-            labelId="src-longitude-label"
-            value={props.routeConfig.srcLongitude}
-            onChange={props.changeRouteSrcLongitude}
-            label="Source Longitude"
-          >
-            <MenuItem value={-1}>
-              <em>None</em>
-            </MenuItem>
-            {props.headers.map((header) => {
-              if (header.selected === "longitude") {
-                return (
-                  <MenuItem key={header.index} value={header.index}>
-                    {header.name}
-                  </MenuItem>
-                );
-              }
-            })}
-          </Select>
-        </FormControl>
-        <FormControl
-          variant="outlined"
-          className={classes.formControl}
-          error={props.routeConfig.srcLatitude === -1 ? true : false}
-        >
-          <InputLabel id="src-latitude-label">Source Latitude</InputLabel>
-          <Select
-            labelId="src-latitude-label"
-            value={props.routeConfig.srcLatitude}
-            onChange={props.changeRouteSrcLatitude}
-            label="Source Latitude"
-          >
-            <MenuItem value={-1}>
-              <em>None</em>
-            </MenuItem>
-            {props.headers.map((header) => {
-              if (header.selected === "latitude") {
-                return (
-                  <MenuItem key={header.index} value={header.index}>
-                    {header.name}
-                  </MenuItem>
-                );
-              }
-            })}
-          </Select>
-        </FormControl>
-      </Box>
-      <Box display="flex" flexDirection="row" alignItems="baseline">
-        <FormControl
-          variant="outlined"
-          className={classes.formControl}
-          error={props.routeConfig.dstLongitude === -1 ? true : false}
-        >
-          <InputLabel id="dst-longitude-label">
-            Destination Longitude
-          </InputLabel>
-          <Select
-            labelId="dst-longitude-label"
-            value={props.routeConfig.dstLongitude}
-            onChange={props.changeRouteDstLongitude}
-            label="Destination Longitude"
-          >
-            <MenuItem value={-1}>
-              <em>None</em>
-            </MenuItem>
-            {props.headers.map((header) => {
-              if (header.selected === "longitude") {
-                return (
-                  <MenuItem key={header.index} value={header.index}>
-                    {header.name}
-                  </MenuItem>
-                );
-              }
-            })}
-          </Select>
-        </FormControl>
-        <FormControl
-          variant="outlined"
-          className={classes.formControl}
-          error={props.routeConfig.dstLatitude === -1 ? true : false}
-        >
-          <InputLabel id="dst-latitude-label">Destination Latitude</InputLabel>
-          <Select
-            labelId="dst-latitude-label"
-            value={props.routeConfig.dstLatitude}
-            onChange={props.changeRouteDstLatitude}
-            label="Destination Latitude"
-          >
-            <MenuItem value={-1}>
-              <em>None</em>
-            </MenuItem>
-            {props.headers.map((header) => {
-              if (header.selected === "latitude") {
-                return (
-                  <MenuItem key={header.index} value={header.index}>
-                    {header.name}
-                  </MenuItem>
-                );
-              }
-            })}
-          </Select>
-        </FormControl>
-      </Box>
-      <Box>
-        <Button
-          variant="contained"
-          color="primary"
-          className={classes.button}
-          size="large"
-          startIcon={<LaunchIcon />}
-          onClick={props.handleRouteOpen}
-        >
-          OPEN
-        </Button>
-      </Box>
-    </Fragment>
-  );
-}
-
-function BarConfiguration(props) {
-  const classes = useStyles();
-  return (
-    <Box display="flex" flexDirection="row" alignItems="baseline">
-      <FormControl
-        variant="outlined"
-        className={classes.formControl}
-        error={props.barConfig.x === -1 ? true : false}
-      >
-        <InputLabel id="x-label">X Axis</InputLabel>
-        <Select
-          labelId="x-label"
-          value={props.barConfig.x}
-          onChange={props.changeBarX}
-          label="X Axis"
-        >
-          <MenuItem value={-1}>
-            <em>None</em>
-          </MenuItem>
-          {props.headers.map((header) => {
-            if (header.selected === "string" || header.selected === "number") {
-              return <MenuItem value={header.index}>{header.name}</MenuItem>;
-            }
-          })}
-        </Select>
-      </FormControl>
-      <FormControl
-        variant="outlined"
-        className={classes.formControl}
-        error={props.barConfig.y === -1 ? true : false}
-      >
-        <InputLabel id="y-label">Y Axis</InputLabel>
-        <Select
-          labelId="y-label"
-          value={props.barConfig.y}
-          onChange={props.changeBarY}
-          label="Y Axis"
-        >
-          <MenuItem value={-1}>
-            <em>None</em>
-          </MenuItem>
-          {props.headers.map((header) => {
-            if (header.selected === "number") {
-              return <MenuItem value={header.index}>{header.name}</MenuItem>;
-            }
-          })}
-        </Select>
-      </FormControl>
-      <Button
-        variant="contained"
-        color="primary"
-        className={classes.button}
-        size="large"
-        startIcon={<LaunchIcon />}
-        onClick={props.handleBarOpen}
-      >
-        OPEN
-      </Button>
-    </Box>
   );
 }
 

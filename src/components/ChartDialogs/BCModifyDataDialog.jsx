@@ -20,7 +20,7 @@ import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 // classes
-import BarChartData from "../../classes/chart/BarChartData";
+import BarChartData from "../../classes/chart/BarChart";
 
 // redux
 import { useSelector } from "react-redux";

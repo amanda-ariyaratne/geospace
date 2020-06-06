@@ -10,13 +10,13 @@ import { useSelector } from "react-redux";
 import { props } from "bluebird";
 
 export default function ControlPanelWrapper(props) {
-  const type = useSelector((state) => state.chart);
+  const type = useSelector((state) => state.currentVis);
   switch (type) {
-    case 1:
+    case "bar":
       return <BarChartControlPanel />;
-    case 2:
+    case "sankey":
       return <SankeyDiagramControlPanel />;
-    case 3:
+    case "line":
       return (
         <LineChartControlPanel
           setLastDrawLocation={props.setLastDrawLocation}
