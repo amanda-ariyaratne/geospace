@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // components
-import LCModifyDataDialog from "../ChartDialogs/LCModifyDataDialog";
+// import LCModifyDataDialog from "../ChartDialogs/LCModifyDataDialog";
 
 // material-ui
 import { Box, Button } from "@material-ui/core";
@@ -27,7 +27,7 @@ export default function LCModifyChartButton(props) {
       >
         CHART
       </Button>
-      <LCModifyDataDialog open={open} onClose={handleClose} />
+      {/* <LCModifyDataDialog open={open} onClose={handleClose} /> */}
     </Box>
   );
 }

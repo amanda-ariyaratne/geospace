@@ -8,36 +8,35 @@ export default class LineChartData {
   }
 
   setDataset(jsonData) {
-    const filtered = [];
-    for (let i = 0; i < this.yHeaderIndices.length; ++i) {
-      filtered.push([]);
-    }
-
     try {
       // produce the basic dataset
+      const filtered = [[this.headers[this.xHeaderIndex].name]];
+      for (let i = 0; i < this.yHeaderIndices.length; ++i) {
+        filtered[0].push(this.headers[this.yHeaderIndices[i]].name);
+      }
+
       this.series = jsonData.reduce((filtered, row) => {
+        const el = [];
+        const x =
+          this.headers[this.xHeaderIndex].selected === "number"
+            ? Number(row[this.xHeaderIndex])
+            : row[this.xHeaderIndex];
+        el.push(x);
         for (let i = 0; i < this.yHeaderIndices.length; ++i) {
-          const y = row[this.yHeaderIndices[i]];
-          if (isNaN(y)) {
-            console.log(row);
-            throw new Error("Not a number");
-          }
-          filtered[i].push({
-            x: row[this.xHeaderIndex],
-            y: Number(y),
-          });
+          const y = Number(row[this.yHeaderIndices[i]]);
+          el.push(y);
         }
+        filtered.push(el);
         return filtered;
       }, filtered);
 
       // sum up similar keys
-      this.sumDataByKey();
+      // this.sumDataByKey();
 
-      this.legendHeaders = this.yHeaderIndices.map((i) => {
-        return this.headers[i];
-      });
+      // this.legendHeaders = this.yHeaderIndices.map((i) => {
+      //   return this.headers[i].name;
+      // });
     } catch (err) {
-      console.log(err);
       throw err;
     }
   }

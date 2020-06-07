@@ -14,7 +14,7 @@ import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 // classes
-import SankeyDiagramData from "../../classes/chart/SankeyDiagramData";
+// import SankeyDiagramData from "../../classes/chart/SankeyDiagramData";
 
 // redux
 import { useSelector } from "react-redux";
@@ -129,26 +129,26 @@ export default function ModifyDataDialog(props) {
       return;
     }
     setError("");
-    const sankeyDiagramData = new SankeyDiagramData(
-      sankeyDiagram.headers,
-      from,
-      to,
-      weight
-    );
-    try {
-      sankeyDiagramData.setDataset(sankeyDiagram.rawData);
-      dispatch(
-        addFilteredData({
-          filtered: sankeyDiagramData.data,
-          from,
-          to,
-          specifyWeight,
-          weight,
-        })
-      );
-    } catch (err) {
-      setError("Weight can only contain numerical data");
-    }
+    // const sankeyDiagramData = new SankeyDiagramData(
+    //   sankeyDiagram.headers,
+    //   from,
+    //   to,
+    //   weight
+    // );
+    // try {
+    //   sankeyDiagramData.setDataset(sankeyDiagram.rawData);
+    //   dispatch(
+    //     addFilteredData({
+    //       filtered: sankeyDiagramData.data,
+    //       from,
+    //       to,
+    //       specifyWeight,
+    //       weight,
+    //     })
+    //   );
+    // } catch (err) {
+    //   setError("Weight can only contain numerical data");
+    // }
     handleClose();
   };
 

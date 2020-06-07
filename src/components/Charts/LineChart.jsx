@@ -1,107 +1,46 @@
-import React, { useState } from "react";
+import React from "react";
 
-import "../../../node_modules/react-vis/dist/style.css";
-
-// components
-import EmptyChart from "./EmptyChart";
-
-import {
-  LineSeries,
-  VerticalGridLines,
-  HorizontalGridLines,
-  XAxis,
-  YAxis,
-  XYPlot,
-  Highlight,
-  FlexibleXYPlot,
-} from "react-vis";
+// google charts
+import Chart from "react-google-charts";
 
 // redux
 import { useSelector } from "react-redux";
 
-function LineChart(props) {
-  const axisStyle = {
-    line: { stroke: "black" },
-    ticks: { stroke: "black" },
-    text: { stroke: "black", fill: "black", fontWeight: 300 },
-    title: { stroke: "black", fill: "black", fontWeight: 300, fontSize: 16 },
-  };
-
-  const gridStyle = {
-    line: { stroke: "black" },
-  };
-
-  const lineChart = useSelector((state) => state.lineChart);
-  const lastDrawLocation = props.lastDrawLocation;
-
-  const setLastDrawLocation = (value) => {
-    props.setLastDrawLocation(value);
-  };
-
-  const xAxisTitle = lineChart.xAxisTitle;
-  const yAxisTitle = lineChart.yAxisTitle;
-
-  let plotAttributes = {
-    xType: "ordinal",
-    margin: { left: 100, bottom: 100 },
-  };
-
-  const colors = [
-    "#12939A",
-    "#79C7FF",
-    "#1A3177",
-    "#FF9833",
-    "#EF5D28",
-    "#496A81",
-    "#813405",
-    "#FFA69E",
-    "#5C9EAD",
-    "#A7A5C6",
-    "#EF476F",
-    "#FFD166",
-    "#06D6A0",
-  ];
+function LineChart() {
+  const data = useSelector((state) => state.line.dataTable.series);
+  const title = useSelector((state) => state.line.title);
+  const xTitle = useSelector((state) => state.line.hAxis.title);
+  const yTitle = useSelector((state) => state.line.vAxis.title);
+  const curveType = useSelector((state) => state.line.curveType);
 
   return (
-    <React.Fragment>
-      {lineChart.series.length > 0 ? (
-        <FlexibleXYPlot
-          {...plotAttributes}
-          animation
-          xDomain={
-            lastDrawLocation && [lastDrawLocation.left, lastDrawLocation.right]
-          }
-          yDomain={
-            lastDrawLocation && [lastDrawLocation.bottom, lastDrawLocation.top]
-          }
-        >
-          <VerticalGridLines />
-          <HorizontalGridLines />
-          <XAxis style={axisStyle} tickLabelAngle={-45} title={xAxisTitle} />
-          <YAxis style={axisStyle} title={yAxisTitle} />
-          {lineChart !== null && lineChart.series !== null
-            ? lineChart.series.map((series, index) => {
-                return (
-                  <LineSeries key={index} data={series} color={colors[index]} />
-                );
-              })
-            : null}
-          {/* <Highlight
-            onBrushEnd={(area) => setLastDrawLocation(area)}
-            onDrag={(area) => {
-              setLastDrawLocation({
-                bottom: lastDrawLocation.bottom + (area.top - area.bottom),
-                left: lastDrawLocation.left - (area.right - area.left),
-                right: lastDrawLocation.right - (area.right - area.left),
-                top: lastDrawLocation.top + (area.top - area.bottom),
-              });
-            }}
-          /> */}
-        </FlexibleXYPlot>
-      ) : (
-        <EmptyChart />
-      )}
-    </React.Fragment>
+    <div className="App">
+      <Chart
+        width="100%"
+        height="85vh"
+        chartType="LineChart"
+        loader={<div>Loading Chart</div>}
+        data={data}
+        options={{
+          title: title,
+          titleTextStyle: {
+            bold: true,
+            italic: true,
+            fontSize: 28,
+          },
+          curveType: curveType,
+          chartArea: { width: "80%" },
+          hAxis: {
+            title: xTitle,
+            minValue: 0,
+          },
+          vAxis: {
+            title: yTitle,
+          },
+          is3D: true,
+        }}
+      />
+    </div>
   );
 }
 

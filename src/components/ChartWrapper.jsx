@@ -2,7 +2,7 @@ import React from "react";
 
 // components
 import BarChart from "./Charts/BarChart";
-import SankeyDiagram from "./Charts/SankeyDiagram";
+import SankeyChart from "./Charts/SankeyChart";
 import LineChart from "./Charts/LineChart";
 import EmptyChart from "./Charts/EmptyChart";
 
@@ -18,7 +18,7 @@ export default function ChartWrapper(props) {
     case "bar":
       return <BarChart />;
     case "sankey":
-      return <SankeyDiagram />;
+      return <SankeyChart />;
     case "line":
       return (
         <LineChart

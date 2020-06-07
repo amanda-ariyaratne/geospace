@@ -3,7 +3,7 @@ import React from "react";
 // components
 import BarChartControlPanel from "./BarChartControlPanel";
 import LineChartControlPanel from "./LineChartControlPanel";
-import SankeyDiagramControlPanel from "./SankeyDiagramControlPanel";
+import SankeyChartControlPanel from "./SankeyChartControlPanel";
 
 // redux
 import { useSelector } from "react-redux";
@@ -15,7 +15,7 @@ export default function ControlPanelWrapper(props) {
     case "bar":
       return <BarChartControlPanel />;
     case "sankey":
-      return <SankeyDiagramControlPanel />;
+      return <SankeyChartControlPanel />;
     case "line":
       return (
         <LineChartControlPanel
