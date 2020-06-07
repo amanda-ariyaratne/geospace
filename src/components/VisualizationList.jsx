@@ -1,11 +1,5 @@
 import React, { useState } from "react";
 
-// components
-import ScatterplotConfiguration from "./Configurations/ScatterplotConfiguration";
-import HeatConfiguration from "./Configurations/HeatConfiguration";
-import RouteConfiguration from "./Configurations/RouteConfiguration";
-import BarConfiguration from "./Configurations/BarConfiguration";
-
 // material-ui
 import {
   Box,
@@ -15,17 +9,19 @@ import {
   ListItemIcon,
   ListItemText,
   Divider,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  Button,
 } from "@material-ui/core";
 import MapIcon from "@material-ui/icons/Map";
 import AssessmentIcon from "@material-ui/icons/Assessment";
 import AccountTreeIcon from "@material-ui/icons/AccountTree";
-import LaunchIcon from "@material-ui/icons/Launch";
 import { makeStyles } from "@material-ui/core/styles";
+
+// components
+import ScatterplotConfiguration from "./Configurations/ScatterplotConfiguration";
+import HeatConfiguration from "./Configurations/HeatConfiguration";
+import RouteConfiguration from "./Configurations/RouteConfiguration";
+import BarConfiguration from "./Configurations/BarConfiguration";
+import LineConfiguration from "./Configurations/LineConfiguration";
+import SankeyConfiguration from "./Configurations/SankeyConfiguration";
 
 // classes
 import VisualizationMapper from "../classes/data/VisualizationMapper";
@@ -33,6 +29,8 @@ import Scatterplot from "../classes/map/Scatterplot";
 import HeatMap from "../classes/map/HeatMap";
 import Route from "../classes/map/Route";
 import BarChart from "../classes/chart/BarChart";
+import LineChart from "../classes/chart/LineChart";
+import SankeyChart from "../classes/chart/SankeyChart";
 
 // redux
 import { useSelector } from "react-redux";
@@ -41,6 +39,8 @@ import { addScatterplot } from "../state/actions/scatterplot";
 import { addHeat } from "../state/actions/heat";
 import { addRoute } from "../state/actions/route";
 import { addBar } from "../state/actions/bar";
+import { addLine } from "../state/actions/line";
+import { addSankey } from "../state/actions/sankey";
 import { changeCurrentVisualization } from "../state/actions/currentVisualization";
 
 // react-router
@@ -266,7 +266,7 @@ export default function VisualizationList(props) {
   };
 
   const handleBarOpen = () => {
-    if (barConfig.x === -1 || barConfig.y === -1) {
+    if (barConfig.x === -1 || barConfig.y.length === 0) {
       return;
     }
 
@@ -280,7 +280,7 @@ export default function VisualizationList(props) {
   // *************** Line Configuration *************** //
   const [lineConfig, setLineConfig] = useState({
     x: -1,
-    y: -1,
+    y: [],
   });
 
   const changeLineX = (event) => {
@@ -302,7 +302,19 @@ export default function VisualizationList(props) {
   };
 
   const handleLineOpen = () => {
-    return;
+    if (lineConfig.x === -1 || lineConfig.y.length === 0) {
+      return;
+    }
+
+    const line = new LineChart(
+      datafile.data,
+      headers,
+      lineConfig.x,
+      lineConfig.y
+    );
+    dispatch(addLine(line));
+    dispatch(changeCurrentVisualization("line"));
+    props.history.push("/charts");
   };
   // **************************************************** //
 
@@ -331,7 +343,20 @@ export default function VisualizationList(props) {
   };
 
   const handleSankeyOpen = () => {
-    return;
+    if (sankeyConfig.from === -1 || sankeyConfig.to === -1) {
+      return;
+    }
+
+    const sankey = new SankeyChart(
+      datafile.data,
+      headers,
+      sankeyConfig.from,
+      sankeyConfig.to,
+      ""
+    );
+    dispatch(addSankey(sankey));
+    dispatch(changeCurrentVisualization("sankey"));
+    props.history.push("/charts");
   };
   // **************************************************** //
 
@@ -508,129 +533,5 @@ export default function VisualizationList(props) {
     </Box>
   ) : (
     <Redirect to="/" />
-  );
-}
-
-function LineConfiguration(props) {
-  const classes = useStyles();
-  return (
-    <Box display="flex" flexDirection="row" alignItems="baseline">
-      <FormControl
-        variant="outlined"
-        className={classes.formControl}
-        error={props.lineConfig.x === -1 ? true : false}
-      >
-        <InputLabel id="x-label">X Axis</InputLabel>
-        <Select
-          labelId="x-label"
-          value={props.lineConfig.x}
-          onChange={props.changeLineX}
-          label="X Axis"
-        >
-          <MenuItem value={-1}>
-            <em>None</em>
-          </MenuItem>
-          {props.headers.map((header) => {
-            if (header.selected === "string" || header.selected === "number") {
-              return <MenuItem value={header.index}>{header.name}</MenuItem>;
-            }
-          })}
-        </Select>
-      </FormControl>
-      <FormControl
-        variant="outlined"
-        className={classes.formControl}
-        error={props.lineConfig.y === -1 ? true : false}
-      >
-        <InputLabel id="y-label">Y Axis</InputLabel>
-        <Select
-          labelId="y-label"
-          value={props.lineConfig.y}
-          onChange={props.changeLineY}
-          label="Y Axis"
-        >
-          <MenuItem value={-1}>
-            <em>None</em>
-          </MenuItem>
-          {props.headers.map((header) => {
-            if (header.selected === "number") {
-              return <MenuItem value={header.index}>{header.name}</MenuItem>;
-            }
-          })}
-        </Select>
-      </FormControl>
-      <Button
-        variant="contained"
-        color="primary"
-        className={classes.button}
-        size="large"
-        startIcon={<LaunchIcon />}
-        onClick={props.handleLineOpen}
-      >
-        OPEN
-      </Button>
-    </Box>
-  );
-}
-
-function SankeyConfiguration(props) {
-  const classes = useStyles();
-  return (
-    <Box display="flex" flexDirection="row" alignItems="baseline">
-      <FormControl
-        variant="outlined"
-        className={classes.formControl}
-        error={props.sankeyConfig.from === -1 ? true : false}
-      >
-        <InputLabel id="from-label">From</InputLabel>
-        <Select
-          labelId="from-label"
-          value={props.sankeyConfig.from}
-          onChange={props.changeSankeyFrom}
-          label="From"
-        >
-          <MenuItem value={-1}>
-            <em>None</em>
-          </MenuItem>
-          {props.headers.map((header) => {
-            if (header.selected === "string") {
-              return <MenuItem value={header.index}>{header.name}</MenuItem>;
-            }
-          })}
-        </Select>
-      </FormControl>
-      <FormControl
-        variant="outlined"
-        className={classes.formControl}
-        error={props.sankeyConfig.to === -1 ? true : false}
-      >
-        <InputLabel id="to-label">To</InputLabel>
-        <Select
-          labelId="to-label"
-          value={props.sankeyConfig.to}
-          onChange={props.changeSankeyTo}
-          label="To"
-        >
-          <MenuItem value={-1}>
-            <em>None</em>
-          </MenuItem>
-          {props.headers.map((header) => {
-            if (header.selected === "string") {
-              return <MenuItem value={header.index}>{header.name}</MenuItem>;
-            }
-          })}
-        </Select>
-      </FormControl>
-      <Button
-        variant="contained"
-        color="primary"
-        className={classes.button}
-        size="large"
-        startIcon={<LaunchIcon />}
-        onClick={props.handleSankeyOpen}
-      >
-        OPEN
-      </Button>
-    </Box>
   );
 }

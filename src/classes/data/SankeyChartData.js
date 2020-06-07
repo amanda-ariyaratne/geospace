@@ -1,4 +1,4 @@
-export default class SankeyDiagramData {
+export default class SankeyChartData {
   constructor(headers, from, to, weight) {
     this.headers = headers;
     this.from = from;
@@ -24,6 +24,8 @@ export default class SankeyDiagramData {
           return filtered;
         }, []);
       }
+
+      console.log(this.data);
 
       this.data = this.data.sort();
 

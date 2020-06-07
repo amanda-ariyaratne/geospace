@@ -88,7 +88,6 @@ export default class DataFile {
       this.data.map((row) => row[i])
     );
 
-    console.log(dataTranspose);
     for (let i = 0; i < dataTranspose.length; ++i) {
       headers[i].number = this.checkIfNumber(dataTranspose[i]);
       if (headers[i].number) {

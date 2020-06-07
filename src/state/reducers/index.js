@@ -2,8 +2,8 @@
 import layersReducer from "./layers";
 import barReducer from "./bar";
 // import chartReducer from "./chart";
-// import sankeyDiagramReducer from "./sankeydiagram";
-// import lineChartReducer from "./linechart";
+import sankeyReducer from "./sankey";
+import lineReducer from "./line";
 import datafileReducer from "./datafile";
 import mapstyleReducer from "./mapstyle";
 import currentVisualizationReducer from "./currentVisualization";
@@ -18,7 +18,7 @@ const rootReducer = combineReducers({
   layers: layersReducer,
   bar: barReducer,
   // chart: chartReducer,
-  // sankeyDiagram: sankeyDiagramReducer,
+  sankey: sankeyReducer,
   // lineChart: lineChartReducer,
   datafile: datafileReducer,
   mapstyle: mapstyleReducer,
@@ -26,6 +26,7 @@ const rootReducer = combineReducers({
   scatterplot: scatterplotReducer,
   heat: heatReducer,
   route: routeReducer,
+  line: lineReducer,
 });
 
 export default rootReducer;

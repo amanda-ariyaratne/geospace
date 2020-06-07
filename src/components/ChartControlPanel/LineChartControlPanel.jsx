@@ -2,59 +2,236 @@ import React from "react";
 
 // material-ui
 import { makeStyles } from "@material-ui/core/styles";
-import { Box } from "@material-ui/core";
-
-// components
-import LCAddDataButton from "./LCAddDataButton";
-import LCModifyChartButton from "./LCModifyChartButton";
-import LCLegend from "./LCLegend";
-import LCXAxisTitle from "./LCXAxisTitle";
-import LCYAxisTitle from "./LCYAxisTitle";
-import LCResetZoomButton from "./LCResetZoomButton";
+import {
+  Box,
+  Typography,
+  FormControl,
+  InputLabel,
+  Select,
+  Input,
+  Chip,
+  MenuItem,
+  TextField,
+  RadioGroup,
+  FormControlLabel,
+  Radio,
+} from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
 
 // redux
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import {
+  addLine,
+  changeLineChartTitle,
+  changeLineXTitle,
+  changeLineYTitle,
+  changeLineCurveType,
+} from "../../state/actions/line";
+
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
+};
+
+function getStyles(header, yAxis, theme) {
+  return {
+    fontWeight:
+      yAxis.indexOf(header) === -1
+        ? theme.typography.fontWeightRegular
+        : theme.typography.fontWeightMedium,
+  };
+}
 
 const useStyles = makeStyles((theme) => ({
   boxStyle: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(4, 1),
   },
-  formControl: {
-    margin: theme.spacing(5, 1),
+  opacityBox: {
+    marginTop: 15,
   },
-  legendStyle: {
-    margin: theme.spacing(1),
-    backgroundColor: "gainsboro",
+  slider: {
+    width: "100%",
+  },
+  chips: {
+    display: "flex",
+    flexWrap: "wrap",
+  },
+  chip: {
+    margin: 2,
   },
 }));
 
 export default function LineChartControlPanel(props) {
   const classes = useStyles();
+  const theme = useTheme();
   const dispatch = useDispatch();
 
-  const lineChart = useSelector((state) => state.lineChart);
+  const lineChart = useSelector((state) => state.line);
+  const xAxis = useSelector((state) => state.line.dataTable.xHeaderIndex);
+  const yAxis = useSelector((state) => state.line.dataTable.yHeaderIndices);
+  const chartTitle = useSelector((state) => state.line.title);
+  const xTitle = useSelector((state) => state.line.hAxis.title);
+  const yTitle = useSelector((state) => state.line.vAxis.title);
+  const curveType = useSelector((state) => state.line.curveType);
+  const datafile = useSelector((state) => state.datafile);
+  const headers = datafile !== null ? datafile.headers : [];
+
+  const handleXAxisChange = (event) => {
+    lineChart.dataTable.xHeaderIndex = event.target.value;
+    lineChart.dataTable.setDataset(datafile.data);
+    dispatch(addLine(lineChart));
+  };
+
+  const handleYAxisChange = (event) => {
+    lineChart.dataTable.yHeaderIndices = event.target.value;
+    lineChart.dataTable.setDataset(datafile.data);
+    dispatch(addLine(lineChart));
+  };
+
+  const handleChartTitleChange = (event) => {
+    dispatch(changeLineChartTitle(event.target.value));
+  };
+
+  const handleXTitleChange = (event) => {
+    dispatch(changeLineXTitle(event.target.value));
+  };
+
+  const handleYTitleChange = (event) => {
+    dispatch(changeLineYTitle(event.target.value));
+  };
+
+  const handleChangeCurveType = (event) => {
+    dispatch(changeLineCurveType(event.target.value));
+  };
 
   return (
-    <Box>
-      <LCAddDataButton boxStyle={classes.boxStyle} />
-      <LCModifyChartButton boxStyle={classes.boxStyle} />
+    <Box style={{ width: 225 }}>
+      <Box display="flex" flexDirection="column" className={classes.boxStyle}>
+        <FormControl variant="standard" color="secondary">
+          <InputLabel>X Axis</InputLabel>
+          <Select native value={xAxis} onChange={handleXAxisChange}>
+            <option aria-label="None" value="" />
 
-      {/* Line Chart Legend */}
-      {lineChart.series.length > 0 ? (
-        <React.Fragment>
-          <LCXAxisTitle boxStyle={classes.boxStyle} />
-          <LCYAxisTitle boxStyle={classes.boxStyle} />
-          <LCResetZoomButton
-            boxStyle={classes.boxStyle}
-            setLastDrawLocation={props.setLastDrawLocation}
-          />
-          <LCLegend
-            legendStyle={classes.legendStyle}
-            legendHeaders={lineChart.legendHeaders}
-          />
-        </React.Fragment>
-      ) : null}
+            {headers.map((header) => {
+              if (
+                header.selected === "string" ||
+                header.selected === "number"
+              ) {
+                return (
+                  <option key={header.index} value={header.index}>
+                    {header.name}
+                  </option>
+                );
+              }
+            })}
+          </Select>
+        </FormControl>
+      </Box>
+      <Box display="flex" flexDirection="column" className={classes.boxStyle}>
+        <FormControl variant="standard" color="secondary">
+          <InputLabel id="y-label">Y Axis</InputLabel>
+          <Select
+            labelId="y-label"
+            value={yAxis}
+            onChange={handleYAxisChange}
+            label="Y Axis"
+            multiple
+            input={<Input id="select-multiple-chip" />}
+            renderValue={(selected) => (
+              <div className={classes.chips}>
+                {selected.map((value) => (
+                  <Chip
+                    key={value}
+                    label={headers[value].name}
+                    className={classes.chip}
+                  />
+                ))}
+              </div>
+            )}
+            MenuProps={MenuProps}
+          >
+            {headers.map((header) => {
+              if (header.selected === "number") {
+                return (
+                  <MenuItem
+                    key={header.index}
+                    value={header.index}
+                    style={getStyles(
+                      header.name,
+                      lineChart.dataTable.yHeaderIndices,
+                      theme
+                    )}
+                  >
+                    {header.name}
+                  </MenuItem>
+                );
+              }
+            })}
+          </Select>
+        </FormControl>
+      </Box>
+      <Box display="flex" flexDirection="column" className={classes.boxStyle}>
+        <Typography variant="subtitle1">Chart Title</Typography>
+        <TextField
+          id="title-chart"
+          value={chartTitle}
+          variant="outlined"
+          fullWidth
+          onChange={handleChartTitleChange}
+          color="secondary"
+        />
+      </Box>
+      <Box display="flex" flexDirection="column" className={classes.boxStyle}>
+        <Typography variant="subtitle1">X Axis Title</Typography>
+        <TextField
+          id="title-x"
+          value={xTitle}
+          variant="outlined"
+          fullWidth
+          onChange={handleXTitleChange}
+          color="secondary"
+        />
+      </Box>
+      <Box display="flex" flexDirection="column" className={classes.boxStyle}>
+        <Typography variant="subtitle1">Y Axis Title</Typography>
+        <TextField
+          id="title-y"
+          value={yTitle}
+          variant="outlined"
+          fullWidth
+          onChange={handleYTitleChange}
+          color="secondary"
+        />
+      </Box>
+      <Box display="flex" flexDirection="column" className={classes.boxStyle}>
+        <Typography variant="subtitle1">Curve Type</Typography>
+        <FormControl component="fieldset" className={classes.formControl}>
+          <RadioGroup
+            aria-label="gender"
+            name="gender1"
+            value={curveType}
+            onChange={handleChangeCurveType}
+          >
+            <FormControlLabel
+              value="none"
+              control={<Radio />}
+              label="Straight"
+            />
+            <FormControlLabel
+              value="function"
+              control={<Radio />}
+              label="Smoothed"
+            />
+          </RadioGroup>
+        </FormControl>
+      </Box>
     </Box>
   );
 }

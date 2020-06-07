@@ -88,10 +88,10 @@ export default function HomePage(props) {
       justifyContent="center"
       alignItems="center"
     >
-      <Typography style={{ fontSize: 150, fontWeight: "bold" }}>
+      <Typography variant="h1" style={{ fontWeight: "bold" }}>
         Ascent
       </Typography>
-      <Typography color="primary" variant="h3" style={{ fontWeight: "bold" }}>
+      <Typography variant="h3" color="primary" style={{ fontWeight: "bold" }}>
         A platform to visualize your transportation datasets instantly
       </Typography>
       <Typography variant="h4" style={{ fontWeight: "bold" }}>
@@ -112,14 +112,7 @@ export default function HomePage(props) {
             variant="contained"
             color="primary"
             component="span"
-            startIcon={<CloudUploadIcon style={{ height: 50, width: 50 }} />}
-            style={{
-              maxWidth: "300px",
-              maxHeight: "100px",
-              minWidth: "300px",
-              minHeight: "100px",
-              fontSize: 30,
-            }}
+            startIcon={<CloudUploadIcon />}
           >
             Upload
           </Button>
