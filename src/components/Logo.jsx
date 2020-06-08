@@ -24,7 +24,7 @@ const Logo = () => {
     <div className={classes.title}>
       <Link to="/" className={classes.link}>
         <Typography style={{ fontSize: 72, fontWeight: "bold" }}>
-          Ascent
+          GeoSpace
         </Typography>
       </Link>
     </div>

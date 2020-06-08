@@ -8,12 +8,11 @@ import {
   FormControlLabel,
   Checkbox,
   Typography,
-  Stepper,
-  Step,
-  StepLabel,
   Button,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
 
 // redux
 import { useSelector } from "react-redux";
@@ -22,6 +21,7 @@ import { useDispatch } from "react-redux";
 
 // react-router
 import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -39,40 +39,33 @@ const useStyles = makeStyles((theme) => ({
       padding: "16px 0px",
     },
   },
+  paper: {
+    padding: theme.spacing(5),
+    margin: theme.spacing(5, 8),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+    height: "100%",
+  },
+  link: {
+    color: "inherit",
+    textDecoration: "inherit",
+  },
 }));
-
-function getSteps() {
-  return ["Number", "Longitude", "Latitude"];
-}
 
 export default function Help(props) {
   const classes = useStyles();
   const dispatch = useDispatch();
   const datafile = useSelector((state) => state.datafile);
-  const steps = getSteps();
-  const [activeStep, setActiveStep] = React.useState(0);
   let [headers, setHeaders] = useState(
     datafile !== null ? datafile.headers : []
   );
 
-  const handleNumberHeaderChange = (event) => {
-    const name = event.target.name;
-    const selected = event.target.checked;
-    setHeaders(
-      headers.reduce((accumulator, header) => {
-        if (header.name === name) {
-          const newHeader = {
-            ...header,
-            selected: selected ? "number" : "string",
-          };
-          accumulator.push(newHeader);
-        } else {
-          accumulator.push(header);
-        }
-        return accumulator;
-      }, [])
-    );
-  };
+  const probableLongitudeColumnCount = headers.filter(
+    (header) => header.longitude
+  ).length;
+  const probableLatitudeColumnCount = headers.filter(
+    (header) => header.latitude
+  ).length;
 
   const handleLongitudeHeaderChange = (event) => {
     const name = event.target.name;
@@ -82,7 +75,7 @@ export default function Help(props) {
         if (header.name === name) {
           const newHeader = {
             ...header,
-            selected: selected ? "longitude" : "string",
+            selected: selected ? "longitude" : "number",
           };
           accumulator.push(newHeader);
         } else {
@@ -101,7 +94,7 @@ export default function Help(props) {
         if (header.name === name) {
           const newHeader = {
             ...header,
-            selected: selected ? "latitude" : "string",
+            selected: selected ? "latitude" : "number",
           };
           accumulator.push(newHeader);
         } else {
@@ -113,18 +106,6 @@ export default function Help(props) {
   };
 
   const handleNext = () => {
-    if (activeStep + 1 === steps.length) {
-      handleFinish();
-      return;
-    }
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleFinish = () => {
     datafile.headers = headers;
     props.history.push("/vis-list");
     dispatch(addDatafile(datafile));
@@ -140,53 +121,81 @@ export default function Help(props) {
       p={5}
       className={classes.flexColumn}
     >
+      {probableLongitudeColumnCount === 0 ||
+      probableLatitudeColumnCount === 0 ? (
+        <Redirect to="/vis-list" />
+      ) : null}
       <Typography variant="h3">
         Can you tell us more about this dataset?
       </Typography>
-      <Stepper
-        activeStep={activeStep}
-        style={{ width: 600, backgroundColor: "transparent" }}
-      >
-        {steps.map((label, index) => {
-          const stepProps = {};
-          const labelProps = {};
-          return (
-            <Step key={label} {...stepProps}>
-              <StepLabel {...labelProps}>{label}</StepLabel>
-            </Step>
-          );
-        })}
-      </Stepper>
 
-      {activeStep === 0 ? (
-        <Step1
-          headers={headers}
-          handleNumberHeaderChange={handleNumberHeaderChange}
-        />
-      ) : null}
-      {activeStep === 1 ? (
-        <Step2
-          headers={headers}
-          handleLongitudeHeaderChange={handleLongitudeHeaderChange}
-        />
-      ) : null}
-      {activeStep === 2 ? (
-        <Step3
-          headers={headers}
-          handleLatitudeHeaderChange={handleLatitudeHeaderChange}
-        />
-      ) : null}
+      <Grid container spacing={3}>
+        <Grid item xs={12} sm={6}>
+          <Paper className={classes.paper}>
+            <Typography variant="h5">
+              Which columns contain longitudes?
+            </Typography>
+            <Box>
+              <FormControl component="fieldset" className={classes.formControl}>
+                <FormGroup>
+                  {headers.map((header) => {
+                    if (header.longitude) {
+                      return (
+                        <FormControlLabel
+                          key={header.index}
+                          control={
+                            <Checkbox
+                              checked={
+                                header.selected === "longitude" ? true : false
+                              }
+                              name={header.name}
+                              onChange={handleLongitudeHeaderChange}
+                            />
+                          }
+                          label={header.name}
+                        />
+                      );
+                    }
+                  })}
+                </FormGroup>
+              </FormControl>
+            </Box>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Paper className={classes.paper}>
+            <Typography variant="h5">
+              Which columns contain latitudes?
+            </Typography>
+            <Box>
+              <FormControl component="fieldset" className={classes.formControl}>
+                <FormGroup>
+                  {headers.map((header) => {
+                    if (header.latitude) {
+                      return (
+                        <FormControlLabel
+                          key={header.index}
+                          control={
+                            <Checkbox
+                              checked={
+                                header.selected === "latitude" ? true : false
+                              }
+                              name={header.name}
+                              onChange={handleLatitudeHeaderChange}
+                            />
+                          }
+                          label={header.name}
+                        />
+                      );
+                    }
+                  })}
+                </FormGroup>
+              </FormControl>{" "}
+            </Box>
+          </Paper>
+        </Grid>
+      </Grid>
       <Box>
-        <Button
-          disabled={activeStep === 0}
-          onClick={handleBack}
-          className={classes.button}
-          color="primary"
-          variant="outlined"
-          size="large"
-        >
-          Back
-        </Button>
         <Button
           variant="contained"
           color="primary"
@@ -194,109 +203,11 @@ export default function Help(props) {
           className={classes.button}
           size="large"
         >
-          {activeStep === steps.length - 1 ? "Finish" : "Next"}
+          Next
         </Button>
       </Box>
     </Box>
   ) : (
     <Redirect to="/" />
-  );
-}
-
-function Step1(props) {
-  const classes = useStyles();
-  return (
-    <React.Fragment>
-      <Typography variant="h5">
-        Which columns contain numerical data?
-      </Typography>
-      <Box>
-        <FormControl component="fieldset" className={classes.formControl}>
-          <FormGroup>
-            {props.headers.map((header) => {
-              if (header.number) {
-                return (
-                  <FormControlLabel
-                    key={header.index}
-                    control={
-                      <Checkbox
-                        checked={header.selected === "number" ? true : false}
-                        name={header.name}
-                        onChange={props.handleNumberHeaderChange}
-                      />
-                    }
-                    label={header.name}
-                  />
-                );
-              }
-            })}
-          </FormGroup>
-        </FormControl>{" "}
-      </Box>
-    </React.Fragment>
-  );
-}
-
-function Step2(props) {
-  const classes = useStyles();
-  return (
-    <React.Fragment>
-      <Typography variant="h5">Which columns contain longitudes?</Typography>
-      <Box>
-        <FormControl component="fieldset" className={classes.formControl}>
-          <FormGroup>
-            {props.headers.map((header) => {
-              if (header.longitude) {
-                return (
-                  <FormControlLabel
-                    key={header.index}
-                    control={
-                      <Checkbox
-                        checked={header.selected === "longitude" ? true : false}
-                        name={header.name}
-                        onChange={props.handleLongitudeHeaderChange}
-                      />
-                    }
-                    label={header.name}
-                  />
-                );
-              }
-            })}
-          </FormGroup>
-        </FormControl>{" "}
-      </Box>
-    </React.Fragment>
-  );
-}
-
-function Step3(props) {
-  const classes = useStyles();
-  return (
-    <React.Fragment>
-      <Typography variant="h5">Which columns contain latitudes?</Typography>
-      <Box>
-        <FormControl component="fieldset" className={classes.formControl}>
-          <FormGroup>
-            {props.headers.map((header) => {
-              if (header.latitude) {
-                return (
-                  <FormControlLabel
-                    key={header.index}
-                    control={
-                      <Checkbox
-                        checked={header.selected === "latitude" ? true : false}
-                        name={header.name}
-                        onChange={props.handleLatitudeHeaderChange}
-                      />
-                    }
-                    label={header.name}
-                  />
-                );
-              }
-            })}
-          </FormGroup>
-        </FormControl>{" "}
-      </Box>
-    </React.Fragment>
   );
 }

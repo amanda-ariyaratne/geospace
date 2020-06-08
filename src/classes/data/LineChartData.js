@@ -7,7 +7,7 @@ export default class LineChartData {
     this.legendHeaders = [];
   }
 
-  setDataset(jsonData) {
+  setDataset(jsonData, type) {
     try {
       // produce the basic dataset
       const filtered = [[this.headers[this.xHeaderIndex].name]];
@@ -18,9 +18,9 @@ export default class LineChartData {
       this.series = jsonData.reduce((filtered, row) => {
         const el = [];
         const x =
-          this.headers[this.xHeaderIndex].selected === "number"
-            ? Number(row[this.xHeaderIndex])
-            : row[this.xHeaderIndex];
+          type === "string"
+            ? row[this.xHeaderIndex].toString()
+            : Number(row[this.xHeaderIndex]);
         el.push(x);
         for (let i = 0; i < this.yHeaderIndices.length; ++i) {
           const y = Number(row[this.yHeaderIndices[i]]);
@@ -55,5 +55,11 @@ export default class LineChartData {
         return summed;
       }, []);
     }
+  }
+
+  getXMin() {
+    const col = this.series.map((e) => e[0]);
+    col.shift();
+    return Math.min(...col);
   }
 }

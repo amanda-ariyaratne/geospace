@@ -20,12 +20,7 @@ export default function ChartWrapper(props) {
     case "sankey":
       return <SankeyChart />;
     case "line":
-      return (
-        <LineChart
-          lastDrawLocation={props.lastDrawLocation}
-          setLastDrawLocation={props.setLastDrawLocation}
-        />
-      );
+      return <LineChart />;
     default:
       return <Redirect to="/" />;
   }

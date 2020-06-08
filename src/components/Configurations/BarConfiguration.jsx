@@ -87,7 +87,7 @@ export default function BarConfiguration(props) {
             <em>None</em>
           </MenuItem>
           {props.headers.map((header) => {
-            if (header.selected === "string") {
+            if (header.selected === "string" || header.selected === "number") {
               return (
                 <MenuItem key={header.index} value={header.index}>
                   {header.name}

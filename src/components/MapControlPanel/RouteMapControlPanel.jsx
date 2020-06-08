@@ -2,6 +2,8 @@ import React from "react";
 
 // components
 import MapStyle from "./MapStyle";
+import ViewVisualizationListButton from "../Shared/ViewVisualizationListButton";
+import ShareButton from "../Shared/ShareButton";
 
 // material-ui
 import { makeStyles } from "@material-ui/core/styles";
@@ -110,6 +112,8 @@ export default function RouteMapControlPanel(props) {
 
   return (
     <React.Fragment>
+      <ViewVisualizationListButton />
+      <ShareButton />
       <MapStyle boxStyle={classes.boxStyle} />
 
       <Box className={classes.boxStyle}>

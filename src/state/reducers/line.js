@@ -19,6 +19,10 @@ const lineReducer = (state = null, action) => {
       state.curveType = action.payload;
       return state;
 
+    case "CHANGE LINE X TYPE":
+      state.xAxisType = action.payload;
+      return state;
+
     default:
       return state;
   }

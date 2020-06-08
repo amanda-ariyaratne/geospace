@@ -1,5 +1,4 @@
 // import viewstateReducer from "./viewstate";
-import layersReducer from "./layers";
 import barReducer from "./bar";
 // import chartReducer from "./chart";
 import sankeyReducer from "./sankey";
@@ -15,7 +14,6 @@ import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
   // viewstate: viewstateReducer,
-  layers: layersReducer,
   bar: barReducer,
   // chart: chartReducer,
   sankey: sankeyReducer,

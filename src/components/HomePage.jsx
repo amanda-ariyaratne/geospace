@@ -31,6 +31,11 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
   },
+  uploadBtn: {
+    padding: theme.spacing(2, 5),
+    margin: theme.spacing(0, 2),
+    fontSize: 18,
+  },
 }));
 
 const bg = "bg.jpeg";
@@ -89,7 +94,7 @@ export default function HomePage(props) {
       alignItems="center"
     >
       <Typography variant="h1" style={{ fontWeight: "bold" }}>
-        Ascent
+        GeoSpace
       </Typography>
       <Typography variant="h3" color="primary" style={{ fontWeight: "bold" }}>
         A platform to visualize your transportation datasets instantly
@@ -113,6 +118,7 @@ export default function HomePage(props) {
             color="primary"
             component="span"
             startIcon={<CloudUploadIcon />}
+            className={classes.uploadBtn}
           >
             Upload
           </Button>
