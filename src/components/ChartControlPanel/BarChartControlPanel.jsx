@@ -18,6 +18,10 @@ import {
 } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
 
+// components
+import ViewVisualizationListButton from "../Shared/ViewVisualizationListButton";
+import ShareButton from "../Shared/ShareButton";
+
 // redux
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -115,14 +119,21 @@ export default function BarChartControlPanel(props) {
 
   return (
     <Box style={{ width: 225 }}>
+      <ViewVisualizationListButton />
+      <ShareButton />
       <Box display="flex" flexDirection="column" className={classes.boxStyle}>
+        <Typography variant="subtitle1" color="secondary">
+          X Axis
+        </Typography>
         <FormControl variant="standard" color="secondary">
-          <InputLabel>X Axis</InputLabel>
           <Select native value={xAxis} onChange={handleXAxisChange}>
             <option aria-label="None" value="" />
 
             {headers.map((header) => {
-              if (header.selected === "string") {
+              if (
+                header.selected === "string" ||
+                header.selected === "number"
+              ) {
                 return (
                   <option key={header.index} value={header.index}>
                     {header.name}
@@ -134,8 +145,10 @@ export default function BarChartControlPanel(props) {
         </FormControl>
       </Box>
       <Box display="flex" flexDirection="column" className={classes.boxStyle}>
+        <Typography variant="subtitle1" color="secondary">
+          Y Axis
+        </Typography>
         <FormControl variant="standard" color="secondary">
-          <InputLabel id="y-label">Y Axis</InputLabel>
           <Select
             labelId="y-label"
             value={yAxis}
@@ -177,7 +190,9 @@ export default function BarChartControlPanel(props) {
         </FormControl>
       </Box>
       <Box display="flex" flexDirection="column" className={classes.boxStyle}>
-        <Typography variant="subtitle1">Chart Title</Typography>
+        <Typography variant="subtitle1" color="secondary">
+          Chart Title
+        </Typography>
         <TextField
           id="title-chart"
           value={chartTitle}
@@ -188,7 +203,9 @@ export default function BarChartControlPanel(props) {
         />
       </Box>
       <Box display="flex" flexDirection="column" className={classes.boxStyle}>
-        <Typography variant="subtitle1">X Axis Title</Typography>
+        <Typography variant="subtitle1" color="secondary">
+          X Axis Title
+        </Typography>
         <TextField
           id="title-x"
           value={xTitle}
@@ -199,7 +216,9 @@ export default function BarChartControlPanel(props) {
         />
       </Box>
       <Box display="flex" flexDirection="column" className={classes.boxStyle}>
-        <Typography variant="subtitle1">Y Axis Title</Typography>
+        <Typography variant="subtitle1" color="secondary">
+          Y Axis Title
+        </Typography>
         <TextField
           id="title-y"
           value={yTitle}
@@ -210,7 +229,9 @@ export default function BarChartControlPanel(props) {
         />
       </Box>
       <Box display="flex" flexDirection="column" className={classes.boxStyle}>
-        <Typography variant="subtitle1">Stack Direction</Typography>
+        <Typography variant="subtitle1" color="secondary">
+          Stack Direction
+        </Typography>
         <FormControl component="fieldset" className={classes.formControl}>
           <RadioGroup
             aria-label="gender"

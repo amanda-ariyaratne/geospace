@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // material-ui
 import { makeStyles } from "@material-ui/core/styles";
@@ -17,6 +17,10 @@ import {
   Radio,
 } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
+
+// components
+import ViewVisualizationListButton from "../Shared/ViewVisualizationListButton";
+import ShareButton from "../Shared/ShareButton";
 
 // redux
 import { useSelector } from "react-redux";
@@ -82,16 +86,29 @@ export default function LineChartControlPanel(props) {
   const curveType = useSelector((state) => state.line.curveType);
   const datafile = useSelector((state) => state.datafile);
   const headers = datafile !== null ? datafile.headers : [];
+  const [xAxisType, setXAxisType] = useState(
+    useSelector((state) => state.line.xAxisType)
+  );
 
   const handleXAxisChange = (event) => {
     lineChart.dataTable.xHeaderIndex = event.target.value;
-    lineChart.dataTable.setDataset(datafile.data);
+    if (headers[event.target.value].selected === "number") {
+      lineChart.dataTable.setDataset(datafile.data, xAxisType);
+    } else {
+      setXAxisType("string");
+      lineChart.dataTable.setDataset(datafile.data, "string");
+    }
+    lineChart.hAxis.minValue = lineChart.dataTable.getXMin();
     dispatch(addLine(lineChart));
   };
 
   const handleYAxisChange = (event) => {
     lineChart.dataTable.yHeaderIndices = event.target.value;
-    lineChart.dataTable.setDataset(datafile.data);
+    if (headers[xAxis].selected === "number") {
+      lineChart.dataTable.setDataset(datafile.data, xAxisType);
+    } else {
+      lineChart.dataTable.setDataset(datafile.data, "string");
+    }
     dispatch(addLine(lineChart));
   };
 
@@ -111,11 +128,21 @@ export default function LineChartControlPanel(props) {
     dispatch(changeLineCurveType(event.target.value));
   };
 
+  const handleChangeXAxisType = (event) => {
+    setXAxisType(event.target.value);
+    lineChart.dataTable.setDataset(datafile.data, event.target.value);
+    dispatch(addLine(lineChart));
+  };
+
   return (
     <Box style={{ width: 225 }}>
+      <ViewVisualizationListButton />
+      <ShareButton />
       <Box display="flex" flexDirection="column" className={classes.boxStyle}>
+        <Typography variant="subtitle1" color="secondary">
+          X Axis
+        </Typography>
         <FormControl variant="standard" color="secondary">
-          <InputLabel>X Axis</InputLabel>
           <Select native value={xAxis} onChange={handleXAxisChange}>
             <option aria-label="None" value="" />
 
@@ -135,8 +162,35 @@ export default function LineChartControlPanel(props) {
         </FormControl>
       </Box>
       <Box display="flex" flexDirection="column" className={classes.boxStyle}>
+        <Typography variant="subtitle1" color="secondary">
+          X Axis Type
+        </Typography>
+        <FormControl component="fieldset" className={classes.formControl}>
+          <RadioGroup
+            aria-label="type"
+            name="type1"
+            value={headers[xAxis].selected === "number" ? xAxisType : "string"}
+            onChange={handleChangeXAxisType}
+          >
+            <FormControlLabel
+              value="string"
+              control={<Radio />}
+              label="String"
+            />
+            <FormControlLabel
+              value="number"
+              control={<Radio />}
+              label="Number"
+              disabled={headers[xAxis].selected === "string"}
+            />
+          </RadioGroup>
+        </FormControl>
+      </Box>
+      <Box display="flex" flexDirection="column" className={classes.boxStyle}>
+        <Typography variant="subtitle1" color="secondary">
+          Y Axis
+        </Typography>
         <FormControl variant="standard" color="secondary">
-          <InputLabel id="y-label">Y Axis</InputLabel>
           <Select
             labelId="y-label"
             value={yAxis}
@@ -178,7 +232,9 @@ export default function LineChartControlPanel(props) {
         </FormControl>
       </Box>
       <Box display="flex" flexDirection="column" className={classes.boxStyle}>
-        <Typography variant="subtitle1">Chart Title</Typography>
+        <Typography variant="subtitle1" color="secondary">
+          Chart Title
+        </Typography>
         <TextField
           id="title-chart"
           value={chartTitle}
@@ -189,7 +245,9 @@ export default function LineChartControlPanel(props) {
         />
       </Box>
       <Box display="flex" flexDirection="column" className={classes.boxStyle}>
-        <Typography variant="subtitle1">X Axis Title</Typography>
+        <Typography variant="subtitle1" color="secondary">
+          X Axis Title
+        </Typography>
         <TextField
           id="title-x"
           value={xTitle}
@@ -200,7 +258,9 @@ export default function LineChartControlPanel(props) {
         />
       </Box>
       <Box display="flex" flexDirection="column" className={classes.boxStyle}>
-        <Typography variant="subtitle1">Y Axis Title</Typography>
+        <Typography variant="subtitle1" color="secondary">
+          Y Axis Title
+        </Typography>
         <TextField
           id="title-y"
           value={yTitle}
@@ -210,8 +270,11 @@ export default function LineChartControlPanel(props) {
           color="secondary"
         />
       </Box>
+
       <Box display="flex" flexDirection="column" className={classes.boxStyle}>
-        <Typography variant="subtitle1">Curve Type</Typography>
+        <Typography variant="subtitle1" color="secondary">
+          Curve Type
+        </Typography>
         <FormControl component="fieldset" className={classes.formControl}>
           <RadioGroup
             aria-label="gender"

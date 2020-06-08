@@ -2,16 +2,12 @@ import React from "react";
 
 // material-ui
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  Box,
-  FormControl,
-  InputLabel,
-  Select,
-  Input,
-  Chip,
-  MenuItem,
-} from "@material-ui/core";
+import { Box, FormControl, Select, Typography } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
+
+// components
+import ViewVisualizationListButton from "../Shared/ViewVisualizationListButton";
+import ShareButton from "../Shared/ShareButton";
 
 // redux
 import { useSelector } from "react-redux";
@@ -90,9 +86,13 @@ export default function SankeyChartControlPanel(props) {
 
   return (
     <Box style={{ width: 225 }}>
+      <ViewVisualizationListButton />
+      <ShareButton />
       <Box display="flex" flexDirection="column" className={classes.boxStyle}>
-        <FormControl variant="filled" color="secondary">
-          <InputLabel>From</InputLabel>
+        <Typography variant="subtitle1" color="secondary">
+          From
+        </Typography>
+        <FormControl variant="standard" color="secondary">
           <Select native value={from} onChange={handleFromChange}>
             <option aria-label="None" value="" />
 
@@ -109,8 +109,10 @@ export default function SankeyChartControlPanel(props) {
         </FormControl>
       </Box>
       <Box display="flex" flexDirection="column" className={classes.boxStyle}>
-        <FormControl variant="filled" color="secondary">
-          <InputLabel>To</InputLabel>
+        <Typography variant="subtitle1" color="secondary">
+          To
+        </Typography>
+        <FormControl variant="standard" color="secondary">
           <Select native value={to} onChange={handleToChange}>
             <option aria-label="None" value="" />
 
@@ -127,10 +129,14 @@ export default function SankeyChartControlPanel(props) {
         </FormControl>
       </Box>
       <Box display="flex" flexDirection="column" className={classes.boxStyle}>
-        <FormControl variant="filled" color="secondary">
-          <InputLabel>Weight</InputLabel>
+        <Typography variant="subtitle1" color="secondary">
+          Weight
+        </Typography>
+        <FormControl variant="standard" color="secondary">
           <Select native value={weight} onChange={handleWeightChange}>
-            <option aria-label="None" value="" />
+            <option aria-label="None" value="">
+              No weight
+            </option>
 
             {headers.map((header) => {
               if (header.selected === "number") {

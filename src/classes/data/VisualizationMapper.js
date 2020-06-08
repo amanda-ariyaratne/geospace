@@ -8,7 +8,7 @@ export default class VisualizationMapper {
     const heatmap = this.containsLatLongPair();
     const routemap = this.containsTwoLatLongPair();
 
-    const barchart = this.containsStringAndNumber();
+    const barchart = this.containsSuitableAxis();
     const linechart = this.containsSuitableAxis();
     const sankeychart = this.containsTwoStrings();
 

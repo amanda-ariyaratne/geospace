@@ -93,6 +93,7 @@ export default class DataFile {
       if (headers[i].number) {
         headers[i].longitude = this.checkIfLongitude(dataTranspose[i]);
         headers[i].latitude = this.checkIfLatitude(dataTranspose[i]);
+        headers[i].selected = "number";
       }
     }
     this.headers = headers;

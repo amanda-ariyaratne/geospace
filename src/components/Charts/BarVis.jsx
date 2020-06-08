@@ -6,42 +6,42 @@ import Chart from "react-google-charts";
 // redux
 import { useSelector } from "react-redux";
 
-function LineChart() {
-  const data = useSelector((state) => state.line.dataTable.series);
-  const title = useSelector((state) => state.line.title);
-  const xTitle = useSelector((state) => state.line.hAxis.title);
-  const yTitle = useSelector((state) => state.line.vAxis.title);
-  const curveType = useSelector((state) => state.line.curveType);
-  const xMin = useSelector((state) => state.line.hAxis.minValue);
+function BarVis({ dataset }) {
+  const data = dataset.dataTable.series;
+  const title = dataset.title;
+  const xTitle = dataset.hAxis.title;
+  const yTitle = dataset.vAxis.title;
+  const isStacked = dataset.isStacked;
 
   return (
     <div className="App">
       <Chart
         width="100%"
         height="85vh"
-        chartType="LineChart"
+        chartType="ColumnChart"
         loader={<div>Loading Chart</div>}
         data={data}
         options={{
+          isStacked: isStacked,
           title: title,
           titleTextStyle: {
             bold: true,
             italic: true,
             fontSize: 28,
           },
-          curveType: curveType,
           chartArea: { width: "80%" },
           hAxis: {
             title: xTitle,
-            minValue: xMin,
+            minValue: 0,
           },
           vAxis: {
             title: yTitle,
           },
+          is3D: true,
         }}
       />
     </div>
   );
 }
 
-export default LineChart;
+export default BarVis;

@@ -16,10 +16,7 @@ export default class BarChartData {
       }
       this.series = jsonData.reduce((filtered, row) => {
         const el = [];
-        const x =
-          this.headers[this.xHeaderIndex].selected === "number"
-            ? Number(row[this.xHeaderIndex])
-            : row[this.xHeaderIndex];
+        const x = row[this.xHeaderIndex].toString();
         el.push(x);
         for (let i = 0; i < this.yHeaderIndices.length; ++i) {
           const y = Number(row[this.yHeaderIndices[i]]);

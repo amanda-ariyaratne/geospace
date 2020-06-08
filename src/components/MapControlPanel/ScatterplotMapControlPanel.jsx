@@ -2,6 +2,8 @@ import React from "react";
 
 // components
 import MapStyle from "./MapStyle";
+import ViewVisualizationListButton from "../Shared/ViewVisualizationListButton";
+import ShareButton from "../Shared/ShareButton";
 
 // material-ui
 import { makeStyles } from "@material-ui/core/styles";
@@ -102,7 +104,9 @@ export default function ScatterplotMapControlPanel(props) {
   };
 
   return (
-    <React.Fragment>
+    <Box style={{ width: 270 }}>
+      <ViewVisualizationListButton />
+      <ShareButton />
       <MapStyle boxStyle={classes.boxStyle} />
       <Box className={classes.boxStyle}>
         <FormControl variant="filled" fullWidth>
@@ -220,6 +224,6 @@ export default function ScatterplotMapControlPanel(props) {
           </FormGroup>
         </FormControl>
       </Box>
-    </React.Fragment>
+    </Box>
   );
 }

@@ -10,6 +10,7 @@ import GraphMain from "./components/GraphMain";
 import VisualizationList from "./components/VisualizationList";
 import Help from "./components/Help";
 import HomePage from "./components/HomePage";
+import VisWrapper from "./components/VisWrapper";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 export default function App(props) {
@@ -26,6 +27,7 @@ export default function App(props) {
           <Route path="/vis-list" exact component={VisualizationList} />
           <Route path="/help" exact component={Help} />
           <Route path="/" exact component={HomePage} />
+          <Route path="/vis/:id" component={VisWrapper} />
         </Switch>
       </Box>
     </Router>

@@ -32,3 +32,10 @@ export const changeLineCurveType = (state) => {
     payload: state,
   };
 };
+
+export const changeLineXType = (state) => {
+  return {
+    type: "CHANGE LINE X TYPE",
+    payload: state,
+  };
+};
