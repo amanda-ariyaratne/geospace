@@ -56,7 +56,5 @@
       "transform-es2015-modules-commonjs"
     ]
   },
-  "devDependencies": {
-    "cypress": "^4.7.0"
-  }
+  "devDependencies": {}
 }
