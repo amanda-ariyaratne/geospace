@@ -177,6 +177,7 @@ export default function VisualizationList(props) {
     srcLatitude: -1,
     dstLongitude: -1,
     dstLatitude: -1,
+    loading: false,
   });
 
   const changeRouteSrcLongitude = (event) => {
@@ -215,6 +216,15 @@ export default function VisualizationList(props) {
     });
   };
 
+  const changeSetRouteLoading = () => {
+    setRouteConfig((prevConfig) => {
+      return {
+        ...prevConfig,
+        loading: !prevConfig.loading,
+      };
+    });
+  };
+
   const handleRouteOpen = () => {
     if (
       routeConfig.srcLongitude === -1 ||
@@ -232,7 +242,9 @@ export default function VisualizationList(props) {
       routeConfig.dstLatitude,
       routeConfig.dstLongitude
     );
+    changeSetRouteLoading();
     route.dataTable.callFetchDataFromGoogleApi().then(() => {
+      changeSetRouteLoading();
       dispatch(addRoute(route));
       dispatch(changeCurrentVisualization("route"));
       props.history.push("/maps");
