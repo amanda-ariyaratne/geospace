@@ -11,6 +11,9 @@ import { useEffect } from "react";
 import Scatterplot from "../classes/map/Scatterplot";
 import HeatMap from "../classes/map/HeatMap";
 import Route from "../classes/map/Route";
+import BarChart from "../classes/chart/BarChart";
+import LineChart from "../classes/chart/LineChart";
+import SankeyChart from "../classes/chart/SankeyChart";
 
 // axios
 import axios from "axios";
@@ -18,10 +21,11 @@ import axios from "axios";
 // components
 import MapVis from "./MapVis";
 import BarVis from "../components/Charts/BarVis";
+import LineVis from "../components/Charts/LineVis";
+import SankeyVis from "../components/Charts/SankeyVis";
 
 // deck.gl
 import { FlyToInterpolator } from "deck.gl";
-import BarChart from "../classes/chart/BarChart";
 
 export default function VisWrapper(props) {
   const [currentVis, setCurrentVis] = useState(null);
@@ -40,7 +44,7 @@ export default function VisWrapper(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/api/dataset/get/${id.toString()}`)
+      .get(`http://18.209.179.112:8080/api/dataset/get/${id.toString()}`)
       .then(({ data }) => {
         switch (data.type) {
           case "scatterplot":
@@ -53,6 +57,7 @@ export default function VisWrapper(props) {
             scatterplot.getColor = data.getColor;
             scatterplot.showOnHover = data.showOnHover;
             scatterplot.mapStyle = data.mapStyle;
+            setViewState(data.viewstate);
             setDataset(scatterplot);
             setCurrentVis("scatterplot");
             break;
@@ -96,6 +101,37 @@ export default function VisWrapper(props) {
             bar.hAxis = data.hAxis;
             setDataset(bar);
             setCurrentVis("bar");
+            break;
+
+          case "line":
+            let line = new LineChart(
+              data.data,
+              data.headers,
+              data.xHeaderIndex,
+              data.yHeaderIndices
+            );
+            line.xAxisType = data.xAxisType;
+            line.dataTable.setDataset(data.data, data.xAxisType);
+            line.title = data.title;
+            line.curveType = data.curveType;
+            line.vAxis = data.vAxis;
+            line.hAxis = data.hAxis;
+            setDataset(line);
+            setCurrentVis("line");
+            break;
+
+          case "sankey":
+            let sankey = new SankeyChart(
+              data.data,
+              data.headers,
+              data.from,
+              data.to,
+              data.weight
+            );
+            setDataset(sankey);
+            setCurrentVis("sankey");
+            break;
+
           default:
             break;
         }
@@ -128,6 +164,24 @@ export default function VisWrapper(props) {
         <Box order={2} className="main">
           <Box className="viz chartspace">
             <BarVis dataset={dataset} />
+          </Box>
+        </Box>
+      );
+
+    case "line":
+      return (
+        <Box order={2} className="main">
+          <Box className="viz chartspace">
+            <LineVis dataset={dataset} />
+          </Box>
+        </Box>
+      );
+
+    case "sankey":
+      return (
+        <Box order={2} className="main">
+          <Box className="viz chartspace">
+            <SankeyVis dataset={dataset} />
           </Box>
         </Box>
       );

@@ -13,6 +13,7 @@ import {
   MenuItem,
   ListItemIcon,
   ListItemText,
+  Typography,
 } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
@@ -92,7 +93,10 @@ const Header = () => {
             flexDirection="row"
             className={classes.vizContainer}
           >
-            <Link to="/maps" className={classes.link} onClick={handleMenuClose}>
+            <Typography variant="h6">
+              The Transport Visualization Framework
+            </Typography>
+            {/* <Link to="/maps" className={classes.link} onClick={handleMenuClose}>
               <Button
                 color="inherit"
                 variant="outlined"
@@ -109,7 +113,7 @@ const Header = () => {
               onClick={handleMenuOpen}
             >
               Charts
-            </Button>
+            </Button> */}
 
             {/* <Link to="/graphs" className={classes.link}>
               <Button

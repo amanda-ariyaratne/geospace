@@ -6,7 +6,7 @@ import Chart from "react-google-charts";
 // redux
 import { useSelector } from "react-redux";
 
-function LineChart() {
+export default function SankeyChart() {
   const data = useSelector((state) => state.sankey.dataTable.data);
 
   return (
@@ -21,5 +21,3 @@ function LineChart() {
     </div>
   );
 }
-
-export default LineChart;

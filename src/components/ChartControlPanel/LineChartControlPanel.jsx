@@ -86,16 +86,17 @@ export default function LineChartControlPanel(props) {
   const curveType = useSelector((state) => state.line.curveType);
   const datafile = useSelector((state) => state.datafile);
   const headers = datafile !== null ? datafile.headers : [];
-  const [xAxisType, setXAxisType] = useState(
-    useSelector((state) => state.line.xAxisType)
-  );
+  const xAxisType = useSelector((state) => state.line.xAxisType);
+  // const [xAxisType, setXAxisType] = useState(
+  //   useSelector((state) => state.line.xAxisType)
+  // );
 
   const handleXAxisChange = (event) => {
     lineChart.dataTable.xHeaderIndex = event.target.value;
     if (headers[event.target.value].selected === "number") {
       lineChart.dataTable.setDataset(datafile.data, xAxisType);
     } else {
-      setXAxisType("string");
+      lineChart.xAxisType = "string";
       lineChart.dataTable.setDataset(datafile.data, "string");
     }
     lineChart.hAxis.minValue = lineChart.dataTable.getXMin();
@@ -107,6 +108,7 @@ export default function LineChartControlPanel(props) {
     if (headers[xAxis].selected === "number") {
       lineChart.dataTable.setDataset(datafile.data, xAxisType);
     } else {
+      lineChart.xAxisType = "string";
       lineChart.dataTable.setDataset(datafile.data, "string");
     }
     dispatch(addLine(lineChart));
@@ -129,7 +131,7 @@ export default function LineChartControlPanel(props) {
   };
 
   const handleChangeXAxisType = (event) => {
-    setXAxisType(event.target.value);
+    lineChart.xAxisType = event.target.value;
     lineChart.dataTable.setDataset(datafile.data, event.target.value);
     dispatch(addLine(lineChart));
   };
@@ -137,7 +139,7 @@ export default function LineChartControlPanel(props) {
   return (
     <Box style={{ width: 225 }}>
       <ViewVisualizationListButton />
-      <ShareButton />
+      <ShareButton viewState={[]} />
       <Box display="flex" flexDirection="column" className={classes.boxStyle}>
         <Typography variant="subtitle1" color="secondary">
           X Axis

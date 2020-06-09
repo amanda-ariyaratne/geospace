@@ -120,7 +120,7 @@ export default function BarChartControlPanel(props) {
   return (
     <Box style={{ width: 225 }}>
       <ViewVisualizationListButton />
-      <ShareButton />
+      <ShareButton viewState={[]} />
       <Box display="flex" flexDirection="column" className={classes.boxStyle}>
         <Typography variant="subtitle1" color="secondary">
           X Axis

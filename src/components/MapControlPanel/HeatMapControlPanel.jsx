@@ -81,7 +81,7 @@ export default function HeatMapControlPanel(props) {
   return (
     <React.Fragment>
       <ViewVisualizationListButton />
-      <ShareButton />
+      <ShareButton viewState={props.viewState} />
       <MapStyle boxStyle={classes.boxStyle} />
 
       <Box className={classes.boxStyle}>

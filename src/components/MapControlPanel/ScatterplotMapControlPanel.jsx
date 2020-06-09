@@ -18,6 +18,7 @@ import {
   FormControlLabel,
   Checkbox,
 } from "@material-ui/core";
+import InfoIcon from "@material-ui/icons/Info";
 
 // react color
 import { CompactPicker } from "react-color";
@@ -106,7 +107,7 @@ export default function ScatterplotMapControlPanel(props) {
   return (
     <Box style={{ width: 270 }}>
       <ViewVisualizationListButton />
-      <ShareButton />
+      <ShareButton viewState={props.viewState} />
       <MapStyle boxStyle={classes.boxStyle} />
       <Box className={classes.boxStyle}>
         <FormControl variant="filled" fullWidth>
@@ -186,7 +187,13 @@ export default function ScatterplotMapControlPanel(props) {
         flexDirection="column"
         className={`${classes.boxStyle} ${classes.opacityBox}`}
       >
-        <Typography variant="subtitle1">Radius</Typography>
+        <Box display="flex" flexDirection="row">
+          <Typography variant="subtitle1">Radius</Typography>
+          <div style={{ position: "relative", left: "10px", top: "3px" }}>
+            <InfoIcon fontSize="small" />
+          </div>
+        </Box>
+
         <div className={classes.slider}>
           <Slider
             aria-labelledby="continuous-slider"

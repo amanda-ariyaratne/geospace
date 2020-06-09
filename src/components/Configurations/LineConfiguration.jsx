@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 // material-ui
 import {
@@ -11,6 +11,7 @@ import {
   Input,
   Chip,
   useTheme,
+  Typography,
 } from "@material-ui/core";
 import LaunchIcon from "@material-ui/icons/Launch";
 import { makeStyles } from "@material-ui/core/styles";
@@ -71,87 +72,93 @@ export default function LineConfiguration(props) {
   const classes = useStyles();
   const theme = useTheme();
   return (
-    <Box display="flex" flexDirection="row" alignItems="baseline">
-      <FormControl
-        variant="outlined"
-        className={classes.formControl}
-        error={props.lineConfig.x === -1 ? true : false}
-      >
-        <InputLabel id="x-label">X Axis</InputLabel>
-        <Select
-          labelId="x-label"
-          value={props.lineConfig.x}
-          onChange={props.changeLineX}
-          label="X Axis"
+    <Fragment>
+      <Typography variant="h6">Line Chart</Typography>
+      <Box display="flex" flexDirection="row" alignItems="baseline">
+        <FormControl
+          variant="outlined"
+          className={classes.formControl}
+          error={props.lineConfig.x === -1 ? true : false}
         >
-          <MenuItem value={-1}>
-            <em>None</em>
-          </MenuItem>
-          {props.headers.map((header) => {
-            if (header.selected === "string" || header.selected === "number") {
-              return (
-                <MenuItem key={header.index} value={header.index}>
-                  {header.name}
-                </MenuItem>
-              );
-            }
-          })}
-        </Select>
-      </FormControl>
-      <FormControl
-        className={classes.formControl}
-        error={props.lineConfig.y.length === 0 ? true : false}
-        variant="outlined"
-      >
-        <InputLabel id="y-label">Y Axis</InputLabel>
-        <Select
-          labelId="y-label"
-          value={props.lineConfig.y}
-          onChange={props.changeLineY}
-          label="Y Axis"
-          multiple
-          input={<Input id="select-multiple-chip" />}
-          renderValue={(selected) => (
-            <div className={classes.chips}>
-              {selected.map((value) => (
-                <Chip
-                  key={value}
-                  label={props.headers[value].name}
-                  className={classes.chip}
-                />
-              ))}
-            </div>
-          )}
-          MenuProps={MenuProps}
+          <InputLabel id="x-label">X Axis</InputLabel>
+          <Select
+            labelId="x-label"
+            value={props.lineConfig.x}
+            onChange={props.changeLineX}
+            label="X Axis"
+          >
+            <MenuItem value={-1}>
+              <em>None</em>
+            </MenuItem>
+            {props.headers.map((header) => {
+              if (
+                header.selected === "string" ||
+                header.selected === "number"
+              ) {
+                return (
+                  <MenuItem key={header.index} value={header.index}>
+                    {header.name}
+                  </MenuItem>
+                );
+              }
+            })}
+          </Select>
+        </FormControl>
+        <FormControl
+          className={classes.formControl}
+          error={props.lineConfig.y.length === 0 ? true : false}
+          variant="outlined"
         >
-          <MenuItem disabled value="">
-            <em>None</em>
-          </MenuItem>
-          {props.headers.map((header) => {
-            if (header.selected === "number") {
-              return (
-                <MenuItem
-                  key={header.index}
-                  value={header.index}
-                  style={getStyles(header.name, props.lineConfig.y, theme)}
-                >
-                  {header.name}
-                </MenuItem>
-              );
-            }
-          })}
-        </Select>
-      </FormControl>
-      <Button
-        variant="contained"
-        color="primary"
-        className={classes.button}
-        size="large"
-        startIcon={<LaunchIcon />}
-        onClick={props.handleLineOpen}
-      >
-        OPEN
-      </Button>
-    </Box>
+          <InputLabel id="y-label">Y Axis</InputLabel>
+          <Select
+            labelId="y-label"
+            value={props.lineConfig.y}
+            onChange={props.changeLineY}
+            label="Y Axis"
+            multiple
+            input={<Input id="select-multiple-chip" />}
+            renderValue={(selected) => (
+              <div className={classes.chips}>
+                {selected.map((value) => (
+                  <Chip
+                    key={value}
+                    label={props.headers[value].name}
+                    className={classes.chip}
+                  />
+                ))}
+              </div>
+            )}
+            MenuProps={MenuProps}
+          >
+            <MenuItem disabled value="">
+              <em>None</em>
+            </MenuItem>
+            {props.headers.map((header) => {
+              if (header.selected === "number") {
+                return (
+                  <MenuItem
+                    key={header.index}
+                    value={header.index}
+                    style={getStyles(header.name, props.lineConfig.y, theme)}
+                  >
+                    {header.name}
+                  </MenuItem>
+                );
+              }
+            })}
+          </Select>
+        </FormControl>
+        <Button
+          variant="contained"
+          color="primary"
+          className={classes.button}
+          size="large"
+          startIcon={<LaunchIcon />}
+          onClick={props.handleLineOpen}
+        >
+          OPEN
+        </Button>
+      </Box>
+    </Fragment>
   );
 }

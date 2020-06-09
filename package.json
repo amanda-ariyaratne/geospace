@@ -33,7 +33,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress:open": "cypress open"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -54,5 +55,8 @@
     "plugins": [
       "transform-es2015-modules-commonjs"
     ]
+  },
+  "devDependencies": {
+    "cypress": "^4.7.0"
   }
 }

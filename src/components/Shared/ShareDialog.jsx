@@ -63,6 +63,7 @@ export default function ShareDialog(props) {
   const datafile = useSelector((state) => state.datafile);
 
   const handleClose = () => {
+    setLoading(false);
     setLink(null);
     onClose();
   };
@@ -87,6 +88,7 @@ export default function ShareDialog(props) {
           getColor: vis.getColor,
           showOnHover: vis.showOnHover,
           mapStyle: mapStyle,
+          viewstate: props.viewState,
         };
 
         break;
@@ -102,6 +104,7 @@ export default function ShareDialog(props) {
           opacity: vis.opacity,
           showOnHover: vis.showOnHover,
           mapStyle: mapStyle,
+          viewstate: props.viewState,
         };
         break;
 
@@ -116,6 +119,7 @@ export default function ShareDialog(props) {
           opacity: vis.opacity,
           showOnHover: vis.showOnHover,
           mapStyle: mapStyle,
+          viewstate: props.viewState,
         };
         break;
 
@@ -134,14 +138,42 @@ export default function ShareDialog(props) {
         };
         break;
 
+      case "line":
+        dataset = {
+          ...dataset,
+          headers: datafile.headers,
+          data: datafile.data,
+          xHeaderIndex: vis.dataTable.xHeaderIndex,
+          yHeaderIndices: vis.dataTable.yHeaderIndices,
+          title: vis.title,
+          curveType: vis.curveType,
+          vAxis: vis.vAxis,
+          hAxis: vis.hAxis,
+          xAxisType: vis.xAxisType,
+        };
+        break;
+
+      case "sankey":
+        dataset = {
+          ...dataset,
+          headers: datafile.headers,
+          data: datafile.data,
+          from: vis.dataTable.from,
+          to: vis.dataTable.to,
+          weight: vis.dataTable.weight,
+        };
+        break;
+
       default:
         break;
     }
     setLoading(true);
-    axios.post(`http://localhost:8080/api/dataset/add`, dataset).then((res) => {
-      setLink(`localhost:3000/vis/${res.data[0]["_id"]}`);
-      setLoading(false);
-    });
+    axios
+      .post(`http://18.209.179.112:8080/api/dataset/add`, dataset)
+      .then((res) => {
+        setLink(`localhost:3000/vis/${res.data[0]["_id"]}`);
+        setLoading(false);
+      });
   };
 
   return (

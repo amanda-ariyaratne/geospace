@@ -8,6 +8,7 @@ import {
   Select,
   MenuItem,
   Button,
+  Typography,
 } from "@material-ui/core";
 import LaunchIcon from "@material-ui/icons/Launch";
 import { makeStyles } from "@material-ui/core/styles";
@@ -41,6 +42,7 @@ export default function RouteConfiguration(props) {
   const classes = useStyles();
   return (
     <Fragment>
+      <Typography variant="h6">Route Map</Typography>
       <Box display="flex" flexDirection="row" alignItems="baseline">
         <FormControl
           variant="outlined"

@@ -129,7 +129,7 @@ export default function Help(props) {
         Can you tell us more about this dataset?
       </Typography>
 
-      <Grid container spacing={3}>
+      {/* <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
           <Paper className={classes.paper}>
             <Typography variant="h5">
@@ -194,7 +194,73 @@ export default function Help(props) {
             </Box>
           </Paper>
         </Grid>
-      </Grid>
+      </Grid> */}
+      <Box display="flex" flexDirection="row" justifyContent="center">
+        <Box className={classes.listBox}>
+          <Paper className={classes.paper}>
+            <Typography variant="h5">
+              Which columns contain longitudes?
+            </Typography>
+            <Box>
+              <FormControl component="fieldset" className={classes.formControl}>
+                <FormGroup>
+                  {headers.map((header) => {
+                    if (header.longitude) {
+                      return (
+                        <FormControlLabel
+                          key={header.index}
+                          control={
+                            <Checkbox
+                              checked={
+                                header.selected === "longitude" ? true : false
+                              }
+                              name={header.name}
+                              onChange={handleLongitudeHeaderChange}
+                            />
+                          }
+                          label={header.name}
+                        />
+                      );
+                    }
+                  })}
+                </FormGroup>
+              </FormControl>
+            </Box>
+          </Paper>
+        </Box>
+        <Box className={classes.listBox}>
+          <Paper className={classes.paper}>
+            <Typography variant="h5">
+              Which columns contain latitudes?
+            </Typography>
+            <Box>
+              <FormControl component="fieldset" className={classes.formControl}>
+                <FormGroup>
+                  {headers.map((header) => {
+                    if (header.latitude) {
+                      return (
+                        <FormControlLabel
+                          key={header.index}
+                          control={
+                            <Checkbox
+                              checked={
+                                header.selected === "latitude" ? true : false
+                              }
+                              name={header.name}
+                              onChange={handleLatitudeHeaderChange}
+                            />
+                          }
+                          label={header.name}
+                        />
+                      );
+                    }
+                  })}
+                </FormGroup>
+              </FormControl>{" "}
+            </Box>
+          </Paper>
+        </Box>
+      </Box>
       <Box>
         <Button
           variant="contained"

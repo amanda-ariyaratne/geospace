@@ -372,6 +372,10 @@ export default function VisualizationList(props) {
     >
       <Typography variant="h3">Choose the visualization method</Typography>
 
+      <Typography variant="h6">
+        These are the types of visualization we found that matches your dataset.
+      </Typography>
+
       <Box display="flex" flexDirection="row" justifyContent="center">
         <Box className={classes.listBox}>
           <List component="nav" aria-label="main mailbox folders">

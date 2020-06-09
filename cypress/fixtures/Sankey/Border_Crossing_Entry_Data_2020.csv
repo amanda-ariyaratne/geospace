@@ -1,0 +1,1550 @@
+Port Name,State,Port Code,Border,Date,Measure,Value
+Alcan,AK,3104,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,1414
+Alcan,AK,3104,US-Canada Border,2/1/2020 00:00,Personal Vehicles,763
+Alcan,AK,3104,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,412
+Alcan,AK,3104,US-Canada Border,2/1/2020 00:00,Truck Containers Full,122
+Alcan,AK,3104,US-Canada Border,2/1/2020 00:00,Trucks,545
+Alexandria Bay,NY,708,US-Canada Border,2/1/2020 00:00,Bus Passengers,1174
+Alexandria Bay,NY,708,US-Canada Border,2/1/2020 00:00,Buses,36
+Alexandria Bay,NY,708,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,68630
+Alexandria Bay,NY,708,US-Canada Border,2/1/2020 00:00,Personal Vehicles,31696
+Alexandria Bay,NY,708,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,1875
+Alexandria Bay,NY,708,US-Canada Border,2/1/2020 00:00,Truck Containers Full,13160
+Alexandria Bay,NY,708,US-Canada Border,2/1/2020 00:00,Trucks,14897
+Algonac,MI,3814,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,5173
+Algonac,MI,3814,US-Canada Border,2/1/2020 00:00,Personal Vehicles,2701
+Ambrose,ND,3410,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,274
+Ambrose,ND,3410,US-Canada Border,2/1/2020 00:00,Personal Vehicles,129
+Ambrose,ND,3410,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,2
+Ambrose,ND,3410,US-Canada Border,2/1/2020 00:00,Trucks,2
+Andrade,CA,2502,US-Mexico Border,2/1/2020 00:00,Pedestrians,115655
+Andrade,CA,2502,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,82972
+Andrade,CA,2502,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,44277
+Antler,ND,3413,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,911
+Antler,ND,3413,US-Canada Border,2/1/2020 00:00,Personal Vehicles,451
+Antler,ND,3413,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,136
+Antler,ND,3413,US-Canada Border,2/1/2020 00:00,Trucks,140
+Baudette,MN,3424,US-Canada Border,2/1/2020 00:00,Bus Passengers,229
+Baudette,MN,3424,US-Canada Border,2/1/2020 00:00,Buses,9
+Baudette,MN,3424,US-Canada Border,2/1/2020 00:00,Pedestrians,25
+Baudette,MN,3424,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,19445
+Baudette,MN,3424,US-Canada Border,2/1/2020 00:00,Personal Vehicles,11293
+Baudette,MN,3424,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,507
+Baudette,MN,3424,US-Canada Border,2/1/2020 00:00,Truck Containers Full,28
+Baudette,MN,3424,US-Canada Border,2/1/2020 00:00,Trucks,543
+Beecher Falls,VT,206,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,4524
+Beecher Falls,VT,206,US-Canada Border,2/1/2020 00:00,Personal Vehicles,2779
+Beecher Falls,VT,206,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,641
+Beecher Falls,VT,206,US-Canada Border,2/1/2020 00:00,Truck Containers Full,291
+Beecher Falls,VT,206,US-Canada Border,2/1/2020 00:00,Trucks,942
+Blaine,WA,3004,US-Canada Border,2/1/2020 00:00,Bus Passengers,13565
+Blaine,WA,3004,US-Canada Border,2/1/2020 00:00,Buses,758
+Blaine,WA,3004,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,490925
+Blaine,WA,3004,US-Canada Border,2/1/2020 00:00,Personal Vehicles,275045
+Blaine,WA,3004,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,10090
+Blaine,WA,3004,US-Canada Border,2/1/2020 00:00,Rail Containers Full,7296
+Blaine,WA,3004,US-Canada Border,2/1/2020 00:00,Train Passengers,3283
+Blaine,WA,3004,US-Canada Border,2/1/2020 00:00,Trains,164
+Blaine,WA,3004,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,9534
+Blaine,WA,3004,US-Canada Border,2/1/2020 00:00,Truck Containers Full,18745
+Blaine,WA,3004,US-Canada Border,2/1/2020 00:00,Trucks,27772
+Boquillas,TX,2410,US-Mexico Border,2/1/2020 00:00,Pedestrians,3036
+Boundary,WA,3015,US-Canada Border,2/1/2020 00:00,Bus Passengers,23
+Boundary,WA,3015,US-Canada Border,2/1/2020 00:00,Buses,1
+Boundary,WA,3015,US-Canada Border,2/1/2020 00:00,Pedestrians,2
+Boundary,WA,3015,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,3042
+Boundary,WA,3015,US-Canada Border,2/1/2020 00:00,Personal Vehicles,1805
+Boundary,WA,3015,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,463
+Boundary,WA,3015,US-Canada Border,2/1/2020 00:00,Rail Containers Full,635
+Boundary,WA,3015,US-Canada Border,2/1/2020 00:00,Train Passengers,48
+Boundary,WA,3015,US-Canada Border,2/1/2020 00:00,Trains,24
+Boundary,WA,3015,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,15
+Boundary,WA,3015,US-Canada Border,2/1/2020 00:00,Trucks,15
+Bridgewater,ME,127,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,4818
+Bridgewater,ME,127,US-Canada Border,2/1/2020 00:00,Personal Vehicles,2740
+Bridgewater,ME,127,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,186
+Bridgewater,ME,127,US-Canada Border,2/1/2020 00:00,Truck Containers Full,31
+Bridgewater,ME,127,US-Canada Border,2/1/2020 00:00,Trucks,218
+Brownsville,TX,2301,US-Mexico Border,2/1/2020 00:00,Bus Passengers,3072
+Brownsville,TX,2301,US-Mexico Border,2/1/2020 00:00,Buses,469
+Brownsville,TX,2301,US-Mexico Border,2/1/2020 00:00,Pedestrians,232880
+Brownsville,TX,2301,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,638585
+Brownsville,TX,2301,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,361923
+Brownsville,TX,2301,US-Mexico Border,2/1/2020 00:00,Rail Containers Empty,7226
+Brownsville,TX,2301,US-Mexico Border,2/1/2020 00:00,Rail Containers Full,923
+Brownsville,TX,2301,US-Mexico Border,2/1/2020 00:00,Trains,84
+Brownsville,TX,2301,US-Mexico Border,2/1/2020 00:00,Truck Containers Empty,12733
+Brownsville,TX,2301,US-Mexico Border,2/1/2020 00:00,Truck Containers Full,10313
+Brownsville,TX,2301,US-Mexico Border,2/1/2020 00:00,Trucks,23012
+Buffalo-Niagara Falls,NY,901,US-Canada Border,2/1/2020 00:00,Bus Passengers,17341
+Buffalo-Niagara Falls,NY,901,US-Canada Border,2/1/2020 00:00,Buses,747
+Buffalo-Niagara Falls,NY,901,US-Canada Border,2/1/2020 00:00,Pedestrians,8443
+Buffalo-Niagara Falls,NY,901,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,603760
+Buffalo-Niagara Falls,NY,901,US-Canada Border,2/1/2020 00:00,Personal Vehicles,296867
+Buffalo-Niagara Falls,NY,901,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,2739
+Buffalo-Niagara Falls,NY,901,US-Canada Border,2/1/2020 00:00,Rail Containers Full,8933
+Buffalo-Niagara Falls,NY,901,US-Canada Border,2/1/2020 00:00,Train Passengers,707
+Buffalo-Niagara Falls,NY,901,US-Canada Border,2/1/2020 00:00,Trains,155
+Buffalo-Niagara Falls,NY,901,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,17323
+Buffalo-Niagara Falls,NY,901,US-Canada Border,2/1/2020 00:00,Truck Containers Full,51203
+Buffalo-Niagara Falls,NY,901,US-Canada Border,2/1/2020 00:00,Trucks,67684
+Calais,ME,115,US-Canada Border,2/1/2020 00:00,Bus Passengers,178
+Calais,ME,115,US-Canada Border,2/1/2020 00:00,Buses,7
+Calais,ME,115,US-Canada Border,2/1/2020 00:00,Pedestrians,289
+Calais,ME,115,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,65505
+Calais,ME,115,US-Canada Border,2/1/2020 00:00,Personal Vehicles,40956
+Calais,ME,115,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,58
+Calais,ME,115,US-Canada Border,2/1/2020 00:00,Rail Containers Full,75
+Calais,ME,115,US-Canada Border,2/1/2020 00:00,Train Passengers,26
+Calais,ME,115,US-Canada Border,2/1/2020 00:00,Trains,12
+Calais,ME,115,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,1589
+Calais,ME,115,US-Canada Border,2/1/2020 00:00,Truck Containers Full,2868
+Calais,ME,115,US-Canada Border,2/1/2020 00:00,Trucks,4395
+Calexico,CA,2503,US-Mexico Border,2/1/2020 00:00,Pedestrians,280949
+Calexico,CA,2503,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,678645
+Calexico,CA,2503,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,419497
+Calexico East,CA,2507,US-Mexico Border,2/1/2020 00:00,Bus Passengers,3880
+Calexico East,CA,2507,US-Mexico Border,2/1/2020 00:00,Buses,97
+Calexico East,CA,2507,US-Mexico Border,2/1/2020 00:00,Pedestrians,36008
+Calexico East,CA,2507,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,401101
+Calexico East,CA,2507,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,239387
+Calexico East,CA,2507,US-Mexico Border,2/1/2020 00:00,Rail Containers Empty,526
+Calexico East,CA,2507,US-Mexico Border,2/1/2020 00:00,Rail Containers Full,45
+Calexico East,CA,2507,US-Mexico Border,2/1/2020 00:00,Train Passengers,18
+Calexico East,CA,2507,US-Mexico Border,2/1/2020 00:00,Trains,17
+Calexico East,CA,2507,US-Mexico Border,2/1/2020 00:00,Truck Containers Empty,14588
+Calexico East,CA,2507,US-Mexico Border,2/1/2020 00:00,Truck Containers Full,18946
+Calexico East,CA,2507,US-Mexico Border,2/1/2020 00:00,Trucks,33203
+Carbury,ND,3421,US-Canada Border,2/1/2020 00:00,Bus Passengers,51
+Carbury,ND,3421,US-Canada Border,2/1/2020 00:00,Buses,3
+Carbury,ND,3421,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,2208
+Carbury,ND,3421,US-Canada Border,2/1/2020 00:00,Personal Vehicles,1100
+Carbury,ND,3421,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,101
+Carbury,ND,3421,US-Canada Border,2/1/2020 00:00,Truck Containers Full,290
+Carbury,ND,3421,US-Canada Border,2/1/2020 00:00,Trucks,246
+Champlain-Rouses Point,NY,712,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,126874
+Champlain-Rouses Point,NY,712,US-Canada Border,2/1/2020 00:00,Personal Vehicles,55925
+Champlain-Rouses Point,NY,712,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,431
+Champlain-Rouses Point,NY,712,US-Canada Border,2/1/2020 00:00,Rail Containers Full,2523
+Champlain-Rouses Point,NY,712,US-Canada Border,2/1/2020 00:00,Trains,46
+Champlain-Rouses Point,NY,712,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,3404
+Champlain-Rouses Point,NY,712,US-Canada Border,2/1/2020 00:00,Truck Containers Full,20016
+Champlain-Rouses Point,NY,712,US-Canada Border,2/1/2020 00:00,Trucks,22589
+Columbus,NM,2406,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,56554
+Columbus,NM,2406,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,28073
+Columbus,NM,2406,US-Mexico Border,2/1/2020 00:00,Truck Containers Empty,122
+Columbus,NM,2406,US-Mexico Border,2/1/2020 00:00,Truck Containers Full,347
+Columbus,NM,2406,US-Mexico Border,2/1/2020 00:00,Trucks,468
+Cross Border Xpress,CA,2582,US-Mexico Border,2/1/2020 00:00,Pedestrians,127902
+Dalton Cache,AK,3106,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,787
+Dalton Cache,AK,3106,US-Canada Border,2/1/2020 00:00,Personal Vehicles,376
+Dalton Cache,AK,3106,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,66
+Dalton Cache,AK,3106,US-Canada Border,2/1/2020 00:00,Truck Containers Full,9
+Dalton Cache,AK,3106,US-Canada Border,2/1/2020 00:00,Trucks,76
+Danville,WA,3012,US-Canada Border,2/1/2020 00:00,Pedestrians,5
+Danville,WA,3012,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,3079
+Danville,WA,3012,US-Canada Border,2/1/2020 00:00,Personal Vehicles,2093
+Danville,WA,3012,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,37
+Danville,WA,3012,US-Canada Border,2/1/2020 00:00,Truck Containers Full,21
+Danville,WA,3012,US-Canada Border,2/1/2020 00:00,Trucks,58
+Del Bonita,MT,3322,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,4007
+Del Bonita,MT,3322,US-Canada Border,2/1/2020 00:00,Personal Vehicles,1697
+Del Bonita,MT,3322,US-Canada Border,2/1/2020 00:00,Truck Containers Full,40
+Del Bonita,MT,3322,US-Canada Border,2/1/2020 00:00,Trucks,40
+Del Rio,TX,2302,US-Mexico Border,2/1/2020 00:00,Pedestrians,18975
+Del Rio,TX,2302,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,203944
+Del Rio,TX,2302,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,120630
+Del Rio,TX,2302,US-Mexico Border,2/1/2020 00:00,Truck Containers Empty,1717
+Del Rio,TX,2302,US-Mexico Border,2/1/2020 00:00,Truck Containers Full,4285
+Del Rio,TX,2302,US-Mexico Border,2/1/2020 00:00,Trucks,5935
+Derby Line,VT,209,US-Canada Border,2/1/2020 00:00,Bus Passengers,3640
+Derby Line,VT,209,US-Canada Border,2/1/2020 00:00,Buses,106
+Derby Line,VT,209,US-Canada Border,2/1/2020 00:00,Pedestrians,26
+Derby Line,VT,209,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,54950
+Derby Line,VT,209,US-Canada Border,2/1/2020 00:00,Personal Vehicles,28227
+Derby Line,VT,209,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,909
+Derby Line,VT,209,US-Canada Border,2/1/2020 00:00,Truck Containers Full,5497
+Derby Line,VT,209,US-Canada Border,2/1/2020 00:00,Trucks,6402
+Detroit,MI,3801,US-Canada Border,2/1/2020 00:00,Bus Passengers,7105
+Detroit,MI,3801,US-Canada Border,2/1/2020 00:00,Buses,770
+Detroit,MI,3801,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,502088
+Detroit,MI,3801,US-Canada Border,2/1/2020 00:00,Personal Vehicles,314509
+Detroit,MI,3801,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,3402
+Detroit,MI,3801,US-Canada Border,2/1/2020 00:00,Rail Containers Full,7983
+Detroit,MI,3801,US-Canada Border,2/1/2020 00:00,Train Passengers,405
+Detroit,MI,3801,US-Canada Border,2/1/2020 00:00,Trains,144
+Detroit,MI,3801,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,30365
+Detroit,MI,3801,US-Canada Border,2/1/2020 00:00,Truck Containers Full,91828
+Detroit,MI,3801,US-Canada Border,2/1/2020 00:00,Trucks,124071
+Douglas,AZ,2601,US-Mexico Border,2/1/2020 00:00,Bus Passengers,1100
+Douglas,AZ,2601,US-Mexico Border,2/1/2020 00:00,Buses,210
+Douglas,AZ,2601,US-Mexico Border,2/1/2020 00:00,Pedestrians,73203
+Douglas,AZ,2601,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,190627
+Douglas,AZ,2601,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,116495
+Douglas,AZ,2601,US-Mexico Border,2/1/2020 00:00,Truck Containers Empty,952
+Douglas,AZ,2601,US-Mexico Border,2/1/2020 00:00,Truck Containers Full,1349
+Douglas,AZ,2601,US-Mexico Border,2/1/2020 00:00,Trucks,2287
+Dunseith,ND,3422,US-Canada Border,2/1/2020 00:00,Bus Passengers,73
+Dunseith,ND,3422,US-Canada Border,2/1/2020 00:00,Buses,3
+Dunseith,ND,3422,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,6201
+Dunseith,ND,3422,US-Canada Border,2/1/2020 00:00,Personal Vehicles,2932
+Dunseith,ND,3422,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,341
+Dunseith,ND,3422,US-Canada Border,2/1/2020 00:00,Truck Containers Full,1788
+Dunseith,ND,3422,US-Canada Border,2/1/2020 00:00,Trucks,2077
+Eagle Pass,TX,2303,US-Mexico Border,2/1/2020 00:00,Bus Passengers,5360
+Eagle Pass,TX,2303,US-Mexico Border,2/1/2020 00:00,Buses,283
+Eagle Pass,TX,2303,US-Mexico Border,2/1/2020 00:00,Pedestrians,59572
+Eagle Pass,TX,2303,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,461922
+Eagle Pass,TX,2303,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,229709
+Eagle Pass,TX,2303,US-Mexico Border,2/1/2020 00:00,Rail Containers Empty,14380
+Eagle Pass,TX,2303,US-Mexico Border,2/1/2020 00:00,Rail Containers Full,12033
+Eagle Pass,TX,2303,US-Mexico Border,2/1/2020 00:00,Trains,265
+Eagle Pass,TX,2303,US-Mexico Border,2/1/2020 00:00,Truck Containers Empty,5075
+Eagle Pass,TX,2303,US-Mexico Border,2/1/2020 00:00,Truck Containers Full,9105
+Eagle Pass,TX,2303,US-Mexico Border,2/1/2020 00:00,Trucks,14204
+Eastport,ID,3302,US-Canada Border,2/1/2020 00:00,Bus Passengers,230
+Eastport,ID,3302,US-Canada Border,2/1/2020 00:00,Buses,7
+Eastport,ID,3302,US-Canada Border,2/1/2020 00:00,Pedestrians,170
+Eastport,ID,3302,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,8042
+Eastport,ID,3302,US-Canada Border,2/1/2020 00:00,Personal Vehicles,3829
+Eastport,ID,3302,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,496
+Eastport,ID,3302,US-Canada Border,2/1/2020 00:00,Rail Containers Full,9728
+Eastport,ID,3302,US-Canada Border,2/1/2020 00:00,Train Passengers,170
+Eastport,ID,3302,US-Canada Border,2/1/2020 00:00,Trains,85
+Eastport,ID,3302,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,820
+Eastport,ID,3302,US-Canada Border,2/1/2020 00:00,Truck Containers Full,3848
+Eastport,ID,3302,US-Canada Border,2/1/2020 00:00,Trucks,4487
+Eastport,ME,103,US-Canada Border,2/1/2020 00:00,Pedestrians,2
+Eastport,ME,103,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,10590
+Eastport,ME,103,US-Canada Border,2/1/2020 00:00,Personal Vehicles,7125
+Eastport,ME,103,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,61
+Eastport,ME,103,US-Canada Border,2/1/2020 00:00,Truck Containers Full,85
+Eastport,ME,103,US-Canada Border,2/1/2020 00:00,Trucks,146
+El Paso,TX,2402,US-Mexico Border,2/1/2020 00:00,Bus Passengers,22909
+El Paso,TX,2402,US-Mexico Border,2/1/2020 00:00,Buses,1531
+El Paso,TX,2402,US-Mexico Border,2/1/2020 00:00,Pedestrians,489272
+El Paso,TX,2402,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,1504954
+El Paso,TX,2402,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,891337
+El Paso,TX,2402,US-Mexico Border,2/1/2020 00:00,Rail Containers Empty,4922
+El Paso,TX,2402,US-Mexico Border,2/1/2020 00:00,Rail Containers Full,2659
+El Paso,TX,2402,US-Mexico Border,2/1/2020 00:00,Trains,98
+El Paso,TX,2402,US-Mexico Border,2/1/2020 00:00,Truck Containers Empty,25435
+El Paso,TX,2402,US-Mexico Border,2/1/2020 00:00,Truck Containers Full,37230
+El Paso,TX,2402,US-Mexico Border,2/1/2020 00:00,Trucks,62892
+Ferry,WA,3013,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,1030
+Ferry,WA,3013,US-Canada Border,2/1/2020 00:00,Personal Vehicles,559
+Ferry,WA,3013,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,5
+Ferry,WA,3013,US-Canada Border,2/1/2020 00:00,Trucks,5
+Grand Portage,MN,3613,US-Canada Border,2/1/2020 00:00,Bus Passengers,789
+Fort Fairfield,ME,107,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,10425
+Fort Fairfield,ME,107,US-Canada Border,2/1/2020 00:00,Personal Vehicles,6451
+Fort Fairfield,ME,107,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,281
+Fort Fairfield,ME,107,US-Canada Border,2/1/2020 00:00,Truck Containers Full,59
+Fort Fairfield,ME,107,US-Canada Border,2/1/2020 00:00,Trucks,340
+Fort Kent,ME,110,US-Canada Border,2/1/2020 00:00,Bus Passengers,18
+Fort Kent,ME,110,US-Canada Border,2/1/2020 00:00,Buses,1
+Fort Kent,ME,110,US-Canada Border,2/1/2020 00:00,Pedestrians,48
+Fort Kent,ME,110,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,10868
+Fort Kent,ME,110,US-Canada Border,2/1/2020 00:00,Personal Vehicles,7830
+Fort Kent,ME,110,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,815
+Fort Kent,ME,110,US-Canada Border,2/1/2020 00:00,Truck Containers Full,80
+Fort Kent,ME,110,US-Canada Border,2/1/2020 00:00,Trucks,895
+Fortuna,ND,3417,US-Canada Border,2/1/2020 00:00,Bus Passengers,36
+Fortuna,ND,3417,US-Canada Border,2/1/2020 00:00,Buses,1
+Fortuna,ND,3417,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,1844
+Fortuna,ND,3417,US-Canada Border,2/1/2020 00:00,Personal Vehicles,898
+Fortuna,ND,3417,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,99
+Fortuna,ND,3417,US-Canada Border,2/1/2020 00:00,Truck Containers Full,321
+Fortuna,ND,3417,US-Canada Border,2/1/2020 00:00,Trucks,420
+Frontier,WA,3020,US-Canada Border,2/1/2020 00:00,Bus Passengers,384
+Frontier,WA,3020,US-Canada Border,2/1/2020 00:00,Buses,39
+Frontier,WA,3020,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,8786
+Frontier,WA,3020,US-Canada Border,2/1/2020 00:00,Personal Vehicles,4088
+Frontier,WA,3020,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,1638
+Frontier,WA,3020,US-Canada Border,2/1/2020 00:00,Truck Containers Full,722
+Frontier,WA,3020,US-Canada Border,2/1/2020 00:00,Trucks,2174
+Grand Portage,MN,3613,US-Canada Border,2/1/2020 00:00,Buses,33
+Grand Portage,MN,3613,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,24561
+Grand Portage,MN,3613,US-Canada Border,2/1/2020 00:00,Personal Vehicles,12256
+Grand Portage,MN,3613,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,415
+Grand Portage,MN,3613,US-Canada Border,2/1/2020 00:00,Truck Containers Full,692
+Grand Portage,MN,3613,US-Canada Border,2/1/2020 00:00,Trucks,1095
+Hannah,ND,3408,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,89
+Hannah,ND,3408,US-Canada Border,2/1/2020 00:00,Personal Vehicles,57
+Hannah,ND,3408,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,11
+Hannah,ND,3408,US-Canada Border,2/1/2020 00:00,Trucks,11
+Hansboro,ND,3415,US-Canada Border,2/1/2020 00:00,Bus Passengers,79
+Hansboro,ND,3415,US-Canada Border,2/1/2020 00:00,Buses,3
+Hansboro,ND,3415,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,817
+Hansboro,ND,3415,US-Canada Border,2/1/2020 00:00,Personal Vehicles,395
+Hansboro,ND,3415,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,19
+Hansboro,ND,3415,US-Canada Border,2/1/2020 00:00,Trucks,19
+Hidalgo,TX,2305,US-Mexico Border,2/1/2020 00:00,Bus Passengers,19145
+Hidalgo,TX,2305,US-Mexico Border,2/1/2020 00:00,Buses,1557
+Hidalgo,TX,2305,US-Mexico Border,2/1/2020 00:00,Pedestrians,178722
+Hidalgo,TX,2305,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,608793
+Hidalgo,TX,2305,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,303087
+Hidalgo,TX,2305,US-Mexico Border,2/1/2020 00:00,Truck Containers Empty,18891
+Hidalgo,TX,2305,US-Mexico Border,2/1/2020 00:00,Truck Containers Full,35479
+Hidalgo,TX,2305,US-Mexico Border,2/1/2020 00:00,Trucks,54368
+Highgate Springs-Alburg,VT,212,US-Canada Border,2/1/2020 00:00,Bus Passengers,3829
+Highgate Springs-Alburg,VT,212,US-Canada Border,2/1/2020 00:00,Buses,173
+Highgate Springs-Alburg,VT,212,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,56013
+Highgate Springs-Alburg,VT,212,US-Canada Border,2/1/2020 00:00,Personal Vehicles,25640
+Highgate Springs-Alburg,VT,212,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,106
+Highgate Springs-Alburg,VT,212,US-Canada Border,2/1/2020 00:00,Rail Containers Full,840
+Highgate Springs-Alburg,VT,212,US-Canada Border,2/1/2020 00:00,Train Passengers,30
+Highgate Springs-Alburg,VT,212,US-Canada Border,2/1/2020 00:00,Trains,19
+Highgate Springs-Alburg,VT,212,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,1474
+Highgate Springs-Alburg,VT,212,US-Canada Border,2/1/2020 00:00,Truck Containers Full,6259
+Highgate Springs-Alburg,VT,212,US-Canada Border,2/1/2020 00:00,Trucks,7640
+Houlton,ME,106,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,26053
+Houlton,ME,106,US-Canada Border,2/1/2020 00:00,Personal Vehicles,13596
+Houlton,ME,106,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,1471
+Houlton,ME,106,US-Canada Border,2/1/2020 00:00,Truck Containers Full,5367
+Houlton,ME,106,US-Canada Border,2/1/2020 00:00,Trucks,6837
+International Falls-Ranier,MN,3604,US-Canada Border,2/1/2020 00:00,Bus Passengers,664
+International Falls-Ranier,MN,3604,US-Canada Border,2/1/2020 00:00,Buses,24
+International Falls-Ranier,MN,3604,US-Canada Border,2/1/2020 00:00,Pedestrians,341
+International Falls-Ranier,MN,3604,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,39639
+International Falls-Ranier,MN,3604,US-Canada Border,2/1/2020 00:00,Personal Vehicles,22690
+International Falls-Ranier,MN,3604,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,13726
+International Falls-Ranier,MN,3604,US-Canada Border,2/1/2020 00:00,Rail Containers Full,46343
+International Falls-Ranier,MN,3604,US-Canada Border,2/1/2020 00:00,Train Passengers,574
+International Falls-Ranier,MN,3604,US-Canada Border,2/1/2020 00:00,Trains,331
+International Falls-Ranier,MN,3604,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,579
+International Falls-Ranier,MN,3604,US-Canada Border,2/1/2020 00:00,Truck Containers Full,796
+International Falls-Ranier,MN,3604,US-Canada Border,2/1/2020 00:00,Trucks,1386
+Jackman,ME,104,US-Canada Border,2/1/2020 00:00,Bus Passengers,96
+Jackman,ME,104,US-Canada Border,2/1/2020 00:00,Buses,3
+Jackman,ME,104,US-Canada Border,2/1/2020 00:00,Pedestrians,3
+Jackman,ME,104,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,13815
+Jackman,ME,104,US-Canada Border,2/1/2020 00:00,Personal Vehicles,7887
+Jackman,ME,104,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,739
+Jackman,ME,104,US-Canada Border,2/1/2020 00:00,Rail Containers Full,554
+Jackman,ME,104,US-Canada Border,2/1/2020 00:00,Train Passengers,36
+Jackman,ME,104,US-Canada Border,2/1/2020 00:00,Trains,37
+Jackman,ME,104,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,6013
+Jackman,ME,104,US-Canada Border,2/1/2020 00:00,Truck Containers Full,1660
+Jackman,ME,104,US-Canada Border,2/1/2020 00:00,Trucks,7621
+Lancaster,MN,3430,US-Canada Border,2/1/2020 00:00,Bus Passengers,67
+Lancaster,MN,3430,US-Canada Border,2/1/2020 00:00,Buses,3
+Lancaster,MN,3430,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,3093
+Lancaster,MN,3430,US-Canada Border,2/1/2020 00:00,Personal Vehicles,1392
+Lancaster,MN,3430,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,386
+Lancaster,MN,3430,US-Canada Border,2/1/2020 00:00,Truck Containers Full,2
+Lancaster,MN,3430,US-Canada Border,2/1/2020 00:00,Trucks,394
+Laredo,TX,2304,US-Mexico Border,2/1/2020 00:00,Bus Passengers,62911
+Laredo,TX,2304,US-Mexico Border,2/1/2020 00:00,Buses,2552
+Laredo,TX,2304,US-Mexico Border,2/1/2020 00:00,Pedestrians,292273
+Laredo,TX,2304,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,731666
+Laredo,TX,2304,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,381802
+Laredo,TX,2304,US-Mexico Border,2/1/2020 00:00,Rail Containers Empty,16859
+Laredo,TX,2304,US-Mexico Border,2/1/2020 00:00,Rail Containers Full,21375
+Laredo,TX,2304,US-Mexico Border,2/1/2020 00:00,Trains,371
+Laredo,TX,2304,US-Mexico Border,2/1/2020 00:00,Truck Containers Empty,56006
+Laredo,TX,2304,US-Mexico Border,2/1/2020 00:00,Truck Containers Full,134309
+Laredo,TX,2304,US-Mexico Border,2/1/2020 00:00,Trucks,190252
+Laurier,WA,3016,US-Canada Border,2/1/2020 00:00,Bus Passengers,72
+Laurier,WA,3016,US-Canada Border,2/1/2020 00:00,Buses,2
+Laurier,WA,3016,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,4463
+Laurier,WA,3016,US-Canada Border,2/1/2020 00:00,Personal Vehicles,2551
+Laurier,WA,3016,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,24
+Laurier,WA,3016,US-Canada Border,2/1/2020 00:00,Rail Containers Full,179
+Laurier,WA,3016,US-Canada Border,2/1/2020 00:00,Train Passengers,18
+Laurier,WA,3016,US-Canada Border,2/1/2020 00:00,Trains,9
+Laurier,WA,3016,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,321
+Laurier,WA,3016,US-Canada Border,2/1/2020 00:00,Truck Containers Full,112
+Laurier,WA,3016,US-Canada Border,2/1/2020 00:00,Trucks,430
+Limestone,ME,118,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,1366
+Limestone,ME,118,US-Canada Border,2/1/2020 00:00,Personal Vehicles,897
+Limestone,ME,118,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,46
+Limestone,ME,118,US-Canada Border,2/1/2020 00:00,Trucks,46
+Lukeville,AZ,2602,US-Mexico Border,2/1/2020 00:00,Bus Passengers,307
+Lukeville,AZ,2602,US-Mexico Border,2/1/2020 00:00,Buses,57
+Lukeville,AZ,2602,US-Mexico Border,2/1/2020 00:00,Pedestrians,3513
+Lukeville,AZ,2602,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,53761
+Lukeville,AZ,2602,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,25359
+Lukeville,AZ,2602,US-Mexico Border,2/1/2020 00:00,Truck Containers Empty,2
+Lukeville,AZ,2602,US-Mexico Border,2/1/2020 00:00,Truck Containers Full,22
+Lukeville,AZ,2602,US-Mexico Border,2/1/2020 00:00,Trucks,25
+Lynden,WA,3023,US-Canada Border,2/1/2020 00:00,Pedestrians,71
+Lynden,WA,3023,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,77146
+Lynden,WA,3023,US-Canada Border,2/1/2020 00:00,Personal Vehicles,40112
+Lynden,WA,3023,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,3996
+Lynden,WA,3023,US-Canada Border,2/1/2020 00:00,Truck Containers Full,411
+Lynden,WA,3023,US-Canada Border,2/1/2020 00:00,Trucks,4450
+Madawaska,ME,109,US-Canada Border,2/1/2020 00:00,Pedestrians,46
+Madawaska,ME,109,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,38285
+Madawaska,ME,109,US-Canada Border,2/1/2020 00:00,Personal Vehicles,26685
+Madawaska,ME,109,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,172
+Madawaska,ME,109,US-Canada Border,2/1/2020 00:00,Trucks,173
+Maida,ND,3416,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,775
+Maida,ND,3416,US-Canada Border,2/1/2020 00:00,Personal Vehicles,365
+Maida,ND,3416,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,31
+Maida,ND,3416,US-Canada Border,2/1/2020 00:00,Trucks,31
+Massena,NY,704,US-Canada Border,2/1/2020 00:00,Bus Passengers,3486
+Massena,NY,704,US-Canada Border,2/1/2020 00:00,Buses,329
+Massena,NY,704,US-Canada Border,2/1/2020 00:00,Pedestrians,12
+Massena,NY,704,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,106397
+Massena,NY,704,US-Canada Border,2/1/2020 00:00,Personal Vehicles,63497
+Massena,NY,704,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,470
+Massena,NY,704,US-Canada Border,2/1/2020 00:00,Truck Containers Full,1226
+Massena,NY,704,US-Canada Border,2/1/2020 00:00,Trucks,1673
+Metaline Falls,WA,3025,US-Canada Border,2/1/2020 00:00,Bus Passengers,103
+Metaline Falls,WA,3025,US-Canada Border,2/1/2020 00:00,Buses,7
+Metaline Falls,WA,3025,US-Canada Border,2/1/2020 00:00,Pedestrians,2
+Metaline Falls,WA,3025,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,5091
+Metaline Falls,WA,3025,US-Canada Border,2/1/2020 00:00,Personal Vehicles,2184
+Metaline Falls,WA,3025,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,243
+Metaline Falls,WA,3025,US-Canada Border,2/1/2020 00:00,Truck Containers Full,21
+Metaline Falls,WA,3025,US-Canada Border,2/1/2020 00:00,Trucks,256
+Morgan,MT,3319,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,712
+Morgan,MT,3319,US-Canada Border,2/1/2020 00:00,Personal Vehicles,357
+Morgan,MT,3319,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,5
+Morgan,MT,3319,US-Canada Border,2/1/2020 00:00,Truck Containers Full,10
+Morgan,MT,3319,US-Canada Border,2/1/2020 00:00,Trucks,10
+Naco,AZ,2603,US-Mexico Border,2/1/2020 00:00,Bus Passengers,25
+Naco,AZ,2603,US-Mexico Border,2/1/2020 00:00,Buses,1
+Naco,AZ,2603,US-Mexico Border,2/1/2020 00:00,Pedestrians,7584
+Naco,AZ,2603,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,39413
+Naco,AZ,2603,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,22566
+Naco,AZ,2603,US-Mexico Border,2/1/2020 00:00,Truck Containers Empty,203
+Naco,AZ,2603,US-Mexico Border,2/1/2020 00:00,Truck Containers Full,51
+Naco,AZ,2603,US-Mexico Border,2/1/2020 00:00,Trucks,254
+Neche,ND,3404,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,4280
+Neche,ND,3404,US-Canada Border,2/1/2020 00:00,Personal Vehicles,2524
+Neche,ND,3404,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,423
+Neche,ND,3404,US-Canada Border,2/1/2020 00:00,Truck Containers Full,170
+Neche,ND,3404,US-Canada Border,2/1/2020 00:00,Trucks,565
+Nighthawk,WA,3011,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,449
+Nighthawk,WA,3011,US-Canada Border,2/1/2020 00:00,Personal Vehicles,222
+Nogales,AZ,2604,US-Mexico Border,2/1/2020 00:00,Bus Passengers,14183
+Nogales,AZ,2604,US-Mexico Border,2/1/2020 00:00,Buses,810
+Nogales,AZ,2604,US-Mexico Border,2/1/2020 00:00,Pedestrians,249148
+Nogales,AZ,2604,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,540410
+Nogales,AZ,2604,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,286440
+Nogales,AZ,2604,US-Mexico Border,2/1/2020 00:00,Rail Containers Empty,3111
+Nogales,AZ,2604,US-Mexico Border,2/1/2020 00:00,Rail Containers Full,3311
+Nogales,AZ,2604,US-Mexico Border,2/1/2020 00:00,Train Passengers,248
+Nogales,AZ,2604,US-Mexico Border,2/1/2020 00:00,Trains,63
+Nogales,AZ,2604,US-Mexico Border,2/1/2020 00:00,Truck Containers Empty,7466
+Nogales,AZ,2604,US-Mexico Border,2/1/2020 00:00,Truck Containers Full,25537
+Nogales,AZ,2604,US-Mexico Border,2/1/2020 00:00,Trucks,32944
+Noonan,ND,3420,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,3022
+Noonan,ND,3420,US-Canada Border,2/1/2020 00:00,Personal Vehicles,1710
+Noonan,ND,3420,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,308
+Noonan,ND,3420,US-Canada Border,2/1/2020 00:00,Trucks,313
+Northgate,ND,3406,US-Canada Border,2/1/2020 00:00,Bus Passengers,34
+Northgate,ND,3406,US-Canada Border,2/1/2020 00:00,Buses,1
+Northgate,ND,3406,US-Canada Border,2/1/2020 00:00,Pedestrians,4
+Northgate,ND,3406,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,1833
+Northgate,ND,3406,US-Canada Border,2/1/2020 00:00,Personal Vehicles,828
+Northgate,ND,3406,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,151
+Northgate,ND,3406,US-Canada Border,2/1/2020 00:00,Rail Containers Full,401
+Northgate,ND,3406,US-Canada Border,2/1/2020 00:00,Train Passengers,42
+Northgate,ND,3406,US-Canada Border,2/1/2020 00:00,Trains,14
+Northgate,ND,3406,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,517
+Northgate,ND,3406,US-Canada Border,2/1/2020 00:00,Truck Containers Full,106
+Northgate,ND,3406,US-Canada Border,2/1/2020 00:00,Trucks,599
+Norton,VT,211,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,978
+Norton,VT,211,US-Canada Border,2/1/2020 00:00,Personal Vehicles,700
+Norton,VT,211,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,65
+Norton,VT,211,US-Canada Border,2/1/2020 00:00,Rail Containers Full,505
+Norton,VT,211,US-Canada Border,2/1/2020 00:00,Train Passengers,26
+Norton,VT,211,US-Canada Border,2/1/2020 00:00,Trains,18
+Norton,VT,211,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,237
+Norton,VT,211,US-Canada Border,2/1/2020 00:00,Truck Containers Full,483
+Norton,VT,211,US-Canada Border,2/1/2020 00:00,Trucks,723
+Ogdensburg,NY,701,US-Canada Border,2/1/2020 00:00,Bus Passengers,140
+Ogdensburg,NY,701,US-Canada Border,2/1/2020 00:00,Buses,5
+Ogdensburg,NY,701,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,37502
+Ogdensburg,NY,701,US-Canada Border,2/1/2020 00:00,Personal Vehicles,19301
+Ogdensburg,NY,701,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,878
+Ogdensburg,NY,701,US-Canada Border,2/1/2020 00:00,Truck Containers Full,2371
+Ogdensburg,NY,701,US-Canada Border,2/1/2020 00:00,Trucks,3253
+Opheim,MT,3317,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,386
+Opheim,MT,3317,US-Canada Border,2/1/2020 00:00,Personal Vehicles,200
+Opheim,MT,3317,US-Canada Border,2/1/2020 00:00,Truck Containers Full,7
+Opheim,MT,3317,US-Canada Border,2/1/2020 00:00,Trucks,4
+Oroville,WA,3019,US-Canada Border,2/1/2020 00:00,Bus Passengers,362
+Oroville,WA,3019,US-Canada Border,2/1/2020 00:00,Buses,12
+Oroville,WA,3019,US-Canada Border,2/1/2020 00:00,Pedestrians,226
+Oroville,WA,3019,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,19635
+Oroville,WA,3019,US-Canada Border,2/1/2020 00:00,Personal Vehicles,10849
+Oroville,WA,3019,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,868
+Oroville,WA,3019,US-Canada Border,2/1/2020 00:00,Truck Containers Full,1276
+Oroville,WA,3019,US-Canada Border,2/1/2020 00:00,Trucks,2140
+Otay Mesa,CA,2506,US-Mexico Border,2/1/2020 00:00,Bus Passengers,430
+Otay Mesa,CA,2506,US-Mexico Border,2/1/2020 00:00,Buses,348
+Otay Mesa,CA,2506,US-Mexico Border,2/1/2020 00:00,Pedestrians,267170
+Otay Mesa,CA,2506,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,737124
+Otay Mesa,CA,2506,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,465008
+Otay Mesa,CA,2506,US-Mexico Border,2/1/2020 00:00,Rail Containers Empty,102
+Otay Mesa,CA,2506,US-Mexico Border,2/1/2020 00:00,Train Passengers,32
+Otay Mesa,CA,2506,US-Mexico Border,2/1/2020 00:00,Trains,14
+Otay Mesa,CA,2506,US-Mexico Border,2/1/2020 00:00,Truck Containers Empty,17104
+Otay Mesa,CA,2506,US-Mexico Border,2/1/2020 00:00,Truck Containers Full,53859
+Otay Mesa,CA,2506,US-Mexico Border,2/1/2020 00:00,Trucks,69812
+Pembina,ND,3401,US-Canada Border,2/1/2020 00:00,Bus Passengers,1362
+Pembina,ND,3401,US-Canada Border,2/1/2020 00:00,Buses,47
+Pembina,ND,3401,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,34052
+Pembina,ND,3401,US-Canada Border,2/1/2020 00:00,Personal Vehicles,15530
+Pembina,ND,3401,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,1406
+Pembina,ND,3401,US-Canada Border,2/1/2020 00:00,Rail Containers Full,13304
+Pembina,ND,3401,US-Canada Border,2/1/2020 00:00,Train Passengers,276
+Pembina,ND,3401,US-Canada Border,2/1/2020 00:00,Trains,138
+Pembina,ND,3401,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,3513
+Pembina,ND,3401,US-Canada Border,2/1/2020 00:00,Truck Containers Full,14155
+Pembina,ND,3401,US-Canada Border,2/1/2020 00:00,Trucks,17264
+Piegan,MT,3316,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,7439
+Piegan,MT,3316,US-Canada Border,2/1/2020 00:00,Personal Vehicles,3668
+Piegan,MT,3316,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,13
+Piegan,MT,3316,US-Canada Border,2/1/2020 00:00,Truck Containers Full,140
+Piegan,MT,3316,US-Canada Border,2/1/2020 00:00,Trucks,153
+Pinecreek,MN,3425,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,473
+Pinecreek,MN,3425,US-Canada Border,2/1/2020 00:00,Personal Vehicles,222
+Pinecreek,MN,3425,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,5
+Pinecreek,MN,3425,US-Canada Border,2/1/2020 00:00,Truck Containers Full,7
+Pinecreek,MN,3425,US-Canada Border,2/1/2020 00:00,Trucks,12
+Point Roberts,WA,3017,US-Canada Border,2/1/2020 00:00,Bus Passengers,936
+Point Roberts,WA,3017,US-Canada Border,2/1/2020 00:00,Buses,36
+Point Roberts,WA,3017,US-Canada Border,2/1/2020 00:00,Pedestrians,1622
+Point Roberts,WA,3017,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,86580
+Point Roberts,WA,3017,US-Canada Border,2/1/2020 00:00,Personal Vehicles,65197
+Point Roberts,WA,3017,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,483
+Point Roberts,WA,3017,US-Canada Border,2/1/2020 00:00,Truck Containers Full,365
+Point Roberts,WA,3017,US-Canada Border,2/1/2020 00:00,Trucks,841
+Port Angeles,WA,3007,US-Canada Border,2/1/2020 00:00,Bus Passengers,1
+Port Angeles,WA,3007,US-Canada Border,2/1/2020 00:00,Buses,1
+Port Angeles,WA,3007,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,15
+Port Angeles,WA,3007,US-Canada Border,2/1/2020 00:00,Truck Containers Full,16
+Port Angeles,WA,3007,US-Canada Border,2/1/2020 00:00,Trucks,32
+Port Huron,MI,3802,US-Canada Border,2/1/2020 00:00,Bus Passengers,1330
+Port Huron,MI,3802,US-Canada Border,2/1/2020 00:00,Buses,55
+Port Huron,MI,3802,US-Canada Border,2/1/2020 00:00,Pedestrians,165
+Port Huron,MI,3802,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,165665
+Port Huron,MI,3802,US-Canada Border,2/1/2020 00:00,Personal Vehicles,85914
+Port Huron,MI,3802,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,10385
+Port Huron,MI,3802,US-Canada Border,2/1/2020 00:00,Rail Containers Full,19478
+Port Huron,MI,3802,US-Canada Border,2/1/2020 00:00,Train Passengers,486
+Port Huron,MI,3802,US-Canada Border,2/1/2020 00:00,Trains,240
+Port Huron,MI,3802,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,12729
+Port Huron,MI,3802,US-Canada Border,2/1/2020 00:00,Truck Containers Full,48402
+Port Huron,MI,3802,US-Canada Border,2/1/2020 00:00,Trucks,60630
+Portal,ND,3403,US-Canada Border,2/1/2020 00:00,Bus Passengers,212
+Portal,ND,3403,US-Canada Border,2/1/2020 00:00,Buses,5
+Portal,ND,3403,US-Canada Border,2/1/2020 00:00,Pedestrians,100
+Portal,ND,3403,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,7809
+Portal,ND,3403,US-Canada Border,2/1/2020 00:00,Personal Vehicles,3866
+Portal,ND,3403,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,5874
+Portal,ND,3403,US-Canada Border,2/1/2020 00:00,Rail Containers Full,20027
+Portal,ND,3403,US-Canada Border,2/1/2020 00:00,Train Passengers,447
+Portal,ND,3403,US-Canada Border,2/1/2020 00:00,Trains,153
+Portal,ND,3403,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,1716
+Portal,ND,3403,US-Canada Border,2/1/2020 00:00,Truck Containers Full,5239
+Portal,ND,3403,US-Canada Border,2/1/2020 00:00,Trucks,6557
+Porthill,ID,3308,US-Canada Border,2/1/2020 00:00,Bus Passengers,140
+Porthill,ID,3308,US-Canada Border,2/1/2020 00:00,Buses,3
+Porthill,ID,3308,US-Canada Border,2/1/2020 00:00,Pedestrians,21
+Porthill,ID,3308,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,13130
+Porthill,ID,3308,US-Canada Border,2/1/2020 00:00,Personal Vehicles,7848
+Porthill,ID,3308,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,398
+Porthill,ID,3308,US-Canada Border,2/1/2020 00:00,Truck Containers Full,21
+Porthill,ID,3308,US-Canada Border,2/1/2020 00:00,Trucks,417
+Presidio,TX,2403,US-Mexico Border,2/1/2020 00:00,Bus Passengers,152
+Presidio,TX,2403,US-Mexico Border,2/1/2020 00:00,Buses,101
+Presidio,TX,2403,US-Mexico Border,2/1/2020 00:00,Pedestrians,17076
+Presidio,TX,2403,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,97435
+Presidio,TX,2403,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,50171
+Presidio,TX,2403,US-Mexico Border,2/1/2020 00:00,Truck Containers Empty,321
+Presidio,TX,2403,US-Mexico Border,2/1/2020 00:00,Truck Containers Full,500
+Presidio,TX,2403,US-Mexico Border,2/1/2020 00:00,Trucks,798
+Progreso,TX,2309,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,214642
+Progreso,TX,2309,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,100329
+Progreso,TX,2309,US-Mexico Border,2/1/2020 00:00,Truck Containers Empty,2055
+Progreso,TX,2309,US-Mexico Border,2/1/2020 00:00,Truck Containers Full,3228
+Progreso,TX,2309,US-Mexico Border,2/1/2020 00:00,Trucks,4559
+Raymond,MT,3301,US-Canada Border,2/1/2020 00:00,Bus Passengers,30
+Raymond,MT,3301,US-Canada Border,2/1/2020 00:00,Buses,1
+Raymond,MT,3301,US-Canada Border,2/1/2020 00:00,Pedestrians,90
+Raymond,MT,3301,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,2939
+Raymond,MT,3301,US-Canada Border,2/1/2020 00:00,Personal Vehicles,1445
+Raymond,MT,3301,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,430
+Raymond,MT,3301,US-Canada Border,2/1/2020 00:00,Truck Containers Full,1422
+Raymond,MT,3301,US-Canada Border,2/1/2020 00:00,Trucks,1594
+Richford,VT,203,US-Canada Border,2/1/2020 00:00,Bus Passengers,78
+Richford,VT,203,US-Canada Border,2/1/2020 00:00,Buses,2
+Richford,VT,203,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,11100
+Richford,VT,203,US-Canada Border,2/1/2020 00:00,Personal Vehicles,5810
+Richford,VT,203,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,22
+Richford,VT,203,US-Canada Border,2/1/2020 00:00,Rail Containers Full,136
+Richford,VT,203,US-Canada Border,2/1/2020 00:00,Train Passengers,26
+Richford,VT,203,US-Canada Border,2/1/2020 00:00,Trains,15
+Richford,VT,203,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,276
+Richford,VT,203,US-Canada Border,2/1/2020 00:00,Truck Containers Full,136
+Richford,VT,203,US-Canada Border,2/1/2020 00:00,Trucks,416
+Rio Grande City,TX,2307,US-Mexico Border,2/1/2020 00:00,Pedestrians,8199
+Rio Grande City,TX,2307,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,66246
+Rio Grande City,TX,2307,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,32768
+Rio Grande City,TX,2307,US-Mexico Border,2/1/2020 00:00,Truck Containers Empty,741
+Rio Grande City,TX,2307,US-Mexico Border,2/1/2020 00:00,Truck Containers Full,2797
+Rio Grande City,TX,2307,US-Mexico Border,2/1/2020 00:00,Trucks,3268
+Roma,TX,2310,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,106966
+Roma,TX,2310,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,59453
+Roma,TX,2310,US-Mexico Border,2/1/2020 00:00,Truck Containers Empty,753
+Roma,TX,2310,US-Mexico Border,2/1/2020 00:00,Truck Containers Full,807
+Roma,TX,2310,US-Mexico Border,2/1/2020 00:00,Trucks,1562
+Roosville,MT,3318,US-Canada Border,2/1/2020 00:00,Bus Passengers,76
+Roosville,MT,3318,US-Canada Border,2/1/2020 00:00,Buses,3
+Roosville,MT,3318,US-Canada Border,2/1/2020 00:00,Pedestrians,14
+Roosville,MT,3318,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,19112
+Roosville,MT,3318,US-Canada Border,2/1/2020 00:00,Personal Vehicles,9280
+Roosville,MT,3318,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,334
+Roosville,MT,3318,US-Canada Border,2/1/2020 00:00,Truck Containers Full,315
+Roosville,MT,3318,US-Canada Border,2/1/2020 00:00,Trucks,633
+Roseau,MN,3426,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,4565
+Roseau,MN,3426,US-Canada Border,2/1/2020 00:00,Personal Vehicles,2578
+Roseau,MN,3426,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,90
+Roseau,MN,3426,US-Canada Border,2/1/2020 00:00,Truck Containers Full,43
+Roseau,MN,3426,US-Canada Border,2/1/2020 00:00,Trucks,135
+San Luis,AZ,2608,US-Mexico Border,2/1/2020 00:00,Bus Passengers,5
+San Luis,AZ,2608,US-Mexico Border,2/1/2020 00:00,Buses,5
+San Luis,AZ,2608,US-Mexico Border,2/1/2020 00:00,Pedestrians,275360
+San Luis,AZ,2608,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,414870
+San Luis,AZ,2608,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,253349
+San Luis,AZ,2608,US-Mexico Border,2/1/2020 00:00,Truck Containers Empty,1500
+San Luis,AZ,2608,US-Mexico Border,2/1/2020 00:00,Truck Containers Full,3153
+San Luis,AZ,2608,US-Mexico Border,2/1/2020 00:00,Trucks,4643
+San Ysidro,CA,2504,US-Mexico Border,2/1/2020 00:00,Bus Passengers,8225
+San Ysidro,CA,2504,US-Mexico Border,2/1/2020 00:00,Buses,3844
+San Ysidro,CA,2504,US-Mexico Border,2/1/2020 00:00,Pedestrians,775305
+San Ysidro,CA,2504,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,2144131
+San Ysidro,CA,2504,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,1311967
+Santa Teresa,NM,2408,US-Mexico Border,2/1/2020 00:00,Buses,10
+Santa Teresa,NM,2408,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,83580
+Santa Teresa,NM,2408,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,40983
+Santa Teresa,NM,2408,US-Mexico Border,2/1/2020 00:00,Truck Containers Empty,4870
+Santa Teresa,NM,2408,US-Mexico Border,2/1/2020 00:00,Truck Containers Full,5818
+Santa Teresa,NM,2408,US-Mexico Border,2/1/2020 00:00,Trucks,10605
+Sarles,ND,3409,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,376
+Sarles,ND,3409,US-Canada Border,2/1/2020 00:00,Personal Vehicles,187
+Sarles,ND,3409,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,12
+Sarles,ND,3409,US-Canada Border,2/1/2020 00:00,Truck Containers Full,75
+Sarles,ND,3409,US-Canada Border,2/1/2020 00:00,Trucks,81
+Sasabe,AZ,2606,US-Mexico Border,2/1/2020 00:00,Pedestrians,45
+Sasabe,AZ,2606,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,3484
+Sasabe,AZ,2606,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,1872
+Sault Sainte Marie,MI,3803,US-Canada Border,2/1/2020 00:00,Bus Passengers,558
+Sault Sainte Marie,MI,3803,US-Canada Border,2/1/2020 00:00,Buses,53
+Sault Sainte Marie,MI,3803,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,74995
+Sault Sainte Marie,MI,3803,US-Canada Border,2/1/2020 00:00,Personal Vehicles,42520
+Sault Sainte Marie,MI,3803,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,1580
+Sault Sainte Marie,MI,3803,US-Canada Border,2/1/2020 00:00,Rail Containers Full,1486
+Sault Sainte Marie,MI,3803,US-Canada Border,2/1/2020 00:00,Train Passengers,56
+Sault Sainte Marie,MI,3803,US-Canada Border,2/1/2020 00:00,Trains,29
+Sault Sainte Marie,MI,3803,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,826
+Sault Sainte Marie,MI,3803,US-Canada Border,2/1/2020 00:00,Truck Containers Full,3239
+Sault Sainte Marie,MI,3803,US-Canada Border,2/1/2020 00:00,Trucks,3415
+Scobey,MT,3309,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,631
+Scobey,MT,3309,US-Canada Border,2/1/2020 00:00,Personal Vehicles,335
+Scobey,MT,3309,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,94
+Scobey,MT,3309,US-Canada Border,2/1/2020 00:00,Truck Containers Full,5
+Scobey,MT,3309,US-Canada Border,2/1/2020 00:00,Trucks,98
+Sherwood,ND,3414,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,2220
+Sherwood,ND,3414,US-Canada Border,2/1/2020 00:00,Personal Vehicles,1089
+Sherwood,ND,3414,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,338
+Sherwood,ND,3414,US-Canada Border,2/1/2020 00:00,Truck Containers Full,178
+Sherwood,ND,3414,US-Canada Border,2/1/2020 00:00,Trucks,523
+Skagway,AK,3103,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,870
+Skagway,AK,3103,US-Canada Border,2/1/2020 00:00,Personal Vehicles,428
+Skagway,AK,3103,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,138
+Skagway,AK,3103,US-Canada Border,2/1/2020 00:00,Truck Containers Full,503
+Skagway,AK,3103,US-Canada Border,2/1/2020 00:00,Trucks,310
+St. John,ND,3405,US-Canada Border,2/1/2020 00:00,Bus Passengers,47
+St. John,ND,3405,US-Canada Border,2/1/2020 00:00,Buses,2
+St. John,ND,3405,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,1576
+St. John,ND,3405,US-Canada Border,2/1/2020 00:00,Personal Vehicles,800
+St. John,ND,3405,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,42
+St. John,ND,3405,US-Canada Border,2/1/2020 00:00,Trucks,42
+Sumas,WA,3009,US-Canada Border,2/1/2020 00:00,Bus Passengers,438
+Sumas,WA,3009,US-Canada Border,2/1/2020 00:00,Buses,25
+Sumas,WA,3009,US-Canada Border,2/1/2020 00:00,Pedestrians,4760
+Sumas,WA,3009,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,103896
+Sumas,WA,3009,US-Canada Border,2/1/2020 00:00,Personal Vehicles,60033
+Sumas,WA,3009,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,260
+Sumas,WA,3009,US-Canada Border,2/1/2020 00:00,Rail Containers Full,112
+Sumas,WA,3009,US-Canada Border,2/1/2020 00:00,Train Passengers,33
+Sumas,WA,3009,US-Canada Border,2/1/2020 00:00,Trains,12
+Sumas,WA,3009,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,3272
+Sumas,WA,3009,US-Canada Border,2/1/2020 00:00,Truck Containers Full,9154
+Sumas,WA,3009,US-Canada Border,2/1/2020 00:00,Trucks,11695
+Sweetgrass,MT,3310,US-Canada Border,2/1/2020 00:00,Bus Passengers,342
+Sweetgrass,MT,3310,US-Canada Border,2/1/2020 00:00,Buses,11
+Sweetgrass,MT,3310,US-Canada Border,2/1/2020 00:00,Pedestrians,213
+Sweetgrass,MT,3310,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,23085
+Sweetgrass,MT,3310,US-Canada Border,2/1/2020 00:00,Personal Vehicles,11661
+Sweetgrass,MT,3310,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,523
+Sweetgrass,MT,3310,US-Canada Border,2/1/2020 00:00,Rail Containers Full,2089
+Sweetgrass,MT,3310,US-Canada Border,2/1/2020 00:00,Train Passengers,186
+Sweetgrass,MT,3310,US-Canada Border,2/1/2020 00:00,Trains,31
+Sweetgrass,MT,3310,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,2083
+Sweetgrass,MT,3310,US-Canada Border,2/1/2020 00:00,Truck Containers Full,9783
+Sweetgrass,MT,3310,US-Canada Border,2/1/2020 00:00,Trucks,10580
+Tecate,CA,2505,US-Mexico Border,2/1/2020 00:00,Pedestrians,69798
+Tecate,CA,2505,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,141426
+Tecate,CA,2505,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,77377
+Tecate,CA,2505,US-Mexico Border,2/1/2020 00:00,Truck Containers Empty,1992
+Tecate,CA,2505,US-Mexico Border,2/1/2020 00:00,Truck Containers Full,3187
+Tecate,CA,2505,US-Mexico Border,2/1/2020 00:00,Trucks,5085
+Tornillo-Fabens,TX,2404,US-Mexico Border,2/1/2020 00:00,Pedestrians,3304
+Tornillo-Fabens,TX,2404,US-Mexico Border,2/1/2020 00:00,Personal Vehicle Passengers,60097
+Tornillo-Fabens,TX,2404,US-Mexico Border,2/1/2020 00:00,Personal Vehicles,32824
+Trout River,NY,715,US-Canada Border,2/1/2020 00:00,Bus Passengers,56
+Trout River,NY,715,US-Canada Border,2/1/2020 00:00,Buses,1
+Trout River,NY,715,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,12906
+Trout River,NY,715,US-Canada Border,2/1/2020 00:00,Personal Vehicles,7105
+Trout River,NY,715,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,901
+Trout River,NY,715,US-Canada Border,2/1/2020 00:00,Rail Containers Full,1661
+Trout River,NY,715,US-Canada Border,2/1/2020 00:00,Train Passengers,102
+Trout River,NY,715,US-Canada Border,2/1/2020 00:00,Trains,51
+Trout River,NY,715,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,350
+Trout River,NY,715,US-Canada Border,2/1/2020 00:00,Truck Containers Full,435
+Trout River,NY,715,US-Canada Border,2/1/2020 00:00,Trucks,776
+Turner,MT,3306,US-Canada Border,2/1/2020 00:00,Bus Passengers,50
+Turner,MT,3306,US-Canada Border,2/1/2020 00:00,Buses,1
+Turner,MT,3306,US-Canada Border,2/1/2020 00:00,Pedestrians,2
+Turner,MT,3306,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,1343
+Turner,MT,3306,US-Canada Border,2/1/2020 00:00,Personal Vehicles,583
+Turner,MT,3306,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,12
+Turner,MT,3306,US-Canada Border,2/1/2020 00:00,Truck Containers Full,24
+Turner,MT,3306,US-Canada Border,2/1/2020 00:00,Trucks,26
+Van Buren,ME,108,US-Canada Border,2/1/2020 00:00,Pedestrians,2
+Van Buren,ME,108,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,14979
+Van Buren,ME,108,US-Canada Border,2/1/2020 00:00,Personal Vehicles,10358
+Van Buren,ME,108,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,283
+Van Buren,ME,108,US-Canada Border,2/1/2020 00:00,Rail Containers Full,478
+Van Buren,ME,108,US-Canada Border,2/1/2020 00:00,Train Passengers,64
+Van Buren,ME,108,US-Canada Border,2/1/2020 00:00,Trains,32
+Van Buren,ME,108,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,525
+Van Buren,ME,108,US-Canada Border,2/1/2020 00:00,Truck Containers Full,854
+Van Buren,ME,108,US-Canada Border,2/1/2020 00:00,Trucks,1172
+Vanceboro,ME,105,US-Canada Border,2/1/2020 00:00,Pedestrians,6
+Vanceboro,ME,105,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,1719
+Vanceboro,ME,105,US-Canada Border,2/1/2020 00:00,Personal Vehicles,1220
+Vanceboro,ME,105,US-Canada Border,2/1/2020 00:00,Rail Containers Empty,1012
+Vanceboro,ME,105,US-Canada Border,2/1/2020 00:00,Rail Containers Full,1172
+Vanceboro,ME,105,US-Canada Border,2/1/2020 00:00,Train Passengers,54
+Vanceboro,ME,105,US-Canada Border,2/1/2020 00:00,Trains,26
+Vanceboro,ME,105,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,40
+Vanceboro,ME,105,US-Canada Border,2/1/2020 00:00,Truck Containers Full,8
+Vanceboro,ME,105,US-Canada Border,2/1/2020 00:00,Trucks,48
+Walhalla,ND,3407,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,4795
+Walhalla,ND,3407,US-Canada Border,2/1/2020 00:00,Personal Vehicles,2478
+Walhalla,ND,3407,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,429
+Walhalla,ND,3407,US-Canada Border,2/1/2020 00:00,Truck Containers Full,292
+Walhalla,ND,3407,US-Canada Border,2/1/2020 00:00,Trucks,708
+Warroad,MN,3423,US-Canada Border,2/1/2020 00:00,Bus Passengers,124
+Warroad,MN,3423,US-Canada Border,2/1/2020 00:00,Buses,45
+Warroad,MN,3423,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,14840
+Warroad,MN,3423,US-Canada Border,2/1/2020 00:00,Personal Vehicles,6186
+Warroad,MN,3423,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,445
+Warroad,MN,3423,US-Canada Border,2/1/2020 00:00,Truck Containers Full,102
+Warroad,MN,3423,US-Canada Border,2/1/2020 00:00,Trucks,559
+Westhope,ND,3419,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,1456
+Westhope,ND,3419,US-Canada Border,2/1/2020 00:00,Personal Vehicles,664
+Westhope,ND,3419,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,335
+Westhope,ND,3419,US-Canada Border,2/1/2020 00:00,Truck Containers Full,161
+Westhope,ND,3419,US-Canada Border,2/1/2020 00:00,Trucks,460
+Whitlash,MT,3321,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,47
+Whitlash,MT,3321,US-Canada Border,2/1/2020 00:00,Personal Vehicles,28
+Wildhorse,MT,3323,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,1109
+Wildhorse,MT,3323,US-Canada Border,2/1/2020 00:00,Personal Vehicles,512
+Wildhorse,MT,3323,US-Canada Border,2/1/2020 00:00,Truck Containers Empty,3
+Wildhorse,MT,3323,US-Canada Border,2/1/2020 00:00,Truck Containers Full,236
+Wildhorse,MT,3323,US-Canada Border,2/1/2020 00:00,Trucks,141
+Willow Creek,MT,3325,US-Canada Border,2/1/2020 00:00,Personal Vehicle Passengers,389
+Willow Creek,MT,3325,US-Canada Border,2/1/2020 00:00,Personal Vehicles,182
+Champlain-Rouses Point,NY,712,US-Canada Border,2/1/2020 00:00,Buses,476
+Champlain-Rouses Point,NY,712,US-Canada Border,2/1/2020 00:00,Bus Passengers,13391
+Champlain-Rouses Point,NY,712,US-Canada Border,2/1/2020 00:00,Pedestrians,336
+Champlain-Rouses Point,NY,712,US-Canada Border,2/1/2020 00:00,Train Passengers,920
+Columbus,NM,2406,US-Mexico Border,2/1/2020 00:00,Buses,0
+Columbus,NM,2406,US-Mexico Border,2/1/2020 00:00,Bus Passengers,0
+El Paso,TX,2402,US-Mexico Border,2/1/2020 00:00,Train Passengers,0
+Roma,TX,2310,US-Mexico Border,2/1/2020 00:00,Buses,35
+Roma,TX,2310,US-Mexico Border,2/1/2020 00:00,Bus Passengers,506
+Roma,TX,2310,US-Mexico Border,2/1/2020 00:00,Pedestrians,23173
+Santa Teresa,NM,2408,US-Mexico Border,2/1/2020 00:00,Bus Passengers,0
+Santa Teresa,NM,2408,US-Mexico Border,2/1/2020 00:00,Pedestrians,0
+Alcan,AK,3104,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,1350
+Alcan,AK,3104,US-Canada Border,1/1/2020 00:00,Personal Vehicles,742
+Alcan,AK,3104,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,430
+Alcan,AK,3104,US-Canada Border,1/1/2020 00:00,Truck Containers Full,108
+Alcan,AK,3104,US-Canada Border,1/1/2020 00:00,Trucks,553
+Alexandria Bay,NY,708,US-Canada Border,1/1/2020 00:00,Bus Passengers,1116
+Alexandria Bay,NY,708,US-Canada Border,1/1/2020 00:00,Buses,30
+Alexandria Bay,NY,708,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,64858
+Alexandria Bay,NY,708,US-Canada Border,1/1/2020 00:00,Personal Vehicles,31631
+Alexandria Bay,NY,708,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,1833
+Alexandria Bay,NY,708,US-Canada Border,1/1/2020 00:00,Truck Containers Full,14746
+Alexandria Bay,NY,708,US-Canada Border,1/1/2020 00:00,Trucks,16513
+Algonac,MI,3814,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,4692
+Algonac,MI,3814,US-Canada Border,1/1/2020 00:00,Personal Vehicles,2541
+Ambrose,ND,3410,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,167
+Ambrose,ND,3410,US-Canada Border,1/1/2020 00:00,Personal Vehicles,86
+Andrade,CA,2502,US-Mexico Border,1/1/2020 00:00,Pedestrians,113254
+Andrade,CA,2502,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,87090
+Andrade,CA,2502,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,46520
+Antler,ND,3413,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,824
+Antler,ND,3413,US-Canada Border,1/1/2020 00:00,Personal Vehicles,426
+Antler,ND,3413,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,100
+Antler,ND,3413,US-Canada Border,1/1/2020 00:00,Trucks,104
+Baudette,MN,3424,US-Canada Border,1/1/2020 00:00,Bus Passengers,167
+Baudette,MN,3424,US-Canada Border,1/1/2020 00:00,Buses,6
+Baudette,MN,3424,US-Canada Border,1/1/2020 00:00,Pedestrians,3
+Baudette,MN,3424,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,19674
+Baudette,MN,3424,US-Canada Border,1/1/2020 00:00,Personal Vehicles,11518
+Baudette,MN,3424,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,563
+Baudette,MN,3424,US-Canada Border,1/1/2020 00:00,Truck Containers Full,16
+Baudette,MN,3424,US-Canada Border,1/1/2020 00:00,Trucks,610
+Beecher Falls,VT,206,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,4466
+Beecher Falls,VT,206,US-Canada Border,1/1/2020 00:00,Personal Vehicles,2728
+Beecher Falls,VT,206,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,589
+Beecher Falls,VT,206,US-Canada Border,1/1/2020 00:00,Truck Containers Full,260
+Beecher Falls,VT,206,US-Canada Border,1/1/2020 00:00,Trucks,879
+Blaine,WA,3004,US-Canada Border,1/1/2020 00:00,Bus Passengers,12682
+Blaine,WA,3004,US-Canada Border,1/1/2020 00:00,Buses,737
+Blaine,WA,3004,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,463427
+Blaine,WA,3004,US-Canada Border,1/1/2020 00:00,Personal Vehicles,260601
+Blaine,WA,3004,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,10287
+Blaine,WA,3004,US-Canada Border,1/1/2020 00:00,Rail Containers Full,6740
+Blaine,WA,3004,US-Canada Border,1/1/2020 00:00,Train Passengers,4269
+Blaine,WA,3004,US-Canada Border,1/1/2020 00:00,Trains,162
+Blaine,WA,3004,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,10139
+Blaine,WA,3004,US-Canada Border,1/1/2020 00:00,Truck Containers Full,18271
+Blaine,WA,3004,US-Canada Border,1/1/2020 00:00,Trucks,28077
+Boquillas,TX,2410,US-Mexico Border,1/1/2020 00:00,Pedestrians,2585
+Boundary,WA,3015,US-Canada Border,1/1/2020 00:00,Bus Passengers,45
+Boundary,WA,3015,US-Canada Border,1/1/2020 00:00,Buses,2
+Boundary,WA,3015,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,2653
+Boundary,WA,3015,US-Canada Border,1/1/2020 00:00,Personal Vehicles,1674
+Boundary,WA,3015,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,581
+Boundary,WA,3015,US-Canada Border,1/1/2020 00:00,Rail Containers Full,637
+Boundary,WA,3015,US-Canada Border,1/1/2020 00:00,Train Passengers,48
+Boundary,WA,3015,US-Canada Border,1/1/2020 00:00,Trains,26
+Boundary,WA,3015,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,21
+Boundary,WA,3015,US-Canada Border,1/1/2020 00:00,Trucks,22
+Bridgewater,ME,127,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,4371
+Bridgewater,ME,127,US-Canada Border,1/1/2020 00:00,Personal Vehicles,2660
+Bridgewater,ME,127,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,257
+Bridgewater,ME,127,US-Canada Border,1/1/2020 00:00,Truck Containers Full,66
+Bridgewater,ME,127,US-Canada Border,1/1/2020 00:00,Trucks,330
+Brownsville,TX,2301,US-Mexico Border,1/1/2020 00:00,Bus Passengers,4467
+Brownsville,TX,2301,US-Mexico Border,1/1/2020 00:00,Buses,508
+Brownsville,TX,2301,US-Mexico Border,1/1/2020 00:00,Pedestrians,256787
+Brownsville,TX,2301,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,706955
+Brownsville,TX,2301,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,390959
+Brownsville,TX,2301,US-Mexico Border,1/1/2020 00:00,Rail Containers Empty,8065
+Brownsville,TX,2301,US-Mexico Border,1/1/2020 00:00,Rail Containers Full,869
+Brownsville,TX,2301,US-Mexico Border,1/1/2020 00:00,Trains,89
+Brownsville,TX,2301,US-Mexico Border,1/1/2020 00:00,Truck Containers Empty,12421
+Brownsville,TX,2301,US-Mexico Border,1/1/2020 00:00,Truck Containers Full,10688
+Brownsville,TX,2301,US-Mexico Border,1/1/2020 00:00,Trucks,23501
+Buffalo-Niagara Falls,NY,901,US-Canada Border,1/1/2020 00:00,Bus Passengers,15533
+Buffalo-Niagara Falls,NY,901,US-Canada Border,1/1/2020 00:00,Buses,680
+Buffalo-Niagara Falls,NY,901,US-Canada Border,1/1/2020 00:00,Pedestrians,3281
+Buffalo-Niagara Falls,NY,901,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,579293
+Buffalo-Niagara Falls,NY,901,US-Canada Border,1/1/2020 00:00,Personal Vehicles,292903
+Buffalo-Niagara Falls,NY,901,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,2616
+Buffalo-Niagara Falls,NY,901,US-Canada Border,1/1/2020 00:00,Rail Containers Full,8138
+Buffalo-Niagara Falls,NY,901,US-Canada Border,1/1/2020 00:00,Train Passengers,1092
+Buffalo-Niagara Falls,NY,901,US-Canada Border,1/1/2020 00:00,Trains,158
+Buffalo-Niagara Falls,NY,901,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,18054
+Buffalo-Niagara Falls,NY,901,US-Canada Border,1/1/2020 00:00,Truck Containers Full,56333
+Buffalo-Niagara Falls,NY,901,US-Canada Border,1/1/2020 00:00,Trucks,73662
+Calais,ME,115,US-Canada Border,1/1/2020 00:00,Bus Passengers,143
+Calais,ME,115,US-Canada Border,1/1/2020 00:00,Buses,4
+Calais,ME,115,US-Canada Border,1/1/2020 00:00,Pedestrians,558
+Calais,ME,115,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,64712
+Calais,ME,115,US-Canada Border,1/1/2020 00:00,Personal Vehicles,42160
+Calais,ME,115,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,63
+Calais,ME,115,US-Canada Border,1/1/2020 00:00,Rail Containers Full,111
+Calais,ME,115,US-Canada Border,1/1/2020 00:00,Train Passengers,28
+Calais,ME,115,US-Canada Border,1/1/2020 00:00,Trains,17
+Calais,ME,115,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,1596
+Calais,ME,115,US-Canada Border,1/1/2020 00:00,Truck Containers Full,3283
+Calais,ME,115,US-Canada Border,1/1/2020 00:00,Trucks,4852
+Calexico,CA,2503,US-Mexico Border,1/1/2020 00:00,Pedestrians,307717
+Calexico,CA,2503,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,728764
+Calexico,CA,2503,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,443958
+Calexico East,CA,2507,US-Mexico Border,1/1/2020 00:00,Bus Passengers,3400
+Calexico East,CA,2507,US-Mexico Border,1/1/2020 00:00,Buses,85
+Calexico East,CA,2507,US-Mexico Border,1/1/2020 00:00,Pedestrians,43565
+Calexico East,CA,2507,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,428522
+Calexico East,CA,2507,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,250071
+Calexico East,CA,2507,US-Mexico Border,1/1/2020 00:00,Rail Containers Empty,523
+Calexico East,CA,2507,US-Mexico Border,1/1/2020 00:00,Rail Containers Full,62
+Calexico East,CA,2507,US-Mexico Border,1/1/2020 00:00,Train Passengers,15
+Calexico East,CA,2507,US-Mexico Border,1/1/2020 00:00,Trains,14
+Calexico East,CA,2507,US-Mexico Border,1/1/2020 00:00,Truck Containers Empty,15451
+Calexico East,CA,2507,US-Mexico Border,1/1/2020 00:00,Truck Containers Full,18652
+Calexico East,CA,2507,US-Mexico Border,1/1/2020 00:00,Trucks,34390
+Carbury,ND,3421,US-Canada Border,1/1/2020 00:00,Bus Passengers,84
+Carbury,ND,3421,US-Canada Border,1/1/2020 00:00,Buses,3
+Carbury,ND,3421,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,2202
+Carbury,ND,3421,US-Canada Border,1/1/2020 00:00,Personal Vehicles,1027
+Carbury,ND,3421,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,100
+Carbury,ND,3421,US-Canada Border,1/1/2020 00:00,Truck Containers Full,52
+Carbury,ND,3421,US-Canada Border,1/1/2020 00:00,Trucks,129
+Champlain-Rouses Point,NY,712,US-Canada Border,1/1/2020 00:00,Bus Passengers,11504
+Champlain-Rouses Point,NY,712,US-Canada Border,1/1/2020 00:00,Buses,441
+Champlain-Rouses Point,NY,712,US-Canada Border,1/1/2020 00:00,Pedestrians,311
+Champlain-Rouses Point,NY,712,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,125018
+Champlain-Rouses Point,NY,712,US-Canada Border,1/1/2020 00:00,Personal Vehicles,57753
+Champlain-Rouses Point,NY,712,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,805
+Champlain-Rouses Point,NY,712,US-Canada Border,1/1/2020 00:00,Rail Containers Full,4081
+Champlain-Rouses Point,NY,712,US-Canada Border,1/1/2020 00:00,Train Passengers,2154
+Champlain-Rouses Point,NY,712,US-Canada Border,1/1/2020 00:00,Trains,68
+Champlain-Rouses Point,NY,712,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,3546
+Champlain-Rouses Point,NY,712,US-Canada Border,1/1/2020 00:00,Truck Containers Full,21198
+Champlain-Rouses Point,NY,712,US-Canada Border,1/1/2020 00:00,Trucks,23815
+Columbus,NM,2406,US-Mexico Border,1/1/2020 00:00,Bus Passengers,1417
+Columbus,NM,2406,US-Mexico Border,1/1/2020 00:00,Buses,118
+Columbus,NM,2406,US-Mexico Border,1/1/2020 00:00,Pedestrians,25043
+Columbus,NM,2406,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,62400
+Columbus,NM,2406,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,29883
+Columbus,NM,2406,US-Mexico Border,1/1/2020 00:00,Truck Containers Empty,79
+Columbus,NM,2406,US-Mexico Border,1/1/2020 00:00,Truck Containers Full,951
+Columbus,NM,2406,US-Mexico Border,1/1/2020 00:00,Trucks,1032
+Cross Border Xpress,CA,2582,US-Mexico Border,1/1/2020 00:00,Pedestrians,179451
+Dalton Cache,AK,3106,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,597
+Dalton Cache,AK,3106,US-Canada Border,1/1/2020 00:00,Personal Vehicles,317
+Dalton Cache,AK,3106,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,61
+Dalton Cache,AK,3106,US-Canada Border,1/1/2020 00:00,Truck Containers Full,7
+Dalton Cache,AK,3106,US-Canada Border,1/1/2020 00:00,Trucks,71
+Danville,WA,3012,US-Canada Border,1/1/2020 00:00,Pedestrians,5
+Danville,WA,3012,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,3134
+Danville,WA,3012,US-Canada Border,1/1/2020 00:00,Personal Vehicles,2172
+Danville,WA,3012,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,37
+Danville,WA,3012,US-Canada Border,1/1/2020 00:00,Truck Containers Full,23
+Danville,WA,3012,US-Canada Border,1/1/2020 00:00,Trucks,63
+Del Bonita,MT,3322,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,3075
+Del Bonita,MT,3322,US-Canada Border,1/1/2020 00:00,Personal Vehicles,1433
+Del Bonita,MT,3322,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,8
+Del Bonita,MT,3322,US-Canada Border,1/1/2020 00:00,Truck Containers Full,42
+Del Bonita,MT,3322,US-Canada Border,1/1/2020 00:00,Trucks,51
+Del Rio,TX,2302,US-Mexico Border,1/1/2020 00:00,Pedestrians,19068
+Del Rio,TX,2302,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,220467
+Del Rio,TX,2302,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,126239
+Del Rio,TX,2302,US-Mexico Border,1/1/2020 00:00,Truck Containers Empty,1753
+Del Rio,TX,2302,US-Mexico Border,1/1/2020 00:00,Truck Containers Full,4446
+Del Rio,TX,2302,US-Mexico Border,1/1/2020 00:00,Trucks,6256
+Derby Line,VT,209,US-Canada Border,1/1/2020 00:00,Bus Passengers,2372
+Derby Line,VT,209,US-Canada Border,1/1/2020 00:00,Buses,77
+Derby Line,VT,209,US-Canada Border,1/1/2020 00:00,Pedestrians,23
+Derby Line,VT,209,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,50921
+Derby Line,VT,209,US-Canada Border,1/1/2020 00:00,Personal Vehicles,27647
+Derby Line,VT,209,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,985
+Derby Line,VT,209,US-Canada Border,1/1/2020 00:00,Truck Containers Full,5959
+Derby Line,VT,209,US-Canada Border,1/1/2020 00:00,Trucks,6985
+Detroit,MI,3801,US-Canada Border,1/1/2020 00:00,Bus Passengers,2171
+Detroit,MI,3801,US-Canada Border,1/1/2020 00:00,Buses,498
+Detroit,MI,3801,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,507477
+Detroit,MI,3801,US-Canada Border,1/1/2020 00:00,Personal Vehicles,324227
+Detroit,MI,3801,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,3851
+Detroit,MI,3801,US-Canada Border,1/1/2020 00:00,Rail Containers Full,7858
+Detroit,MI,3801,US-Canada Border,1/1/2020 00:00,Train Passengers,78
+Detroit,MI,3801,US-Canada Border,1/1/2020 00:00,Trains,143
+Detroit,MI,3801,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,31751
+Detroit,MI,3801,US-Canada Border,1/1/2020 00:00,Truck Containers Full,91323
+Detroit,MI,3801,US-Canada Border,1/1/2020 00:00,Trucks,124658
+Douglas,AZ,2601,US-Mexico Border,1/1/2020 00:00,Bus Passengers,916
+Douglas,AZ,2601,US-Mexico Border,1/1/2020 00:00,Buses,34
+Douglas,AZ,2601,US-Mexico Border,1/1/2020 00:00,Pedestrians,79229
+Douglas,AZ,2601,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,198559
+Douglas,AZ,2601,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,119134
+Douglas,AZ,2601,US-Mexico Border,1/1/2020 00:00,Truck Containers Empty,980
+Douglas,AZ,2601,US-Mexico Border,1/1/2020 00:00,Truck Containers Full,1193
+Douglas,AZ,2601,US-Mexico Border,1/1/2020 00:00,Trucks,2189
+Dunseith,ND,3422,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,5579
+Dunseith,ND,3422,US-Canada Border,1/1/2020 00:00,Personal Vehicles,2762
+Dunseith,ND,3422,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,393
+Dunseith,ND,3422,US-Canada Border,1/1/2020 00:00,Truck Containers Full,1611
+Dunseith,ND,3422,US-Canada Border,1/1/2020 00:00,Trucks,1928
+Eagle Pass,TX,2303,US-Mexico Border,1/1/2020 00:00,Bus Passengers,10451
+Eagle Pass,TX,2303,US-Mexico Border,1/1/2020 00:00,Buses,358
+Eagle Pass,TX,2303,US-Mexico Border,1/1/2020 00:00,Pedestrians,68879
+Eagle Pass,TX,2303,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,505610
+Eagle Pass,TX,2303,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,239675
+Eagle Pass,TX,2303,US-Mexico Border,1/1/2020 00:00,Rail Containers Empty,15226
+Eagle Pass,TX,2303,US-Mexico Border,1/1/2020 00:00,Rail Containers Full,11954
+Eagle Pass,TX,2303,US-Mexico Border,1/1/2020 00:00,Trains,274
+Eagle Pass,TX,2303,US-Mexico Border,1/1/2020 00:00,Truck Containers Empty,5268
+Eagle Pass,TX,2303,US-Mexico Border,1/1/2020 00:00,Truck Containers Full,9416
+Eagle Pass,TX,2303,US-Mexico Border,1/1/2020 00:00,Trucks,14820
+Eastport,ID,3302,US-Canada Border,1/1/2020 00:00,Bus Passengers,83
+Eastport,ID,3302,US-Canada Border,1/1/2020 00:00,Buses,3
+Eastport,ID,3302,US-Canada Border,1/1/2020 00:00,Pedestrians,184
+Eastport,ID,3302,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,6991
+Eastport,ID,3302,US-Canada Border,1/1/2020 00:00,Personal Vehicles,3343
+Eastport,ID,3302,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,466
+Eastport,ID,3302,US-Canada Border,1/1/2020 00:00,Rail Containers Full,10067
+Eastport,ID,3302,US-Canada Border,1/1/2020 00:00,Train Passengers,184
+Eastport,ID,3302,US-Canada Border,1/1/2020 00:00,Trains,94
+Eastport,ID,3302,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,1098
+Eastport,ID,3302,US-Canada Border,1/1/2020 00:00,Truck Containers Full,3646
+Eastport,ID,3302,US-Canada Border,1/1/2020 00:00,Trucks,4615
+Eastport,ME,103,US-Canada Border,1/1/2020 00:00,Pedestrians,2
+Eastport,ME,103,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,11216
+Eastport,ME,103,US-Canada Border,1/1/2020 00:00,Personal Vehicles,7607
+Eastport,ME,103,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,73
+Eastport,ME,103,US-Canada Border,1/1/2020 00:00,Truck Containers Full,88
+Eastport,ME,103,US-Canada Border,1/1/2020 00:00,Trucks,166
+El Paso,TX,2402,US-Mexico Border,1/1/2020 00:00,Bus Passengers,35547
+El Paso,TX,2402,US-Mexico Border,1/1/2020 00:00,Buses,1857
+El Paso,TX,2402,US-Mexico Border,1/1/2020 00:00,Pedestrians,552882
+El Paso,TX,2402,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,1593590
+El Paso,TX,2402,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,924114
+El Paso,TX,2402,US-Mexico Border,1/1/2020 00:00,Rail Containers Empty,4331
+El Paso,TX,2402,US-Mexico Border,1/1/2020 00:00,Rail Containers Full,1775
+El Paso,TX,2402,US-Mexico Border,1/1/2020 00:00,Trains,92
+El Paso,TX,2402,US-Mexico Border,1/1/2020 00:00,Truck Containers Empty,28720
+El Paso,TX,2402,US-Mexico Border,1/1/2020 00:00,Truck Containers Full,37792
+El Paso,TX,2402,US-Mexico Border,1/1/2020 00:00,Trucks,67451
+Ferry,WA,3013,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,1015
+Ferry,WA,3013,US-Canada Border,1/1/2020 00:00,Personal Vehicles,518
+Ferry,WA,3013,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,5
+Ferry,WA,3013,US-Canada Border,1/1/2020 00:00,Trucks,6
+Fort Fairfield,ME,107,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,10077
+Fort Fairfield,ME,107,US-Canada Border,1/1/2020 00:00,Personal Vehicles,6343
+Fort Fairfield,ME,107,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,496
+Fort Fairfield,ME,107,US-Canada Border,1/1/2020 00:00,Truck Containers Full,75
+Fort Fairfield,ME,107,US-Canada Border,1/1/2020 00:00,Trucks,591
+Fort Kent,ME,110,US-Canada Border,1/1/2020 00:00,Bus Passengers,15
+Fort Kent,ME,110,US-Canada Border,1/1/2020 00:00,Buses,1
+Fort Kent,ME,110,US-Canada Border,1/1/2020 00:00,Pedestrians,70
+Fort Kent,ME,110,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,10907
+Fort Kent,ME,110,US-Canada Border,1/1/2020 00:00,Personal Vehicles,7907
+Fort Kent,ME,110,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,836
+Fort Kent,ME,110,US-Canada Border,1/1/2020 00:00,Truck Containers Full,149
+Fort Kent,ME,110,US-Canada Border,1/1/2020 00:00,Trucks,1021
+Fortuna,ND,3417,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,1400
+Fortuna,ND,3417,US-Canada Border,1/1/2020 00:00,Personal Vehicles,761
+Fortuna,ND,3417,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,133
+Fortuna,ND,3417,US-Canada Border,1/1/2020 00:00,Truck Containers Full,345
+Fortuna,ND,3417,US-Canada Border,1/1/2020 00:00,Trucks,482
+Frontier,WA,3020,US-Canada Border,1/1/2020 00:00,Bus Passengers,240
+Frontier,WA,3020,US-Canada Border,1/1/2020 00:00,Buses,20
+Frontier,WA,3020,US-Canada Border,1/1/2020 00:00,Pedestrians,1
+Frontier,WA,3020,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,7446
+Frontier,WA,3020,US-Canada Border,1/1/2020 00:00,Personal Vehicles,3487
+Frontier,WA,3020,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,1484
+Frontier,WA,3020,US-Canada Border,1/1/2020 00:00,Truck Containers Full,728
+Frontier,WA,3020,US-Canada Border,1/1/2020 00:00,Trucks,2049
+Grand Portage,MN,3613,US-Canada Border,1/1/2020 00:00,Bus Passengers,428
+Grand Portage,MN,3613,US-Canada Border,1/1/2020 00:00,Buses,30
+Grand Portage,MN,3613,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,20661
+Grand Portage,MN,3613,US-Canada Border,1/1/2020 00:00,Personal Vehicles,10805
+Grand Portage,MN,3613,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,361
+Grand Portage,MN,3613,US-Canada Border,1/1/2020 00:00,Truck Containers Full,764
+Grand Portage,MN,3613,US-Canada Border,1/1/2020 00:00,Trucks,1137
+Hannah,ND,3408,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,90
+Hannah,ND,3408,US-Canada Border,1/1/2020 00:00,Personal Vehicles,60
+Hannah,ND,3408,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,4
+Hannah,ND,3408,US-Canada Border,1/1/2020 00:00,Truck Containers Full,14
+Hannah,ND,3408,US-Canada Border,1/1/2020 00:00,Trucks,18
+Hansboro,ND,3415,US-Canada Border,1/1/2020 00:00,Bus Passengers,30
+Hansboro,ND,3415,US-Canada Border,1/1/2020 00:00,Buses,2
+Hansboro,ND,3415,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,612
+Hansboro,ND,3415,US-Canada Border,1/1/2020 00:00,Personal Vehicles,325
+Hansboro,ND,3415,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,30
+Hansboro,ND,3415,US-Canada Border,1/1/2020 00:00,Trucks,30
+Hidalgo,TX,2305,US-Mexico Border,1/1/2020 00:00,Bus Passengers,114346
+Hidalgo,TX,2305,US-Mexico Border,1/1/2020 00:00,Buses,1671
+Hidalgo,TX,2305,US-Mexico Border,1/1/2020 00:00,Pedestrians,188082
+Hidalgo,TX,2305,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,694258
+Hidalgo,TX,2305,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,332449
+Hidalgo,TX,2305,US-Mexico Border,1/1/2020 00:00,Truck Containers Empty,18936
+Hidalgo,TX,2305,US-Mexico Border,1/1/2020 00:00,Truck Containers Full,38947
+Hidalgo,TX,2305,US-Mexico Border,1/1/2020 00:00,Trucks,58516
+Highgate Springs-Alburg,VT,212,US-Canada Border,1/1/2020 00:00,Bus Passengers,4444
+Highgate Springs-Alburg,VT,212,US-Canada Border,1/1/2020 00:00,Buses,202
+Highgate Springs-Alburg,VT,212,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,53668
+Highgate Springs-Alburg,VT,212,US-Canada Border,1/1/2020 00:00,Personal Vehicles,25440
+Highgate Springs-Alburg,VT,212,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,137
+Highgate Springs-Alburg,VT,212,US-Canada Border,1/1/2020 00:00,Rail Containers Full,1143
+Highgate Springs-Alburg,VT,212,US-Canada Border,1/1/2020 00:00,Train Passengers,34
+Highgate Springs-Alburg,VT,212,US-Canada Border,1/1/2020 00:00,Trains,19
+Highgate Springs-Alburg,VT,212,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,1488
+Highgate Springs-Alburg,VT,212,US-Canada Border,1/1/2020 00:00,Truck Containers Full,7003
+Highgate Springs-Alburg,VT,212,US-Canada Border,1/1/2020 00:00,Trucks,8389
+Houlton,ME,106,US-Canada Border,1/1/2020 00:00,Bus Passengers,206
+Houlton,ME,106,US-Canada Border,1/1/2020 00:00,Buses,8
+Houlton,ME,106,US-Canada Border,1/1/2020 00:00,Pedestrians,22
+Houlton,ME,106,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,22501
+Houlton,ME,106,US-Canada Border,1/1/2020 00:00,Personal Vehicles,12816
+Houlton,ME,106,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,1639
+Houlton,ME,106,US-Canada Border,1/1/2020 00:00,Truck Containers Full,5598
+Houlton,ME,106,US-Canada Border,1/1/2020 00:00,Trucks,7253
+International Falls-Ranier,MN,3604,US-Canada Border,1/1/2020 00:00,Bus Passengers,291
+International Falls-Ranier,MN,3604,US-Canada Border,1/1/2020 00:00,Buses,12
+International Falls-Ranier,MN,3604,US-Canada Border,1/1/2020 00:00,Pedestrians,332
+International Falls-Ranier,MN,3604,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,39399
+International Falls-Ranier,MN,3604,US-Canada Border,1/1/2020 00:00,Personal Vehicles,23295
+International Falls-Ranier,MN,3604,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,13006
+International Falls-Ranier,MN,3604,US-Canada Border,1/1/2020 00:00,Rail Containers Full,55976
+International Falls-Ranier,MN,3604,US-Canada Border,1/1/2020 00:00,Train Passengers,712
+International Falls-Ranier,MN,3604,US-Canada Border,1/1/2020 00:00,Trains,362
+International Falls-Ranier,MN,3604,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,595
+International Falls-Ranier,MN,3604,US-Canada Border,1/1/2020 00:00,Truck Containers Full,808
+International Falls-Ranier,MN,3604,US-Canada Border,1/1/2020 00:00,Trucks,1422
+Jackman,ME,104,US-Canada Border,1/1/2020 00:00,Bus Passengers,26
+Jackman,ME,104,US-Canada Border,1/1/2020 00:00,Buses,1
+Jackman,ME,104,US-Canada Border,1/1/2020 00:00,Pedestrians,9
+Jackman,ME,104,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,11571
+Jackman,ME,104,US-Canada Border,1/1/2020 00:00,Personal Vehicles,7068
+Jackman,ME,104,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,819
+Jackman,ME,104,US-Canada Border,1/1/2020 00:00,Rail Containers Full,877
+Jackman,ME,104,US-Canada Border,1/1/2020 00:00,Train Passengers,36
+Jackman,ME,104,US-Canada Border,1/1/2020 00:00,Trains,36
+Jackman,ME,104,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,5597
+Jackman,ME,104,US-Canada Border,1/1/2020 00:00,Truck Containers Full,1701
+Jackman,ME,104,US-Canada Border,1/1/2020 00:00,Trucks,7450
+Lancaster,MN,3430,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,2669
+Lancaster,MN,3430,US-Canada Border,1/1/2020 00:00,Personal Vehicles,1252
+Lancaster,MN,3430,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,398
+Lancaster,MN,3430,US-Canada Border,1/1/2020 00:00,Truck Containers Full,3
+Lancaster,MN,3430,US-Canada Border,1/1/2020 00:00,Trucks,415
+Laredo,TX,2304,US-Mexico Border,1/1/2020 00:00,Bus Passengers,93240
+Laredo,TX,2304,US-Mexico Border,1/1/2020 00:00,Buses,3149
+Laredo,TX,2304,US-Mexico Border,1/1/2020 00:00,Pedestrians,309041
+Laredo,TX,2304,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,897997
+Laredo,TX,2304,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,419736
+Laredo,TX,2304,US-Mexico Border,1/1/2020 00:00,Rail Containers Empty,17099
+Laredo,TX,2304,US-Mexico Border,1/1/2020 00:00,Rail Containers Full,18263
+Laredo,TX,2304,US-Mexico Border,1/1/2020 00:00,Trains,359
+Laredo,TX,2304,US-Mexico Border,1/1/2020 00:00,Truck Containers Empty,61515
+Laredo,TX,2304,US-Mexico Border,1/1/2020 00:00,Truck Containers Full,130977
+Laredo,TX,2304,US-Mexico Border,1/1/2020 00:00,Trucks,194588
+Laurier,WA,3016,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,3979
+Laurier,WA,3016,US-Canada Border,1/1/2020 00:00,Personal Vehicles,2322
+Laurier,WA,3016,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,26
+Laurier,WA,3016,US-Canada Border,1/1/2020 00:00,Rail Containers Full,169
+Laurier,WA,3016,US-Canada Border,1/1/2020 00:00,Train Passengers,19
+Laurier,WA,3016,US-Canada Border,1/1/2020 00:00,Trains,9
+Laurier,WA,3016,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,325
+Laurier,WA,3016,US-Canada Border,1/1/2020 00:00,Truck Containers Full,225
+Laurier,WA,3016,US-Canada Border,1/1/2020 00:00,Trucks,561
+Limestone,ME,118,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,1221
+Limestone,ME,118,US-Canada Border,1/1/2020 00:00,Personal Vehicles,825
+Limestone,ME,118,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,67
+Limestone,ME,118,US-Canada Border,1/1/2020 00:00,Trucks,69
+Lukeville,AZ,2602,US-Mexico Border,1/1/2020 00:00,Bus Passengers,540
+Lukeville,AZ,2602,US-Mexico Border,1/1/2020 00:00,Buses,100
+Lukeville,AZ,2602,US-Mexico Border,1/1/2020 00:00,Pedestrians,4771
+Lukeville,AZ,2602,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,59423
+Lukeville,AZ,2602,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,26901
+Lukeville,AZ,2602,US-Mexico Border,1/1/2020 00:00,Truck Containers Empty,2
+Lukeville,AZ,2602,US-Mexico Border,1/1/2020 00:00,Truck Containers Full,25
+Lukeville,AZ,2602,US-Mexico Border,1/1/2020 00:00,Trucks,28
+Lynden,WA,3023,US-Canada Border,1/1/2020 00:00,Bus Passengers,50
+Lynden,WA,3023,US-Canada Border,1/1/2020 00:00,Buses,1
+Lynden,WA,3023,US-Canada Border,1/1/2020 00:00,Pedestrians,44
+Lynden,WA,3023,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,66546
+Lynden,WA,3023,US-Canada Border,1/1/2020 00:00,Personal Vehicles,34414
+Lynden,WA,3023,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,3651
+Lynden,WA,3023,US-Canada Border,1/1/2020 00:00,Truck Containers Full,352
+Lynden,WA,3023,US-Canada Border,1/1/2020 00:00,Trucks,4157
+Madawaska,ME,109,US-Canada Border,1/1/2020 00:00,Bus Passengers,7
+Madawaska,ME,109,US-Canada Border,1/1/2020 00:00,Buses,1
+Madawaska,ME,109,US-Canada Border,1/1/2020 00:00,Pedestrians,25
+Madawaska,ME,109,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,39028
+Madawaska,ME,109,US-Canada Border,1/1/2020 00:00,Personal Vehicles,27857
+Madawaska,ME,109,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,164
+Madawaska,ME,109,US-Canada Border,1/1/2020 00:00,Trucks,178
+Maida,ND,3416,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,738
+Maida,ND,3416,US-Canada Border,1/1/2020 00:00,Personal Vehicles,357
+Maida,ND,3416,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,27
+Maida,ND,3416,US-Canada Border,1/1/2020 00:00,Trucks,27
+Massena,NY,704,US-Canada Border,1/1/2020 00:00,Bus Passengers,3095
+Massena,NY,704,US-Canada Border,1/1/2020 00:00,Buses,329
+Massena,NY,704,US-Canada Border,1/1/2020 00:00,Pedestrians,10
+Massena,NY,704,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,107863
+Massena,NY,704,US-Canada Border,1/1/2020 00:00,Personal Vehicles,66466
+Massena,NY,704,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,578
+Massena,NY,704,US-Canada Border,1/1/2020 00:00,Truck Containers Full,1382
+Massena,NY,704,US-Canada Border,1/1/2020 00:00,Trucks,1973
+Metaline Falls,WA,3025,US-Canada Border,1/1/2020 00:00,Bus Passengers,84
+Metaline Falls,WA,3025,US-Canada Border,1/1/2020 00:00,Buses,5
+Metaline Falls,WA,3025,US-Canada Border,1/1/2020 00:00,Pedestrians,2
+Metaline Falls,WA,3025,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,4684
+Metaline Falls,WA,3025,US-Canada Border,1/1/2020 00:00,Personal Vehicles,2013
+Metaline Falls,WA,3025,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,236
+Metaline Falls,WA,3025,US-Canada Border,1/1/2020 00:00,Truck Containers Full,15
+Metaline Falls,WA,3025,US-Canada Border,1/1/2020 00:00,Trucks,262
+Morgan,MT,3319,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,552
+Morgan,MT,3319,US-Canada Border,1/1/2020 00:00,Personal Vehicles,292
+Morgan,MT,3319,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,14
+Morgan,MT,3319,US-Canada Border,1/1/2020 00:00,Truck Containers Full,12
+Morgan,MT,3319,US-Canada Border,1/1/2020 00:00,Trucks,21
+Naco,AZ,2603,US-Mexico Border,1/1/2020 00:00,Pedestrians,6797
+Naco,AZ,2603,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,43941
+Naco,AZ,2603,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,24905
+Naco,AZ,2603,US-Mexico Border,1/1/2020 00:00,Truck Containers Empty,195
+Naco,AZ,2603,US-Mexico Border,1/1/2020 00:00,Truck Containers Full,46
+Naco,AZ,2603,US-Mexico Border,1/1/2020 00:00,Trucks,256
+Neche,ND,3404,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,4092
+Neche,ND,3404,US-Canada Border,1/1/2020 00:00,Personal Vehicles,2512
+Neche,ND,3404,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,498
+Neche,ND,3404,US-Canada Border,1/1/2020 00:00,Truck Containers Full,174
+Neche,ND,3404,US-Canada Border,1/1/2020 00:00,Trucks,679
+Nighthawk,WA,3011,US-Canada Border,1/1/2020 00:00,Pedestrians,1
+Nighthawk,WA,3011,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,332
+Nighthawk,WA,3011,US-Canada Border,1/1/2020 00:00,Personal Vehicles,183
+Nogales,AZ,2604,US-Mexico Border,1/1/2020 00:00,Bus Passengers,18434
+Nogales,AZ,2604,US-Mexico Border,1/1/2020 00:00,Buses,818
+Nogales,AZ,2604,US-Mexico Border,1/1/2020 00:00,Pedestrians,285482
+Nogales,AZ,2604,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,608469
+Nogales,AZ,2604,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,299906
+Nogales,AZ,2604,US-Mexico Border,1/1/2020 00:00,Rail Containers Empty,3210
+Nogales,AZ,2604,US-Mexico Border,1/1/2020 00:00,Rail Containers Full,3014
+Nogales,AZ,2604,US-Mexico Border,1/1/2020 00:00,Train Passengers,232
+Nogales,AZ,2604,US-Mexico Border,1/1/2020 00:00,Trains,57
+Nogales,AZ,2604,US-Mexico Border,1/1/2020 00:00,Truck Containers Empty,8147
+Nogales,AZ,2604,US-Mexico Border,1/1/2020 00:00,Truck Containers Full,26622
+Nogales,AZ,2604,US-Mexico Border,1/1/2020 00:00,Trucks,34948
+Noonan,ND,3420,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,2957
+Noonan,ND,3420,US-Canada Border,1/1/2020 00:00,Personal Vehicles,1744
+Noonan,ND,3420,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,254
+Noonan,ND,3420,US-Canada Border,1/1/2020 00:00,Trucks,261
+Northgate,ND,3406,US-Canada Border,1/1/2020 00:00,Pedestrians,6
+Northgate,ND,3406,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,1525
+Northgate,ND,3406,US-Canada Border,1/1/2020 00:00,Personal Vehicles,762
+Northgate,ND,3406,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,151
+Northgate,ND,3406,US-Canada Border,1/1/2020 00:00,Rail Containers Full,440
+Northgate,ND,3406,US-Canada Border,1/1/2020 00:00,Train Passengers,41
+Northgate,ND,3406,US-Canada Border,1/1/2020 00:00,Trains,14
+Northgate,ND,3406,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,575
+Northgate,ND,3406,US-Canada Border,1/1/2020 00:00,Truck Containers Full,283
+Northgate,ND,3406,US-Canada Border,1/1/2020 00:00,Trucks,767
+Norton,VT,211,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,1072
+Norton,VT,211,US-Canada Border,1/1/2020 00:00,Personal Vehicles,767
+Norton,VT,211,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,109
+Norton,VT,211,US-Canada Border,1/1/2020 00:00,Rail Containers Full,939
+Norton,VT,211,US-Canada Border,1/1/2020 00:00,Train Passengers,45
+Norton,VT,211,US-Canada Border,1/1/2020 00:00,Trains,22
+Norton,VT,211,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,247
+Norton,VT,211,US-Canada Border,1/1/2020 00:00,Truck Containers Full,521
+Norton,VT,211,US-Canada Border,1/1/2020 00:00,Trucks,781
+Ogdensburg,NY,701,US-Canada Border,1/1/2020 00:00,Bus Passengers,236
+Ogdensburg,NY,701,US-Canada Border,1/1/2020 00:00,Buses,9
+Ogdensburg,NY,701,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,32011
+Ogdensburg,NY,701,US-Canada Border,1/1/2020 00:00,Personal Vehicles,17677
+Ogdensburg,NY,701,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,904
+Ogdensburg,NY,701,US-Canada Border,1/1/2020 00:00,Truck Containers Full,2364
+Ogdensburg,NY,701,US-Canada Border,1/1/2020 00:00,Trucks,3288
+Opheim,MT,3317,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,368
+Opheim,MT,3317,US-Canada Border,1/1/2020 00:00,Personal Vehicles,224
+Opheim,MT,3317,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,2
+Opheim,MT,3317,US-Canada Border,1/1/2020 00:00,Truck Containers Full,1
+Opheim,MT,3317,US-Canada Border,1/1/2020 00:00,Trucks,3
+Oroville,WA,3019,US-Canada Border,1/1/2020 00:00,Bus Passengers,301
+Oroville,WA,3019,US-Canada Border,1/1/2020 00:00,Buses,10
+Oroville,WA,3019,US-Canada Border,1/1/2020 00:00,Pedestrians,291
+Oroville,WA,3019,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,17796
+Oroville,WA,3019,US-Canada Border,1/1/2020 00:00,Personal Vehicles,10293
+Oroville,WA,3019,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,875
+Oroville,WA,3019,US-Canada Border,1/1/2020 00:00,Truck Containers Full,1284
+Oroville,WA,3019,US-Canada Border,1/1/2020 00:00,Trucks,2186
+Otay Mesa,CA,2506,US-Mexico Border,1/1/2020 00:00,Bus Passengers,435
+Otay Mesa,CA,2506,US-Mexico Border,1/1/2020 00:00,Buses,397
+Otay Mesa,CA,2506,US-Mexico Border,1/1/2020 00:00,Pedestrians,282958
+Otay Mesa,CA,2506,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,802567
+Otay Mesa,CA,2506,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,499813
+Otay Mesa,CA,2506,US-Mexico Border,1/1/2020 00:00,Rail Containers Empty,218
+Otay Mesa,CA,2506,US-Mexico Border,1/1/2020 00:00,Train Passengers,34
+Otay Mesa,CA,2506,US-Mexico Border,1/1/2020 00:00,Trains,25
+Otay Mesa,CA,2506,US-Mexico Border,1/1/2020 00:00,Truck Containers Empty,18911
+Otay Mesa,CA,2506,US-Mexico Border,1/1/2020 00:00,Truck Containers Full,55407
+Otay Mesa,CA,2506,US-Mexico Border,1/1/2020 00:00,Trucks,73703
+Pembina,ND,3401,US-Canada Border,1/1/2020 00:00,Bus Passengers,848
+Pembina,ND,3401,US-Canada Border,1/1/2020 00:00,Buses,31
+Pembina,ND,3401,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,30855
+Pembina,ND,3401,US-Canada Border,1/1/2020 00:00,Personal Vehicles,14329
+Pembina,ND,3401,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,1628
+Pembina,ND,3401,US-Canada Border,1/1/2020 00:00,Rail Containers Full,13385
+Pembina,ND,3401,US-Canada Border,1/1/2020 00:00,Train Passengers,282
+Pembina,ND,3401,US-Canada Border,1/1/2020 00:00,Trains,141
+Pembina,ND,3401,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,3915
+Pembina,ND,3401,US-Canada Border,1/1/2020 00:00,Truck Containers Full,15153
+Pembina,ND,3401,US-Canada Border,1/1/2020 00:00,Trucks,18668
+Piegan,MT,3316,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,6117
+Piegan,MT,3316,US-Canada Border,1/1/2020 00:00,Personal Vehicles,3231
+Piegan,MT,3316,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,8
+Piegan,MT,3316,US-Canada Border,1/1/2020 00:00,Truck Containers Full,192
+Piegan,MT,3316,US-Canada Border,1/1/2020 00:00,Trucks,204
+Pinecreek,MN,3425,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,357
+Pinecreek,MN,3425,US-Canada Border,1/1/2020 00:00,Personal Vehicles,208
+Pinecreek,MN,3425,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,11
+Pinecreek,MN,3425,US-Canada Border,1/1/2020 00:00,Truck Containers Full,4
+Pinecreek,MN,3425,US-Canada Border,1/1/2020 00:00,Trucks,16
+Point Roberts,WA,3017,US-Canada Border,1/1/2020 00:00,Bus Passengers,540
+Point Roberts,WA,3017,US-Canada Border,1/1/2020 00:00,Buses,40
+Point Roberts,WA,3017,US-Canada Border,1/1/2020 00:00,Pedestrians,1488
+Point Roberts,WA,3017,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,76683
+Point Roberts,WA,3017,US-Canada Border,1/1/2020 00:00,Personal Vehicles,59047
+Point Roberts,WA,3017,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,484
+Point Roberts,WA,3017,US-Canada Border,1/1/2020 00:00,Truck Containers Full,311
+Point Roberts,WA,3017,US-Canada Border,1/1/2020 00:00,Trucks,822
+Port Angeles,WA,3007,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,5
+Port Angeles,WA,3007,US-Canada Border,1/1/2020 00:00,Truck Containers Full,8
+Port Angeles,WA,3007,US-Canada Border,1/1/2020 00:00,Trucks,13
+Port Huron,MI,3802,US-Canada Border,1/1/2020 00:00,Bus Passengers,1484
+Port Huron,MI,3802,US-Canada Border,1/1/2020 00:00,Buses,142
+Port Huron,MI,3802,US-Canada Border,1/1/2020 00:00,Pedestrians,247
+Port Huron,MI,3802,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,170884
+Port Huron,MI,3802,US-Canada Border,1/1/2020 00:00,Personal Vehicles,89180
+Port Huron,MI,3802,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,13300
+Port Huron,MI,3802,US-Canada Border,1/1/2020 00:00,Rail Containers Full,18376
+Port Huron,MI,3802,US-Canada Border,1/1/2020 00:00,Train Passengers,486
+Port Huron,MI,3802,US-Canada Border,1/1/2020 00:00,Trains,233
+Port Huron,MI,3802,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,13400
+Port Huron,MI,3802,US-Canada Border,1/1/2020 00:00,Truck Containers Full,49832
+Port Huron,MI,3802,US-Canada Border,1/1/2020 00:00,Trucks,62752
+Portal,ND,3403,US-Canada Border,1/1/2020 00:00,Bus Passengers,251
+Portal,ND,3403,US-Canada Border,1/1/2020 00:00,Buses,5
+Portal,ND,3403,US-Canada Border,1/1/2020 00:00,Pedestrians,115
+Portal,ND,3403,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,6796
+Portal,ND,3403,US-Canada Border,1/1/2020 00:00,Personal Vehicles,3748
+Portal,ND,3403,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,6902
+Portal,ND,3403,US-Canada Border,1/1/2020 00:00,Rail Containers Full,21597
+Portal,ND,3403,US-Canada Border,1/1/2020 00:00,Train Passengers,510
+Portal,ND,3403,US-Canada Border,1/1/2020 00:00,Trains,172
+Portal,ND,3403,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,1790
+Portal,ND,3403,US-Canada Border,1/1/2020 00:00,Truck Containers Full,5162
+Portal,ND,3403,US-Canada Border,1/1/2020 00:00,Trucks,6581
+Porthill,ID,3308,US-Canada Border,1/1/2020 00:00,Pedestrians,23
+Porthill,ID,3308,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,12197
+Porthill,ID,3308,US-Canada Border,1/1/2020 00:00,Personal Vehicles,7333
+Porthill,ID,3308,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,350
+Porthill,ID,3308,US-Canada Border,1/1/2020 00:00,Truck Containers Full,24
+Porthill,ID,3308,US-Canada Border,1/1/2020 00:00,Trucks,392
+Presidio,TX,2403,US-Mexico Border,1/1/2020 00:00,Bus Passengers,197
+Presidio,TX,2403,US-Mexico Border,1/1/2020 00:00,Buses,128
+Presidio,TX,2403,US-Mexico Border,1/1/2020 00:00,Pedestrians,24807
+Presidio,TX,2403,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,120912
+Presidio,TX,2403,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,56535
+Presidio,TX,2403,US-Mexico Border,1/1/2020 00:00,Truck Containers Empty,327
+Presidio,TX,2403,US-Mexico Border,1/1/2020 00:00,Truck Containers Full,630
+Presidio,TX,2403,US-Mexico Border,1/1/2020 00:00,Trucks,967
+Progreso,TX,2309,US-Mexico Border,1/1/2020 00:00,Pedestrians,121421
+Progreso,TX,2309,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,218195
+Progreso,TX,2309,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,101514
+Progreso,TX,2309,US-Mexico Border,1/1/2020 00:00,Truck Containers Empty,2425
+Progreso,TX,2309,US-Mexico Border,1/1/2020 00:00,Truck Containers Full,3314
+Progreso,TX,2309,US-Mexico Border,1/1/2020 00:00,Trucks,5074
+Raymond,MT,3301,US-Canada Border,1/1/2020 00:00,Bus Passengers,17
+Raymond,MT,3301,US-Canada Border,1/1/2020 00:00,Buses,1
+Raymond,MT,3301,US-Canada Border,1/1/2020 00:00,Pedestrians,43
+Raymond,MT,3301,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,3008
+Raymond,MT,3301,US-Canada Border,1/1/2020 00:00,Personal Vehicles,1531
+Raymond,MT,3301,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,589
+Raymond,MT,3301,US-Canada Border,1/1/2020 00:00,Truck Containers Full,1951
+Raymond,MT,3301,US-Canada Border,1/1/2020 00:00,Trucks,1998
+Richford,VT,203,US-Canada Border,1/1/2020 00:00,Bus Passengers,74
+Richford,VT,203,US-Canada Border,1/1/2020 00:00,Buses,2
+Richford,VT,203,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,10471
+Richford,VT,203,US-Canada Border,1/1/2020 00:00,Personal Vehicles,5607
+Richford,VT,203,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,23
+Richford,VT,203,US-Canada Border,1/1/2020 00:00,Rail Containers Full,129
+Richford,VT,203,US-Canada Border,1/1/2020 00:00,Train Passengers,26
+Richford,VT,203,US-Canada Border,1/1/2020 00:00,Trains,16
+Richford,VT,203,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,248
+Richford,VT,203,US-Canada Border,1/1/2020 00:00,Truck Containers Full,147
+Richford,VT,203,US-Canada Border,1/1/2020 00:00,Trucks,408
+Rio Grande City,TX,2307,US-Mexico Border,1/1/2020 00:00,Pedestrians,8384
+Rio Grande City,TX,2307,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,68123
+Rio Grande City,TX,2307,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,33126
+Rio Grande City,TX,2307,US-Mexico Border,1/1/2020 00:00,Truck Containers Empty,724
+Rio Grande City,TX,2307,US-Mexico Border,1/1/2020 00:00,Truck Containers Full,3056
+Rio Grande City,TX,2307,US-Mexico Border,1/1/2020 00:00,Trucks,3545
+Roma,TX,2310,US-Mexico Border,1/1/2020 00:00,Bus Passengers,748
+Roma,TX,2310,US-Mexico Border,1/1/2020 00:00,Buses,42
+Roma,TX,2310,US-Mexico Border,1/1/2020 00:00,Pedestrians,24655
+Roma,TX,2310,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,118076
+Roma,TX,2310,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,63397
+Roma,TX,2310,US-Mexico Border,1/1/2020 00:00,Truck Containers Empty,806
+Roma,TX,2310,US-Mexico Border,1/1/2020 00:00,Truck Containers Full,652
+Roma,TX,2310,US-Mexico Border,1/1/2020 00:00,Trucks,1499
+Roosville,MT,3318,US-Canada Border,1/1/2020 00:00,Bus Passengers,115
+Roosville,MT,3318,US-Canada Border,1/1/2020 00:00,Buses,3
+Roosville,MT,3318,US-Canada Border,1/1/2020 00:00,Pedestrians,1
+Roosville,MT,3318,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,14071
+Roosville,MT,3318,US-Canada Border,1/1/2020 00:00,Personal Vehicles,7348
+Roosville,MT,3318,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,300
+Roosville,MT,3318,US-Canada Border,1/1/2020 00:00,Truck Containers Full,367
+Roosville,MT,3318,US-Canada Border,1/1/2020 00:00,Trucks,665
+Roseau,MN,3426,US-Canada Border,1/1/2020 00:00,Bus Passengers,11
+Roseau,MN,3426,US-Canada Border,1/1/2020 00:00,Buses,1
+Roseau,MN,3426,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,4982
+Roseau,MN,3426,US-Canada Border,1/1/2020 00:00,Personal Vehicles,2733
+Roseau,MN,3426,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,101
+Roseau,MN,3426,US-Canada Border,1/1/2020 00:00,Truck Containers Full,61
+Roseau,MN,3426,US-Canada Border,1/1/2020 00:00,Trucks,165
+San Luis,AZ,2608,US-Mexico Border,1/1/2020 00:00,Bus Passengers,6
+San Luis,AZ,2608,US-Mexico Border,1/1/2020 00:00,Buses,6
+San Luis,AZ,2608,US-Mexico Border,1/1/2020 00:00,Pedestrians,263073
+San Luis,AZ,2608,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,423350
+San Luis,AZ,2608,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,256959
+San Luis,AZ,2608,US-Mexico Border,1/1/2020 00:00,Truck Containers Empty,1706
+San Luis,AZ,2608,US-Mexico Border,1/1/2020 00:00,Truck Containers Full,2627
+San Luis,AZ,2608,US-Mexico Border,1/1/2020 00:00,Trucks,4310
+San Ysidro,CA,2504,US-Mexico Border,1/1/2020 00:00,Bus Passengers,8608
+San Ysidro,CA,2504,US-Mexico Border,1/1/2020 00:00,Buses,3840
+San Ysidro,CA,2504,US-Mexico Border,1/1/2020 00:00,Pedestrians,831154
+San Ysidro,CA,2504,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,2298003
+San Ysidro,CA,2504,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,1391251
+Santa Teresa,NM,2408,US-Mexico Border,1/1/2020 00:00,Bus Passengers,124
+Santa Teresa,NM,2408,US-Mexico Border,1/1/2020 00:00,Buses,31
+Santa Teresa,NM,2408,US-Mexico Border,1/1/2020 00:00,Pedestrians,23104
+Santa Teresa,NM,2408,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,108489
+Santa Teresa,NM,2408,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,46478
+Santa Teresa,NM,2408,US-Mexico Border,1/1/2020 00:00,Truck Containers Empty,5197
+Santa Teresa,NM,2408,US-Mexico Border,1/1/2020 00:00,Truck Containers Full,6539
+Santa Teresa,NM,2408,US-Mexico Border,1/1/2020 00:00,Trucks,11864
+Sarles,ND,3409,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,273
+Sarles,ND,3409,US-Canada Border,1/1/2020 00:00,Personal Vehicles,149
+Sarles,ND,3409,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,8
+Sarles,ND,3409,US-Canada Border,1/1/2020 00:00,Truck Containers Full,56
+Sarles,ND,3409,US-Canada Border,1/1/2020 00:00,Trucks,52
+Sasabe,AZ,2606,US-Mexico Border,1/1/2020 00:00,Pedestrians,59
+Sasabe,AZ,2606,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,4744
+Sasabe,AZ,2606,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,2442
+Sault Sainte Marie,MI,3803,US-Canada Border,1/1/2020 00:00,Bus Passengers,557
+Sault Sainte Marie,MI,3803,US-Canada Border,1/1/2020 00:00,Buses,53
+Sault Sainte Marie,MI,3803,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,74661
+Sault Sainte Marie,MI,3803,US-Canada Border,1/1/2020 00:00,Personal Vehicles,43171
+Sault Sainte Marie,MI,3803,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,1637
+Sault Sainte Marie,MI,3803,US-Canada Border,1/1/2020 00:00,Rail Containers Full,1547
+Sault Sainte Marie,MI,3803,US-Canada Border,1/1/2020 00:00,Train Passengers,62
+Sault Sainte Marie,MI,3803,US-Canada Border,1/1/2020 00:00,Trains,30
+Sault Sainte Marie,MI,3803,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,849
+Sault Sainte Marie,MI,3803,US-Canada Border,1/1/2020 00:00,Truck Containers Full,3177
+Sault Sainte Marie,MI,3803,US-Canada Border,1/1/2020 00:00,Trucks,3549
+Scobey,MT,3309,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,608
+Scobey,MT,3309,US-Canada Border,1/1/2020 00:00,Personal Vehicles,342
+Scobey,MT,3309,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,23
+Scobey,MT,3309,US-Canada Border,1/1/2020 00:00,Truck Containers Full,11
+Scobey,MT,3309,US-Canada Border,1/1/2020 00:00,Trucks,37
+Sherwood,ND,3414,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,1990
+Sherwood,ND,3414,US-Canada Border,1/1/2020 00:00,Personal Vehicles,1022
+Sherwood,ND,3414,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,384
+Sherwood,ND,3414,US-Canada Border,1/1/2020 00:00,Truck Containers Full,83
+Sherwood,ND,3414,US-Canada Border,1/1/2020 00:00,Trucks,483
+Skagway,AK,3103,US-Canada Border,1/1/2020 00:00,Pedestrians,1
+Skagway,AK,3103,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,768
+Skagway,AK,3103,US-Canada Border,1/1/2020 00:00,Personal Vehicles,357
+Skagway,AK,3103,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,129
+Skagway,AK,3103,US-Canada Border,1/1/2020 00:00,Truck Containers Full,51
+Skagway,AK,3103,US-Canada Border,1/1/2020 00:00,Trucks,147
+St. John,ND,3405,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,1393
+St. John,ND,3405,US-Canada Border,1/1/2020 00:00,Personal Vehicles,751
+St. John,ND,3405,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,17
+St. John,ND,3405,US-Canada Border,1/1/2020 00:00,Trucks,18
+Sumas,WA,3009,US-Canada Border,1/1/2020 00:00,Bus Passengers,430
+Sumas,WA,3009,US-Canada Border,1/1/2020 00:00,Buses,24
+Sumas,WA,3009,US-Canada Border,1/1/2020 00:00,Pedestrians,3598
+Sumas,WA,3009,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,98774
+Sumas,WA,3009,US-Canada Border,1/1/2020 00:00,Personal Vehicles,58238
+Sumas,WA,3009,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,297
+Sumas,WA,3009,US-Canada Border,1/1/2020 00:00,Rail Containers Full,77
+Sumas,WA,3009,US-Canada Border,1/1/2020 00:00,Train Passengers,42
+Sumas,WA,3009,US-Canada Border,1/1/2020 00:00,Trains,15
+Sumas,WA,3009,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,3327
+Sumas,WA,3009,US-Canada Border,1/1/2020 00:00,Truck Containers Full,8812
+Sumas,WA,3009,US-Canada Border,1/1/2020 00:00,Trucks,11765
+Sweetgrass,MT,3310,US-Canada Border,1/1/2020 00:00,Bus Passengers,44
+Sweetgrass,MT,3310,US-Canada Border,1/1/2020 00:00,Buses,1
+Sweetgrass,MT,3310,US-Canada Border,1/1/2020 00:00,Pedestrians,222
+Sweetgrass,MT,3310,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,24903
+Sweetgrass,MT,3310,US-Canada Border,1/1/2020 00:00,Personal Vehicles,12841
+Sweetgrass,MT,3310,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,605
+Sweetgrass,MT,3310,US-Canada Border,1/1/2020 00:00,Rail Containers Full,2268
+Sweetgrass,MT,3310,US-Canada Border,1/1/2020 00:00,Train Passengers,210
+Sweetgrass,MT,3310,US-Canada Border,1/1/2020 00:00,Trains,38
+Sweetgrass,MT,3310,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,2257
+Sweetgrass,MT,3310,US-Canada Border,1/1/2020 00:00,Truck Containers Full,9787
+Sweetgrass,MT,3310,US-Canada Border,1/1/2020 00:00,Trucks,10781
+Tecate,CA,2505,US-Mexico Border,1/1/2020 00:00,Pedestrians,73750
+Tecate,CA,2505,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,152551
+Tecate,CA,2505,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,82300
+Tecate,CA,2505,US-Mexico Border,1/1/2020 00:00,Truck Containers Empty,1989
+Tecate,CA,2505,US-Mexico Border,1/1/2020 00:00,Truck Containers Full,3330
+Tecate,CA,2505,US-Mexico Border,1/1/2020 00:00,Trucks,5366
+Tornillo-Fabens,TX,2404,US-Mexico Border,1/1/2020 00:00,Pedestrians,3098
+Tornillo-Fabens,TX,2404,US-Mexico Border,1/1/2020 00:00,Personal Vehicle Passengers,63627
+Tornillo-Fabens,TX,2404,US-Mexico Border,1/1/2020 00:00,Personal Vehicles,34183
+Trout River,NY,715,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,12443
+Trout River,NY,715,US-Canada Border,1/1/2020 00:00,Personal Vehicles,7099
+Trout River,NY,715,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,473
+Trout River,NY,715,US-Canada Border,1/1/2020 00:00,Rail Containers Full,1457
+Trout River,NY,715,US-Canada Border,1/1/2020 00:00,Train Passengers,102
+Trout River,NY,715,US-Canada Border,1/1/2020 00:00,Trains,52
+Trout River,NY,715,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,305
+Trout River,NY,715,US-Canada Border,1/1/2020 00:00,Truck Containers Full,493
+Trout River,NY,715,US-Canada Border,1/1/2020 00:00,Trucks,812
+Turner,MT,3306,US-Canada Border,1/1/2020 00:00,Bus Passengers,48
+Turner,MT,3306,US-Canada Border,1/1/2020 00:00,Buses,1
+Turner,MT,3306,US-Canada Border,1/1/2020 00:00,Pedestrians,1
+Turner,MT,3306,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,1332
+Turner,MT,3306,US-Canada Border,1/1/2020 00:00,Personal Vehicles,661
+Turner,MT,3306,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,8
+Turner,MT,3306,US-Canada Border,1/1/2020 00:00,Truck Containers Full,14
+Turner,MT,3306,US-Canada Border,1/1/2020 00:00,Trucks,17
+Van Buren,ME,108,US-Canada Border,1/1/2020 00:00,Pedestrians,2
+Van Buren,ME,108,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,14908
+Van Buren,ME,108,US-Canada Border,1/1/2020 00:00,Personal Vehicles,10454
+Van Buren,ME,108,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,287
+Van Buren,ME,108,US-Canada Border,1/1/2020 00:00,Rail Containers Full,752
+Van Buren,ME,108,US-Canada Border,1/1/2020 00:00,Train Passengers,56
+Van Buren,ME,108,US-Canada Border,1/1/2020 00:00,Trains,44
+Van Buren,ME,108,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,859
+Van Buren,ME,108,US-Canada Border,1/1/2020 00:00,Truck Containers Full,959
+Van Buren,ME,108,US-Canada Border,1/1/2020 00:00,Trucks,1629
+Vanceboro,ME,105,US-Canada Border,1/1/2020 00:00,Pedestrians,6
+Vanceboro,ME,105,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,1776
+Vanceboro,ME,105,US-Canada Border,1/1/2020 00:00,Personal Vehicles,1316
+Vanceboro,ME,105,US-Canada Border,1/1/2020 00:00,Rail Containers Empty,1334
+Vanceboro,ME,105,US-Canada Border,1/1/2020 00:00,Rail Containers Full,943
+Vanceboro,ME,105,US-Canada Border,1/1/2020 00:00,Train Passengers,57
+Vanceboro,ME,105,US-Canada Border,1/1/2020 00:00,Trains,27
+Vanceboro,ME,105,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,28
+Vanceboro,ME,105,US-Canada Border,1/1/2020 00:00,Truck Containers Full,13
+Vanceboro,ME,105,US-Canada Border,1/1/2020 00:00,Trucks,42
+Walhalla,ND,3407,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,4264
+Walhalla,ND,3407,US-Canada Border,1/1/2020 00:00,Personal Vehicles,2233
+Walhalla,ND,3407,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,498
+Walhalla,ND,3407,US-Canada Border,1/1/2020 00:00,Truck Containers Full,93
+Walhalla,ND,3407,US-Canada Border,1/1/2020 00:00,Trucks,607
+Warroad,MN,3423,US-Canada Border,1/1/2020 00:00,Bus Passengers,307
+Warroad,MN,3423,US-Canada Border,1/1/2020 00:00,Buses,41
+Warroad,MN,3423,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,14842
+Warroad,MN,3423,US-Canada Border,1/1/2020 00:00,Personal Vehicles,5968
+Warroad,MN,3423,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,418
+Warroad,MN,3423,US-Canada Border,1/1/2020 00:00,Truck Containers Full,89
+Warroad,MN,3423,US-Canada Border,1/1/2020 00:00,Trucks,523
+Westhope,ND,3419,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,1168
+Westhope,ND,3419,US-Canada Border,1/1/2020 00:00,Personal Vehicles,570
+Westhope,ND,3419,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,421
+Westhope,ND,3419,US-Canada Border,1/1/2020 00:00,Truck Containers Full,154
+Westhope,ND,3419,US-Canada Border,1/1/2020 00:00,Trucks,551
+Whitlash,MT,3321,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,65
+Whitlash,MT,3321,US-Canada Border,1/1/2020 00:00,Personal Vehicles,35
+Wildhorse,MT,3323,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,1022
+Wildhorse,MT,3323,US-Canada Border,1/1/2020 00:00,Personal Vehicles,491
+Wildhorse,MT,3323,US-Canada Border,1/1/2020 00:00,Truck Containers Empty,2
+Wildhorse,MT,3323,US-Canada Border,1/1/2020 00:00,Truck Containers Full,108
+Wildhorse,MT,3323,US-Canada Border,1/1/2020 00:00,Trucks,83
+Willow Creek,MT,3325,US-Canada Border,1/1/2020 00:00,Personal Vehicle Passengers,373
+Willow Creek,MT,3325,US-Canada Border,1/1/2020 00:00,Personal Vehicles,176
