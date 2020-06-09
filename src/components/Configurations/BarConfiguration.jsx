@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { Fragment } from "react";
+=======
+import React from "react";
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
 =======
 import React from "react";
 >>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
@@ -15,7 +19,10 @@ import {
   Input,
   Chip,
 <<<<<<< HEAD
+<<<<<<< HEAD
   Typography,
+=======
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
 =======
 >>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
 } from "@material-ui/core";
@@ -79,6 +86,7 @@ export default function BarConfiguration(props) {
   const classes = useStyles();
   const theme = useTheme();
   return (
+<<<<<<< HEAD
 <<<<<<< HEAD
     <Fragment>
       <Typography variant="h6">Heat Map</Typography>
@@ -168,6 +176,8 @@ export default function BarConfiguration(props) {
       </Box>
     </Fragment>
 =======
+=======
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
     <Box display="flex" flexDirection="row" alignItems="baseline">
       <FormControl
         className={classes.formControl}
@@ -249,6 +259,9 @@ export default function BarConfiguration(props) {
         OPEN
       </Button>
     </Box>
+<<<<<<< HEAD
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
+=======
 >>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
   );
 }

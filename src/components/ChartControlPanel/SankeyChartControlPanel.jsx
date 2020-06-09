@@ -88,7 +88,11 @@ export default function SankeyChartControlPanel(props) {
     <Box style={{ width: 225 }}>
       <ViewVisualizationListButton />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <ShareButton viewState={[]} />
+=======
+      <ShareButton />
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
 =======
       <ShareButton />
 >>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176

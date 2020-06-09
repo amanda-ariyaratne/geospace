@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { Fragment } from "react";
+=======
+import React from "react";
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
 =======
 import React from "react";
 >>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
@@ -13,7 +17,10 @@ import {
   MenuItem,
   Button,
 <<<<<<< HEAD
+<<<<<<< HEAD
   Typography,
+=======
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
 =======
 >>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
 } from "@material-ui/core";
@@ -55,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
 export default function SankeyConfiguration(props) {
   const classes = useStyles();
   return (
+<<<<<<< HEAD
 <<<<<<< HEAD
     <Fragment>
       <Typography variant="h6">Heat Map</Typography>
@@ -124,6 +132,8 @@ export default function SankeyConfiguration(props) {
       </Box>
     </Fragment>
 =======
+=======
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
     <Box display="flex" flexDirection="row" alignItems="baseline">
       <FormControl
         variant="outlined"
@@ -188,6 +198,9 @@ export default function SankeyConfiguration(props) {
         OPEN
       </Button>
     </Box>
+<<<<<<< HEAD
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
+=======
 >>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
   );
 }

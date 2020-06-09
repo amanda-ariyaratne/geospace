@@ -87,10 +87,16 @@ export default function LineChartControlPanel(props) {
   const datafile = useSelector((state) => state.datafile);
   const headers = datafile !== null ? datafile.headers : [];
 <<<<<<< HEAD
+<<<<<<< HEAD
   const xAxisType = useSelector((state) => state.line.xAxisType);
   // const [xAxisType, setXAxisType] = useState(
   //   useSelector((state) => state.line.xAxisType)
   // );
+=======
+  const [xAxisType, setXAxisType] = useState(
+    useSelector((state) => state.line.xAxisType)
+  );
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
 =======
   const [xAxisType, setXAxisType] = useState(
     useSelector((state) => state.line.xAxisType)
@@ -103,7 +109,11 @@ export default function LineChartControlPanel(props) {
       lineChart.dataTable.setDataset(datafile.data, xAxisType);
     } else {
 <<<<<<< HEAD
+<<<<<<< HEAD
       lineChart.xAxisType = "string";
+=======
+      setXAxisType("string");
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
 =======
       setXAxisType("string");
 >>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
@@ -119,7 +129,10 @@ export default function LineChartControlPanel(props) {
       lineChart.dataTable.setDataset(datafile.data, xAxisType);
     } else {
 <<<<<<< HEAD
+<<<<<<< HEAD
       lineChart.xAxisType = "string";
+=======
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
 =======
 >>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
       lineChart.dataTable.setDataset(datafile.data, "string");
@@ -145,7 +158,11 @@ export default function LineChartControlPanel(props) {
 
   const handleChangeXAxisType = (event) => {
 <<<<<<< HEAD
+<<<<<<< HEAD
     lineChart.xAxisType = event.target.value;
+=======
+    setXAxisType(event.target.value);
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
 =======
     setXAxisType(event.target.value);
 >>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
@@ -157,7 +174,11 @@ export default function LineChartControlPanel(props) {
     <Box style={{ width: 225 }}>
       <ViewVisualizationListButton />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <ShareButton viewState={[]} />
+=======
+      <ShareButton />
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
 =======
       <ShareButton />
 >>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176

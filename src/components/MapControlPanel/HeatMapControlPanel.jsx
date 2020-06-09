@@ -82,7 +82,11 @@ export default function HeatMapControlPanel(props) {
     <React.Fragment>
       <ViewVisualizationListButton />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <ShareButton viewState={props.viewState} />
+=======
+      <ShareButton />
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
 =======
       <ShareButton />
 >>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
