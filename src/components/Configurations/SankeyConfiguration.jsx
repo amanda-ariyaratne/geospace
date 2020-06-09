@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { Fragment } from "react";
+=======
+import React from "react";
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
 
 // material-ui
 import {
@@ -8,7 +12,10 @@ import {
   Select,
   MenuItem,
   Button,
+<<<<<<< HEAD
   Typography,
+=======
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
 } from "@material-ui/core";
 import LaunchIcon from "@material-ui/icons/Launch";
 import { makeStyles } from "@material-ui/core/styles";
@@ -48,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
 export default function SankeyConfiguration(props) {
   const classes = useStyles();
   return (
+<<<<<<< HEAD
     <Fragment>
       <Typography variant="h6">Heat Map</Typography>
       <Box display="flex" flexDirection="row" alignItems="baseline">
@@ -115,5 +123,71 @@ export default function SankeyConfiguration(props) {
         </Button>
       </Box>
     </Fragment>
+=======
+    <Box display="flex" flexDirection="row" alignItems="baseline">
+      <FormControl
+        variant="outlined"
+        className={classes.formControl}
+        error={props.sankeyConfig.from === -1 ? true : false}
+      >
+        <InputLabel id="from-label">From</InputLabel>
+        <Select
+          labelId="from-label"
+          value={props.sankeyConfig.from}
+          onChange={props.changeSankeyFrom}
+          label="From"
+        >
+          <MenuItem value={-1}>
+            <em>None</em>
+          </MenuItem>
+          {props.headers.map((header) => {
+            if (header.selected === "string") {
+              return (
+                <MenuItem key={header.index} value={header.index}>
+                  {header.name}
+                </MenuItem>
+              );
+            }
+          })}
+        </Select>
+      </FormControl>
+      <FormControl
+        variant="outlined"
+        className={classes.formControl}
+        error={props.sankeyConfig.to === -1 ? true : false}
+      >
+        <InputLabel id="to-label">To</InputLabel>
+        <Select
+          labelId="to-label"
+          value={props.sankeyConfig.to}
+          onChange={props.changeSankeyTo}
+          label="To"
+        >
+          <MenuItem value={-1}>
+            <em>None</em>
+          </MenuItem>
+          {props.headers.map((header) => {
+            if (header.selected === "string") {
+              return (
+                <MenuItem key={header.index} value={header.index}>
+                  {header.name}
+                </MenuItem>
+              );
+            }
+          })}
+        </Select>
+      </FormControl>
+      <Button
+        variant="contained"
+        color="primary"
+        className={classes.button}
+        size="large"
+        startIcon={<LaunchIcon />}
+        onClick={props.handleSankeyOpen}
+      >
+        OPEN
+      </Button>
+    </Box>
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
   );
 }

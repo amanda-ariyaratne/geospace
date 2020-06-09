@@ -11,9 +11,12 @@ import { useEffect } from "react";
 import Scatterplot from "../classes/map/Scatterplot";
 import HeatMap from "../classes/map/HeatMap";
 import Route from "../classes/map/Route";
+<<<<<<< HEAD
 import BarChart from "../classes/chart/BarChart";
 import LineChart from "../classes/chart/LineChart";
 import SankeyChart from "../classes/chart/SankeyChart";
+=======
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
 
 // axios
 import axios from "axios";
@@ -21,11 +24,18 @@ import axios from "axios";
 // components
 import MapVis from "./MapVis";
 import BarVis from "../components/Charts/BarVis";
+<<<<<<< HEAD
 import LineVis from "../components/Charts/LineVis";
 import SankeyVis from "../components/Charts/SankeyVis";
 
 // deck.gl
 import { FlyToInterpolator } from "deck.gl";
+=======
+
+// deck.gl
+import { FlyToInterpolator } from "deck.gl";
+import BarChart from "../classes/chart/BarChart";
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
 
 export default function VisWrapper(props) {
   const [currentVis, setCurrentVis] = useState(null);
@@ -44,7 +54,11 @@ export default function VisWrapper(props) {
 
   useEffect(() => {
     axios
+<<<<<<< HEAD
       .get(`http://18.209.179.112:8080/api/dataset/get/${id.toString()}`)
+=======
+      .get(`http://localhost:8080/api/dataset/get/${id.toString()}`)
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
       .then(({ data }) => {
         switch (data.type) {
           case "scatterplot":
@@ -57,7 +71,10 @@ export default function VisWrapper(props) {
             scatterplot.getColor = data.getColor;
             scatterplot.showOnHover = data.showOnHover;
             scatterplot.mapStyle = data.mapStyle;
+<<<<<<< HEAD
             setViewState(data.viewstate);
+=======
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
             setDataset(scatterplot);
             setCurrentVis("scatterplot");
             break;
@@ -101,6 +118,7 @@ export default function VisWrapper(props) {
             bar.hAxis = data.hAxis;
             setDataset(bar);
             setCurrentVis("bar");
+<<<<<<< HEAD
             break;
 
           case "line":
@@ -132,6 +150,8 @@ export default function VisWrapper(props) {
             setCurrentVis("sankey");
             break;
 
+=======
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
           default:
             break;
         }
@@ -168,6 +188,7 @@ export default function VisWrapper(props) {
         </Box>
       );
 
+<<<<<<< HEAD
     case "line":
       return (
         <Box order={2} className="main">
@@ -186,6 +207,8 @@ export default function VisWrapper(props) {
         </Box>
       );
 
+=======
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
     default:
       return (
         <Box

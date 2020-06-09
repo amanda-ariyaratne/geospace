@@ -86,17 +86,27 @@ export default function LineChartControlPanel(props) {
   const curveType = useSelector((state) => state.line.curveType);
   const datafile = useSelector((state) => state.datafile);
   const headers = datafile !== null ? datafile.headers : [];
+<<<<<<< HEAD
   const xAxisType = useSelector((state) => state.line.xAxisType);
   // const [xAxisType, setXAxisType] = useState(
   //   useSelector((state) => state.line.xAxisType)
   // );
+=======
+  const [xAxisType, setXAxisType] = useState(
+    useSelector((state) => state.line.xAxisType)
+  );
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
 
   const handleXAxisChange = (event) => {
     lineChart.dataTable.xHeaderIndex = event.target.value;
     if (headers[event.target.value].selected === "number") {
       lineChart.dataTable.setDataset(datafile.data, xAxisType);
     } else {
+<<<<<<< HEAD
       lineChart.xAxisType = "string";
+=======
+      setXAxisType("string");
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
       lineChart.dataTable.setDataset(datafile.data, "string");
     }
     lineChart.hAxis.minValue = lineChart.dataTable.getXMin();
@@ -108,7 +118,10 @@ export default function LineChartControlPanel(props) {
     if (headers[xAxis].selected === "number") {
       lineChart.dataTable.setDataset(datafile.data, xAxisType);
     } else {
+<<<<<<< HEAD
       lineChart.xAxisType = "string";
+=======
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
       lineChart.dataTable.setDataset(datafile.data, "string");
     }
     dispatch(addLine(lineChart));
@@ -131,7 +144,11 @@ export default function LineChartControlPanel(props) {
   };
 
   const handleChangeXAxisType = (event) => {
+<<<<<<< HEAD
     lineChart.xAxisType = event.target.value;
+=======
+    setXAxisType(event.target.value);
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
     lineChart.dataTable.setDataset(datafile.data, event.target.value);
     dispatch(addLine(lineChart));
   };
@@ -139,7 +156,11 @@ export default function LineChartControlPanel(props) {
   return (
     <Box style={{ width: 225 }}>
       <ViewVisualizationListButton />
+<<<<<<< HEAD
       <ShareButton viewState={[]} />
+=======
+      <ShareButton />
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
       <Box display="flex" flexDirection="column" className={classes.boxStyle}>
         <Typography variant="subtitle1" color="secondary">
           X Axis

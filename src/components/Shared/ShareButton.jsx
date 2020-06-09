@@ -39,11 +39,15 @@ export default function ShareButton(props) {
       >
         SHARE
       </Button>
+<<<<<<< HEAD
       <ShareDialog
         open={open}
         onClose={handleClose}
         viewState={props.viewState}
       />
+=======
+      <ShareDialog open={open} onClose={handleClose} />
+>>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
     </Box>
   );
 }
