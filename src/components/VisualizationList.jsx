@@ -120,8 +120,8 @@ export default function VisualizationList(props) {
       return;
     }
     const scatterplot = new Scatterplot(
-      datafile.data,
-      headers,
+      JSON.parse(JSON.stringify(datafile.data)),
+      JSON.parse(JSON.stringify(headers)),
       scatterplotConfig.latitude,
       scatterplotConfig.longitude
     );
@@ -160,8 +160,8 @@ export default function VisualizationList(props) {
       return;
     }
     const heat = new HeatMap(
-      datafile.data,
-      headers,
+      JSON.parse(JSON.stringify(datafile.data)),
+      JSON.parse(JSON.stringify(headers)),
       heatConfig.latitude,
       heatConfig.longitude
     );
@@ -235,8 +235,8 @@ export default function VisualizationList(props) {
       return;
     }
     const route = new Route(
-      datafile.data,
-      headers,
+      JSON.parse(JSON.stringify(datafile.data)),
+      JSON.parse(JSON.stringify(headers)),
       routeConfig.srcLatitude,
       routeConfig.srcLongitude,
       routeConfig.dstLatitude,
@@ -282,7 +282,12 @@ export default function VisualizationList(props) {
       return;
     }
 
-    const bar = new BarChart(datafile.data, headers, barConfig.x, barConfig.y);
+    const bar = new BarChart(
+      JSON.parse(JSON.stringify(datafile.data)),
+      JSON.parse(JSON.stringify(headers)),
+      barConfig.x,
+      barConfig.y
+    );
     dispatch(addBar(bar));
     dispatch(changeCurrentVisualization("bar"));
     props.history.push("/charts");
@@ -319,8 +324,8 @@ export default function VisualizationList(props) {
     }
 
     const line = new LineChart(
-      datafile.data,
-      headers,
+      JSON.parse(JSON.stringify(datafile.data)),
+      JSON.parse(JSON.stringify(headers)),
       lineConfig.x,
       lineConfig.y
     );
@@ -360,8 +365,8 @@ export default function VisualizationList(props) {
     }
 
     const sankey = new SankeyChart(
-      datafile.data,
-      headers,
+      JSON.parse(JSON.stringify(datafile.data)),
+      JSON.parse(JSON.stringify(headers)),
       sankeyConfig.from,
       sankeyConfig.to,
       ""
