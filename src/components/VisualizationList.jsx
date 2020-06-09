@@ -177,10 +177,7 @@ export default function VisualizationList(props) {
     srcLatitude: -1,
     dstLongitude: -1,
     dstLatitude: -1,
-<<<<<<< HEAD
     loading: false,
-=======
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
   });
 
   const changeRouteSrcLongitude = (event) => {
@@ -219,7 +216,6 @@ export default function VisualizationList(props) {
     });
   };
 
-<<<<<<< HEAD
   const changeSetRouteLoading = () => {
     setRouteConfig((prevConfig) => {
       return {
@@ -229,8 +225,6 @@ export default function VisualizationList(props) {
     });
   };
 
-=======
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
   const handleRouteOpen = () => {
     if (
       routeConfig.srcLongitude === -1 ||
@@ -248,13 +242,9 @@ export default function VisualizationList(props) {
       routeConfig.dstLatitude,
       routeConfig.dstLongitude
     );
-<<<<<<< HEAD
     changeSetRouteLoading();
     route.dataTable.callFetchDataFromGoogleApi().then(() => {
       changeSetRouteLoading();
-=======
-    route.dataTable.callFetchDataFromGoogleApi().then(() => {
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
       dispatch(addRoute(route));
       dispatch(changeCurrentVisualization("route"));
       props.history.push("/maps");
@@ -394,13 +384,10 @@ export default function VisualizationList(props) {
     >
       <Typography variant="h3">Choose the visualization method</Typography>
 
-<<<<<<< HEAD
       <Typography variant="h6">
         These are the types of visualization we found that matches your dataset.
       </Typography>
 
-=======
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
       <Box display="flex" flexDirection="row" justifyContent="center">
         <Box className={classes.listBox}>
           <List component="nav" aria-label="main mailbox folders">

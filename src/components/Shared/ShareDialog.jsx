@@ -63,10 +63,7 @@ export default function ShareDialog(props) {
   const datafile = useSelector((state) => state.datafile);
 
   const handleClose = () => {
-<<<<<<< HEAD
     setLoading(false);
-=======
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
     setLink(null);
     onClose();
   };
@@ -91,10 +88,7 @@ export default function ShareDialog(props) {
           getColor: vis.getColor,
           showOnHover: vis.showOnHover,
           mapStyle: mapStyle,
-<<<<<<< HEAD
           viewstate: props.viewState,
-=======
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
         };
 
         break;
@@ -110,10 +104,7 @@ export default function ShareDialog(props) {
           opacity: vis.opacity,
           showOnHover: vis.showOnHover,
           mapStyle: mapStyle,
-<<<<<<< HEAD
           viewstate: props.viewState,
-=======
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
         };
         break;
 
@@ -128,10 +119,7 @@ export default function ShareDialog(props) {
           opacity: vis.opacity,
           showOnHover: vis.showOnHover,
           mapStyle: mapStyle,
-<<<<<<< HEAD
           viewstate: props.viewState,
-=======
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
         };
         break;
 
@@ -150,7 +138,6 @@ export default function ShareDialog(props) {
         };
         break;
 
-<<<<<<< HEAD
       case "line":
         dataset = {
           ...dataset,
@@ -177,25 +164,16 @@ export default function ShareDialog(props) {
         };
         break;
 
-=======
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
       default:
         break;
     }
     setLoading(true);
-<<<<<<< HEAD
     axios
       .post(`http://18.209.179.112:8080/api/dataset/add`, dataset)
       .then((res) => {
         setLink(`localhost:3000/vis/${res.data[0]["_id"]}`);
         setLoading(false);
       });
-=======
-    axios.post(`http://localhost:8080/api/dataset/add`, dataset).then((res) => {
-      setLink(`localhost:3000/vis/${res.data[0]["_id"]}`);
-      setLoading(false);
-    });
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
   };
 
   return (

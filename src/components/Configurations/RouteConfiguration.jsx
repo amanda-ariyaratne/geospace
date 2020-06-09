@@ -8,11 +8,8 @@ import {
   Select,
   MenuItem,
   Button,
-<<<<<<< HEAD
   Typography,
   CircularProgress,
-=======
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
 } from "@material-ui/core";
 import LaunchIcon from "@material-ui/icons/Launch";
 import { makeStyles } from "@material-ui/core/styles";
@@ -44,15 +41,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RouteConfiguration(props) {
   const classes = useStyles();
-<<<<<<< HEAD
 
   return (
     <Fragment>
       <Typography variant="h6">Route Map</Typography>
-=======
-  return (
-    <Fragment>
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
       <Box display="flex" flexDirection="row" alignItems="baseline">
         <FormControl
           variant="outlined"
@@ -175,15 +167,12 @@ export default function RouteConfiguration(props) {
           OPEN
         </Button>
       </Box>
-<<<<<<< HEAD
       {props.routeConfig.loading ? (
         <Box display="flex" flexDirection="row" alignItems="center">
           <CircularProgress style={{ position: "relative", right: "10px" }} />
           <Typography>Please wait while we calculate the routes</Typography>
         </Box>
       ) : null}
-=======
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
     </Fragment>
   );
 }
