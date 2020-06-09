@@ -169,7 +169,7 @@ export default function ShareDialog(props) {
     }
     setLoading(true);
     axios
-      .post(`http://18.209.179.112:8080/api/dataset/add`, dataset)
+      .post(`https://18.209.179.112:8080/api/dataset/add`, dataset)
       .then((res) => {
         setLink(`localhost:3000/vis/${res.data[0]["_id"]}`);
         setLoading(false);

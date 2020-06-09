@@ -44,7 +44,7 @@ export default function VisWrapper(props) {
 
   useEffect(() => {
     axios
-      .get(`http://18.209.179.112:8080/api/dataset/get/${id.toString()}`)
+      .get(`https://18.209.179.112:8080/api/dataset/get/${id.toString()}`)
       .then(({ data }) => {
         switch (data.type) {
           case "scatterplot":
