@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react'
 
 // components
-import MapStyle from "./MapStyle";
-import ViewVisualizationListButton from "../Shared/ViewVisualizationListButton";
-import ShareButton from "../Shared/ShareButton";
+import MapStyle from './MapStyle'
+import ViewVisualizationListButton from '../Shared/ViewVisualizationListButton'
+import ShareButton from '../Shared/ShareButton'
 
 // material-ui
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles'
 import {
   Box,
   Typography,
@@ -16,93 +16,93 @@ import {
   Slider,
   FormGroup,
   FormControlLabel,
-  Checkbox,
-} from "@material-ui/core";
-import InfoIcon from "@material-ui/icons/Info";
+  Checkbox
+} from '@material-ui/core'
+import InfoIcon from '@material-ui/icons/Info'
 
 // react color
-import { CompactPicker } from "react-color";
+import { CompactPicker } from 'react-color'
 
 // redux
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import {
   changeScatterplotMapColor,
   changeScatterplotMapOpacity,
   changeScatterplotMapRadius,
   addMetadataToShowOnHover,
   removeMetadataFromShowOnHover,
-  addScatterplot,
-} from "../../state/actions/scatterplot";
+  addScatterplot
+} from '../../state/actions/scatterplot'
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   boxStyle: {
-    margin: theme.spacing(2, 1),
+    margin: theme.spacing(2, 1)
   },
   opacityBox: {
-    marginTop: 15,
+    marginTop: 15
   },
   slider: {
-    width: "100%",
-  },
-}));
+    width: '100%'
+  }
+}))
 
-export default function ScatterplotMapControlPanel(props) {
-  const classes = useStyles();
-  const dispatch = useDispatch();
-  const scatterplotMap = useSelector((state) => state.scatterplot);
-  const opacity = useSelector((state) => state.scatterplot.opacity);
-  const radius = useSelector((state) => state.scatterplot.radiusMinPixels);
-  let showOnHover = useSelector((state) => state.scatterplot.showOnHover);
-  const datafile = useSelector((state) => state.datafile);
-  const headers = datafile !== null ? datafile.headers : [];
+export default function ScatterplotMapControlPanel (props) {
+  const classes = useStyles()
+  const dispatch = useDispatch()
+  const scatterplotMap = useSelector(state => state.scatterplot)
+  const opacity = useSelector(state => state.scatterplot.opacity)
+  const radius = useSelector(state => state.scatterplot.radiusMinPixels)
+  let showOnHover = useSelector(state => state.scatterplot.showOnHover)
+  const datafile = useSelector(state => state.datafile)
+  const headers = datafile !== null ? datafile.headers : []
 
-  const handleChangeColor = (color) => {
-    scatterplotMap.getColor = [color.rgb["r"], color.rgb["g"], color.rgb["b"]];
+  const handleChangeColor = color => {
+    scatterplotMap.getColor = [color.rgb['r'], color.rgb['g'], color.rgb['b']]
     dispatch(
       changeScatterplotMapColor([
-        color.rgb["r"],
-        color.rgb["g"],
-        color.rgb["b"],
+        color.rgb['r'],
+        color.rgb['g'],
+        color.rgb['b']
       ])
-    );
-  };
+    )
+  }
 
   const handleChangeOpacity = (event, value) => {
-    dispatch(changeScatterplotMapOpacity(value));
-  };
+    dispatch(changeScatterplotMapOpacity(value))
+  }
 
   const handleChangeRadius = (event, value) => {
-    dispatch(changeScatterplotMapRadius(value));
-  };
+    dispatch(changeScatterplotMapRadius(value))
+  }
 
-  const handleChangeMetaData = (event) => {
-    const index = Number(event.target.name);
+  const handleChangeMetaData = event => {
+    const index = Number(event.target.name)
     if (event.target.checked) {
-      showOnHover = [...showOnHover, index];
+      showOnHover = [...showOnHover, index]
 
-      dispatch(addMetadataToShowOnHover(index));
+      dispatch(addMetadataToShowOnHover(index))
     } else {
-      const newShowOnHover = [...showOnHover];
-      const removeIndex = newShowOnHover.indexOf(index);
-      newShowOnHover.splice(removeIndex, 1);
-      showOnHover = newShowOnHover;
-      dispatch(removeMetadataFromShowOnHover(index));
+      const newShowOnHover = [...showOnHover]
+      const removeIndex = newShowOnHover.indexOf(index)
+      newShowOnHover.splice(removeIndex, 1)
+      showOnHover = newShowOnHover
+      dispatch(removeMetadataFromShowOnHover(index))
     }
-    return;
-  };
+    return
+  }
 
-  const handleChangeLongitude = (event) => {
-    scatterplotMap.dataTable.longitudeHeaderIndex = event.target.value;
-    scatterplotMap.dataTable.setDataset(scatterplotMap.dataTable.dataset);
-    dispatch(addScatterplot(scatterplotMap));
-  };
+  const handleChangeLongitude = event => {
+    scatterplotMap.dataTable.longitudeHeaderIndex = event.target.value
+    scatterplotMap.dataTable.setDataset(scatterplotMap.dataTable.dataset)
+    dispatch(addScatterplot(scatterplotMap))
+  }
 
-  const handleChangeLatitude = (event) => {
-    scatterplotMap.dataTable.latitudeHeaderIndex = event.target.value;
-    scatterplotMap.dataTable.setDataset(scatterplotMap.dataTable.dataset);
-    dispatch(addScatterplot(scatterplotMap));
-  };
+  const handleChangeLatitude = event => {
+    scatterplotMap.dataTable.latitudeHeaderIndex = event.target.value
+    scatterplotMap.dataTable.setDataset(scatterplotMap.dataTable.dataset)
+    dispatch(addScatterplot(scatterplotMap))
+  }
 
   return (
     <Box style={{ width: 270 }}>
@@ -110,108 +110,108 @@ export default function ScatterplotMapControlPanel(props) {
       <ShareButton viewState={props.viewState} />
       <MapStyle boxStyle={classes.boxStyle} />
       <Box className={classes.boxStyle}>
-        <FormControl variant="filled" fullWidth>
-          <InputLabel htmlFor="longitude-input">Longitude</InputLabel>
+        <FormControl variant='filled' fullWidth>
+          <InputLabel htmlFor='longitude-input'>Longitude</InputLabel>
           <Select
             native
-            variant="filled"
-            onChange={(event) => handleChangeLongitude(event)}
+            variant='filled'
+            onChange={event => handleChangeLongitude(event)}
             value={0}
           >
-            {headers.map((header) => {
-              if (header.selected === "longitude") {
+            {headers.map(header => {
+              if (header.selected === 'longitude') {
                 return (
                   <option key={header.index} value={header.index}>
                     {header.name}
                   </option>
-                );
+                )
               }
             })}
           </Select>
         </FormControl>
       </Box>
       <Box className={classes.boxStyle}>
-        <FormControl variant="filled" fullWidth>
-          <InputLabel htmlFor="latitude-input">Latitude</InputLabel>
+        <FormControl variant='filled' fullWidth>
+          <InputLabel htmlFor='latitude-input'>Latitude</InputLabel>
           <Select
             native
-            variant="filled"
-            onChange={(event) => handleChangeLatitude(event)}
+            variant='filled'
+            onChange={event => handleChangeLatitude(event)}
             value={1}
           >
-            {headers.map((header) => {
-              if (header.selected === "latitude") {
+            {headers.map(header => {
+              if (header.selected === 'latitude') {
                 return (
                   <option key={header.index} value={header.index}>
                     {header.name}
                   </option>
-                );
+                )
               }
             })}
           </Select>
         </FormControl>
       </Box>
-      <Box display="flex" flexDirection="column" className={classes.boxStyle}>
-        <Typography variant="subtitle1">Color</Typography>
+      <Box display='flex' flexDirection='column' className={classes.boxStyle}>
+        <Typography variant='subtitle1'>Color</Typography>
 
         <CompactPicker
           color={{
             r: scatterplotMap.getColor[0],
             g: scatterplotMap.getColor[1],
-            b: scatterplotMap.getColor[2],
+            b: scatterplotMap.getColor[2]
           }}
           onChangeComplete={handleChangeColor}
         />
       </Box>
       <Box
-        display="flex"
-        flexDirection="column"
+        display='flex'
+        flexDirection='column'
         className={`${classes.boxStyle} ${classes.opacityBox}`}
       >
-        <Typography variant="subtitle1">Opacity</Typography>
+        <Typography variant='subtitle1'>Opacity</Typography>
 
         <div className={classes.slider}>
           <Slider
-            aria-labelledby="continuous-slider"
+            aria-labelledby='continuous-slider'
             min={0}
             max={1}
             step={0.01}
-            valueLabelDisplay="auto"
+            valueLabelDisplay='auto'
             value={opacity}
             onChange={handleChangeOpacity}
           />
         </div>
       </Box>
       <Box
-        display="flex"
-        flexDirection="column"
+        display='flex'
+        flexDirection='column'
         className={`${classes.boxStyle} ${classes.opacityBox}`}
       >
-        <Box display="flex" flexDirection="row">
-          <Typography variant="subtitle1">Radius</Typography>
-          <div style={{ position: "relative", left: "10px", top: "3px" }}>
+        <Box display='flex' flexDirection='row'>
+          <Typography variant='subtitle1'>Radius</Typography>
+          {/* <div style={{ position: "relative", left: "10px", top: "3px" }}>
             <InfoIcon fontSize="small" />
-          </div>
+          </div> */}
         </Box>
 
         <div className={classes.slider}>
           <Slider
-            aria-labelledby="continuous-slider"
+            aria-labelledby='continuous-slider'
             min={0}
             max={50}
             step={1}
-            valueLabelDisplay="auto"
+            valueLabelDisplay='auto'
             value={radius}
             onChange={handleChangeRadius}
           />
         </div>
       </Box>
-      <Box display="flex" flexDirection="column" className={classes.boxStyle}>
-        <Typography variant="subtitle1">Metadata</Typography>
+      <Box display='flex' flexDirection='column' className={classes.boxStyle}>
+        <Typography variant='subtitle1'>Metadata</Typography>
 
-        <FormControl component="fieldset" className={classes.formControl}>
+        <FormControl component='fieldset' className={classes.formControl}>
           <FormGroup>
-            {scatterplotMap.dataTable.headers.map((header) => {
+            {scatterplotMap.dataTable.headers.map(header => {
               return (
                 <FormControlLabel
                   key={header.index}
@@ -226,11 +226,11 @@ export default function ScatterplotMapControlPanel(props) {
                   }
                   label={header.name}
                 />
-              );
+              )
             })}
           </FormGroup>
         </FormControl>
       </Box>
     </Box>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
 // material-ui
 import {
@@ -10,71 +10,71 @@ import {
   Typography,
   TextField,
   LinearProgress,
-  IconButton,
-} from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import { useTheme } from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-import FileCopyIcon from "@material-ui/icons/FileCopy";
+  IconButton
+} from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
+import { useTheme } from '@material-ui/core/styles'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
+import FileCopyIcon from '@material-ui/icons/FileCopy'
 
 // axios
-import axios from "axios";
+import axios from 'axios'
 
 // redux
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux'
 
-const useModelStyles = makeStyles((theme) => ({
+const useModelStyles = makeStyles(theme => ({
   paper: {
-    padding: "20px 40px",
+    padding: '20px 40px'
   },
   box: {
-    padding: "10px 40px",
-    "& > *": {
-      padding: "8px 0px",
-    },
+    padding: '10px 40px',
+    '& > *': {
+      padding: '8px 0px'
+    }
   },
   dialogClose: {
-    color: theme.palette.primary.dark,
+    color: theme.palette.primary.dark
   },
   dialogSave: {
-    color: theme.palette.primary.light,
+    color: theme.palette.primary.light
   },
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 120,
+    minWidth: 120
   },
   margin: {
-    margin: theme.spacing(1),
-  },
-}));
+    margin: theme.spacing(1)
+  }
+}))
 
-export default function ShareDialog(props) {
-  const classes = useModelStyles();
-  const { onClose, open } = props;
-  const [link, setLink] = useState(null);
-  const [loading, setLoading] = useState(false);
+export default function ShareDialog (props) {
+  const classes = useModelStyles()
+  const { onClose, open } = props
+  const [link, setLink] = useState(null)
+  const [loading, setLoading] = useState(false)
 
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const theme = useTheme()
+  const fullScreen = useMediaQuery(theme.breakpoints.down('sm'))
 
-  const currentVis = useSelector((state) => state.currentVis);
-  const mapStyle = useSelector((state) => state.mapstyle);
-  const vis = useSelector((state) => state[currentVis]);
-  const datafile = useSelector((state) => state.datafile);
+  const currentVis = useSelector(state => state.currentVis)
+  const mapStyle = useSelector(state => state.mapstyle)
+  const vis = useSelector(state => state[currentVis])
+  const datafile = useSelector(state => state.datafile)
 
   const handleClose = () => {
-    setLoading(false);
-    setLink(null);
-    onClose();
-  };
+    setLoading(false)
+    setLink(null)
+    onClose()
+  }
 
   const handleGenerateLink = () => {
     let dataset = {
-      type: currentVis,
-    };
+      type: currentVis
+    }
 
     switch (currentVis) {
-      case "scatterplot":
+      case 'scatterplot':
         dataset = {
           ...dataset,
           headers: vis.dataTable.headers,
@@ -88,12 +88,12 @@ export default function ShareDialog(props) {
           getColor: vis.getColor,
           showOnHover: vis.showOnHover,
           mapStyle: mapStyle,
-          viewstate: props.viewState,
-        };
+          viewstate: props.viewState
+        }
 
-        break;
+        break
 
-      case "heat":
+      case 'heat':
         dataset = {
           ...dataset,
           headers: vis.dataTable.headers,
@@ -104,11 +104,11 @@ export default function ShareDialog(props) {
           opacity: vis.opacity,
           showOnHover: vis.showOnHover,
           mapStyle: mapStyle,
-          viewstate: props.viewState,
-        };
-        break;
+          viewstate: props.viewState
+        }
+        break
 
-      case "route":
+      case 'route':
         dataset = {
           ...dataset,
           headers: vis.dataTable.headers,
@@ -119,11 +119,11 @@ export default function ShareDialog(props) {
           opacity: vis.opacity,
           showOnHover: vis.showOnHover,
           mapStyle: mapStyle,
-          viewstate: props.viewState,
-        };
-        break;
+          viewstate: props.viewState
+        }
+        break
 
-      case "bar":
+      case 'bar':
         dataset = {
           ...dataset,
           headers: datafile.headers,
@@ -134,11 +134,11 @@ export default function ShareDialog(props) {
           subtitle: vis.subtitle,
           isStacked: vis.isStacked,
           vAxis: vis.vAxis,
-          hAxis: vis.hAxis,
-        };
-        break;
+          hAxis: vis.hAxis
+        }
+        break
 
-      case "line":
+      case 'line':
         dataset = {
           ...dataset,
           headers: datafile.headers,
@@ -149,50 +149,50 @@ export default function ShareDialog(props) {
           curveType: vis.curveType,
           vAxis: vis.vAxis,
           hAxis: vis.hAxis,
-          xAxisType: vis.xAxisType,
-        };
-        break;
+          xAxisType: vis.xAxisType
+        }
+        break
 
-      case "sankey":
+      case 'sankey':
         dataset = {
           ...dataset,
           headers: datafile.headers,
           data: datafile.data,
           from: vis.dataTable.from,
           to: vis.dataTable.to,
-          weight: vis.dataTable.weight,
-        };
-        break;
+          weight: vis.dataTable.weight
+        }
+        break
 
       default:
-        break;
+        break
     }
-    setLoading(true);
+    setLoading(true)
     axios
-      .post(`https://18.209.179.112:8080/api/dataset/add`, dataset)
-      .then((res) => {
-        setLink(`localhost:3000/vis/${res.data[0]["_id"]}`);
-        setLoading(false);
-      });
-  };
+      .post(`http://18.209.179.112:8080/api/dataset/add`, dataset)
+      .then(res => {
+        setLink(`localhost:3000/vis/${res.data[0]['_id']}`)
+        setLoading(false)
+      })
+  }
 
   return (
     <React.Fragment>
       <Dialog
         onClose={handleClose}
-        aria-labelledby="simple-dialog-title"
+        aria-labelledby='simple-dialog-title'
         open={open}
         fullScreen={fullScreen}
         fullWidth={true}
-        maxWidth="sm"
+        maxWidth='sm'
         disableBackdropClick
         classes={{
-          paper: classes.paper,
+          paper: classes.paper
         }}
       >
         {loading ? <LinearProgress /> : null}
 
-        <DialogTitle id="simple-dialog-title">Share Visualization</DialogTitle>
+        <DialogTitle id='simple-dialog-title'>Share Visualization</DialogTitle>
         {link === null ? (
           <Box className={classes.box}>
             <Typography>
@@ -203,28 +203,28 @@ export default function ShareDialog(props) {
               Please note that your data will be saved in GeoSpace servers.
             </Typography>
             <Typography>
-              If you wish to proceed, click on{" "}
+              If you wish to proceed, click on{' '}
               <span style={{ color: theme.palette.primary.light }}>
                 GENERATE LINK
-              </span>{" "}
+              </span>{' '}
               button.
             </Typography>
             <Typography>
-              Otherwise, click{" "}
-              <span style={{ color: theme.palette.primary.dark }}>CLOSE</span>{" "}
+              Otherwise, click{' '}
+              <span style={{ color: theme.palette.primary.dark }}>CLOSE</span>{' '}
               button to escape this dialog box.
             </Typography>
           </Box>
         ) : (
           <Box className={classes.box}>
             <Typography>Your link is</Typography>
-            <Box display="flex" flexDirection="row">
-              <TextField variant="outlined" value={link} fullWidth />
+            <Box display='flex' flexDirection='row'>
+              <TextField variant='outlined' value={link} fullWidth />
               <IconButton
-                aria-label="delete"
+                aria-label='delete'
                 className={classes.margin}
                 onClick={() => {
-                  navigator.clipboard.writeText(link);
+                  navigator.clipboard.writeText(link)
                 }}
               >
                 <FileCopyIcon />
@@ -253,5 +253,5 @@ export default function ShareDialog(props) {
         </DialogActions>
       </Dialog>
     </React.Fragment>
-  );
+  )
 }

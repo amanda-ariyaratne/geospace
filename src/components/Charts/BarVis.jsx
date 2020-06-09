@@ -1,24 +1,24 @@
-import React from "react";
+import React from 'react'
 
 // google charts
-import Chart from "react-google-charts";
+import Chart from 'react-google-charts'
 
 // redux
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux'
 
-function BarVis({ dataset }) {
-  const data = dataset.dataTable.series;
-  const title = dataset.title;
-  const xTitle = dataset.hAxis.title;
-  const yTitle = dataset.vAxis.title;
-  const isStacked = dataset.isStacked;
+function BarVis ({ dataset }) {
+  const data = dataset.dataTable.series
+  const title = dataset.title
+  const xTitle = dataset.hAxis.title
+  const yTitle = dataset.vAxis.title
+  const isStacked = dataset.isStacked
 
   return (
-    <div className="App">
+    <div className='App'>
       <Chart
-        width="100%"
-        height="85vh"
-        chartType="ColumnChart"
+        width='100%'
+        height='75vh'
+        chartType='ColumnChart'
         loader={<div>Loading Chart</div>}
         data={data}
         options={{
@@ -27,21 +27,21 @@ function BarVis({ dataset }) {
           titleTextStyle: {
             bold: true,
             italic: true,
-            fontSize: 28,
+            fontSize: 28
           },
-          chartArea: { width: "80%" },
+          chartArea: { width: '80%' },
           hAxis: {
             title: xTitle,
-            minValue: 0,
+            minValue: 0
           },
           vAxis: {
-            title: yTitle,
+            title: yTitle
           },
-          is3D: true,
+          is3D: true
         }}
       />
     </div>
-  );
+  )
 }
 
-export default BarVis;
+export default BarVis

@@ -1,31 +1,31 @@
 // deck,gk
-import { HeatmapLayer } from "@deck.gl/aggregation-layers";
+import { HeatmapLayer } from '@deck.gl/aggregation-layers'
 
 // classes
-import Layer from "./Layer";
-import HeatMapDataTable from "../data/HeatMapDataTable";
+import Layer from './Layer'
+import HeatMapDataTable from '../data/HeatMapDataTable'
 
 export default class HeatMap extends Layer {
-  constructor(data, headers, latitudeHeaderIndex, longitudeHeaderIndex) {
-    super();
+  constructor (data, headers, latitudeHeaderIndex, longitudeHeaderIndex) {
+    super()
 
-    this.dataTable = new HeatMapDataTable();
-    this.dataTable.headers = headers;
-    this.dataTable.latitudeHeaderIndex = latitudeHeaderIndex;
-    this.dataTable.longitudeHeaderIndex = longitudeHeaderIndex;
-    this.dataTable.setDataset(data);
+    this.dataTable = new HeatMapDataTable()
+    this.dataTable.headers = headers
+    this.dataTable.latitudeHeaderIndex = latitudeHeaderIndex
+    this.dataTable.longitudeHeaderIndex = longitudeHeaderIndex
+    this.dataTable.setDataset(data)
 
-    this.radiusPixels = 30;
-    this.intensity = 1;
-    this.threshold = 0.05;
-    this.opacity = 1;
-    this.getPosition = null;
-    this.getMetadata = {};
-    this.name = "";
-    this.showOnHover = [];
+    this.radiusPixels = 30
+    this.intensity = 1
+    this.threshold = 0.05
+    this.opacity = 1
+    this.getPosition = null
+    this.getMetadata = {}
+    this.name = ''
+    this.showOnHover = []
   }
 
-  render() {
+  render () {
     return new HeatmapLayer({
       id: this.id,
       data: this.dataTable.dataset,
@@ -33,19 +33,19 @@ export default class HeatMap extends Layer {
       intensity: this.intensity,
       threshold: this.threshold,
       opacity: this.opacity,
-      getPosition: this.dataTable.getObjectPosition(),
-    });
+      getPosition: this.dataTable.getObjectPosition()
+    })
   }
 
-  setRadiusScale(rs) {
-    this.radiusScale = rs;
+  setRadiusScale (rs) {
+    this.radiusScale = rs
   }
 
-  setPickable(pickable) {
-    this.pickable = pickable;
+  setPickable (pickable) {
+    this.pickable = pickable
   }
 
-  setOpacity(opacity) {
-    this.opacity = opacity;
+  setOpacity (opacity) {
+    this.opacity = opacity
   }
 }
