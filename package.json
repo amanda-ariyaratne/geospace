@@ -33,15 +33,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "eject": "react-scripts eject",
-    "cypress:open": "cypress open"
-=======
-=======
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
+
     "eject": "react-scripts eject"
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
+
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -62,13 +56,9 @@
     "plugins": [
       "transform-es2015-modules-commonjs"
     ]
-<<<<<<< HEAD
-<<<<<<< HEAD
+
   },
   "devDependencies": {}
-=======
-=======
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
-  }
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
+
+
 }

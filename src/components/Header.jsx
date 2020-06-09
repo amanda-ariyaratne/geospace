@@ -13,13 +13,7 @@ import {
   MenuItem,
   ListItemIcon,
   ListItemText,
-<<<<<<< HEAD
-<<<<<<< HEAD
   Typography,
-=======
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
-=======
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
 } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
@@ -99,18 +93,10 @@ const Header = () => {
             flexDirection="row"
             className={classes.vizContainer}
           >
-<<<<<<< HEAD
-<<<<<<< HEAD
             <Typography variant="h6">
               The Transport Visualization Framework
             </Typography>
             {/* <Link to="/maps" className={classes.link} onClick={handleMenuClose}>
-=======
-            <Link to="/maps" className={classes.link} onClick={handleMenuClose}>
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
-=======
-            <Link to="/maps" className={classes.link} onClick={handleMenuClose}>
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
               <Button
                 color="inherit"
                 variant="outlined"
@@ -127,15 +113,7 @@ const Header = () => {
               onClick={handleMenuOpen}
             >
               Charts
-<<<<<<< HEAD
-<<<<<<< HEAD
             </Button> */}
-=======
-            </Button>
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
-=======
-            </Button>
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
 
             {/* <Link to="/graphs" className={classes.link}>
               <Button

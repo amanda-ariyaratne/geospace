@@ -129,15 +129,7 @@ export default function Help(props) {
         Can you tell us more about this dataset?
       </Typography>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
       {/* <Grid container spacing={3}>
-=======
-      <Grid container spacing={3}>
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
-=======
-      <Grid container spacing={3}>
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
         <Grid item xs={12} sm={6}>
           <Paper className={classes.paper}>
             <Typography variant="h5">
@@ -202,8 +194,6 @@ export default function Help(props) {
             </Box>
           </Paper>
         </Grid>
-<<<<<<< HEAD
-<<<<<<< HEAD
       </Grid> */}
       <Box display="flex" flexDirection="row" justifyContent="center">
         <Box className={classes.listBox}>
@@ -271,12 +261,6 @@ export default function Help(props) {
           </Paper>
         </Box>
       </Box>
-=======
-      </Grid>
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
-=======
-      </Grid>
->>>>>>> d0b8b5a60233aab4c69da06912ceaf32d14ce176
       <Box>
         <Button
           variant="contained"
